@@ -5,6 +5,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 #endif
 using System.Traits;
+using Troschuetz.Random;
+using Troschuetz.Random.Generators;
 
 namespace Numbersome {
 	/// <summary>
@@ -13,37 +15,51 @@ namespace Numbersome {
 	/// <remarks>
 	/// This is essentially a <see cref="System.Random"/> but with additional features. Not only is the standard type coverage considerably better, but generators are provided, and the whole thing is itself a read-only stream, and can be used anywhere <see cref="IRead{TElement}"/> can be used.
 	/// </remarks>
-	public sealed partial class Random : IRead<Byte>, IRead<SByte>, IRead<Int16>, IRead<UInt16>, IRead<Int32>, IRead<UInt32>, IRead<Int64>, IRead<UInt64>, IRead<Single>, IRead<Double>, IRead<Decimal>, IRead<Boolean>, IRead<Char>
+	public sealed class Random :
+		IRead<Byte>,
+		IRead<SByte>,
+		IRead<Int16>,
+		IRead<UInt16>,
+		IRead<Int32>,
+		IRead<UInt32>,
+		IRead<Int64>,
+		IRead<UInt64>,
+		IRead<Single>,
+		IRead<Double>,
+		IRead<Decimal>,
+		IRead<Boolean>,
+		IRead<Char>
 #if NETCOREAPP3_0_OR_GREATER
 		, IRead<Rune>
 #endif
 		{
 		/// <summary>
-		/// The <see cref="Generator"/> instance powering this <see cref="Random"/>.
+		/// The <see cref="IGenerator"/> instance powering this <see cref="Random"/>.
 		/// </summary>
-		private readonly Generator Base;
+		private readonly IGenerator Base;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Random"/> class using a default seed value.
 		/// </summary>
-		public Random() : this(new DefaultGenerator()) { }
+		public Random() : this(new NR3Q1Generator()) { }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Random"/> class, using the specified <paramref name="seed"/> value.
 		/// </summary>
 		/// <param name="seed">A number used to calculate a starting value for the pseudo-random number sequence. If a negative number is specified, the absolute value of the number is used.</param>
-		public Random(Int32 seed) : this(new DefaultGenerator(seed)) { }
+		public Random(Int32 seed) : this(new NR3Q1Generator(seed)) { }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Random"/> class, using the specified <paramref name="base"/>.
 		/// </summary>
-		/// <param name="base">The <see cref="Generator"/> providing the raw random generator capabilities.</param>
-		public Random([DisallowNull] Generator @base) => Base = @base;
+		/// <param name="base">The <see cref="IGenerator"/> providing the raw random generator capabilities.</param>
+		[CLSCompliant(false)]
+		public Random([DisallowNull] IGenerator @base) => Base = @base;
 
 		#region Boolean
 		/// <inheritdoc/>
 		public void Read(out Boolean element) {
-			Base.Read(out Byte elmt);
+			Read(out Byte elmt);
 			element = elmt > 0;
 		}
 
@@ -52,8 +68,8 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Boolean"/> value.</returns>
 		public Boolean NextBoolean() {
-			Read(out Boolean result);
-			return result;
+			Read(out Byte elmt);
+			return elmt > 0;
 		}
 
 		/// <summary>
@@ -93,15 +109,20 @@ namespace Numbersome {
 
 		#region Byte
 		/// <inheritdoc/>
-		public void Read(out Byte element) => Base.Read(out element);
+		public unsafe void Read(out Byte element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Byte)];
+			Base.NextBytes(buffer);
+			element = buffer[0];
+		}
 
 		/// <summary>
 		/// Generates a <see cref="Byte"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Byte"/> value.</returns>
 		public Byte NextByte() {
-			Read(out Byte result);
-			return result;
+			Span<Byte> buffer = stackalloc Byte[sizeof(Byte)];
+			Base.NextBytes(buffer);
+			return buffer[0];
 		}
 
 		/// <summary>
@@ -172,10 +193,8 @@ namespace Numbersome {
 		#region Char
 		/// <inheritdoc/>
 		public unsafe void Read(out Char element) {
-			Span<Byte> buffer = new Byte[sizeof(Char)];
-			for (Int32 i = 0; i < sizeof(Char); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(Char)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToChar(buffer);
 		}
 
@@ -331,10 +350,8 @@ namespace Numbersome {
 		#region Double
 		/// <inheritdoc/>
 		public unsafe void Read(out Double element) {
-			Span<Byte> buffer = new Byte[sizeof(Double)];
-			for (Int32 i = 0; i < sizeof(Double); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(Double)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToDouble(buffer);
 		}
 
@@ -418,10 +435,8 @@ namespace Numbersome {
 		#region Int16
 		/// <inheritdoc/>
 		public unsafe void Read(out Int16 element) {
-			Span<Byte> buffer = new Byte[sizeof(Int16)];
-			for (Int32 i = 0; i < sizeof(Int16); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int16)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToInt16(buffer);
 		}
 
@@ -502,10 +517,8 @@ namespace Numbersome {
 		#region Int32
 		/// <inheritdoc/>
 		public unsafe void Read(out Int32 element) {
-			Span<Byte> buffer = new Byte[sizeof(Int32)];
-			for (Int32 i = 0; i < sizeof(Int32); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int32)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToInt32(buffer);
 		}
 
@@ -586,10 +599,8 @@ namespace Numbersome {
 		#region Int64
 		/// <inheritdoc/>
 		public unsafe void Read(out Int64 element) {
-			Span<Byte> buffer = new Byte[sizeof(Int64)];
-			for (Int32 i = 0; i < sizeof(Int64); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int64)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToInt64(buffer);
 		}
 
@@ -934,10 +945,8 @@ namespace Numbersome {
 		#region Single
 		/// <inheritdoc/>
 		public unsafe void Read(out Single element) {
-			Span<Byte> buffer = new Byte[sizeof(Single)];
-			for (Int32 i = 0; i < sizeof(Single); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(Single)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToSingle(buffer);
 		}
 
@@ -1018,10 +1027,8 @@ namespace Numbersome {
 		#region UInt16
 		/// <inheritdoc/>
 		public unsafe void Read(out UInt16 element) {
-			Span<Byte> buffer = new Byte[sizeof(UInt16)];
-			for (Int32 i = 0; i < sizeof(UInt16); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToUInt16(buffer);
 		}
 
@@ -1110,10 +1117,8 @@ namespace Numbersome {
 		#region UInt32
 		/// <inheritdoc/>
 		public unsafe void Read(out UInt32 element) {
-			Span<Byte> buffer = new Byte[sizeof(UInt32)];
-			for (Int32 i = 0; i < sizeof(UInt32); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToUInt32(buffer);
 		}
 
@@ -1201,10 +1206,8 @@ namespace Numbersome {
 		#region UInt64
 		/// <inheritdoc/>
 		public unsafe void Read(out UInt64 element) {
-			Span<Byte> buffer = new Byte[sizeof(UInt64)];
-			for (Int32 i = 0; i < sizeof(UInt64); i++) {
-				Base.Read(out buffer[i]);
-			}
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt64)];
+			Base.NextBytes(buffer);
 			element = BitConverter.ToUInt64(buffer);
 		}
 
