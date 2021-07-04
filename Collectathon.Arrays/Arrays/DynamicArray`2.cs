@@ -17,7 +17,7 @@ namespace Collectathon.Arrays {
 		IClear,
 		IInsert<TIndex, TElement>,
 		IResize,
-		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<(TIndex Index, TElement Element)>> {
+		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>> {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>
@@ -25,24 +25,37 @@ namespace Collectathon.Arrays {
 		private const Double φ = 1.6180339887_4989484820_4586834365_6381177203_0917980576_2862135448_6227052604_6281890244_9707207204_1893911374_8475408807_5386891752;
 
 		/// <summary>
-		/// The backing array of this <see cref="DynamicArray{TIndex, TElement}"/>.
+		/// The indicies of this <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
-		private (TIndex Index, TElement? Element)[] Entries;
+		[DisallowNull, NotNull]
+		private TIndex[] Indicies;
+
+		/// <summary>
+		/// The elements of this <see cref="DynamicArray{TIndex, TElement}"/>.
+		/// </summary>
+		[DisallowNull, NotNull]
+		private TElement?[] Elements;
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
-		public DynamicArray() => Entries = Array.Empty<(TIndex, TElement?)>();
+		public DynamicArray() {
+			Indicies = Array.Empty<TIndex>();
+			Elements = Array.Empty<TElement?>();
+		}
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public DynamicArray(Int32 capacity) => Entries = new (TIndex, TElement?)[capacity];
+		public DynamicArray(Int32 capacity) {
+			Indicies = new TIndex[capacity];
+			Elements = new TElement?[capacity];
+		}
 
 		/// <inheritdoc/>
 		public Int32 Capacity {
-			get => Entries.Length;
+			get => Indicies.Length;
 			set => Resize(value);
 		}
 
@@ -53,17 +66,17 @@ namespace Collectathon.Arrays {
 		[AllowNull, MaybeNull]
 		public TElement this[[DisallowNull] TIndex index] {
 			get {
-				foreach ((TIndex Index, TElement? Element) in Entries) {
-					if (Equals(Index, index)) {
-						return Element;
+				for (Int32 i = 0; i < Count; i++) {
+					if (Equals(Indicies[i], index)) {
+						return Elements[i];
 					}
 				}
 				throw new IndexOutOfRangeException();
 			}
 			set {
 				for (Int32 i = 0; i < Count; i++) {
-					if (Equals(Entries[i].Index, index)) {
-						Entries[i].Element = value;
+					if (Equals(Indicies[i], index)) {
+						Elements[i] = value;
 						return;
 					}
 				}
@@ -75,10 +88,10 @@ namespace Collectathon.Arrays {
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => throw new NotImplementedException();
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <inheritdoc/>
-		public ArrayEnumerator<(TIndex Index, TElement Element)> GetEnumerator() => new ArrayEnumerator<(TIndex Index, TElement Element)>(Entries, Count);
+		public ArrayEnumerator<TIndex, TElement> GetEnumerator() => new ArrayEnumerator<TIndex, TElement>(Indicies, Elements, Count);
 
 		/// <inheritdoc/>
 		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
@@ -86,8 +99,8 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
-			foreach ((TIndex Index, _) in Entries) {
-				if (Equals(Index, index)) {
+			for (Int32 i = 0; i < Count; i++) {
+				if (Equals(Indicies[i], index)) {
 					return;
 				}
 			}
@@ -95,30 +108,30 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => throw new NotImplementedException();
+		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Elements, Count, search, replace);
 
 		/// <inheritdoc/>
 		public void Resize(Int32 capacity) {
-			(TIndex, TElement)[] newBuffer = new (TIndex, TElement)[capacity];
-			Entries.AsMemory(0, capacity > Capacity ? Capacity : capacity).CopyTo(newBuffer);
-			Count = Count < capacity ? Count : capacity;
-			Entries = newBuffer;
+			Indicies = Collection.Resize(Indicies, capacity);
+			Elements = Collection.Resize(Elements, capacity);
 		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(Entries);
+		public override String ToString() => Collection.ToString(Indicies, Elements);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(Int32 amount) => Collection.ToString(Entries, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Indicies, Elements, amount);
 
 		/// <inheritdoc/>
 		private void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (Count == Capacity) {
 				Grow();
 			}
-			Entries[Count++] = (index, element);
+			Indicies[Count] = index;
+			Elements[Count] = element;
+			Count++;
 		}
 
 		/// <summary>

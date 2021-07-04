@@ -1,8 +1,6 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using System.Traits;
 using System.Traits.Concepts;
 
 namespace Collectathon.Enumerators {
@@ -13,9 +11,10 @@ namespace Collectathon.Enumerators {
 	[StructLayout(LayoutKind.Auto)]
 	public struct ArrayEnumerator<TElement> : IEnumerator<TElement> {
 		/// <summary>
-		/// The <see cref="ReadOnlyMemory{T}"/> being enumerated.
+		/// The <see cref="Array"/> being enumerated.
 		/// </summary>
-		private readonly ReadOnlyMemory<TElement> Memory;
+		[DisallowNull, NotNull]
+		private readonly TElement[] Memory;
 
 		/// <summary>
 		/// The current index into the <see cref="Memory"/>.
@@ -30,7 +29,7 @@ namespace Collectathon.Enumerators {
 		/// <remarks>
 		/// At first it might seem like <paramref name="length"/> is superfluous, as <see cref="ReadOnlyMemory{T}"/> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <paramref name="length"/> is the actually used portion.
 		/// </remarks>
-		public ArrayEnumerator(ReadOnlyMemory<TElement> memory, Int32 length) {
+		public ArrayEnumerator([DisallowNull] TElement[] memory, Int32 length) {
 			Memory = memory;
 			Count = length;
 			i = -1;
@@ -38,7 +37,7 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		[MaybeNull]
-		public TElement Current => Memory.Span[i];
+		public TElement Current => Memory[i];
 
 		/// <inheritdoc/>
 		public Int32 Count { get; }

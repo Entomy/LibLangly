@@ -8,13 +8,13 @@ namespace Langly {
 	[SimpleJob(RuntimeMoniker.Net50)]
 	[MemoryDiagnoser]
 	public class Sum {
-		private readonly BoundedArray<Byte> @byte = new Byte[] { 1, 2, 3, 4, 5 };
+		private readonly BoundedArray<Byte> @byte = new(1, 2, 3, 4, 5);
 
-		private readonly BoundedArray<Double> @double = new Double[] { 1.0, 2.0, 3.0, 4.0, 5.0 };
+		private readonly BoundedArray<Double> @double = new(1.0, 2.0, 3.0, 4.0, 5.0);
 
-		private readonly BoundedArray<Int32> int32 = new Int32[] { 1, 2, 3, 4, 5 };
+		private readonly BoundedArray<Int32> int32 = new(1, 2, 3, 4, 5);
 
-		private readonly BoundedArray<Single> single = new Single[] { 1f, 2f, 3f, 4f, 5f };
+		private readonly BoundedArray<Single> single = new(1f, 2f, 3f, 4f, 5f);
 
 		[Benchmark]
 		public void Byte() => @byte.Sum();
