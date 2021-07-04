@@ -73,15 +73,6 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public void Dispose() { /* No-op */ }
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public IEnumerator<TElement> GetEnumerator() => this;
-
-		/// <inheritdoc/>
 		public Boolean MoveNext() {
 			++i;
 			while ((ListDealt && Dealt.Span[i]) || (ListRemaining && !Dealt.Span[i])) {
@@ -92,15 +83,5 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		public void Reset() => i = -1;
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public override String ToString() => Collection.ToString(Cards);
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public String ToString(Int32 amount) => Collection.ToString(Cards, amount);
 	}
 }

@@ -4,14 +4,6 @@
 	/// </summary>
 	public interface ISeek {
 		/// <summary>
-		/// Can this be seeked?
-		/// </summary>
-		/// <remarks>
-		/// This is a state indicator. Of course an <see cref="ISeek"/> can be seeked, but that doesn't mean it can always be seeked. Rather, this being <see langword="true"/> indicates the type can currently be seeked.
-		/// </remarks>
-		Boolean Seekable { get; }
-
-		/// <summary>
 		/// The position within the datastream, counted by an offset from the start.
 		/// </summary>
 		Int32 Position { get; set; }

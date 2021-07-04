@@ -4,16 +4,25 @@ using System.Diagnostics.CodeAnalysis;
 #if NETCOREAPP3_0_OR_GREATER
 using System.Text;
 #endif
-using Streamy;
+using System.Traits;
 
 namespace Numbersome {
 	/// <summary>
 	/// Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.
 	/// </summary>
 	/// <remarks>
-	/// This is essentially a <see cref="System.Random"/> but with additional features. Not only is the standard type coverage considerably better, but generators are provided, and the whole thing is itself a <see cref="Stream"/>, and can be used anywhere streams can be used.
+	/// This is essentially a <see cref="System.Random"/> but with additional features. Not only is the standard type coverage considerably better, but generators are provided, and the whole thing is itself a read-only stream, and can be used anywhere <see cref="IRead{TElement}"/> can be used.
 	/// </remarks>
-	public sealed partial class Random : Stream {
+	public sealed partial class Random : IRead<Byte>, IRead<SByte>, IRead<Int16>, IRead<UInt16>, IRead<Int32>, IRead<UInt32>, IRead<Int64>, IRead<UInt64>, IRead<Single>, IRead<Double>, IRead<Decimal>, IRead<Boolean>, IRead<Char>
+#if NETCOREAPP3_0_OR_GREATER
+		, IRead<Rune>
+#endif
+		{
+		/// <summary>
+		/// The <see cref="Generator"/> instance powering this <see cref="Random"/>.
+		/// </summary>
+		private readonly Generator Base;
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Random"/> class using a default seed value.
 		/// </summary>
@@ -29,9 +38,15 @@ namespace Numbersome {
 		/// Initializes a new instance of the <see cref="Random"/> class, using the specified <paramref name="base"/>.
 		/// </summary>
 		/// <param name="base">The <see cref="Generator"/> providing the raw random generator capabilities.</param>
-		public Random([DisallowNull] Generator @base) : base(@base) { }
+		public Random([DisallowNull] Generator @base) => Base = @base;
 
 		#region Boolean
+		/// <inheritdoc/>
+		public void Read(out Boolean element) {
+			Base.Read(out Byte elmt);
+			element = elmt > 0;
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Boolean"/> value.
 		/// </summary>
@@ -77,6 +92,9 @@ namespace Numbersome {
 		#endregion
 
 		#region Byte
+		/// <inheritdoc/>
+		public void Read(out Byte element) => Base.Read(out element);
+
 		/// <summary>
 		/// Generates a <see cref="Byte"/> value.
 		/// </summary>
@@ -152,13 +170,22 @@ namespace Numbersome {
 		#endregion
 
 		#region Char
+		/// <inheritdoc/>
+		public unsafe void Read(out Char element) {
+			Span<Byte> buffer = new Byte[sizeof(Char)];
+			for (Int32 i = 0; i < sizeof(Char); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToChar(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Char"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Char"/> value.</returns>
 		public Char NextChar() {
-			Read(out Int16 result);
-			return (Char)result;
+			Read(out Char result);
+			return result;
 		}
 
 		/// <summary>
@@ -227,6 +254,9 @@ namespace Numbersome {
 		#endregion
 
 		#region Decimal
+		/// <inheritdoc/>
+		public void Read(out Decimal element) => element = NextDecimal();
+
 		/// <summary>
 		/// Generates a <see cref="Decimal"/> value.
 		/// </summary>
@@ -299,6 +329,15 @@ namespace Numbersome {
 		#endregion
 
 		#region Double
+		/// <inheritdoc/>
+		public unsafe void Read(out Double element) {
+			Span<Byte> buffer = new Byte[sizeof(Double)];
+			for (Int32 i = 0; i < sizeof(Double); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToDouble(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Double"/> value.
 		/// </summary>
@@ -377,6 +416,15 @@ namespace Numbersome {
 		#endregion
 
 		#region Int16
+		/// <inheritdoc/>
+		public unsafe void Read(out Int16 element) {
+			Span<Byte> buffer = new Byte[sizeof(Int16)];
+			for (Int32 i = 0; i < sizeof(Int16); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToInt16(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Int16"/> value.
 		/// </summary>
@@ -452,6 +500,15 @@ namespace Numbersome {
 		#endregion
 
 		#region Int32
+		/// <inheritdoc/>
+		public unsafe void Read(out Int32 element) {
+			Span<Byte> buffer = new Byte[sizeof(Int32)];
+			for (Int32 i = 0; i < sizeof(Int32); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToInt32(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Int32"/> value.
 		/// </summary>
@@ -527,6 +584,15 @@ namespace Numbersome {
 		#endregion
 
 		#region Int64
+		/// <inheritdoc/>
+		public unsafe void Read(out Int64 element) {
+			Span<Byte> buffer = new Byte[sizeof(Int64)];
+			for (Int32 i = 0; i < sizeof(Int64); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToInt64(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Int64"/> value.
 		/// </summary>
@@ -602,6 +668,9 @@ namespace Numbersome {
 		#endregion
 
 		#region IntPtr
+		/// <inheritdoc/>
+		public unsafe void Read(out IntPtr element) => element = NextIntPtr();
+
 		/// <summary>
 		/// Generates a <see cref="IntPtr"/> value.
 		/// </summary>
@@ -686,6 +755,9 @@ namespace Numbersome {
 
 		#region Rune
 #if NETCOREAPP3_0_OR_GREATER
+		/// <inheritdoc/>
+		public void Read(out Rune element) => element = NextRune();
+
 		/// <summary>
 		/// Generates a <see cref="Rune"/> value.
 		/// </summary>
@@ -772,6 +844,12 @@ namespace Numbersome {
 		#endregion
 
 		#region SByte
+		/// <inheritdoc/>
+		public void Read(out SByte element) {
+			Read(out Byte elmt);
+			element = (SByte)elmt;
+		}
+
 		/// <summary>
 		/// Generates a <see cref="SByte"/> value.
 		/// </summary>
@@ -854,6 +932,15 @@ namespace Numbersome {
 		#endregion
 
 		#region Single
+		/// <inheritdoc/>
+		public unsafe void Read(out Single element) {
+			Span<Byte> buffer = new Byte[sizeof(Single)];
+			for (Int32 i = 0; i < sizeof(Single); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToSingle(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="Single"/> value.
 		/// </summary>
@@ -929,6 +1016,16 @@ namespace Numbersome {
 		#endregion
 
 		#region UInt16
+		/// <inheritdoc/>
+		public unsafe void Read(out UInt16 element) {
+			Span<Byte> buffer = new Byte[sizeof(UInt16)];
+			for (Int32 i = 0; i < sizeof(UInt16); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToUInt16(buffer);
+		}
+
+
 		/// <summary>
 		/// Generates a <see cref="UInt16"/> value.
 		/// </summary>
@@ -1011,6 +1108,15 @@ namespace Numbersome {
 		#endregion
 
 		#region UInt32
+		/// <inheritdoc/>
+		public unsafe void Read(out UInt32 element) {
+			Span<Byte> buffer = new Byte[sizeof(UInt32)];
+			for (Int32 i = 0; i < sizeof(UInt32); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToUInt32(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="UInt32"/> value.
 		/// </summary>
@@ -1093,6 +1199,15 @@ namespace Numbersome {
 		#endregion
 
 		#region UInt64
+		/// <inheritdoc/>
+		public unsafe void Read(out UInt64 element) {
+			Span<Byte> buffer = new Byte[sizeof(UInt64)];
+			for (Int32 i = 0; i < sizeof(UInt64); i++) {
+				Base.Read(out buffer[i]);
+			}
+			element = BitConverter.ToUInt64(buffer);
+		}
+
 		/// <summary>
 		/// Generates a <see cref="UInt64"/> value.
 		/// </summary>
@@ -1175,6 +1290,9 @@ namespace Numbersome {
 		#endregion
 
 		#region UIntPtr
+		/// <inheritdoc/>
+		public void Read(out UIntPtr element) => element = NextUIntPtr();
+
 		/// <summary>
 		/// Generates a <see cref="UIntPtr"/> value.
 		/// </summary>
@@ -1262,33 +1380,6 @@ namespace Numbersome {
 				buffer[i] = NextUIntPtr();
 			}
 		}
-		#endregion
-
-		#region System.Random compatibility
-		/// <summary>
-		/// Returns a non-negative random integer.
-		/// </summary>
-		/// <returns>A 32-bit signed integer that is greater than or equal to 0 and less than <see cref="Int32.MaxValue"/>.</returns>
-		[Obsolete("Use NextInt32() instead.")]
-		public Int32 Next() => NextInt32(0, Int32.MaxValue);
-
-		/// <summary>
-		/// Returns a non-negative random integer that is less than the specified maximum.
-		/// </summary>
-		/// <param name="maxValue">The exclusive upper bound of the random number to be generated. <paramref name="maxValue"/> must be greater than or equal to 0.</param>
-		/// <returns>A 32-bit signed integer that is greater than or equal to 0, and less than <paramref name="maxValue"/>; that is, the range of return values ordinarily includes 0 but not <paramref name="maxValue"/>. However, if <paramref name="maxValue"/> equals 0, <paramref name="maxValue"/> is returned.</returns>
-		/// <exception cref="ArgumentOutOfRangeException"><paramref name="maxValue"/> is less than 0.</exception>
-		[Obsolete("Use NextInt32() instead.")]
-		public Int32 Next(Int32 maxValue) => NextInt32(0, maxValue - 1);
-
-		/// <summary>
-		/// Returns a random integer that is within a specified range.
-		/// </summary>
-		/// <param name="minValue">The inclusive lower vound of the random number returned.</param>
-		/// <param name="maxValue">The exclusive upper bound of the random number returned. <paramref name="maxValue"/> must be greater than or equalt o <paramref name="minValue"/>.</param>
-		/// <returns>A 32-bit signed integer greater than or equal to <paramref name="minValue"/> and less than <paramref name="maxValue"/>; that is, the range of return values includes <paramref name="minValue"/> but not <paramref name="maxValue"/>. If <paramref name="minValue"/> equals <paramref name="maxValue"/>, <paramref name="minValue"/> is returned.</returns>
-		[Obsolete("Use NextInt32() instead.")]
-		public Int32 Next(Int32 minValue, Int32 maxValue) => NextInt32(minValue, maxValue - 1);
 		#endregion
 	}
 }

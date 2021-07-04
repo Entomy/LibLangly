@@ -12,7 +12,6 @@ namespace Collectathon.Pools {
 	public sealed class Deck<TElement> :
 		IClear,
 		IContains<TElement>,
-		IControlled,
 		IPeek<TElement>,
 		IRemove<TElement>,
 		ISequence<TElement, DeckEnumerator<TElement>> {
@@ -30,6 +29,7 @@ namespace Collectathon.Pools {
 		/// </summary>
 		[DisallowNull, NotNull]
 		private readonly Numbersome.Random Random = new();
+
 		/// <summary>
 		/// Whether each corresponding card was dealt.
 		/// </summary>
@@ -69,9 +69,6 @@ namespace Collectathon.Pools {
 		/// Gets the dealt elements from this deck.
 		/// </summary>
 		public DeckEnumerator<TElement> Dealt => new DeckEnumerator<TElement>(cards, dealt, listDealt: true, listRemaining: false);
-
-		/// <inheritdoc/>
-		Boolean IControlled.Disposed { get; set; }
 
 		/// <summary>
 		/// Gets the remaining elements in this deck.
@@ -118,16 +115,7 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		void IControlled.DisposeManaged() => ((IControlled)Random).Dispose();
-
-		/// <inheritdoc/>
-		void IControlled.DisposeUnmanaged() { /* No-op */ }
-
-		/// <inheritdoc/>
 		public DeckEnumerator<TElement> GetEnumerator() => new DeckEnumerator<TElement>(cards, dealt, listDealt: true, listRemaining: true);
-
-		/// <inheritdoc/>
-		void IControlled.NullLargeFields() => dealt = null!;
 
 		/// <inheritdoc/>
 		public void Peek([MaybeNull] out TElement element) {
