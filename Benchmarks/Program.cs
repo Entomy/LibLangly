@@ -30,9 +30,6 @@ namespace Langly {
 					nameof(Sum),
 					nameof(Product),
 				})
-				.AddChoiceGroup(nameof(Streamy), new[] {
-					""
-				})
 				.AddChoiceGroup(nameof(Stringier), new[] {
 					""
 				}))) {

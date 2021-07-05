@@ -60,6 +60,17 @@ namespace Numbersome {
 		/// Adds the top two elements on the <paramref name="stack"/> together, and pushes the result back onto the <paramref name="stack"/>.
 		/// </summary>
 		/// <param name="stack">This stack.</param>
+		[CLSCompliant(false)]
+		public static void Add([DisallowNull] this IStack<UInt64> stack) {
+			UInt64 right = stack.Pop();
+			UInt64 left = stack.Pop();
+			stack.Push(left + right);
+		}
+
+		/// <summary>
+		/// Adds the top two elements on the <paramref name="stack"/> together, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
 		public static void Add([DisallowNull] this IStack<Single> stack) {
 			Single right = stack.Pop();
 			Single left = stack.Pop();
