@@ -9,7 +9,7 @@ namespace Stringier {
 		[InlineData("ram", "rom", 1)]
 		[InlineData("ram", "rob", 2)]
 		[InlineData("ram", "rma", 2)]
-		public void Hamming(String source, String other, Int32 expected) => Assert.Equal(expected, EditDistance.Hamming(source, other));
+		public void Hamming_String_String(String source, String other, Int32 expected) => Assert.Equal(expected, EditDistance.Hamming(source, other));
 
 		[Theory]
 		[InlineData("ram", "rom", 1)]
@@ -18,6 +18,6 @@ namespace Stringier {
 		[InlineData("ram", "rob", 2)]
 		[InlineData("ram", "random", 3)]
 		[InlineData("flaw", "lawn", 2)]
-		public void Levenshtein(String source, String other, Int32 expected) => Assert.Equal(expected, EditDistance.Levenshtein(source, other));
+		public void Levenshtein_String_String(String source, String other, Int32 expected) => Assert.Equal(expected, EditDistance.Levenshtein(source, other));
 	}
 }
