@@ -6,6 +6,7 @@ namespace System.Traits.Testing {
 	/// <summary>
 	/// Represents a <see cref="Tests"/> asserter.
 	/// </summary>
+	[ExcludeFromCodeCoverage]
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "This isn't really possible given what this class is, and how it's meant to be used. What this analyzer is trying to catch isn't an issue, anyways.")]
 	public readonly ref struct ArrayAssert<T> {
 		/// <summary>

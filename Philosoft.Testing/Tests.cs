@@ -7,6 +7,7 @@ namespace System.Traits.Testing {
 	/// <remarks>
 	/// Inheriting from this provides the Philosoft testing framework to unit tests contained in the derived class.
 	/// </remarks>
+	[ExcludeFromCodeCoverage]
 	public abstract class Tests {
 		/// <summary>
 		/// Provides a collection of contracts that validate types designed with the Trait and Concept APIs.
