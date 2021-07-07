@@ -35,6 +35,9 @@ namespace Stringier {
 			/// <inheritdoc/>
 			public abstract Boolean Contains(Char element);
 
+			/// <inheritdoc/>
+			public abstract Boolean Contains([AllowNull] Predicate<Char> predicate);
+
 			public abstract (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element);
 
 			public abstract (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements);

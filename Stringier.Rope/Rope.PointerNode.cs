@@ -46,6 +46,9 @@ namespace Stringier {
 			public override Boolean Contains(Char element) => Collection.Contains(Pointer, Count, element);
 
 			/// <inheritdoc/>
+			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => Collection.Contains(Pointer, Count, predicate);
+
+			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
 				Node head;
 				Node tail;

@@ -399,5 +399,8 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		public Boolean Contains(Char element) => Predicate(new Rune(element));
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<Char> predicate) => throw new NotImplementedException();
 	}
 }

@@ -9,7 +9,7 @@ namespace Collectathon {
 		public void Constructor() {
 			Deck<String> deck = new("heart", "club", "spade", "diamond");
 			Assert(deck.Count).Equals(4);
-			Assert(deck.ContainsAll<String>("heart", "club", "spade", "diamond")).True();
+			Assert(deck.ContainsAll("heart", "club", "spade", "diamond")).True();
 		}
 
 		[Fact]

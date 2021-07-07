@@ -99,6 +99,9 @@ namespace Collectathon.Lists {
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
 
 		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Head, predicate);
+
+		/// <inheritdoc/>
 		[UnlinksNode]
 		[return: MaybeNull]
 		public TElement Dequeue() {

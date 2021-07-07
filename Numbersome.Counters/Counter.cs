@@ -139,6 +139,9 @@ namespace Numbersome {
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Elements.Length, element);
 
 		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Elements, Elements.Length, predicate);
+
+		/// <inheritdoc/>
 		[return: NotNull]
 		public Enumerator GetEnumerator() => new Enumerator(Elements, Counts, count);
 

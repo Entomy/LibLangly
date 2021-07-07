@@ -72,6 +72,9 @@ namespace Collectathon.Arrays {
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Elements, Count, predicate);
+
+		/// <inheritdoc/>
 		public ArrayEnumerator<TIndex, TElement?> GetEnumerator() => new ArrayEnumerator<TIndex, TElement?>(Indicies, Elements, Count);
 
 		/// <inheritdoc/>

@@ -40,6 +40,8 @@ namespace Collectathon.Nodes {
 		/// <inheritdoc/>
 		public Boolean Contains([AllowNull] TElement element) => Equals(Element, element);
 
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => predicate?.Invoke(Element) ?? Element is null;
+
 		/// <inheritdoc/>
 		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
 		public override Int32 GetHashCode() => base.GetHashCode();

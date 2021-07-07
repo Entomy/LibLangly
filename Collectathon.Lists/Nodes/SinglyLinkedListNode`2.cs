@@ -45,6 +45,8 @@ namespace Collectathon.Nodes {
 		/// <inheritdoc/>
 		public Boolean Contains([AllowNull] TElement element) => Equals(Element, element);
 
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => predicate?.Invoke(Element) ?? Element is null;
+
 		/// <inheritdoc/>
 		[return: NotNull]
 		public SinglyLinkedListNode<TIndex, TElement> Postpend([DisallowNull] TIndex index, [AllowNull] TElement element) {

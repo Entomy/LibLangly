@@ -31,6 +31,9 @@ namespace Stringier {
 			public override Boolean Contains([AllowNull] Char element) => Equals(Char, element);
 
 			/// <inheritdoc/>
+			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => predicate?.Invoke(Char) ?? false;
+
+			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
 				Node head;
 				Node tail;

@@ -11,7 +11,7 @@ namespace Collectathon.Pools {
 	/// <typeparam name="TElement">The type of the elements in the deck.</typeparam>
 	public sealed class Deck<TElement> :
 		IClear,
-		IContains<TElement>,
+		IContainsAll<TElement>, IContainsAny<TElement>,
 		IPeek<TElement>,
 		IRemove<TElement>,
 		ISequence<TElement, DeckEnumerator<TElement>> {
@@ -88,6 +88,32 @@ namespace Collectathon.Pools {
 				if (Equals(cards[i], element)) {
 					if (!dealt[i]) return true;
 				}
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) {
+			for (Int32 i = 0; i < cards.Length; i++) {
+				if (predicate?.Invoke(cards[i]) ?? cards[i] is null) {
+					if (!dealt[i]) return true;
+				}
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
+		public Boolean ContainsAll([AllowNull] params TElement[] elements) {
+			foreach (TElement element in elements) {
+				if (!Contains(element)) return false;
+			}
+			return true;
+		}
+
+		/// <inheritdoc/>
+		public Boolean ContainsAny([AllowNull] params TElement[] elements) {
+			foreach (TElement element in elements) {
+				if (Contains(element)) return true;
 			}
 			return false;
 		}

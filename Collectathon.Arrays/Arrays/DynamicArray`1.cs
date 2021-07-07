@@ -160,6 +160,9 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
 
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Elements, Count, predicate);
+
 		/// <summary>
 		/// Determines if the two values are equal.
 		/// </summary>

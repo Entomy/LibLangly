@@ -105,6 +105,9 @@ namespace Numbersome {
 		/// <inheritdoc/>
 		public Boolean Contains([AllowNull] TElement element) => Predicate(element);
 
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => throw new NotImplementedException();
+
 		[return: NotNull]
 		protected static Predicate<TElement> Compliment([AllowNull] Set<TElement> set) => set is not null ? (element) => !set.Predicate(element) : (element) => element is null;
 
