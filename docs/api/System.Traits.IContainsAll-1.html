@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IReadOnlyArray&lt;TIndex, TElement&gt;
+    <title>Interface IContainsAll&lt;TElement&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IReadOnlyArray&lt;TIndex, TElement&gt;
+    <meta name="title" content="Interface IContainsAll&lt;TElement&gt;
    ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -68,37 +68,28 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="System.Traits.Concepts.IReadOnlyArray`2">
+            <article class="content wrap" id="_content" data-uid="System.Traits.IContainsAll`1">
   
   
-  <h1 id="System_Traits_Concepts_IReadOnlyArray_2" data-uid="System.Traits.Concepts.IReadOnlyArray`2" class="text-break">Interface IReadOnlyArray&lt;TIndex, TElement&gt;
+  <h1 id="System_Traits_IContainsAll_1" data-uid="System.Traits.IContainsAll`1" class="text-break">Interface IContainsAll&lt;TElement&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the type can be used as a read-only array.</p>
+  <div class="markdown level0 summary"><p>Indicates the type can contain elements, and test against those.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="System.Traits.ICapacity.html#System_Traits_ICapacity_Capacity">ICapacity.Capacity</a>
-    </div>
-    <div>
       <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains__0_">IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
-      <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains_Predicate__0__">IContains&lt;TElement&gt;.Contains(Predicate&lt;&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="System.Traits.ICount.html#System_Traits_ICount_Count">ICount.Count</a>
-    </div>
-    <div>
-      <a class="xref" href="System.Traits.IIndexReadOnly-2.html#System_Traits_IIndexReadOnly_2_Item__0_">IIndexReadOnly&lt;TIndex, TElement&gt;.Item[TIndex]</a>
+      <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains_Predicate__0__">IContains&lt;TElement&gt;.Contains(Predicate&lt;TElement&gt;)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.Concepts.html">System.Traits.Concepts</a></h6>
-  <h6><strong>Assembly</strong>: Philosoft.Concepts.dll</h6>
-  <h5 id="System_Traits_Concepts_IReadOnlyArray_2_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.html">System.Traits</a></h6>
+  <h6><strong>Assembly</strong>: Philosoft.Traits.dll</h6>
+  <h5 id="System_Traits_IContainsAll_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IReadOnlyArray&lt;TIndex, TElement&gt; : ICapacity, IContains&lt;TElement&gt;, ICount, IIndexReadOnly&lt;TIndex, TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IContainsAll&lt;TElement&gt; : IContains&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -110,13 +101,60 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TIndex</span></td>
-        <td><p>The type of the indicies.</p>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of element contained in the collection.</p>
 </td>
       </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IContainsAll_1_ContainsAll__0___.md&amp;value=---%0Auid%3A%20System.Traits.IContainsAll%601.ContainsAll(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IContainsAll`1.cs/#L14">View Source</a>
+  </span>
+  <a id="System_Traits_IContainsAll_1_ContainsAll_" data-uid="System.Traits.IContainsAll`1.ContainsAll*"></a>
+  <h4 id="System_Traits_IContainsAll_1_ContainsAll__0___" data-uid="System.Traits.IContainsAll`1.ContainsAll(`0[])">ContainsAll(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Boolean ContainsAll(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
       <tr>
-        <td><span class="parametername">TElement</span></td>
-        <td><p>The type of the elements.</p>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -129,10 +167,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IReadOnlyArray_2.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IReadOnlyArray%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IContainsAll_1.md&amp;value=---%0Auid%3A%20System.Traits.IContainsAll%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/IReadOnlyArray`2.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IContainsAll`1.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

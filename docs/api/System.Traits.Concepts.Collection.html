@@ -157,7 +157,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(TElement*elements, Int32 count, TElement element)
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(TElement*collection, Int32 count, TElement element)
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -172,7 +172,7 @@
     <tbody>
       <tr>
         <td>TElement*</td>
-        <td><span class="parametername">elements</span></td>
+        <td><span class="parametername">collection</span></td>
         <td><p>The elements of this collection.</p>
 </td>
       </tr>
@@ -202,6 +202,84 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1___0__Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(%60%600*%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L164">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1___0__Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(``0*,Int32,Predicate{``0})">Contains&lt;TElement&gt;(TElement*, Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(TElement*collection, Int32 count, Predicate&lt;TElement&gt; predicate)
+    where TElement : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement*</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -235,7 +313,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(TElement[] elements, Int32 count, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(TElement[] collection, Int32 count, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -249,7 +327,7 @@
     <tbody>
       <tr>
         <td>TElement[]</td>
-        <td><span class="parametername">elements</span></td>
+        <td><span class="parametername">collection</span></td>
         <td><p>The elements of this collection.</p>
 </td>
       </tr>
@@ -279,6 +357,160 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1___0___Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(%60%600%5B%5D%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L96">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1___0___Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(``0[],Int32,Predicate{``0})">Contains&lt;TElement&gt;(TElement[], Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(TElement[] collection, Int32 count, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1_ArraySegment___0__Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(ArraySegment%7B%60%600%7D%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L106">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1_ArraySegment___0__Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(ArraySegment{``0},Int32,Predicate{``0})">Contains&lt;TElement&gt;(ArraySegment&lt;TElement&gt;, Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ArraySegment&lt;TElement&gt; collection, Int32 count, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -312,7 +544,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(Memory&lt;TElement&gt; elements, Int32 count, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(Memory&lt;TElement&gt; collection, Int32 count, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -326,7 +558,7 @@
     <tbody>
       <tr>
         <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
+        <td><span class="parametername">collection</span></td>
         <td><p>The elements of this collection.</p>
 </td>
       </tr>
@@ -356,6 +588,83 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1_Memory___0__Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(Memory%7B%60%600%7D%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L116">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1_Memory___0__Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(Memory{``0},Int32,Predicate{``0})">Contains&lt;TElement&gt;(Memory&lt;TElement&gt;, Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(Memory&lt;TElement&gt; collection, Int32 count, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -389,7 +698,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt; elements, Int32 count, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt; collection, Int32 count, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -403,7 +712,7 @@
     <tbody>
       <tr>
         <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
+        <td><span class="parametername">collection</span></td>
         <td><p>The elements of this collection.</p>
 </td>
       </tr>
@@ -433,6 +742,83 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1_ReadOnlyMemory___0__Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(ReadOnlyMemory%7B%60%600%7D%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L126">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1_ReadOnlyMemory___0__Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(ReadOnlyMemory{``0},Int32,Predicate{``0})">Contains&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt; collection, Int32 count, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -466,7 +852,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt; elements, Int32 count, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt; collection, Int32 count, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -480,7 +866,7 @@
     <tbody>
       <tr>
         <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
+        <td><span class="parametername">collection</span></td>
         <td><p>The elements of this collection.</p>
 </td>
       </tr>
@@ -510,6 +896,83 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1_ReadOnlySpan___0__Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(ReadOnlySpan%7B%60%600%7D%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L146">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1_ReadOnlySpan___0__Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(ReadOnlySpan{``0},Int32,Predicate{``0})">Contains&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt; collection, Int32 count, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -543,7 +1006,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(Span&lt;TElement&gt; elements, Int32 count, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(Span&lt;TElement&gt; collection, Int32 count, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -557,7 +1020,7 @@
     <tbody>
       <tr>
         <td><span class="xref">Span</span>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
+        <td><span class="parametername">collection</span></td>
         <td><p>The elements of this collection.</p>
 </td>
       </tr>
@@ -608,10 +1071,87 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__1_Span___0__Int32_Predicate___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%601(Span%7B%60%600%7D%2CInt32%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L136">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__1_Span___0__Int32_Predicate___0__" data-uid="System.Traits.Concepts.Collection.Contains``1(Span{``0},Int32,Predicate{``0})">Contains&lt;TElement&gt;(Span&lt;TElement&gt;, Int32, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement&gt;(Span&lt;TElement&gt; collection, Int32 count, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__2___0___1_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%602(%60%600%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L78">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L79">View Source</a>
   </span>
   <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
   <h4 id="System_Traits_Concepts_Collection_Contains__2___0___1_" data-uid="System.Traits.Concepts.Collection.Contains``2(``0,``1)">Contains&lt;TNode, TElement&gt;(TNode, TElement)</h4>
@@ -684,13 +1224,1321 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Equals__2_Collections_Generic_IEnumerable___0__System_Traits_Concepts_ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Equals%60%602(Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Traits.Concepts.ISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Contains__2___0_Predicate___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Contains%60%602(%60%600%2CPredicate%7B%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Contains.cs/#L174">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_Contains_" data-uid="System.Traits.Concepts.Collection.Contains*"></a>
+  <h4 id="System_Traits_Concepts_Collection_Contains__2___0_Predicate___1__" data-uid="System.Traits.Concepts.Collection.Contains``2(``0,Predicate{``1})">Contains&lt;TNode, TElement&gt;(TNode, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains an element matching the specified <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TNode, TElement&gt;(TNode head, Predicate&lt;TElement&gt; predicate)
+    where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">head</span></td>
+        <td><p>The head node of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>A <see cref="!:Predicate&lt;T>"></see> describing the element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if an element described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(%60%600*%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L83">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(``0*,Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(TElement*, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(TElement*collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)
+    where TElement : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement*</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1___0___Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(%60%600%5B%5D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L15">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1___0___Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(``0[],Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(TElement[], Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(TElement[] collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1_ArraySegment___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(ArraySegment%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L25">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1_ArraySegment___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(ArraySegment{``0},Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(ArraySegment&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(ArraySegment&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1_Memory___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(Memory%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L35">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1_Memory___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(Memory{``0},Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(Memory&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(Memory&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1_ReadOnlyMemory___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(ReadOnlyMemory%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L45">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1_ReadOnlyMemory___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(ReadOnlyMemory{``0},Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1_ReadOnlySpan___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(ReadOnlySpan%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L65">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1_ReadOnlySpan___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(ReadOnlySpan{``0},Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__1_Span___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%601(Span%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L55">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__1_Span___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAll``1(Span{``0},Int32,ReadOnlySpan{``0})">ContainsAll&lt;TElement&gt;(Span&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement&gt;(Span&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAll__2___0_ReadOnlySpan___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAll%60%602(%60%600%2CReadOnlySpan%7B%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAll.cs/#L93">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAll_" data-uid="System.Traits.Concepts.Collection.ContainsAll*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAll__2___0_ReadOnlySpan___1__" data-uid="System.Traits.Concepts.Collection.ContainsAll``2(``0,ReadOnlySpan{``1})">ContainsAll&lt;TNode, TElement&gt;(TNode, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TNode, TElement&gt;(TNode head, ReadOnlySpan&lt;TElement&gt; elements)
+    where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">head</span></td>
+        <td><p>The head node of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if all of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(%60%600*%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L82">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(``0*,Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(TElement*, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(TElement*collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)
+    where TElement : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement*</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1___0___Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(%60%600%5B%5D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L14">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1___0___Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(``0[],Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(TElement[], Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(TElement[] collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1_ArraySegment___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(ArraySegment%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L24">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1_ArraySegment___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(ArraySegment{``0},Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(ArraySegment&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(ArraySegment&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1_Memory___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(Memory%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L34">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1_Memory___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(Memory{``0},Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(Memory&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(Memory&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1_ReadOnlyMemory___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(ReadOnlyMemory%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L44">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1_ReadOnlyMemory___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(ReadOnlyMemory{``0},Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1_ReadOnlySpan___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(ReadOnlySpan%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L64">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1_ReadOnlySpan___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(ReadOnlySpan{``0},Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__1_Span___0__Int32_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%601(Span%7B%60%600%7D%2CInt32%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L54">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__1_Span___0__Int32_ReadOnlySpan___0__" data-uid="System.Traits.Concepts.Collection.ContainsAny``1(Span{``0},Int32,ReadOnlySpan{``0})">ContainsAny&lt;TElement&gt;(Span&lt;TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement&gt;(Span&lt;TElement&gt; collection, Int32 count, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the collection; the amount currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_ContainsAny__2___0_ReadOnlySpan___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.ContainsAny%60%602(%60%600%2CReadOnlySpan%7B%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/ContainsAny.cs/#L92">View Source</a>
+  </span>
+  <a id="System_Traits_Concepts_Collection_ContainsAny_" data-uid="System.Traits.Concepts.Collection.ContainsAny*"></a>
+  <h4 id="System_Traits_Concepts_Collection_ContainsAny__2___0_ReadOnlySpan___1__" data-uid="System.Traits.Concepts.Collection.ContainsAny``2(``0,ReadOnlySpan{``1})">ContainsAny&lt;TNode, TElement&gt;(TNode, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TNode, TElement&gt;(TNode head, ReadOnlySpan&lt;TElement&gt; elements)
+    where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">head</span></td>
+        <td><p>The head node of this collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if any of the <code data-dev-comment-type="paramref" class="paramref">elements</code> are contained in this collection; otherwise <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Equals__2_Collections_Generic_IEnumerable___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Equals%60%602(Collections.Generic.IEnumerable%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Equals.cs/#L53">View Source</a>
   </span>
   <a id="System_Traits_Concepts_Collection_Equals_" data-uid="System.Traits.Concepts.Collection.Equals*"></a>
-  <h4 id="System_Traits_Concepts_Collection_Equals__2_Collections_Generic_IEnumerable___0__System_Traits_Concepts_ISequence___0___1__" data-uid="System.Traits.Concepts.Collection.Equals``2(Collections.Generic.IEnumerable{``0},System.Traits.Concepts.ISequence{``0,``1})">Equals&lt;TElement, TEnumerator&gt;(Collections.Generic.IEnumerable&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_Traits_Concepts_Collection_Equals__2_Collections_Generic_IEnumerable___0__ISequence___0___1__" data-uid="System.Traits.Concepts.Collection.Equals``2(Collections.Generic.IEnumerable{``0},ISequence{``0,``1})">Equals&lt;TElement, TEnumerator&gt;(Collections.Generic.IEnumerable&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether the specified sequences are considered equal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -716,7 +2564,7 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">second</span></td>
         <td><p>The second sequence to compare.</p>
 </td>
@@ -755,20 +2603,20 @@
       </tr>
       <tr>
         <td><span class="parametername">TEnumerator</span></td>
-        <td><p>The type of the enumerator for the <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>.</p>
+        <td><p>The type of the enumerator for the <see cref="!:ISequence&lt;TElement, TEnumerator>"></see>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Equals__2_System_Traits_Concepts_ISequence___0___1__Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Equals%60%602(System.Traits.Concepts.ISequence%7B%60%600%2C%60%601%7D%2CCollections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Equals__2_ISequence___0___1__Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Equals%60%602(ISequence%7B%60%600%2C%60%601%7D%2CCollections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Equals.cs/#L33">View Source</a>
   </span>
   <a id="System_Traits_Concepts_Collection_Equals_" data-uid="System.Traits.Concepts.Collection.Equals*"></a>
-  <h4 id="System_Traits_Concepts_Collection_Equals__2_System_Traits_Concepts_ISequence___0___1__Collections_Generic_IEnumerable___0__" data-uid="System.Traits.Concepts.Collection.Equals``2(System.Traits.Concepts.ISequence{``0,``1},Collections.Generic.IEnumerable{``0})">Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Collections.Generic.IEnumerable&lt;TElement&gt;)</h4>
+  <h4 id="System_Traits_Concepts_Collection_Equals__2_ISequence___0___1__Collections_Generic_IEnumerable___0__" data-uid="System.Traits.Concepts.Collection.Equals``2(ISequence{``0,``1},Collections.Generic.IEnumerable{``0})">Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Collections.Generic.IEnumerable&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether the specified sequences are considered equal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -788,7 +2636,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">first</span></td>
         <td><p>The first sequence to compare.</p>
 </td>
@@ -833,20 +2681,20 @@
       </tr>
       <tr>
         <td><span class="parametername">TEnumerator</span></td>
-        <td><p>The type of the enumerator for the <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>.</p>
+        <td><p>The type of the enumerator for the <see cref="!:ISequence&lt;TElement, TEnumerator>"></see>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Equals__2_System_Traits_Concepts_ISequence___0___1__System_Traits_Concepts_ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Equals%60%602(System.Traits.Concepts.ISequence%7B%60%600%2C%60%601%7D%2CSystem.Traits.Concepts.ISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_Collection_Equals__2_ISequence___0___1__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.Collection.Equals%60%602(ISequence%7B%60%600%2C%60%601%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Providers/Equals.cs/#L13">View Source</a>
   </span>
   <a id="System_Traits_Concepts_Collection_Equals_" data-uid="System.Traits.Concepts.Collection.Equals*"></a>
-  <h4 id="System_Traits_Concepts_Collection_Equals__2_System_Traits_Concepts_ISequence___0___1__System_Traits_Concepts_ISequence___0___1__" data-uid="System.Traits.Concepts.Collection.Equals``2(System.Traits.Concepts.ISequence{``0,``1},System.Traits.Concepts.ISequence{``0,``1})">Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_Traits_Concepts_Collection_Equals__2_ISequence___0___1__ISequence___0___1__" data-uid="System.Traits.Concepts.Collection.Equals``2(ISequence{``0,``1},ISequence{``0,``1})">Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether the specified sequences are considered equal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -866,13 +2714,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">first</span></td>
         <td><p>The first sequence to compare.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">second</span></td>
         <td><p>The second sequence to compare.</p>
 </td>
@@ -911,7 +2759,7 @@
       </tr>
       <tr>
         <td><span class="parametername">TEnumerator</span></td>
-        <td><p>The type of the enumerator for the <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>.</p>
+        <td><p>The type of the enumerator for the <see cref="!:ISequence&lt;TElement, TEnumerator>"></see>.</p>
 </td>
       </tr>
     </tbody>
