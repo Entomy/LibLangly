@@ -2,15 +2,23 @@
 <RuleSet Name="GlobalRuleSet" Description="Rules for analyzers applied across the entire solution" ToolsVersion="16.0">
   <Rules AnalyzerId="CSharpGuidelinesAnalyzer" RuleNamespace="CSharpGuidelinesAnalyzer">
     <Rule Id="AV1010" Action="Info" />
+    <Rule Id="AV1500" Action="None" />
     <Rule Id="AV1505" Action="None" />
     <Rule Id="AV1506" Action="None" />
+    <Rule Id="AV1561" Action="Info" />
     <Rule Id="AV1562" Action="None" />
     <Rule Id="AV1564" Action="Info" />
+    <Rule Id="AV1706" Action="Info" />
     <Rule Id="AV2210" Action="None" />
   </Rules>
   <Rules AnalyzerId="CodeCracker.CSharp" RuleNamespace="CodeCracker.CSharp">
+    <Rule Id="CC0001" Action="None" />
     <Rule Id="CC0057" Action="None" />
     <Rule Id="CC0090" Action="Warning" />
+    <Rule Id="CC0105" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Meziantou.Analyzer" RuleNamespace="Meziantou.Analyzer">
+    <Rule Id="MA0048" Action="None" />
   </Rules>
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
     <Rule Id="CS8597" Action="Error" />
@@ -65,5 +73,8 @@
     <Rule Id="CS8824" Action="Error" />
     <Rule Id="CS8825" Action="Error" />
     <Rule Id="CS8847" Action="Error" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Features" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Features">
+    <Rule Id="IDE0011" Action="None" />
   </Rules>
 </RuleSet>
