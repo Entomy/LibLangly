@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace System.Traits.Concepts {
-	public static partial class Collection {
+	public static partial class CollectionProviders {
 		/// <summary>
 		/// Returns a string that represents this sequence.
 		/// </summary>

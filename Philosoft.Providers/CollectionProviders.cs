@@ -7,7 +7,7 @@ namespace System.Traits.Concepts {
 	/// <remarks>
 	/// 	<para>These are primarily intended for the creation of new collections, with any of the contained operations being "reasonable defaults" for the implementation of the equivalent public API.</para>
 	/// </remarks>
-	public static partial class Collection {
+	public static partial class CollectionProviders {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 namespace System.Traits.Concepts {
-	public static partial class Collection {
+	public static partial class CollectionProviders {
 		/// <summary>
 		/// Determines whether the specified sequences are considered equal.
 		/// </summary>
@@ -11,13 +11,13 @@ namespace System.Traits.Concepts {
 		/// <param name="second">The second sequence to compare.</param>
 		/// <returns><see langword="true"/> if the objects are considered equal; otherwise, <see langword="false"/>. If both <paramref name="first"/> and <paramref name="second"/> are <see langword="null"/>, the method returns <see langword="true"/>.</returns>
 		public static Boolean Equals<TElement, TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> first, [AllowNull] ISequence<TElement, TEnumerator> second) where TEnumerator : IEnumerator<TElement> {
-			if (first is null && second is null) return true;
-			if (first is null || second is null) return false;
-			if (first.Count != second.Count) return false; // Because ISequence has a length/count property, we can check this upfront
+			if (first is null && second is null) { return true; }
+			if (first is null || second is null) { return false; }
+			if (first.Count != second.Count) { return false; } // Because ISequence has a length/count property, we can check this upfront
 			TEnumerator fst = first.GetEnumerator();
 			TEnumerator snd = second.GetEnumerator();
 			while (fst.MoveNext() && snd.MoveNext()) {
-				if (!Equals(fst.Current, snd.Current)) return false;
+				if (!Equals(fst.Current, snd.Current)) { return false; }
 			}
 			return true;
 		}
@@ -31,15 +31,14 @@ namespace System.Traits.Concepts {
 		/// <param name="second">The second sequence to compare.</param>
 		/// <returns><see langword="true"/> if the objects are considered equal; otherwise, <see langword="false"/>. If both <paramref name="first"/> and <paramref name="second"/> are <see langword="null"/>, the method returns <see langword="true"/>.</returns>
 		public static Boolean Equals<TElement, TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> first, [AllowNull] Collections.Generic.IEnumerable<TElement> second) where TEnumerator : IEnumerator<TElement> {
-			if (first is null && second is null) return true;
-			if (first is null || second is null) return false;
+			if (first is null && second is null) { return true; }
+			if (first is null || second is null) { return false; }
 			TEnumerator fst = first.GetEnumerator();
 			using Collections.Generic.IEnumerator<TElement> snd = second.GetEnumerator();
 			while (fst.MoveNext() && snd.MoveNext()) {
-				if (!Equals(fst.Current, snd.Current)) return false;
+				if (!Equals(fst.Current, snd.Current)) { return false; }
 			}
-			if (fst.MoveNext() || snd.MoveNext()) return false; // If either of the enumerators can still be moved the sequences are different lengths
-			return true;
+			return !(fst.MoveNext() || snd.MoveNext()); // If either of the enumerators can still be moved the sequences are different lengths
 		}
 
 		/// <summary>
@@ -51,15 +50,14 @@ namespace System.Traits.Concepts {
 		/// <param name="second">The second sequence to compare.</param>
 		/// <returns><see langword="true"/> if the objects are considered equal; otherwise, <see langword="false"/>. If both <paramref name="first"/> and <paramref name="second"/> are <see langword="null"/>, the method returns <see langword="true"/>.</returns>
 		public static Boolean Equals<TElement, TEnumerator>([AllowNull] Collections.Generic.IEnumerable<TElement> first, [AllowNull] ISequence<TElement, TEnumerator> second) where TEnumerator : IEnumerator<TElement> {
-			if (first is null && second is null) return true;
-			if (first is null || second is null) return false;
+			if (first is null && second is null) { return true; }
+			if (first is null || second is null) { return false; }
 			using Collections.Generic.IEnumerator<TElement> fst = first.GetEnumerator();
 			TEnumerator snd = second.GetEnumerator();
 			while (fst.MoveNext() && snd.MoveNext()) {
-				if (!Equals(fst.Current, snd.Current)) return false;
+				if (!Equals(fst.Current, snd.Current)) { return false; }
 			}
-			if (fst.MoveNext() || snd.MoveNext()) return false; // If either of the enumerators can still be moved the sequences are different lengths
-			return true;
+			return !(fst.MoveNext() || snd.MoveNext()); // If either of the enumerators can still be moved the sequences are different lengths
 		}
 	}
 }

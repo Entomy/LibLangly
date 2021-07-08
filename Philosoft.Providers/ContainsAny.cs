@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace System.Traits.Concepts {
-	public static partial class Collection {
+	public static partial class CollectionProviders {
 		/// <summary>
 		/// Determines whether this collection contains any of the specified <paramref name="elements"/>.
 		/// </summary>

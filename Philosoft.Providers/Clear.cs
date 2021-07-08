@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 
 namespace System.Traits.Concepts {
-	public static partial class Collection {
+	public static partial class CollectionProviders {
 		/// <summary>
 		/// Clears this collection.
 		/// </summary>

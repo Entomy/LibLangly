@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 
 namespace System.Traits.Concepts {
-	public static partial class Collection {
+	public static partial class CollectionProviders {
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.
 		/// </summary>
