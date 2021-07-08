@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Description>Meta-package for all of Philosoft.</Description>
+		<Description>Provides a rich set of trait APIs.</Description>
 		<PackageTags>trait, traits, trait-based</PackageTags>
-		<AssemblyName>Philosoft</AssemblyName>
+		<AssemblyName>Philosoft.Traits</AssemblyName>
+		<RootNamespace>System.Traits</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
 		<CodeAnalysisRuleSet>GlobalRuleSet.ruleset</CodeAnalysisRuleSet>
 		<CodeAnalysisRuleSetDirectories>..\</CodeAnalysisRuleSetDirectories>
@@ -19,9 +20,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="System.Memory" Version="4.5.4" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\Philosoft.BehavioralAttributes\Philosoft.BehavioralAttributes.csproj" />
 	  <ProjectReference Include="..\Philosoft.CodeAnalysisAttributes\Philosoft.CodeAnalysisAttributes.csproj" />
-	  <ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
 	</ItemGroup>
 
 </Project>

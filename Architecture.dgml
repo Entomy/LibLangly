@@ -1,16 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="PhilosoftBehavioralAttributes" Bounds="0,0,127.156666666667,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;BehavioralAttributes (PhilosoftBehavioralAttributes)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;BehavioralAttributes" />
-    <Node Id="PhilosoftCodeAnalysisAttributes" Bounds="0,71.9200000000001,142.48,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;CodeAnalysisAttributes (PhilosoftCodeAnalysisAttributes)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;CodeAnalysisAttributes" />
+    <Node Id="PhilosoftBehavioralAttributes" Bounds="0,0,127.156666666667,41.92" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;BehavioralAttributes" />
+    <Node Id="PhilosoftCodeAnalysisAttributes" Bounds="157.338333333333,0,142.48,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;CodeAnalysisAttributes (PhilosoftCodeAnalysisAttributes)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;CodeAnalysisAttributes" />
+    <Node Id="PhilosoftTraits" Bounds="195.428333333333,71.9200000000001,66.3,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Traits' has a hub value of 100." Hub="100" Label="Philosoft&#xD;&#xA;Traits" />
   </Nodes>
-  <Links />
+  <Links>
+    <Link Source="PhilosoftBehavioralAttributes" Target="PhilosoftTraits" Bounds="111.665100097656,41.9199981689453,75.5129089355469,32.9144821166992" />
+    <Link Source="PhilosoftCodeAnalysisAttributes" Target="PhilosoftTraits" Bounds="228.578338623047,41.9199981689453,0,21" />
+  </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="ErrorMessage" Label="Error" Description="Error" DataType="System.String" />
     <Property Id="Expression" DataType="System.String" />
     <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
     <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Hub" Label="Hub" Description="Node is in the top 10% of highly connected nodes" DataType="System.Int32" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsUnreferenced" Label="Unreferenced" Description="Node has no links pointing to it from other nodes in the graph" DataType="System.Boolean" />
     <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
