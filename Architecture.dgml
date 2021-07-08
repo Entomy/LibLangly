@@ -3,14 +3,18 @@
   <Nodes>
     <Node Id="PhilosoftBehavioralAttributes" Bounds="0,0,127.156666666667,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;BehavioralAttributes (PhilosoftBehavioralAttributes)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;BehavioralAttributes" />
     <Node Id="PhilosoftCodeAnalysisAttributes" Bounds="157.338333333333,0,142.48,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;CodeAnalysisAttributes (PhilosoftCodeAnalysisAttributes)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;CodeAnalysisAttributes" />
-    <Node Id="PhilosoftConcepts" Bounds="193.936666666667,143.84,69.2833333333333,41.92" Label="Philosoft&#xD;&#xA;Concepts" />
-    <Node Id="PhilosoftProviders" Bounds="193.985,215.76,69.1866666666667,41.92" Label="Philosoft&#xD;&#xA;Providers" />
-    <Node Id="PhilosoftTraits" Bounds="195.428333333333,71.9200000000001,66.3,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Traits' has a hub value of 75." Hub="75" Label="Philosoft&#xD;&#xA;Traits" />
+    <Node Id="PhilosoftConcepts" Bounds="193.936666666667,143.84,69.2833333333333,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Concepts' has a hub value of 66." Hub="66" Label="Philosoft&#xD;&#xA;Concepts" />
+    <Node Id="PhilosoftExtensions" Bounds="190.766666666667,215.76,75.6233333333333,41.92" Label="Philosoft&#xD;&#xA;Extensions" />
+    <Node Id="PhilosoftProviders" Bounds="90.9850000000002,215.76,69.1866666666667,41.92" Label="Philosoft&#xD;&#xA;Providers" />
+    <Node Id="PhilosoftTesting" Bounds="296.428333333334,215.76,66.3,41.92" Label="Philosoft&#xD;&#xA;Testing" />
+    <Node Id="PhilosoftTraits" Bounds="195.428333333333,71.9200000000001,66.3,41.92" Label="Philosoft&#xD;&#xA;Traits" />
   </Nodes>
   <Links>
     <Link Source="PhilosoftBehavioralAttributes" Target="PhilosoftTraits" Bounds="111.665100097656,41.9199981689453,75.5129089355469,32.9144821166992" />
     <Link Source="PhilosoftCodeAnalysisAttributes" Target="PhilosoftTraits" Bounds="228.578338623047,41.9199981689453,0,21" />
-    <Link Source="PhilosoftConcepts" Target="PhilosoftProviders" Bounds="228.578338623047,185.759994506836,0,21" />
+    <Link Source="PhilosoftConcepts" Target="PhilosoftExtensions" Bounds="228.578338623047,185.759994506836,0,21" />
+    <Link Source="PhilosoftConcepts" Target="PhilosoftProviders" Bounds="162.97526550293,185.759994506836,35.5852661132813,24.8475036621094" />
+    <Link Source="PhilosoftConcepts" Target="PhilosoftTesting" Bounds="258.013275146484,185.759994506836,34.7988891601563,24.7795715332031" />
     <Link Source="PhilosoftTraits" Target="PhilosoftConcepts" Bounds="228.578338623047,113.839996337891,0,21" />
   </Links>
   <Properties>

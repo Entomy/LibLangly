@@ -12,11 +12,7 @@ namespace System.Traits.Concepts {
 	/// <para>What's wrong with the current <see cref="IDisposable"/> pattern? Nothing really, as long as downstream is fully aware of how to override <see cref="Dispose(Boolean)"/> and always overrides it the safe way. Will they? Who knows. The pattern implemented here simply de<see langword="virtual"/>ized the <see cref="Dispose(Boolean)"/> implementation, implementing it with three <see langword="virtual"/> methods, <see cref="DisposeManaged()"/>, <see cref="DisposeUnmanaged()"/>, <see cref="NullLargeFields()"/>. They are obvious in what should be done, and what is done gets put in the right place. Consider it accident proof <see cref="IDisposable"/>.</para>
 	/// <para>This is inspired by, but implemented very differently from, the Controlled type in Ada. Unlike the Ada implementation, this actually uses interfaces, which greatly solves many problems. However, like Ada, it uses a base class approach which internalizes many details, encapsulating the complexity of the pattern.</para>
 	/// </remarks>
-	public interface IControlled : IDisposable
-#if !NETSTANDARD1_3
-		, IAsyncDisposable
-#endif
-		{
+	public interface IControlled : IDisposable {
 		/// <summary>
 		/// Used to detect and handle redundant calls.
 		/// </summary>
@@ -27,20 +23,6 @@ namespace System.Traits.Concepts {
 		void IDisposable.Dispose() {
 			Dispose(disposing: true);
 			GC.SuppressFinalize(this);
-		}
-#endif
-
-#if !NETSTANDARD1_3
-		/// <inheritdoc/>
-		[SuppressMessage("Miscellaneous Design", "AV1210:Catch a specific exception instead of Exception, SystemException or ApplicationException", Justification = "This is the correct pattern.")]
-		ValueTask IAsyncDisposable.DisposeAsync() {
-			try {
-				Dispose(disposing: true);
-				GC.SuppressFinalize(this);
-				return default;
-			} catch (Exception exception) {
-				return new ValueTask(Task.FromException(exception));
-			}
 		}
 #endif
 

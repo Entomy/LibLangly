@@ -5,9 +5,10 @@
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Description>Meta-package for all of Philosoft.</Description>
+		<Description>Provides an extensible abstraction layer for unit tests, with extensions for handling Trait and Concept APIs.</Description>
 		<PackageTags>trait, traits, trait-based</PackageTags>
-		<AssemblyName>Philosoft</AssemblyName>
+		<AssemblyName>Philosoft.Testing</AssemblyName>
+		<RootNamespace>System.Traits.Testing</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
 		<CodeAnalysisRuleSet>GlobalRuleSet.ruleset</CodeAnalysisRuleSet>
 		<CodeAnalysisRuleSetDirectories>..\</CodeAnalysisRuleSetDirectories>
@@ -19,13 +20,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Philosoft.BehavioralAttributes\Philosoft.BehavioralAttributes.csproj" />
-	  <ProjectReference Include="..\Philosoft.CodeAnalysisAttributes\Philosoft.CodeAnalysisAttributes.csproj" />
+	  <PackageReference Include="System.Memory" Version="4.5.4" />
+	  <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' != 'netstandard1.3'">
+	  <PackageReference Include="FastEnum">
+	    <Version>1.6.1</Version>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\Philosoft.Concepts\Philosoft.Concepts.csproj" />
-	  <ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
-	  <ProjectReference Include="..\Philosoft.Providers\Philosoft.Providers.csproj" />
-	  <ProjectReference Include="..\Philosoft.Testing\Philosoft.Testing.csproj" />
-	  <ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
 	</ItemGroup>
 
 </Project>
