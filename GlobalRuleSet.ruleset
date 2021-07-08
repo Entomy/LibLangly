@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RuleSet Name="GlobalRuleSet" Description="Rules for analyzers applied across the entire solution" ToolsVersion="16.0">
+  <Rules AnalyzerId="CSharpGuidelinesAnalyzer" RuleNamespace="CSharpGuidelinesAnalyzer">
+    <Rule Id="AV1564" Action="Info" />
+    <Rule Id="AV2210" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="CodeCracker.CSharp" RuleNamespace="CodeCracker.CSharp">
+    <Rule Id="CC0057" Action="None" />
+    <Rule Id="CC0090" Action="Warning" />
+  </Rules>
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
     <Rule Id="CS8597" Action="Error" />
     <Rule Id="CS8600" Action="Error" />
