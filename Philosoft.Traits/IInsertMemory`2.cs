@@ -6,7 +6,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies.</typeparam>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	public interface IInsertMemory<in TIndex, TElement> : IInsert<TIndex, TElement> {
+	public interface IInsertMemory<in TIndex, TElement> : IInsert<TIndex, TElement> where TIndex : notnull {
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, as a batch.
 		/// </summary>

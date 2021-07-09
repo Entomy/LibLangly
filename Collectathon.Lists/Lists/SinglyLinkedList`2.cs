@@ -17,7 +17,8 @@ namespace Collectathon.Lists {
 		IClear,
 		IIndex<TIndex, TElement>,
 		IInsert<TIndex, TElement>,
-		ISequence<(TIndex Index, TElement Element), StandardListEnumerator<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>>> {
+		ISequence<(TIndex Index, TElement Element), StandardListEnumerator<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>>>
+		where TIndex : notnull {
 		/// <summary>
 		/// The head node of the list; the first element.
 		/// </summary>

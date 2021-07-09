@@ -12,7 +12,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, [AllowNull] params TElement?[] elements) where TEnumerator : IEnumerator<TElement> => ContainsAny(collection, elements.AsSpan());
+		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, [AllowNull] params TElement?[] elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => ContainsAny(collection, elements.AsSpan());
 
 		/// <summary>
 		/// Determines whether this collection contains any of the specified <paramref name="elements"/>.
@@ -22,7 +22,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ArraySegment<TElement?> elements) where TEnumerator : IEnumerator<TElement> => ContainsAny(collection, elements.AsSpan());
+		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ArraySegment<TElement?> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => ContainsAny(collection, elements.AsSpan());
 
 		/// <summary>
 		/// Determines whether this collection contains any of the specified <paramref name="elements"/>.
@@ -32,7 +32,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, Memory<TElement?> elements) where TEnumerator : IEnumerator<TElement> => ContainsAny(collection, elements.Span);
+		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, Memory<TElement?> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => ContainsAny(collection, elements.Span);
 
 		/// <summary>
 		/// Determines whether this collection contains any of the specified <paramref name="elements"/>.
@@ -42,7 +42,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ReadOnlyMemory<TElement?> elements) where TEnumerator : IEnumerator<TElement> => ContainsAny(collection, elements.Span);
+		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ReadOnlyMemory<TElement?> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => ContainsAny(collection, elements.Span);
 
 		/// <summary>
 		/// Determines whether this collection contains any of the specified <paramref name="elements"/>.
@@ -52,7 +52,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, Span<TElement?> elements) where TEnumerator : IEnumerator<TElement> => ContainsAny(collection, (ReadOnlySpan<TElement>)elements);
+		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, Span<TElement?> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => ContainsAny(collection, (ReadOnlySpan<TElement>)elements);
 
 		/// <summary>
 		/// Determines whether this collection contains any of the specified <paramref name="elements"/>.
@@ -62,7 +62,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ReadOnlySpan<TElement?> elements) where TEnumerator : IEnumerator<TElement> {
+		public static Boolean ContainsAny<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ReadOnlySpan<TElement?> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			foreach (TElement? element in elements) {
 				if (collection.Contains(element)) {
 					return true;

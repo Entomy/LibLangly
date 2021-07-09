@@ -17,7 +17,8 @@ namespace Collectathon.Arrays {
 		IClear,
 		IInsert<TIndex, TElement>,
 		IList<TIndex, TElement>,
-		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>> {
+		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>>
+		where TIndex : notnull {
 		/// <summary>
 		/// The indicies of this <see cref="BoundedArray{TIndex, TElement}"/>.
 		/// </summary>

@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using System.Traits.Concepts;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -24,8 +23,8 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="amount">The amount of elements to load.</param>
 		/// <param name="source">The source to load data from.</param>
-		public static void Load<TElement>([DisallowNull] this IWrite<TElement> collection, nint amount, [AllowNull] IRead<TElement> source) {
-			for (nint i = 0; i < amount; i++) {
+		public static void Load<TElement>([DisallowNull] this IWrite<TElement> collection, Int32 amount, [AllowNull] IRead<TElement> source) {
+			for (Int32 i = 0; i < amount; i++) {
 				collection.Load(source);
 			}
 		}

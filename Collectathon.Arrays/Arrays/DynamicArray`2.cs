@@ -17,7 +17,8 @@ namespace Collectathon.Arrays {
 		IClear,
 		IInsert<TIndex, TElement>,
 		IResize,
-		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>> {
+		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>>
+		where TIndex : notnull {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>

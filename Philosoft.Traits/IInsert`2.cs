@@ -6,7 +6,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies.</typeparam>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	public interface IInsert<in TIndex, in TElement> {
+	public interface IInsert<in TIndex, in TElement> where TIndex : notnull {
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
 		/// </summary>

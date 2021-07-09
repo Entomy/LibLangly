@@ -13,7 +13,9 @@ namespace Collectathon.Enumerators {
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	/// <typeparam name="TNode">The type of the nodes being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct StandardListEnumerator<TIndex, TElement, TNode> : IEnumerator<(TIndex Index, TElement? Element)> where TNode : class, IElement<TElement>, IIndex<TIndex>, INext<TNode> {
+	public struct StandardListEnumerator<TIndex, TElement, TNode> : IEnumerator<(TIndex Index, TElement? Element)>
+		where TNode : class, IElement<TElement>, IIndex<TIndex>, INext<TNode>
+		where TIndex : notnull {
 		/// <summary>
 		/// The head node.
 		/// </summary>

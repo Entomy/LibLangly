@@ -115,7 +115,7 @@ namespace System {
 		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement, TEnumerator>([DisallowNull] this IPrepend<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+		public static void Prepend<TElement, TEnumerator>([DisallowNull] this IPrepend<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Prepend(element);

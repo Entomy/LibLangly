@@ -115,7 +115,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement, TEnumerator>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+		public static void Insert<TElement, TEnumerator>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Insert(index++, element);

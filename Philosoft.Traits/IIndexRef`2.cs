@@ -6,7 +6,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TIndex">The type used to index the collection.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
-	public interface IIndexRef<in TIndex, TElement> : IIndexRefReadOnly<TIndex, TElement> {
+	public interface IIndexRef<in TIndex, TElement> : IIndexRefReadOnly<TIndex, TElement> where TIndex : notnull {
 		/// <summary>
 		/// Gets a reference to the element at the specified index.
 		/// </summary>

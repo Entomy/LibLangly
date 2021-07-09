@@ -14,7 +14,8 @@ namespace Collectathon.Nodes {
 		IIndex<TIndex>,
 		INext<SinglyLinkedListNode<TIndex, TElement>>,
 		IReplace<TElement>,
-		IUnlink {
+		IUnlink
+		where TIndex : notnull {
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedListNode{TIndex, TElement}"/>.
 		/// </summary>

@@ -10,7 +10,7 @@ namespace Collectathon.Enumerators {
 	/// <typeparam name="TIndex">The type of the indicies being enumerated.</typeparam>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct ArrayEnumerator<TIndex, TElement> : IEnumerator<(TIndex Index, TElement? Element)> {
+	public struct ArrayEnumerator<TIndex, TElement> : IEnumerator<(TIndex Index, TElement? Element)> where TIndex : notnull {
 		/// <summary>
 		/// The <see cref="Array"/> of indicies being enumerated.
 		/// </summary>

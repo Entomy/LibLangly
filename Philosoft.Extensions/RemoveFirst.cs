@@ -90,7 +90,7 @@ namespace System {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to remove.</param>
-		public static void RemoveFirst<TElement, TEnumerator>([DisallowNull] this IRemove<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+		public static void RemoveFirst<TElement, TEnumerator>([DisallowNull] this IRemove<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.RemoveFirst(element);

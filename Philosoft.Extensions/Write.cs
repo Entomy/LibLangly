@@ -98,7 +98,7 @@ namespace System {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The values to write.</param>
-		public static void Write<TElement, TEnumerator>([DisallowNull] this IWrite<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+		public static void Write<TElement, TEnumerator>([DisallowNull] this IWrite<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Write(element);

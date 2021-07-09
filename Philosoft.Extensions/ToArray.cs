@@ -12,7 +12,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <returns>An array that contains the elements from the input sequence.</returns>
 		[return: NotNull]
-		public static TElement[] ToArray<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection) where TEnumerator : IEnumerator<TElement> {
+		public static TElement[] ToArray<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			TElement[] array = new TElement[collection.Count];
 			collection.CopyTo(array);
 			return array;
