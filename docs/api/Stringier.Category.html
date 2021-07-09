@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Category
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -79,13 +79,13 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Numbersome.Set-1.html">Set</a>&lt;<span class="xref">Rune</span>&gt;</div>
+    <div class="level1"><a class="xref" href="Numbersome.Set-1.html">Set</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</div>
     <div class="level2"><span class="xref">Category</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;<span class="xref">Rune</span>&gt;</div>
-    <div><span class="xref">IContains</span>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -99,7 +99,7 @@
       <a class="xref" href="Numbersome.Set-1.html#Numbersome_Set_1_Contains__0_">Set&lt;Rune&gt;.Contains(Rune)</a>
     </div>
     <div>
-      <a class="xref" href="Numbersome.Set-1.html#Numbersome_Set_1_Contains_Predicate__0__">Set&lt;Rune&gt;.Contains(Predicate&lt;&gt;)</a>
+      <a class="xref" href="Numbersome.Set-1.html#Numbersome_Set_1_Contains_System_Predicate__0__">Set&lt;Rune&gt;.Contains(Predicate&lt;Rune&gt;)</a>
     </div>
     <div>
       <a class="xref" href="Numbersome.Set-1.html#Numbersome_Set_1_Compliment_Numbersome_Set__0__">Set&lt;Rune&gt;.Compliment(Set&lt;Rune&gt;)</a>
@@ -116,164 +116,49 @@
     <div>
       <a class="xref" href="Numbersome.Set-1.html#Numbersome_Set_1_Union_Numbersome_Set__0__Numbersome_Set__0__">Set&lt;Rune&gt;.Union(Set&lt;Rune&gt;, Set&lt;Rune&gt;)</a>
     </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Categories.dll</h6>
   <h5 id="Stringier_Category_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Category : Set&lt;Rune&gt;, IContains&lt;Rune&gt;, IContains&lt;Char&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Category : Set&lt;Rune&gt;, IContains&lt;Rune&gt;, IContains&lt;char&gt;</code></pre>
   </div>
   <h5 id="Stringier_Category_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>While this has analogues to <see cref="!:UnicodeCategory"></see>, there are a number of issues with how Microsoft approached that. First and foremost, there&apos;s no convenient way to group categories, even though UAX#44-5.7.1 does exactly this. This grouping of categories is important from a usability standpoint, for example, removing all symbols from a given text, or identifying any punctuation. Furthermore, <see cref="!:UnicodeCategory"></see> strays from the names that the UNICODE Consortium gave, which is confusing, such as <see cref="!:UnicodeCategory.OtherNotAssigned"></see> versus <a class="xref" href="Stringier.Category.html#Stringier_Category_Unassigned">Unassigned</a>.</p>
-<p>This has been designed with respect to Set Theory and Set Algebra, so far more complicated situations than <see cref="!:UnicodeCategory"></see> can provide are possible through this.</p>
+  <div class="markdown level0 remarks"><p>While this has analogues to <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a>, there are a number of issues with how Microsoft approached that. First and foremost, there&apos;s no convenient way to group categories, even though UAX#44-5.7.1 does exactly this. This grouping of categories is important from a usability standpoint, for example, removing all symbols from a given text, or identifying any punctuation. Furthermore, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a> strays from the names that the UNICODE Consortium gave, which is confusing, such as <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory#system-globalization-unicodecategory-othernotassigned">OtherNotAssigned</a> versus <a class="xref" href="Stringier.Category.html#Stringier_Category_Unassigned">Unassigned</a>.</p>
+<p>This has been designed with respect to Set Theory and Set Algebra, so far more complicated situations than <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a> can provide are possible through this.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_ContributoryProperties_.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(ContributoryProperties)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L310">View Source</a>
-  </span>
-  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
-  <h4 id="Stringier_Category__ctor_ContributoryProperties_" data-uid="Stringier.Category.#ctor(ContributoryProperties)">Category(ContributoryProperties)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Category(ContributoryProperties properties)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ContributoryProperties</span></td>
-        <td><span class="parametername">properties</span></td>
-        <td><p>The <see cref="!:ContributoryProperties"></see> describing this <a class="xref" href="Stringier.Category.html">Category</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_IContains_Rune__.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(IContains%7BRune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L298">View Source</a>
-  </span>
-  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
-  <h4 id="Stringier_Category__ctor_IContains_Rune__" data-uid="Stringier.Category.#ctor(IContains{Rune})">Category(IContains&lt;Rune&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Category(IContains&lt;Rune&gt; collection)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IContains</span>&lt;<span class="xref">Rune</span>&gt;</td>
-        <td><span class="parametername">collection</span></td>
-        <td><p>The elements of the set.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_Predicate_Rune__.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(Predicate%7BRune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L286">View Source</a>
-  </span>
-  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
-  <h4 id="Stringier_Category__ctor_Predicate_Rune__" data-uid="Stringier.Category.#ctor(Predicate{Rune})">Category(Predicate&lt;Rune&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Category(Predicate&lt;Rune&gt; predicate)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Predicate</span>&lt;<span class="xref">Rune</span>&gt;</td>
-        <td><span class="parametername">predicate</span></td>
-        <td><p>The <see cref="!:Predicate&lt;T>"></see> used to determine inclusion into the category.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_Rune___.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(Rune%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L292">View Source</a>
-  </span>
-  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
-  <h4 id="Stringier_Category__ctor_Rune___" data-uid="Stringier.Category.#ctor(Rune[])">Category(Rune[])</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Category(params Rune[] elements)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Rune</span>[]</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The elements of the set.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_UnicodeCategory_.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(UnicodeCategory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_System_Globalization_UnicodeCategory_.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(System.Globalization.UnicodeCategory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L304">View Source</a>
   </span>
   <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
-  <h4 id="Stringier_Category__ctor_UnicodeCategory_" data-uid="Stringier.Category.#ctor(UnicodeCategory)">Category(UnicodeCategory)</h4>
+  <h4 id="Stringier_Category__ctor_System_Globalization_UnicodeCategory_" data-uid="Stringier.Category.#ctor(System.Globalization.UnicodeCategory)">Category(UnicodeCategory)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -292,9 +177,146 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnicodeCategory</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a></td>
         <td><span class="parametername">category</span></td>
-        <td><p>The <see cref="!:UnicodeCategory"></see> describing this <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a> describing this <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_System_Predicate_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(System.Predicate%7BSystem.Text.Rune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L286">View Source</a>
+  </span>
+  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
+  <h4 id="Stringier_Category__ctor_System_Predicate_System_Text_Rune__" data-uid="Stringier.Category.#ctor(System.Predicate{System.Text.Rune})">Category(Predicate&lt;Rune&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Category(Predicate&lt;Rune&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> used to determine inclusion into the category.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_System_Text_Rune___.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(System.Text.Rune%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L292">View Source</a>
+  </span>
+  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
+  <h4 id="Stringier_Category__ctor_System_Text_Rune___" data-uid="Stringier.Category.#ctor(System.Text.Rune[])">Category(Rune[])</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Category(params Rune[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements of the set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_System_Traits_IContains_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(System.Traits.IContains%7BSystem.Text.Rune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L298">View Source</a>
+  </span>
+  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
+  <h4 id="Stringier_Category__ctor_System_Traits_IContains_System_Text_Rune__" data-uid="Stringier.Category.#ctor(System.Traits.IContains{System.Text.Rune})">Category(IContains&lt;Rune&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Category(IContains&lt;Rune&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The elements of the set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category__ctor_System_Unicode_ContributoryProperties_.md&amp;value=---%0Auid%3A%20Stringier.Category.%23ctor(System.Unicode.ContributoryProperties)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L310">View Source</a>
+  </span>
+  <a id="Stringier_Category__ctor_" data-uid="Stringier.Category.#ctor*"></a>
+  <h4 id="Stringier_Category__ctor_System_Unicode_ContributoryProperties_" data-uid="Stringier.Category.#ctor(System.Unicode.ContributoryProperties)">Category(ContributoryProperties)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+protected Category(ContributoryProperties properties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Unicode.ContributoryProperties</span></td>
+        <td><span class="parametername">properties</span></td>
+        <td><p>The <span class="xref">System.Unicode.ContributoryProperties</span> describing this <a class="xref" href="Stringier.Category.html">Category</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -1700,18 +1722,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Contains_Char_.md&amp;value=---%0Auid%3A%20Stringier.Category.Contains(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Contains_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Category.Contains(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L401">View Source</a>
   </span>
   <a id="Stringier_Category_Contains_" data-uid="Stringier.Category.Contains*"></a>
-  <h4 id="Stringier_Category_Contains_Char_" data-uid="Stringier.Category.Contains(Char)">Contains(Char)</h4>
+  <h4 id="Stringier_Category_Contains_System_Char_" data-uid="Stringier.Category.Contains(System.Char)">Contains(Char)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Contains(Char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Contains(char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1724,7 +1746,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">element</span></td>
         <td></td>
       </tr>
@@ -1740,25 +1762,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Contains_Predicate_Char__.md&amp;value=---%0Auid%3A%20Stringier.Category.Contains(Predicate%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Contains_System_Predicate_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Category.Contains(System.Predicate%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L404">View Source</a>
   </span>
   <a id="Stringier_Category_Contains_" data-uid="Stringier.Category.Contains*"></a>
-  <h4 id="Stringier_Category_Contains_Predicate_Char__" data-uid="Stringier.Category.Contains(Predicate{Char})">Contains(Predicate&lt;Char&gt;)</h4>
+  <h4 id="Stringier_Category_Contains_System_Predicate_System_Char__" data-uid="Stringier.Category.Contains(System.Predicate{System.Char})">Contains(Predicate&lt;Char&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Contains(Predicate&lt;Char&gt; predicate)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Contains(Predicate&lt;char&gt; predicate)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1771,7 +1793,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1787,26 +1809,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Range_Char_Char_.md&amp;value=---%0Auid%3A%20Stringier.Category.Range(Char%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Range_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Category.Range(System.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L398">View Source</a>
   </span>
   <a id="Stringier_Category_Range_" data-uid="Stringier.Category.Range*"></a>
-  <h4 id="Stringier_Category_Range_Char_Char_" data-uid="Stringier.Category.Range(Char,Char)">Range(Char, Char)</h4>
+  <h4 id="Stringier_Category_Range_System_Char_System_Char_" data-uid="Stringier.Category.Range(System.Char,System.Char)">Range(Char, Char)</h4>
   <div class="markdown level1 summary"><p>Constructs a <a class="xref" href="Stringier.Category.html">Category</a> from the range <code data-dev-comment-type="paramref" class="paramref">lower</code>..<code data-dev-comment-type="paramref" class="paramref">upper</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Category Range(Char lower, Char upper)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Category Range(char lower, char upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1819,13 +1841,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">lower</span></td>
         <td><p>The lower bound.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">upper</span></td>
         <td><p>The upper bound.</p>
 </td>
@@ -1850,13 +1872,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Range_Rune_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Category.Range(Rune%2CRune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_Range_System_Text_Rune_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Category.Range(System.Text.Rune%2CSystem.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L390">View Source</a>
   </span>
   <a id="Stringier_Category_Range_" data-uid="Stringier.Category.Range*"></a>
-  <h4 id="Stringier_Category_Range_Rune_Rune_" data-uid="Stringier.Category.Range(Rune,Rune)">Range(Rune, Rune)</h4>
+  <h4 id="Stringier_Category_Range_System_Text_Rune_System_Text_Rune_" data-uid="Stringier.Category.Range(System.Text.Rune,System.Text.Rune)">Range(Rune, Rune)</h4>
   <div class="markdown level1 summary"><p>Constructs a <a class="xref" href="Stringier.Category.html">Category</a> from the range <code data-dev-comment-type="paramref" class="paramref">lower</code>..<code data-dev-comment-type="paramref" class="paramref">upper</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1875,13 +1897,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Rune</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
         <td><span class="parametername">lower</span></td>
         <td><p>The lower bound.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Rune</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
         <td><span class="parametername">upper</span></td>
         <td><p>The upper bound.</p>
 </td>
@@ -2076,19 +2098,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_op_Implicit_ContributoryProperties__Stringier_Category.md&amp;value=---%0Auid%3A%20Stringier.Category.op_Implicit(ContributoryProperties)~Stringier.Category%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_op_Implicit_System_Globalization_UnicodeCategory__Stringier_Category.md&amp;value=---%0Auid%3A%20Stringier.Category.op_Implicit(System.Globalization.UnicodeCategory)~Stringier.Category%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L324">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L317">View Source</a>
   </span>
   <a id="Stringier_Category_op_Implicit_" data-uid="Stringier.Category.op_Implicit*"></a>
-  <h4 id="Stringier_Category_op_Implicit_ContributoryProperties__Stringier_Category" data-uid="Stringier.Category.op_Implicit(ContributoryProperties)~Stringier.Category">Implicit(ContributoryProperties to Category)</h4>
-  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">properties</code> to a <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+  <h4 id="Stringier_Category_op_Implicit_System_Globalization_UnicodeCategory__Stringier_Category" data-uid="Stringier.Category.op_Implicit(System.Globalization.UnicodeCategory)~Stringier.Category">Implicit(UnicodeCategory to Category)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">category</code> to a <a class="xref" href="Stringier.Category.html">Category</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Category(ContributoryProperties properties)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator Category(UnicodeCategory category)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2101,9 +2123,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ContributoryProperties</span></td>
-        <td><span class="parametername">properties</span></td>
-        <td><p>The <see cref="!:ContributoryProperties"></see> to convert.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a></td>
+        <td><span class="parametername">category</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.unicodecategory">UnicodeCategory</a> to convert.</p>
 </td>
       </tr>
     </tbody>
@@ -2125,19 +2147,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_op_Implicit_UnicodeCategory__Stringier_Category.md&amp;value=---%0Auid%3A%20Stringier.Category.op_Implicit(UnicodeCategory)~Stringier.Category%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Category_op_Implicit_System_Unicode_ContributoryProperties__Stringier_Category.md&amp;value=---%0Auid%3A%20Stringier.Category.op_Implicit(System.Unicode.ContributoryProperties)~Stringier.Category%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L317">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Categories/Category.cs/#L324">View Source</a>
   </span>
   <a id="Stringier_Category_op_Implicit_" data-uid="Stringier.Category.op_Implicit*"></a>
-  <h4 id="Stringier_Category_op_Implicit_UnicodeCategory__Stringier_Category" data-uid="Stringier.Category.op_Implicit(UnicodeCategory)~Stringier.Category">Implicit(UnicodeCategory to Category)</h4>
-  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">category</code> to a <a class="xref" href="Stringier.Category.html">Category</a>.</p>
+  <h4 id="Stringier_Category_op_Implicit_System_Unicode_ContributoryProperties__Stringier_Category" data-uid="Stringier.Category.op_Implicit(System.Unicode.ContributoryProperties)~Stringier.Category">Implicit(ContributoryProperties to Category)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">properties</code> to a <a class="xref" href="Stringier.Category.html">Category</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Category(UnicodeCategory category)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static implicit operator Category(ContributoryProperties properties)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2150,9 +2173,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnicodeCategory</span></td>
-        <td><span class="parametername">category</span></td>
-        <td><p>The <see cref="!:UnicodeCategory"></see> to convert.</p>
+        <td><span class="xref">System.Unicode.ContributoryProperties</span></td>
+        <td><span class="parametername">properties</span></td>
+        <td><p>The <span class="xref">System.Unicode.ContributoryProperties</span> to convert.</p>
 </td>
       </tr>
     </tbody>
@@ -2283,7 +2306,7 @@
       <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IContains&lt;&gt;</span>
+      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
   </div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">

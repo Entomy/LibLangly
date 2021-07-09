@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct ArrayEnumerator&lt;TIndex, TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -78,13 +78,38 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerator</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="System.Traits.ICurrent-1.html">ICurrent</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a></div>
+    <div><a class="xref" href="System.Traits.IReset.html">IReset</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#system-valuetype-equals(system-object)">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#system-valuetype-gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#system-valuetype-tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Enumerators.html">Collectathon.Enumerators</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Enumerators_ArrayEnumerator_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct ArrayEnumerator&lt;TIndex, TElement&gt; : IEnumerator&lt;(TIndex Index, TElement Element)&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct ArrayEnumerator&lt;TIndex, TElement&gt; : IEnumerator&lt;(TIndex Index, TElement Element)&gt;, ICount, ICurrent&lt;(TIndex Index, TElement Element)&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -111,19 +136,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_ArrayEnumerator_2__ctor__0____1___Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.ArrayEnumerator%602.%23ctor(%600%5B%5D%2C%601%5B%5D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_ArrayEnumerator_2__ctor__0____1___System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.ArrayEnumerator%602.%23ctor(%600%5B%5D%2C%601%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Enumerators/ArrayEnumerator`2.cs/#L40">View Source</a>
   </span>
   <a id="Collectathon_Enumerators_ArrayEnumerator_2__ctor_" data-uid="Collectathon.Enumerators.ArrayEnumerator`2.#ctor*"></a>
-  <h4 id="Collectathon_Enumerators_ArrayEnumerator_2__ctor__0____1___Int32_" data-uid="Collectathon.Enumerators.ArrayEnumerator`2.#ctor(`0[],`1[],Int32)">ArrayEnumerator(TIndex[], TElement[], Int32)</h4>
+  <h4 id="Collectathon_Enumerators_ArrayEnumerator_2__ctor__0____1___System_Int32_" data-uid="Collectathon.Enumerators.ArrayEnumerator`2.#ctor(`0[],`1[],System.Int32)">ArrayEnumerator(TIndex[], TElement[], Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator&lt;TElement&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ArrayEnumerator(TIndex[] indicies, TElement[] elements, Int32 length)</code></pre>
+    <pre><code class="lang-csharp hljs">public ArrayEnumerator(TIndex[] indicies, TElement[] elements, int length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -148,15 +173,15 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">length</span></td>
         <td><p>The length of the active array.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Collectathon_Enumerators_ArrayEnumerator_2__ctor__0____1___Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>At first it might seem like <code data-dev-comment-type="paramref" class="paramref">length</code> is superfluous, as <see cref="!:ReadOnlyMemory&lt;T>"></see> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <code data-dev-comment-type="paramref" class="paramref">length</code> is the actually used portion.</p>
+  <h5 id="Collectathon_Enumerators_ArrayEnumerator_2__ctor__0____1___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>At first it might seem like <code data-dev-comment-type="paramref" class="paramref">length</code> is superfluous, as <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <code data-dev-comment-type="paramref" class="paramref">length</code> is the actually used portion.</p>
 </div>
   <h3 id="properties">Properties
   </h3>
@@ -173,7 +198,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int32 Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly int Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -185,7 +210,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -203,7 +228,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public (TIndex Index, TElement Element) Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly (TIndex Index, TElement Element) Current { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -215,7 +240,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -235,7 +260,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean MoveNext()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool MoveNext()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -247,7 +272,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -269,7 +294,19 @@
   </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerator&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICurrent-1.html">ICurrent&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReset.html">IReset</a>
   </div>
 </article>
           </div>

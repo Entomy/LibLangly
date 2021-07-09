@@ -108,9 +108,20 @@ namespace Numbersome {
 		/// <inheritdoc/>
 		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => throw new NotImplementedException();
 
+		/// <summary>
+		/// Returns the compliment of the <paramref name="set"/>.
+		/// </summary>
+		/// <param name="set">The <see cref="Set{TElement}"/> to compliment.</param>
+		/// <returns>A <see cref="Predicate{T}"/> representing the compliment of the one describing the <paramref name="set"/>.</returns>
 		[return: NotNull]
 		protected static Predicate<TElement> Compliment([AllowNull] Set<TElement> set) => set is not null ? (element) => !set.Predicate(element) : (element) => element is null;
 
+		/// <summary>
+		/// Returns the difference of <paramref name="right"/> from <paramref name="left"/>.
+		/// </summary>
+		/// <param name="left">The lefthand <see cref="Set{TElement}"/>; the set to take from.</param>
+		/// <param name="right">The righthand <see cref="Set{TElement}"/>; the set to take away.</param>
+		/// <returns>A <see cref="Predicate{T}"/> representing the difference of <paramref name="right"/> from <paramref name="left"/>.</returns>
 		[return: NotNull]
 		protected static Predicate<TElement> Difference([AllowNull] Set<TElement> left, [AllowNull] Set<TElement> right) {
 			if (left is null) {
@@ -122,6 +133,12 @@ namespace Numbersome {
 			}
 		}
 
+		/// <summary>
+		/// Returns the disjunction of <paramref name="left"/> and <paramref name="right"/>.
+		/// </summary>
+		/// <param name="left">The lefthand <see cref="Set{TElement}"/>.</param>
+		/// <param name="right">The righthand <see cref="Set{TElement}"/>.</param>
+		/// <returns>A <see cref="Predicate{T}"/> representing the disjunction of <paramref name="left"/> and <paramref name="right"/>.</returns>
 		[return: NotNull]
 		protected static Predicate<TElement> Disjunction([AllowNull] Set<TElement> left, [AllowNull] Set<TElement> right) {
 			if (left is null && right is null) {
@@ -135,6 +152,12 @@ namespace Numbersome {
 			}
 		}
 
+		/// <summary>
+		/// Returns the intersection of <paramref name="left"/> and <paramref name="right"/>.
+		/// </summary>
+		/// <param name="left">The lefthand <see cref="Set{TElement}"/>.</param>
+		/// <param name="right">The righthand <see cref="Set{TElement}"/>.</param>
+		/// <returns>A <see cref="Predicate{T}"/> representing the intersection of <paramref name="left"/> and <paramref name="right"/>.</returns>
 		[return: NotNull]
 		protected static Predicate<TElement> Intersection([AllowNull] Set<TElement> left, [AllowNull] Set<TElement> right) {
 			if (left is null && right is null) {
@@ -148,6 +171,12 @@ namespace Numbersome {
 			}
 		}
 
+		/// <summary>
+		/// Returns the union of <paramref name="left"/> and <paramref name="right"/>.
+		/// </summary>
+		/// <param name="left">The lefthand <see cref="Set{TElement}"/>.</param>
+		/// <param name="right">The righthand <see cref="Set{TElement}"/>.</param>
+		/// <returns>A <see cref="Predicate{T}"/> representing the union of <paramref name="left"/> and <paramref name="right"/>.</returns>
 		[return: NotNull]
 		protected static Predicate<TElement> Union([AllowNull] Set<TElement> left, [AllowNull] Set<TElement> right) {
 			if (left is null && right is null) {

@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits.Concepts;
 
 namespace Numbersome {
-	public static partial class StatisticExtensions {
+	public static partial class StatisticsExtensions {
 		/// <summary>
 		/// Finds the minimum of the <paramref name="values"/>.
 		/// </summary>

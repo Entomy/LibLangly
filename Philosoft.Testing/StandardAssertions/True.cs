@@ -1,5 +1,5 @@
 ﻿namespace System.Traits.Testing {
-	public static partial class TraitAssertions {
+	public static partial class StandardAssertions {
 		/// <summary>
 		/// Asserts that the expression evaluated to <see langword="true"/>.
 		/// </summary>

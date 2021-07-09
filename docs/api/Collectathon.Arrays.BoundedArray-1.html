@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BoundedArray&lt;TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -83,23 +83,67 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IArray</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IClear</span></div>
-    <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
-    <div><span class="xref">IInsertSpan</span>&lt;<span class="xref">Int32</span>, TElement&gt;</div>
-    <div><span class="xref">IList</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IPostpendSpan</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IPrependSpan</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IPushSpan</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IRemove</span>&lt;TElement&gt;</div>
-    <div><span class="xref">ISequence</span>&lt;TElement, <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;TElement&gt;&gt;</div>
-    <div><span class="xref">IStack</span>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAddSpan-1.html">IAddSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IArray-1.html">IArray</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IArray-2.html">IArray</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IReadOnlyArray-1.html">IReadOnlyArray</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IReadOnlyArray-2.html">IReadOnlyArray</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ICapacity.html">ICapacity</a></div>
+    <div><a class="xref" href="System.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IShift.html">IShift</a></div>
+    <div><a class="xref" href="System.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsertSpan-2.html">IInsertSpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IList-1.html">IList</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IList-2.html">IList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IReadOnlyList-1.html">IReadOnlyList</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IReadOnlyList-2.html">IReadOnlyList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpendSpan-1.html">IPostpendSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpend-1.html">IPostpend</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrependSpan-1.html">IPrependSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrepend-1.html">IPrepend</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPushSpan-1.html">IPushSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPushMemory-1.html">IPushMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="System.Traits.Concepts.IStack-1.html">IStack</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPeek-1.html">IPeek</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPop-1.html">IPop</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPush-1.html">IPush</a>&lt;TElement&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_BoundedArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : IAddSpan&lt;TElement&gt;, IArray&lt;TElement&gt;, IClear, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IInsertSpan&lt;Int32, TElement&gt;, IList&lt;TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPushSpan&lt;TElement&gt;, IRemove&lt;TElement&gt;, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IStack&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, IArray&lt;TElement&gt;, IArray&lt;int, TElement&gt;, IReadOnlyArray&lt;TElement&gt;, IReadOnlyArray&lt;int, TElement&gt;, ICapacity, ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, IClear, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IInsertSpan&lt;int, TElement&gt;, IInsertMemory&lt;int, TElement&gt;, IInsert&lt;int, TElement&gt;, IList&lt;TElement&gt;, IList&lt;int, TElement&gt;, IIndex&lt;int, TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, IReadOnlyList&lt;TElement&gt;, IReadOnlyList&lt;int, TElement&gt;, IContains&lt;TElement&gt;, IIndexReadOnly&lt;int, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IPushSpan&lt;TElement&gt;, IPushMemory&lt;TElement&gt;, IRemove&lt;TElement&gt;, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, ICount, IStack&lt;TElement&gt;, IPeek&lt;TElement&gt;, IPop&lt;TElement&gt;, IPush&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -148,26 +192,26 @@
       <tr>
         <td>TElement[]</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The <see cref="!:Array"></see> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to reuse.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to reuse.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1__ctor_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.%23ctor(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L42">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1__ctor_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1__ctor_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor(Int32)">BoundedArray(Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1__ctor_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor(System.Int32)">BoundedArray(Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BoundedArray(Int32 capacity)</code></pre>
+    <pre><code class="lang-csharp hljs">public BoundedArray(int capacity)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -180,7 +224,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">capacity</span></td>
         <td><p>The maximum capacity.</p>
 </td>
@@ -202,7 +246,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int32 Capacity { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Capacity { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -214,7 +258,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -232,7 +276,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int32 Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -244,25 +288,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Item_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Item(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Item_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L63">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Item_" data-uid="Collectathon.Arrays.BoundedArray`1.Item*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Item_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.Item(Int32)">Item[Int32]</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Item_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.Item(System.Int32)">Item[Int32]</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TElement this[Int32 index] { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TElement this[int index] { get; set; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -275,7 +319,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -364,13 +408,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_System_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(System.ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L126">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Add_" data-uid="Collectathon.Arrays.BoundedArray`1.Add*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(ArraySegment{`0})">Add(ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_System_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(System.ArraySegment{`0})">Add(ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -388,7 +432,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -396,13 +440,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L129">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Add_" data-uid="Collectathon.Arrays.BoundedArray`1.Add*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_System_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(System.Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -420,7 +464,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -428,13 +472,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L132">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Add_" data-uid="Collectathon.Arrays.BoundedArray`1.Add*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(System.ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -452,7 +496,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -460,13 +504,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L138">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Add_" data-uid="Collectathon.Arrays.BoundedArray`1.Add*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(System.ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -484,7 +528,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -492,13 +536,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L135">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Add_" data-uid="Collectathon.Arrays.BoundedArray`1.Add*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(Span{`0})">Add(Span&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Add_System_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Add(System.Span{`0})">Add(Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -516,7 +560,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -550,7 +594,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Contains(TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Contains(TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -579,25 +623,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Contains_Predicate__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Contains(Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Contains_System_Predicate__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Contains(System.Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L147">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Contains_" data-uid="Collectathon.Arrays.BoundedArray`1.Contains*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Contains_Predicate__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Contains(Predicate{`0})">Contains(Predicate&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Contains_System_Predicate__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Contains(System.Predicate{`0})">Contains(Predicate&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Contains(Predicate&lt;TElement&gt; predicate)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Contains(Predicate&lt;TElement&gt; predicate)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -610,7 +654,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -626,7 +670,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -644,7 +688,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(BoundedArray&lt;TElement&gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(BoundedArray&lt;TElement&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -673,26 +717,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Equals_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Equals_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Equals(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L154">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L169">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Equals_" data-uid="Collectathon.Arrays.BoundedArray`1.Equals*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Equals_Object_" data-uid="Collectathon.Arrays.BoundedArray`1.Equals(Object)">Equals(Object)</h4>
-  <div class="markdown level1 summary"><p>Determines if the two values are equal.</p>
-</div>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(IEnumerable&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Boolean Equals(Object obj)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(IEnumerable&lt;TElement&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -705,7 +748,55 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Object</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L154">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_Equals_" data-uid="Collectathon.Arrays.BoundedArray`1.Equals*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Equals_System_Object_" data-uid="Collectathon.Arrays.BoundedArray`1.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two values are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td><span class="parametername">obj</span></td>
         <td><p>The other object.</p>
 </td>
@@ -722,59 +813,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if the two values are equal; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Equals_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Equals(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L169">View Source</a>
-  </span>
-  <a id="Collectathon_Arrays_BoundedArray_1_Equals_" data-uid="Collectathon.Arrays.BoundedArray`1.Equals*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(Collections.Generic.IEnumerable&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(Collections.Generic.IEnumerable&lt;TElement&gt; other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">Collections.Generic.IEnumerable</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -818,7 +864,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Int32 GetHashCode()</code></pre>
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -830,25 +876,27 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L180">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,`0)">Insert(Int32, TElement)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,`0)">Insert(Int32, TElement)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -861,7 +909,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -872,20 +920,36 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L190">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32__0___" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,`0[])">Insert(Int32, TElement[])</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32__0___" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,`0[])">Insert(Int32, TElement[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, params TElement[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, params TElement[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -898,7 +962,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -909,20 +973,36 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2CArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2CSystem.ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L194">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,ArraySegment{`0})">Insert(Int32, ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,System.ArraySegment{`0})">Insert(Int32, ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, ArraySegment&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, ArraySegment&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -935,31 +1015,47 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2CMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2CSystem.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L198">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,Memory{`0})">Insert(Int32, Memory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,System.Memory{`0})">Insert(Int32, Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, Memory&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, Memory&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -972,31 +1068,47 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2CReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2CSystem.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L202">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,ReadOnlyMemory{`0})">Insert(Int32, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,System.ReadOnlyMemory{`0})">Insert(Int32, ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1009,31 +1121,47 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2CReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2CSystem.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L210">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,ReadOnlySpan{`0})">Insert(Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,System.ReadOnlySpan{`0})">Insert(Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1046,31 +1174,47 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_Int32_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(Int32%2CSpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(System.Int32%2CSystem.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L206">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_Int32_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(Int32,Span{`0})">Insert(Int32, Span&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_Int32_System_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.Int32,System.Span{`0})">Insert(Int32, Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, Span&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(int index, Span&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1083,14 +1227,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1218,6 +1378,22 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1250,15 +1426,31 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_System_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(System.ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L245">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(ArraySegment{`0})">Postpend(ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_System_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(System.ArraySegment{`0})">Postpend(ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1276,21 +1468,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L249">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_System_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(System.Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1308,21 +1516,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L253">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(System.ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1340,21 +1564,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L261">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(System.ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1372,21 +1612,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Postpend_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Postpend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L257">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(Span{`0})">Postpend(Span&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_System_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(System.Span{`0})">Postpend(Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1404,9 +1660,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1442,6 +1714,22 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1474,15 +1762,31 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_System_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(System.ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L287">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(ArraySegment{`0})">Prepend(ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_System_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(System.ArraySegment{`0})">Prepend(ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1500,21 +1804,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L292">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_System_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(System.Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1532,21 +1852,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L297">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(System.ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1564,21 +1900,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L307">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(System.ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1596,21 +1948,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Prepend_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Prepend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L302">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_System_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(System.Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1628,9 +1996,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if the array is at maximum capacity.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1700,13 +2084,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_System_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(System.ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L323">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Push_" data-uid="Collectathon.Arrays.BoundedArray`1.Push*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(ArraySegment{`0})">Push(ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_System_ArraySegment__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(System.ArraySegment{`0})">Push(ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1724,7 +2108,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -1732,13 +2116,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L326">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Push_" data-uid="Collectathon.Arrays.BoundedArray`1.Push*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(Memory{`0})">Push(Memory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_System_Memory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(System.Memory{`0})">Push(Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1756,7 +2140,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -1764,13 +2148,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L329">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Push_" data-uid="Collectathon.Arrays.BoundedArray`1.Push*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(ReadOnlyMemory{`0})">Push(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(System.ReadOnlyMemory{`0})">Push(ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1788,7 +2172,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -1796,13 +2180,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L335">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Push_" data-uid="Collectathon.Arrays.BoundedArray`1.Push*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(ReadOnlySpan{`0})">Push(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(System.ReadOnlySpan{`0})">Push(ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1820,7 +2204,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -1828,13 +2212,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Push_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Push(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L332">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Push_" data-uid="Collectathon.Arrays.BoundedArray`1.Push*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(Span{`0})">Push(Span&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Push_System_Span__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Push(System.Span{`0})">Push(Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1852,7 +2236,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td></td>
       </tr>
@@ -2008,18 +2392,18 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_ShiftLeft_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.ShiftLeft(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_ShiftLeft_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.ShiftLeft(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L357">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_ShiftLeft_" data-uid="Collectathon.Arrays.BoundedArray`1.ShiftLeft*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_ShiftLeft_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.ShiftLeft(Int32)">ShiftLeft(Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_ShiftLeft_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.ShiftLeft(System.Int32)">ShiftLeft(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ShiftLeft(Int32 amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ShiftLeft(int amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2032,7 +2416,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
@@ -2055,18 +2439,18 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_ShiftRight_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.ShiftRight(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_ShiftRight_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.ShiftRight(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L365">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_ShiftRight_" data-uid="Collectathon.Arrays.BoundedArray`1.ShiftRight*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_ShiftRight_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.ShiftRight(Int32)">ShiftRight(Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_ShiftRight_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.ShiftRight(System.Int32)">ShiftRight(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ShiftRight(Int32 amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ShiftRight(int amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2079,7 +2463,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
@@ -2110,25 +2494,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Slice_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Slice(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Slice_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Slice(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L372">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.Slice*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Slice_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.Slice(Int32)">Slice(Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Slice_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.Slice(System.Int32)">Slice(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Span&lt;TElement&gt; Slice(Int32 start)</code></pre>
+    <pre><code class="lang-csharp hljs">public Span&lt;TElement&gt; Slice(int start)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2141,7 +2525,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">start</span></td>
         <td></td>
       </tr>
@@ -2157,25 +2541,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Slice_Int32_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Slice(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Slice_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Slice(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L375">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.Slice*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_Slice_Int32_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.Slice(Int32,Int32)">Slice(Int32, Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Slice_System_Int32_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.Slice(System.Int32,System.Int32)">Slice(Int32, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Span&lt;TElement&gt; Slice(Int32 start, Int32 length)</code></pre>
+    <pre><code class="lang-csharp hljs">public Span&lt;TElement&gt; Slice(int start, int length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2188,12 +2572,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">start</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">length</span></td>
         <td></td>
       </tr>
@@ -2209,7 +2593,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -2227,7 +2611,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2239,25 +2623,27 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_ToString_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_ToString_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.ToString(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L400">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_ToString_" data-uid="Collectathon.Arrays.BoundedArray`1.ToString*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_ToString_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.ToString(Int32)">ToString(Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_ToString_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.ToString(System.Int32)">ToString(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String ToString(Int32 amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToString(int amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2270,7 +2656,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
@@ -2286,7 +2672,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -2295,19 +2681,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_op_LeftShift_Collectathon_Arrays_BoundedArray__0__Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.op_LeftShift(Collectathon.Arrays.BoundedArray%7B%600%7D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_op_LeftShift_Collectathon_Arrays_BoundedArray__0__System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.op_LeftShift(Collectathon.Arrays.BoundedArray%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L100">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_op_LeftShift_" data-uid="Collectathon.Arrays.BoundedArray`1.op_LeftShift*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_op_LeftShift_Collectathon_Arrays_BoundedArray__0__Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.op_LeftShift(Collectathon.Arrays.BoundedArray{`0},Int32)">LeftShift(BoundedArray&lt;TElement&gt;, Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_op_LeftShift_Collectathon_Arrays_BoundedArray__0__System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.op_LeftShift(Collectathon.Arrays.BoundedArray{`0},System.Int32)">LeftShift(BoundedArray&lt;TElement&gt;, Int32)</h4>
   <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static BoundedArray&lt;TElement&gt; operator &lt;&lt;(BoundedArray&lt;TElement&gt; array, Int32 amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public static BoundedArray&lt;TElement&gt; operator &lt;&lt;(BoundedArray&lt;TElement&gt; array, int amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2326,7 +2712,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">amount</span></td>
         <td><p>The amount of positions to shift.</p>
 </td>
@@ -2350,19 +2736,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_op_RightShift_Collectathon_Arrays_BoundedArray__0__Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.op_RightShift(Collectathon.Arrays.BoundedArray%7B%600%7D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_op_RightShift_Collectathon_Arrays_BoundedArray__0__System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.op_RightShift(Collectathon.Arrays.BoundedArray%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L112">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_op_RightShift_" data-uid="Collectathon.Arrays.BoundedArray`1.op_RightShift*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_1_op_RightShift_Collectathon_Arrays_BoundedArray__0__Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.op_RightShift(Collectathon.Arrays.BoundedArray{`0},Int32)">RightShift(BoundedArray&lt;TElement&gt;, Int32)</h4>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_op_RightShift_Collectathon_Arrays_BoundedArray__0__System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.op_RightShift(Collectathon.Arrays.BoundedArray{`0},System.Int32)">RightShift(BoundedArray&lt;TElement&gt;, Int32)</h4>
   <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static BoundedArray&lt;TElement&gt; operator &gt;&gt;(BoundedArray&lt;TElement&gt; array, Int32 amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public static BoundedArray&lt;TElement&gt; operator &gt;&gt;(BoundedArray&lt;TElement&gt; array, int amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2381,7 +2767,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">amount</span></td>
         <td><p>The amount of positions to shift.</p>
 </td>
@@ -2403,39 +2789,789 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23Concepts%23IReadOnlyArray%7BTElement%7D%23Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L377">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#Concepts#IReadOnlyArray{TElement}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#Concepts#IReadOnlyArray{TElement}#Slice">IReadOnlyArray&lt;TElement&gt;.Slice()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReadOnlySpan&lt;TElement&gt; IReadOnlyArray&lt;TElement&gt;.Slice()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23Concepts%23IReadOnlyArray%7BTElement%7D%23Slice(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L379">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#Concepts#IReadOnlyArray{TElement}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#Concepts#IReadOnlyArray{TElement}#Slice(System.Int32)">IReadOnlyArray&lt;TElement&gt;.Slice(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReadOnlySpan&lt;TElement&gt; IReadOnlyArray&lt;TElement&gt;.Slice(int start)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23Concepts%23IReadOnlyArray%7BTElement%7D%23Slice(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L381">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#Concepts#IReadOnlyArray{TElement}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_Concepts_IReadOnlyArray_TElement__Slice_System_Int32_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#Concepts#IReadOnlyArray{TElement}#Slice(System.Int32,System.Int32)">IReadOnlyArray&lt;TElement&gt;.Slice(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReadOnlySpan&lt;TElement&gt; IReadOnlyArray&lt;TElement&gt;.Slice(int start, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23ISlice%7BSystem%23Memory%7BTElement%7D%7D%23Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L389">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#Memory{TElement}}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#Memory{TElement}}#Slice">ISlice&lt;Memory&lt;TElement&gt;&gt;.Slice()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Memory&lt;TElement&gt; ISlice&lt;Memory&lt;TElement&gt;&gt;.Slice()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23ISlice%7BSystem%23Memory%7BTElement%7D%7D%23Slice(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L391">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#Memory{TElement}}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#Memory{TElement}}#Slice(System.Int32)">ISlice&lt;Memory&lt;TElement&gt;&gt;.Slice(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Memory&lt;TElement&gt; ISlice&lt;Memory&lt;TElement&gt;&gt;.Slice(int start)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23ISlice%7BSystem%23Memory%7BTElement%7D%7D%23Slice(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L393">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#Memory{TElement}}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_Memory_TElement___Slice_System_Int32_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#Memory{TElement}}#Slice(System.Int32,System.Int32)">ISlice&lt;Memory&lt;TElement&gt;&gt;.Slice(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Memory&lt;TElement&gt; ISlice&lt;Memory&lt;TElement&gt;&gt;.Slice(int start, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23ISlice%7BSystem%23ReadOnlyMemory%7BTElement%7D%7D%23Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L383">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#ReadOnlyMemory{TElement}}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#ReadOnlyMemory{TElement}}#Slice">ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReadOnlyMemory&lt;TElement&gt; ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23ISlice%7BSystem%23ReadOnlyMemory%7BTElement%7D%7D%23Slice(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L385">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#ReadOnlyMemory{TElement}}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#ReadOnlyMemory{TElement}}#Slice(System.Int32)">ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReadOnlyMemory&lt;TElement&gt; ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice(int start)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.System%23Traits%23ISlice%7BSystem%23ReadOnlyMemory%7BTElement%7D%7D%23Slice(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`1.cs/#L387">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#ReadOnlyMemory{TElement}}#Slice*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_System_Traits_ISlice_System_ReadOnlyMemory_TElement___Slice_System_Int32_System_Int32_" data-uid="Collectathon.Arrays.BoundedArray`1.System#Traits#ISlice{System#ReadOnlyMemory{TElement}}#Slice(System.Int32,System.Int32)">ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReadOnlyMemory&lt;TElement&gt; ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice(int start, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IArray&lt;&gt;</span>
+      <a class="xref" href="System.Traits.IAddSpan-1.html">IAddSpan&lt;TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IClear</span>
+      <a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory&lt;TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IEquatable&lt;&gt;</span>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IInsertSpan&lt;, &gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IArray-1.html">IArray&lt;TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IList&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IArray-2.html">IArray&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IPostpendSpan&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IReadOnlyArray-1.html">IReadOnlyArray&lt;TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IPrependSpan&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IReadOnlyArray-2.html">IReadOnlyArray&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IPushSpan&lt;&gt;</span>
+      <a class="xref" href="System.Traits.ICapacity.html">ICapacity</a>
   </div>
   <div>
-      <span class="xref">IRemove&lt;&gt;</span>
+      <a class="xref" href="System.Traits.ISlice-1.html">ISlice&lt;TResult&gt;</a>
   </div>
   <div>
-      <span class="xref">ISequence&lt;, &gt;</span>
+      <a class="xref" href="System.Traits.IShift.html">IShift</a>
   </div>
   <div>
-      <span class="xref">IStack&lt;&gt;</span>
+      <a class="xref" href="System.Traits.ISlice-1.html">ISlice&lt;TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsertSpan-2.html">IInsertSpan&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.IList-1.html">IList&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.IList-2.html">IList&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.IReadOnlyList-1.html">IReadOnlyList&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.IReadOnlyList-2.html">IReadOnlyList&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpendSpan-1.html">IPostpendSpan&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpend-1.html">IPostpend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrependSpan-1.html">IPrependSpan&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrepend-1.html">IPrepend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPushSpan-1.html">IPushSpan&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPushMemory-1.html">IPushMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRemove-1.html">IRemove&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.IStack-1.html">IStack&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPeek-1.html">IPeek&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPop-1.html">IPop&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPush-1.html">IPush&lt;TElement&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0____0___">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ArraySegment___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Memory___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ReadOnlyMemory___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Span___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ReadOnlySpan___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__2_System_Traits_IAdd___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_Concepts_ISequence___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_Concepts_ISequence___0___1__System_Predicate___0__">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_Concepts_ISequence___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_Concepts_ISequence___0___1__System_ArraySegment___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_Concepts_ISequence___0___1__System_Memory___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_Concepts_ISequence___0___1__System_ReadOnlyMemory___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_Concepts_ISequence___0___1__System_Span___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_Concepts_ISequence___0___1__System_ReadOnlySpan___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_Concepts_ISequence___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_Concepts_ISequence___0___1__System_ArraySegment___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_Concepts_ISequence___0___1__System_Memory___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_Concepts_ISequence___0___1__System_ReadOnlyMemory___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_Concepts_ISequence___0___1__System_Span___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_Concepts_ISequence___0___1__System_ReadOnlySpan___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1____0_">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1____0___">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1__System_ArraySegment___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1__System_Memory___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1__System_Span___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1__System_ReadOnlySpan___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_Concepts_ISequence___0___1__System_Predicate___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1____0___">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1__System_ArraySegment___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1__System_Memory___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1__System_Span___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__2_System_Traits_Concepts_ISequence___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__1_System_Traits_IInsert_System_Int32___0__System_Int32___0___">TraitExtensions.Insert&lt;TElement&gt;(IInsert&lt;Int32, TElement&gt;, Int32, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__1_System_Traits_IInsert_System_Int32___0__System_Int32_System_ArraySegment___0__">TraitExtensions.Insert&lt;TElement&gt;(IInsert&lt;Int32, TElement&gt;, Int32, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__1_System_Traits_IInsert_System_Int32___0__System_Int32_System_Memory___0__">TraitExtensions.Insert&lt;TElement&gt;(IInsert&lt;Int32, TElement&gt;, Int32, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__1_System_Traits_IInsert_System_Int32___0__System_Int32_System_ReadOnlyMemory___0__">TraitExtensions.Insert&lt;TElement&gt;(IInsert&lt;Int32, TElement&gt;, Int32, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__1_System_Traits_IInsert_System_Int32___0__System_Int32_System_Span___0__">TraitExtensions.Insert&lt;TElement&gt;(IInsert&lt;Int32, TElement&gt;, Int32, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__1_System_Traits_IInsert_System_Int32___0__System_Int32_System_ReadOnlySpan___0__">TraitExtensions.Insert&lt;TElement&gt;(IInsert&lt;Int32, TElement&gt;, Int32, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Insert__2_System_Traits_IInsert_System_Int32___0__System_Int32_System_Traits_Concepts_ISequence___0___1__">TraitExtensions.Insert&lt;TElement, TEnumerator&gt;(IInsert&lt;Int32, TElement&gt;, Int32, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Map__1_System_Traits_Concepts_IList_System_Int32___0__System_Func___0___0__">TraitExtensions.Map&lt;TElement&gt;(IList&lt;Int32, TElement&gt;, Func&lt;TElement, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_Concepts_ISequence___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_Concepts_ISequence___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0____0___">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_ArraySegment___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_Memory___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_ReadOnlyMemory___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_Span___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_ReadOnlySpan___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__2_System_Traits_IPostpend___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.Postpend&lt;TElement, TEnumerator&gt;(IPostpend&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0____0___">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_ArraySegment___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_Memory___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_ReadOnlyMemory___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_Span___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_ReadOnlySpan___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__2_System_Traits_IPrepend___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.Prepend&lt;TElement, TEnumerator&gt;(IPrepend&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0____0___">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0__System_ArraySegment___0__">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0__System_Memory___0__">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0__System_ReadOnlyMemory___0__">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0__System_Span___0__">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0__System_ReadOnlySpan___0__">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__1_System_Traits_IPush___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Push&lt;TElement&gt;(IPush&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Push__2_System_Traits_IPush___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.Push&lt;TElement, TEnumerator&gt;(IPush&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0____0___">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_Memory___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_ReadOnlyMemory___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_Span___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_ReadOnlySpan___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__2_System_Traits_IRemove___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.Remove&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0____0___">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_Memory___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_ReadOnlyMemory___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_Span___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_ReadOnlySpan___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__2_System_Traits_IRemove___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.RemoveFirst&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0____0___">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_Memory___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_ReadOnlyMemory___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_Span___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_ReadOnlySpan___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__2_System_Traits_IRemove___0__System_Traits_Concepts_ISequence___0___1__">TraitExtensions.RemoveLast&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_Concepts_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Numbersome.StatisticsExtensions.html#Numbersome_StatisticsExtensions_Mode__2_System_Traits_Concepts_ISequence___0___1__">StatisticsExtensions.Mode&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
 </article>
           </div>

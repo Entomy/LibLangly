@@ -13,9 +13,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[CLSCompliant(false)]
@@ -31,9 +31,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[CLSCompliant(false)]
@@ -49,9 +49,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[CLSCompliant(false)]
@@ -67,9 +67,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,9 +84,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,9 +101,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -118,9 +118,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -135,9 +135,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -152,9 +152,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -169,9 +169,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -186,9 +186,9 @@ namespace Numbersome {
 		/// <returns>
 		/// <paramref name="value"/> if <paramref name="min"/> ≤ <paramref name="value"/> ≤ <paramref name="max"/>.
 		/// -or-
-		/// <paramref name="min"/> if <paramref name="value"/> < <paramref name="min"/>.
+		/// <paramref name="min"/> if <paramref name="value"/> &lt; <paramref name="min"/>.
 		/// -or-
-		/// <paramref name="max"/> if <paramref name="max"/> < <paramref name="value"/>.
+		/// <paramref name="max"/> if <paramref name="max"/> &lt; <paramref name="value"/>.
 		/// </returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp"/>
 		[CLSCompliant(false)]

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ExcludeFromCodeCoverageAttribute
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,19 +73,49 @@
   
   <h1 id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute" data-uid="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" class="text-break">Class ExcludeFromCodeCoverageAttribute
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Specifies that the attributed code should be excluded from code coverage information.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">ExcludeFromCodeCoverageAttribute</span></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a></div>
+    <div class="level2"><span class="xref">ExcludeFromCodeCoverageAttribute</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute.equals#system-attribute-equals(system-object)">Attribute.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute.gethashcode#system-attribute-gethashcode">Attribute.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="System.Diagnostics.CodeAnalysis.html">System.Diagnostics.CodeAnalysis</a></h6>
   <h6><strong>Assembly</strong>: Philosoft.CodeAnalysisAttributes.dll</h6>
   <h5 id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class ExcludeFromCodeCoverageAttribute : Attribute</code></pre>
+    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Event, Inherited = false, AllowMultiple = false)]
+public sealed class ExcludeFromCodeCoverageAttribute : Attribute</code></pre>
   </div>
+  <h5 id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Placing this attribute on a class or a structure excludes all the members of that class or structure from the collection of code coverage information.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -93,11 +123,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute__ctor.md&amp;value=---%0Auid%3A%20System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.CodeAnalysisAttributes/ExcludeFromCodeCoverageAttribute.cs/#L8">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.CodeAnalysisAttributes/ExcludeFromCodeCoverageAttribute.cs/#L17">View Source</a>
   </span>
   <a id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute__ctor_" data-uid="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.#ctor*"></a>
   <h4 id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute__ctor" data-uid="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.#ctor">ExcludeFromCodeCoverageAttribute()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.html">ExcludeFromCodeCoverageAttribute</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -110,7 +141,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute_Justification.md&amp;value=---%0Auid%3A%20System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.Justification%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.CodeAnalysisAttributes/ExcludeFromCodeCoverageAttribute.cs/#L11">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.CodeAnalysisAttributes/ExcludeFromCodeCoverageAttribute.cs/#L22">View Source</a>
   </span>
   <a id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute_Justification_" data-uid="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.Justification*"></a>
   <h4 id="System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute_Justification" data-uid="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.Justification">Justification</h4>
@@ -119,7 +150,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String? Justification { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Justification { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -131,7 +162,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">String</span>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -147,7 +178,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Diagnostics_CodeAnalysis_ExcludeFromCodeCoverageAttribute.md&amp;value=---%0Auid%3A%20System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.CodeAnalysisAttributes/ExcludeFromCodeCoverageAttribute.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.CodeAnalysisAttributes/ExcludeFromCodeCoverageAttribute.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class UTF8
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,11 +81,35 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">UTF8</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Encodings.dll</h6>
   <h5 id="Stringier_UTF8_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class UTF8 : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class UTF8</code></pre>
   </div>
   <h5 id="Stringier_UTF8_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Most of these helpers assume working with a UTF-8 stream, not a buffer. This is important because it enables us to more easily support stream decoding. Buffered data doesn't need special considerations, so these operations still work with buffers.</p>
@@ -106,7 +130,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ReadOnlyMemory&lt;Byte&gt; BOM { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static ReadOnlyMemory&lt;byte&gt; BOM { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -118,7 +142,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Byte</span>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -127,19 +151,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_IsFirstUnit_Byte_.md&amp;value=---%0Auid%3A%20Stringier.UTF8.IsFirstUnit(Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_IsFirstUnit_System_Byte_.md&amp;value=---%0Auid%3A%20Stringier.UTF8.IsFirstUnit(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF8.cs/#L300">View Source</a>
   </span>
   <a id="Stringier_UTF8_IsFirstUnit_" data-uid="Stringier.UTF8.IsFirstUnit*"></a>
-  <h4 id="Stringier_UTF8_IsFirstUnit_Byte_" data-uid="Stringier.UTF8.IsFirstUnit(Byte)">IsFirstUnit(Byte)</h4>
+  <h4 id="Stringier_UTF8_IsFirstUnit_System_Byte_" data-uid="Stringier.UTF8.IsFirstUnit(System.Byte)">IsFirstUnit(Byte)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">unit</code> the first unit of a UTF-8 sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsFirstUnit(Byte unit)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsFirstUnit(byte unit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -152,9 +176,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">unit</span></td>
-        <td><p>The <see cref="!:Byte"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to check.</p>
 </td>
       </tr>
     </tbody>
@@ -169,7 +193,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if the <code data-dev-comment-type="paramref" class="paramref">unit</code> is the first unit of a UTF-8 sequence; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -177,19 +201,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_IsNextUnit_Byte_Byte_Byte_.md&amp;value=---%0Auid%3A%20Stringier.UTF8.IsNextUnit(Byte%2CByte%2CByte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_IsNextUnit_System_Byte_System_Byte_System_Byte_.md&amp;value=---%0Auid%3A%20Stringier.UTF8.IsNextUnit(System.Byte%2CSystem.Byte%2CSystem.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF8.cs/#L309">View Source</a>
   </span>
   <a id="Stringier_UTF8_IsNextUnit_" data-uid="Stringier.UTF8.IsNextUnit*"></a>
-  <h4 id="Stringier_UTF8_IsNextUnit_Byte_Byte_Byte_" data-uid="Stringier.UTF8.IsNextUnit(Byte,Byte,Byte)">IsNextUnit(Byte, Byte, Byte)</h4>
+  <h4 id="Stringier_UTF8_IsNextUnit_System_Byte_System_Byte_System_Byte_" data-uid="Stringier.UTF8.IsNextUnit(System.Byte,System.Byte,System.Byte)">IsNextUnit(Byte, Byte, Byte)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">unit</code> a continuation unit of a UTF-8 sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsNextUnit(Byte unit, Byte lower, Byte upper)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsNextUnit(byte unit, byte lower, byte upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -202,21 +226,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">unit</span></td>
-        <td><p>The <see cref="!:Byte"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to check.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">lower</span></td>
-        <td><p>The lower bound of this <see cref="!:Byte"></see>.</p>
+        <td><p>The lower bound of this <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">upper</span></td>
-        <td><p>The upper bound of this <see cref="!:Byte"></see>.</p>
+        <td><p>The upper bound of this <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -231,7 +255,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if the <code data-dev-comment-type="paramref" class="paramref">unit</code> is a valid continuation unit of a UTF-8 sequence; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -239,19 +263,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_NextUnitRange_Byte_Byte__Byte__.md&amp;value=---%0Auid%3A%20Stringier.UTF8.NextUnitRange(Byte%2CByte%40%2CByte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_NextUnitRange_System_Byte_System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Stringier.UTF8.NextUnitRange(System.Byte%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF8.cs/#L320">View Source</a>
   </span>
   <a id="Stringier_UTF8_NextUnitRange_" data-uid="Stringier.UTF8.NextUnitRange*"></a>
-  <h4 id="Stringier_UTF8_NextUnitRange_Byte_Byte__Byte__" data-uid="Stringier.UTF8.NextUnitRange(Byte,Byte@,Byte@)">NextUnitRange(Byte, out Byte, out Byte)</h4>
+  <h4 id="Stringier_UTF8_NextUnitRange_System_Byte_System_Byte__System_Byte__" data-uid="Stringier.UTF8.NextUnitRange(System.Byte,System.Byte@,System.Byte@)">NextUnitRange(Byte, out Byte, out Byte)</h4>
   <div class="markdown level1 summary"><p>Gets the valid range the next unit after <code data-dev-comment-type="paramref" class="paramref">unit</code> can be within.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void NextUnitRange(Byte unit, out Byte lower, out Byte upper)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void NextUnitRange(byte unit, out byte lower, out byte upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -264,43 +288,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">unit</span></td>
-        <td><p>The <see cref="!:Byte"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to check.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">lower</span></td>
-        <td><p>The lower bound of the next <see cref="!:Byte"></see>.</p>
+        <td><p>The lower bound of the next <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">upper</span></td>
-        <td><p>The upper bound of the next <see cref="!:Byte"></see>.</p>
+        <td><p>The upper bound of the next <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_UTF8_NextUnitRange_Byte_Byte__Byte___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This can&apos;t possibly know when we are at the end of a sequence, so with the exception of special cases, it always outputs the range for a UTF-8 &quot;tail&quot;. You need to use this together with <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_SequenceLength_Byte_">SequenceLength(Byte)</a> to know how long the sequence actually is. Because of how this is meant to be used, the range 0x00..0x7F does not return itself. When you have that, <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_SequenceLength_Byte_">SequenceLength(Byte)</a> will return 1 and you have no business using this method, so it&apos;s optimized to not even handle that case.</p>
+  <h5 id="Stringier_UTF8_NextUnitRange_System_Byte_System_Byte__System_Byte___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This can&apos;t possibly know when we are at the end of a sequence, so with the exception of special cases, it always outputs the range for a UTF-8 &quot;tail&quot;. You need to use this together with <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_SequenceLength_System_Byte_">SequenceLength(Byte)</a> to know how long the sequence actually is. Because of how this is meant to be used, the range 0x00..0x7F does not return itself. When you have that, <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_SequenceLength_System_Byte_">SequenceLength(Byte)</a> will return 1 and you have no business using this method, so it&apos;s optimized to not even handle that case.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_SequenceLength_Byte_.md&amp;value=---%0Auid%3A%20Stringier.UTF8.SequenceLength(Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF8_SequenceLength_System_Byte_.md&amp;value=---%0Auid%3A%20Stringier.UTF8.SequenceLength(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF8.cs/#L344">View Source</a>
   </span>
   <a id="Stringier_UTF8_SequenceLength_" data-uid="Stringier.UTF8.SequenceLength*"></a>
-  <h4 id="Stringier_UTF8_SequenceLength_Byte_" data-uid="Stringier.UTF8.SequenceLength(Byte)">SequenceLength(Byte)</h4>
+  <h4 id="Stringier_UTF8_SequenceLength_System_Byte_" data-uid="Stringier.UTF8.SequenceLength(System.Byte)">SequenceLength(Byte)</h4>
   <div class="markdown level1 summary"><p>What is the length of the UTF-8 sequence, assuming <code data-dev-comment-type="paramref" class="paramref">unit</code> is the first in the sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Int32 SequenceLength(Byte unit)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int SequenceLength(byte unit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -313,7 +337,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Byte</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
         <td><span class="parametername">unit</span></td>
         <td><p>The first unit in the sequence.</p>
 </td>
@@ -330,7 +354,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><p>The length of the sequence, or <code>0</code> if <code data-dev-comment-type="paramref" class="paramref">unit</code> is not the first unit, or is an invalid unit.</p>
 </td>
       </tr>
