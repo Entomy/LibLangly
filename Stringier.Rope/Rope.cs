@@ -5,6 +5,8 @@ using System.Text;
 using System.Traits;
 using System.Traits.Concepts;
 
+#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant. Microsoft's own MemberNotNullAttribute violates CLS Compliance.
+
 namespace Stringier {
 	/// <summary>
 	/// Represent a Rope, a type of dynamic text structure.

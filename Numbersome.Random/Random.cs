@@ -856,6 +856,7 @@ namespace Numbersome {
 
 		#region SByte
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		public void Read(out SByte element) {
 			Read(out Byte elmt);
 			element = (SByte)elmt;
@@ -1026,6 +1027,7 @@ namespace Numbersome {
 
 		#region UInt16
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		public unsafe void Read(out UInt16 element) {
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
 			Base.NextBytes(buffer);
@@ -1116,6 +1118,7 @@ namespace Numbersome {
 
 		#region UInt32
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		public unsafe void Read(out UInt32 element) {
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
 			Base.NextBytes(buffer);
@@ -1205,6 +1208,7 @@ namespace Numbersome {
 
 		#region UInt64
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		public unsafe void Read(out UInt64 element) {
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt64)];
 			Base.NextBytes(buffer);
@@ -1294,6 +1298,7 @@ namespace Numbersome {
 
 		#region UIntPtr
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		public void Read(out UIntPtr element) => element = NextUIntPtr();
 
 		/// <summary>

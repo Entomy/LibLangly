@@ -94,6 +94,7 @@ namespace Numbersome {
 		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
 		/// </summary>
 		/// <param name="stack">This stack.</param>
+		[CLSCompliant(false)]
 		public static void Abs([DisallowNull] this IStack<SByte> stack) => stack.Push(stack.Pop().Abs());
 
 		/// <summary>

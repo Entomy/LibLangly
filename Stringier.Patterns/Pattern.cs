@@ -292,6 +292,7 @@ namespace Stringier.Patterns {
 		/// <param name="location">The location within the <paramref name="source"/> to begin parsing, updated to the end of the match.</param>
 		/// <param name="trace">The object to trace the steps through the pattern graph in.</param>
 		/// <returns>The captured text.</returns>
+		[CLSCompliant(false)]
 		[return: NotNull]
 		public unsafe Span<Char> Parse([AllowNull] Char* source, Int32 length, ref Int32 location, [AllowNull] IAdd<Capture> trace) {
 			Consume(new ReadOnlySpan<Char>(source, length), ref location, out Exception? exception, trace);
