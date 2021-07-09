@@ -735,7 +735,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Add&lt;TElement, TEnumerator&gt;(this IAdd&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -790,7 +790,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Contains__2_ISequence___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Contains%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L14">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L15">View Source</a>
   </span>
   <a id="System_TraitExtensions_Contains_" data-uid="System.TraitExtensions.Contains*"></a>
   <h4 id="System_TraitExtensions_Contains__2_ISequence___0___1____0_" data-uid="System.TraitExtensions.Contains``2(ISequence{``0,``1},``0)">Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</h4>
@@ -800,7 +800,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -868,7 +868,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Contains__2_ISequence___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Contains%60%602(ISequence%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L32">View Source</a>
   </span>
   <a id="System_TraitExtensions_Contains_" data-uid="System.TraitExtensions.Contains*"></a>
   <h4 id="System_TraitExtensions_Contains__2_ISequence___0___1__Predicate___0__" data-uid="System.TraitExtensions.Contains``2(ISequence{``0,``1},Predicate{``0})">Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
@@ -878,7 +878,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -956,7 +956,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1034,7 +1034,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1112,7 +1112,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1190,7 +1190,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1268,7 +1268,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1346,7 +1346,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1424,7 +1424,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1502,7 +1502,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1580,7 +1580,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1658,7 +1658,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1736,7 +1736,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1814,7 +1814,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1882,7 +1882,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L16">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0_" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},``0)">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</h4>
@@ -1892,7 +1892,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1960,7 +1960,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L32">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0___" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},``0[])">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</h4>
@@ -1970,7 +1970,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2038,7 +2038,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L41">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L42">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},ArraySegment{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
@@ -2048,7 +2048,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2116,7 +2116,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L51">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L52">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},Memory{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
@@ -2126,7 +2126,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2194,7 +2194,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L90">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L91">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Predicate___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},Predicate{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
@@ -2204,7 +2204,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2272,7 +2272,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L71">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L72">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},ReadOnlySpan{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -2282,7 +2282,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2350,7 +2350,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L61">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L62">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
   <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},Span{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
@@ -2360,7 +2360,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2438,7 +2438,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement[] array)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2498,7 +2498,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; array)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2558,7 +2558,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; memory)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2618,7 +2618,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; span)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2740,7 +2740,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2818,7 +2818,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Grow_IResize_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Grow(IResize)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Grow.cs/#L11">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Grow.cs/#L10">View Source</a>
   </span>
   <a id="System_TraitExtensions_Grow_" data-uid="System.TraitExtensions.Grow*"></a>
   <h4 id="System_TraitExtensions_Grow_IResize_" data-uid="System.TraitExtensions.Grow(IResize)">Grow(IResize)</h4>
@@ -2852,7 +2852,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Grow_IResize_nint_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Grow(IResize%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Grow.cs/#L24">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Grow.cs/#L23">View Source</a>
   </span>
   <a id="System_TraitExtensions_Grow_" data-uid="System.TraitExtensions.Grow*"></a>
   <h4 id="System_TraitExtensions_Grow_IResize_nint_" data-uid="System.TraitExtensions.Grow(IResize,nint)">Grow(IResize, nint)</h4>
@@ -3508,7 +3508,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Insert&lt;TElement, TEnumerator&gt;(this IInsert&lt;Int32, TElement&gt; collection, Int32 index, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5813,19 +5813,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Load__1_IWrite___0__IRead___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Load%60%601(IWrite%7B%60%600%7D%2CIRead%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Load__1_IWrite___0__Int32_IRead___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Load%60%601(IWrite%7B%60%600%7D%2CInt32%2CIRead%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Load.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Load.cs/#L26">View Source</a>
   </span>
   <a id="System_TraitExtensions_Load_" data-uid="System.TraitExtensions.Load*"></a>
-  <h4 id="System_TraitExtensions_Load__1_IWrite___0__IRead___0__" data-uid="System.TraitExtensions.Load``1(IWrite{``0},IRead{``0})">Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, IRead&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Loads a byte into this object.</p>
+  <h4 id="System_TraitExtensions_Load__1_IWrite___0__Int32_IRead___0__" data-uid="System.TraitExtensions.Load``1(IWrite{``0},Int32,IRead{``0})">Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, Int32, IRead&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Loads <code data-dev-comment-type="paramref" class="paramref">amount</code> bytes into this object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Load&lt;TElement&gt;(this IWrite&lt;TElement&gt; collection, IRead&lt;TElement&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Load&lt;TElement&gt;(this IWrite&lt;TElement&gt; collection, Int32 amount, IRead&lt;TElement&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5841,6 +5841,12 @@
         <td><span class="xref">IWrite</span>&lt;TElement&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of elements to load.</p>
 </td>
       </tr>
       <tr>
@@ -5869,19 +5875,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Load__1_IWrite___0__nint_IRead___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Load%60%601(IWrite%7B%60%600%7D%2Cnint%2CIRead%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Load__1_IWrite___0__IRead___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Load%60%601(IWrite%7B%60%600%7D%2CIRead%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Load.cs/#L27">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Load.cs/#L12">View Source</a>
   </span>
   <a id="System_TraitExtensions_Load_" data-uid="System.TraitExtensions.Load*"></a>
-  <h4 id="System_TraitExtensions_Load__1_IWrite___0__nint_IRead___0__" data-uid="System.TraitExtensions.Load``1(IWrite{``0},nint,IRead{``0})">Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, nint, IRead&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Loads <code data-dev-comment-type="paramref" class="paramref">amount</code> bytes into this object.</p>
+  <h4 id="System_TraitExtensions_Load__1_IWrite___0__IRead___0__" data-uid="System.TraitExtensions.Load``1(IWrite{``0},IRead{``0})">Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, IRead&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Loads a byte into this object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Load&lt;TElement&gt;(this IWrite&lt;TElement&gt; collection, nint amount, IRead&lt;TElement&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Load&lt;TElement&gt;(this IWrite&lt;TElement&gt; collection, IRead&lt;TElement&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5897,12 +5903,6 @@
         <td><span class="xref">IWrite</span>&lt;TElement&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">nint</span></td>
-        <td><span class="parametername">amount</span></td>
-        <td><p>The amount of elements to load.</p>
 </td>
       </tr>
       <tr>
@@ -6002,7 +6002,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6080,7 +6080,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6756,7 +6756,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Postpend&lt;TElement, TEnumerator&gt;(this IPostpend&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7416,7 +7416,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Prepend&lt;TElement, TEnumerator&gt;(this IPrepend&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8076,7 +8076,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Push&lt;TElement, TEnumerator&gt;(this IPush&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8926,7 +8926,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Remove&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9427,7 +9427,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void RemoveFirst&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9928,7 +9928,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void RemoveLast&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10074,7 +10074,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement[] ToArray&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10641,7 +10641,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Write&lt;TElement, TEnumerator&gt;(this IWrite&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
