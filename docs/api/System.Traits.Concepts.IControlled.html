@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IControlled
    ">
-    <meta name="generator" content="docfx 2.58.0.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,15 +73,9 @@
   
   <h1 id="System_Traits_Concepts_IControlled" data-uid="System.Traits.Concepts.IControlled" class="text-break">Interface IControlled
   </h1>
-  <div class="markdown level0 summary"><p>Implements a very resiliant <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a> base that's easy and safe to extend.</p>
+  <div class="markdown level0 summary"><p>Implements a very resiliant <see cref="!:IDisposable"></see> base that's easy and safe to extend.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#system-idisposable-dispose">IDisposable.Dispose()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.Concepts.html">System.Traits.Concepts</a></h6>
   <h6><strong>Assembly</strong>: Philosoft.Concepts.dll</h6>
   <h5 id="System_Traits_Concepts_IControlled_syntax">Syntax</h5>
@@ -89,8 +83,8 @@
     <pre><code class="lang-csharp hljs">public interface IControlled : IDisposable</code></pre>
   </div>
   <h5 id="System_Traits_Concepts_IControlled_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This uses an extension of the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a> pattern, extending it even further in a safe way.</p>
-<p>What&apos;s wrong with the current <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a> pattern? Nothing really, as long as downstream is fully aware of how to override <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_Dispose_System_Boolean_">Dispose(Boolean)</a> and always overrides it the safe way. Will they? Who knows. The pattern implemented here simply de<span class="xref">virtual</span>ized the <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_Dispose_System_Boolean_">Dispose(Boolean)</a> implementation, implementing it with three <span class="xref">virtual</span> methods, <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_DisposeManaged">DisposeManaged()</a>, <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_DisposeUnmanaged">DisposeUnmanaged()</a>, <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_NullLargeFields">NullLargeFields()</a>. They are obvious in what should be done, and what is done gets put in the right place. Consider it accident proof <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>.</p>
+  <div class="markdown level0 remarks"><p>This uses an extension of the <see cref="!:IDisposable"></see> pattern, extending it even further in a safe way.</p>
+<p>What&apos;s wrong with the current <see cref="!:IDisposable"></see> pattern? Nothing really, as long as downstream is fully aware of how to override <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_Dispose_Boolean_">Dispose(Boolean)</a> and always overrides it the safe way. Will they? Who knows. The pattern implemented here simply de<span class="xref">virtual</span>ized the <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_Dispose_Boolean_">Dispose(Boolean)</a> implementation, implementing it with three <span class="xref">virtual</span> methods, <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_DisposeManaged">DisposeManaged()</a>, <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_DisposeUnmanaged">DisposeUnmanaged()</a>, <a class="xref" href="System.Traits.Concepts.IControlled.html#System_Traits_Concepts_IControlled_NullLargeFields">NullLargeFields()</a>. They are obvious in what should be done, and what is done gets put in the right place. Consider it accident proof <see cref="!:IDisposable"></see>.</p>
 <p>This is inspired by, but implemented very differently from, the Controlled type in Ada. Unlike the Ada implementation, this actually uses interfaces, which greatly solves many problems. However, like Ada, it uses a base class approach which internalizes many details, encapsulating the complexity of the pattern.</p>
 </div>
   <h3 id="properties">Properties
@@ -109,7 +103,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Disposed { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">Boolean Disposed { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -121,7 +115,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -130,19 +124,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IControlled_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IControlled.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IControlled_Dispose_Boolean_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IControlled.Dispose(Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/IControlled.cs/#L51">View Source</a>
   </span>
   <a id="System_Traits_Concepts_IControlled_Dispose_" data-uid="System.Traits.Concepts.IControlled.Dispose*"></a>
-  <h4 id="System_Traits_Concepts_IControlled_Dispose_System_Boolean_" data-uid="System.Traits.Concepts.IControlled.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <h4 id="System_Traits_Concepts_IControlled_Dispose_Boolean_" data-uid="System.Traits.Concepts.IControlled.Dispose(Boolean)">Dispose(Boolean)</h4>
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Dispose(bool disposing)</code></pre>
+    <pre><code class="lang-csharp hljs">void Dispose(Boolean disposing)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -155,7 +149,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">Boolean</span></td>
         <td><span class="parametername">disposing</span></td>
         <td><p>Whether managed resources should be disposed.</p>
 </td>
@@ -171,7 +165,7 @@
   </span>
   <a id="System_Traits_Concepts_IControlled_DisposeManaged_" data-uid="System.Traits.Concepts.IControlled.DisposeManaged*"></a>
   <h4 id="System_Traits_Concepts_IControlled_DisposeManaged" data-uid="System.Traits.Concepts.IControlled.DisposeManaged">DisposeManaged()</h4>
-  <div class="markdown level1 summary"><p>Dispose of managed resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#system-idisposable-dispose">Dispose()</a>.</p>
+  <div class="markdown level1 summary"><p>Dispose of managed resources. Part of <see cref="!:IDisposable.Dispose()"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -187,7 +181,7 @@
   </span>
   <a id="System_Traits_Concepts_IControlled_DisposeUnmanaged_" data-uid="System.Traits.Concepts.IControlled.DisposeUnmanaged*"></a>
   <h4 id="System_Traits_Concepts_IControlled_DisposeUnmanaged" data-uid="System.Traits.Concepts.IControlled.DisposeUnmanaged">DisposeUnmanaged()</h4>
-  <div class="markdown level1 summary"><p>Dispose of unmanaged resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#system-idisposable-dispose">Dispose()</a>.</p>
+  <div class="markdown level1 summary"><p>Dispose of unmanaged resources. Part of <see cref="!:IDisposable.Dispose()"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -203,7 +197,7 @@
   </span>
   <a id="System_Traits_Concepts_IControlled_NullLargeFields_" data-uid="System.Traits.Concepts.IControlled.NullLargeFields*"></a>
   <h4 id="System_Traits_Concepts_IControlled_NullLargeFields" data-uid="System.Traits.Concepts.IControlled.NullLargeFields">NullLargeFields()</h4>
-  <div class="markdown level1 summary"><p>Null out large fields. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#system-idisposable-dispose">Dispose()</a>.</p>
+  <div class="markdown level1 summary"><p>Null out large fields. Part of <see cref="!:IDisposable.Dispose()"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
