@@ -26,11 +26,31 @@ To use the framework, simply include the `System.Traits.Testing` namespace, and 
 
 `Assert` provides an extensible source for assertions. Originally, I thought providing some overloads of `Assert()` would be fine. Imagine Samuel Jackson saying: It was not fine. When writing an extender to support testing Roslyn Analyzers with a much friendlier approach, the problem became clear: we can't provide a good experience for extension methods on `Test` to handle new situations. Providing an `Assert` property and having extenders operate off the associated type works though. So, setting up an assertion looks like the follow:
 
+# [C#](#tab/cs)
+
 ~~~~csharp
 [Theory]
 public void TestMethod<T>(T actual, String expected) =>
 	Assert.That(actual);
 ~~~~
+
+# [VB](#tab/vb)
+
+~~~~visualbasic
+<Theory>
+Public Sub TestMethod(Of T)(actual As T, expected As String)
+	Assert.That(actual)
+End Sub
+~~~~
+
+# [F#](#tab/fs)
+~~~~fsharp
+[<Theory>]
+let testMethod<'t> (actual:'t) (expected:string) =
+	Assert.That(actual) |> ignore
+~~~~
+
+***
 
 From there you call assertions off the type returned by `.That(actual)`, which, thanks to IntelliSense and strong typing, only shows relevant assertions for whatever `T` is in your case. Of course, you don't have to write generic test methods, but this is a generic example. Let's do a simple assertion.
 
