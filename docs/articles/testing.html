@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Testing </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Testing ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="testing">Testing</h1>
+
+<p>Your testing framework generally isn't something you give too much thought to. But what if a framework you depend on ceases to be developed? Okay, obviously the community will step in. But more realistically and to the same point, what if a framework doesn't adopt the necessary features to test things introduced <em>several years ago</em>. It's happened numerous times, and leaves developers writing awkward unit tests to get around limitations in various frameworks. Alternatively, developers write massive amount of test extenders to kludge necessary behavior into a specific framework. Do you know where all these extenders are, and which frameworks they cover? Do you know which framework has which limitations? Do you know what requirements your product is going to have and will it fit in those limitations? <em><strong>Should it?</strong></em></p>
+<p>With the rise of test-first development strategies like TDD, it's become increasingly ridiculous for your testing framework to dictate anything about your code. And yet, because of the concessions we have to make for the frameworks, this is a very real phenomenon.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>From all this, we can piece together a few key issues driving the problem:</p>
+<ul>
+<li>Testing frameworks make assumptions about your code: either kludge or conform.</li>
+<li>Testing frameworks aren't extensible by design: testing new complex types requires learning new API's. Kludges like new static classes hamper discoverability.</li>
+<li>Extensions to testing frameworks are tied to test discoverers and test runners.</li>
+<li>Frameworks that claim to deal with these issues introduces drastically different styles of testing that require relearning your approach.</li>
+<li>Frameworks that claim to deal with these issues introduces extensions onto the instance being tested, polluting IntelliSense and convoluting what belongs to whom. Is a given method an extension method within the library, or one from the test framework? What happens if these names collide?</li>
+</ul>
+<p>Most of the problems stem from conflation of the test discoverer, test runner, and test framework. The discoverer and runner probably should be tied together. Does the framework?</p>
+<p>Furthermore, when trying to address these concerns I learned of another issue: some frameworks like <a href="https://xunit.net/">xUnit</a> make it difficult to test some of your code, because they provide their own implementations for things! What? No!</p>
+<h2 id="the-solution">The Solution</h2>
+<p>When digging through the test protocol .NET uses, it was clear nothing required the test framework to be tied to the test discoverer or test runner. I'm not 100% certain if the test discoverer and test runner have to be tied together, but it's fine if they are. So, if a test framework was developed with <em>no</em> dependency on the other two components, we can start to address these issues. <a href="https://www.nuget.org/packages?q=Philosoft.Testing"><code>Philosoft.Testing</code></a> does exactly this!</p>
+<p>To use the framework, simply include the <code>System.Traits.Testing</code> namespace, and derive your test class from <code>Tests</code>. Testing is done through fluent-style assertions, which enables the framework to provide you with <em>only</em> the relevant assertions for the type you're working with. You can easily see what the framework is doing, and don't have to mess around with the framework converting types behind your back. Now you have access to an <code>Assert</code> property within your test methods.</p>
+<p><code>Assert</code> provides an extensible source for assertions. Originally, I thought providing some overloads of <code>Assert()</code> would be fine. Imagine Samuel Jackson saying: It was not fine. When writing an extender to support testing Roslyn Analyzers with a much friendlier approach, the problem became clear: we can't provide a good experience for extension methods on <code>Test</code> to handle new situations. Providing an <code>Assert</code> property and having extenders operate off the associated type works though. So, setting up an assertion looks like the follow:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">[Theory]
+public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
+	Assert.That(actual);
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-visualbasic">&lt;Theory&gt;
+Public Sub TestMethod(Of T)(actual As T, expected As String)
+	Assert.That(actual)
+End Sub
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-fsharp">[&lt;Theory&gt;]
+let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
+	Assert.That(actual) |&gt; ignore
+</code></pre>
+</section>
+</div>
+
+<p>From there you call assertions off the type returned by <code>.That(actual)</code>, which, thanks to IntelliSense and strong typing, only shows relevant assertions for whatever <code>T</code> is in your case. Of course, you don't have to write generic test methods, but this is a generic example. Let's do a simple assertion.</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">[Theory]
+public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
+	Assert.That(actual.ToString()).Equals(expected);
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-visualbasic">&lt;Theory&gt;
+Public Sub TestMethod(Of T)(actual As T, expected As String)
+	Assert.That(actual.ToString()).Equals(expected)
+End Sub
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-fsharp">[&lt;Theory&gt;]
+let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
+	Assert.That(actual.ToString()).Equals(expected)
+</code></pre>
+</section>
+</div>
+
+<p>This is exactly identical to <code>Assert.Equal(expected, actual.ToString())</code> or similar in other frameworks. However, because of how easily extensible the framework is, we can actually write our intentions even more clear:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">[Theory]
+public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
+	Assert.That(actual).ToString(expected);
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-visualbasic">Public Sub TestMethod(Of T)(actual As T, expected As String)
+	Assert.That(actual).ToString(expected)
+End Sub
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-fsharp">[&lt;Theory&gt;]
+let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
+	Assert.That(actual).ToString(expected)
+</code></pre>
+</section>
+</div>
+
+<p>Now we can go even further. Let's say in our case, <code>T</code> is some collection which, when converted to a string has the same length as the collections element count: that is, there's no formatting. For example, let's say an incredibly inefficient BigNum which links together the digits. We could do full property testing easily, like follows:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">[Theory]
+public void TestMethod(BadBigNum actual, String expected) =&gt;
+	Assert.That(actual)
+		.Count(expected.Length)
+		.ToString(expected);
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-visualbasic">&lt;Theory&gt;
+Public Sub TestMethod(actual As BadBigNum, expected As String)
+	Assert.That(actual)
+		.Count(expected.Length)
+		.ToString(expected)
+End Sub
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-3_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-fsharp">[&lt;Theory&gt;]
+let testMethod (actual:BadBigNum) (expected:String) =
+	Assert.That(actual)
+		.Count(expected.Length))
+		.ToString(expected)
+</code></pre>
+<p>Yup. It's that easy.</p>
+<p>Keep in mind that while these examples use the <a href="https://xunit.net/">xUnit</a> attributes, you're free to use whatever you want. No changes need to occur other than conforming to how the test discoverer finds its tests. Iteration setup/cleanup, global setup/cleanup, state management, anything outside of how the assertions occur are handled by the runner.</p>
+<p>You may have worked with some test extensions in the past that need information about what test runner is being used. Maybe it was like the Roslyn Analyzers where you download a unique package to match your runner. Maybe you passed the runner in as a generic type parameter somewhere. You might be wondering where that's done here. It's not. At all. Does this use reflection to figure that out? Also no. Turns out, the runner doesn't care what the framework is doing.</p>
+<p>No seriously. The way the VSTest protocol works, the runners just sit there running the tests the discoverer found, listening for exceptions in those tests. It doesn't care <em>what</em> the exceptions are, just whether or not there are exceptions. This means that we can simply provide our own exceptions to use internally, with our own error formatters, and everything <em>just works</em>.</p>
+<p>So let's revisit the problem and see if the issues are adequately handled:</p>
+<blockquote>
+<p>Testing frameworks make assumptions about your code: either kludge or conform.</p>
+</blockquote>
+<p>If everything is extensible nothing needs to be assumed. The assertions possible are entirely dependent on what the type being tested has, and uses those features directly. Cases like <a href="https://xunit.net/">xUnit</a> using its own definition of equality won't happen. Extensions could be provided to do this, but are not the default action.</p>
+<blockquote>
+<p>Testing frameworks aren't extensible by design: testing new complex types requires learning new API's. Kludges like new static classes hamper discoverability.</p>
+</blockquote>
+<p>Everything is set up to handle extension methods. Other than a few key assertions which collide with methods in <a href="https://docs.microsoft.com/en-us/dotnet/api/system.object"><code>Object</code></a>, all functionality is implemented as extensions. The design was specifically chosen to have IntelliSense help as much as possible, while also looking as familiar as possible.</p>
+<blockquote>
+<p>Extensions to testing frameworks are tied to test discoverers and test runners.</p>
+</blockquote>
+<p>Nothing about the test framework is tied to test discovered or test runners in any capacity.</p>
+<blockquote>
+<p>Frameworks that claim to deal with these issues introduces drastically different styles of testing that require relearning your approach.</p>
+</blockquote>
+<p>Names of asserters were specifically chosen to look as similar as possible to those used in <a href="https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest">MSTest</a>, <a href="https://nunit.org/">NUnit</a>, and <a href="https://xunit.net/">xUnit</a>. Similarly, the names of the asserters are as close as possible to what the method or property being tested is called. Convenient extensions are helpful, but in no way required, like what you saw with <code>ToString()</code>. The entire framework uses an <code>Assert.That(actual).&lt;&lt;Assertion&gt;&gt;</code> style approach. There's no superfluous methods.</p>
+<blockquote>
+<p>Frameworks that claim to deal with these issues introduces extensions onto the instance being tested, polluting IntelliSense and convoluting what belongs to whom. Is a given method an extension method within the library, or one from the test framework? What happens if these names collide?</p>
+</blockquote>
+<p>This is precisely why the framework requires the actual instance being tested to be encapsulated by <code>Assert.That(actual)</code>. I understand why it's appealing in small examples and demos, but in large projects it becomes an absolute nightmare.</p>
+</section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/testing.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
