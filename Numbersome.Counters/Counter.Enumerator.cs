@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using System.Traits;
 using System.Traits.Concepts;
 
 namespace Numbersome {
@@ -37,25 +35,10 @@ namespace Numbersome {
 			public Int32 Count { get; private set; }
 
 			/// <inheritdoc/>
-			public void Dispose() { /* No-op */ }
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			public IEnumerator<(TElement Element, Int32 Count)> GetEnumerator() => this;
-
-			/// <inheritdoc/>
 			public Boolean MoveNext() => ++i < Count;
 
 			/// <inheritdoc/>
 			public void Reset() => i = -1;
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			public override String ToString() => throw new NotImplementedException();
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			public String ToString(Int32 amount) => throw new NotImplementedException();
 		}
 	}
 }

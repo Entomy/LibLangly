@@ -9,14 +9,7 @@ namespace System.Traits.Concepts {
 	/// <remarks>
 	/// This interface devirtualizes the enumerator, and simplifies numerous parts of the interface through well defined defaults.
 	/// </remarks>
-	public interface ISequence<out TElement, TEnumerator> : ICount where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
-		/// <summary>
-		/// Returns an enumerator that iterates through the sequence.
-		/// </summary>
-		/// <returns>An enumerator that can be used to iterate through the collection.</returns>
-		[return: NotNull]
-		TEnumerator GetEnumerator();
-
+	public interface ISequence<out TElement, TEnumerator> : ICount, IGetEnumerator<TEnumerator> where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 		/// <summary>
 		/// Returns a string that represents this sequence, with no more than <paramref name="amount"/> elements.
 		/// </summary>

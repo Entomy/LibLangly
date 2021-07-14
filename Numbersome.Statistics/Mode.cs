@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Traits;
 using System.Traits.Concepts;
 
 namespace Numbersome {
@@ -11,7 +12,7 @@ namespace Numbersome {
 		/// <param name="values">The values to find the mode of.</param>
 		/// <returns>The mode of the <paramref name="values"/>.</returns>
 		[return: MaybeNull]
-		public static TElement Mode<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> values) where TEnumerator : IEnumerator<TElement> {
+		public static TElement Mode<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			Counter<TElement> counter = new Counter<TElement>();
 			if (values is not null) {
 				foreach (TElement value in values) {

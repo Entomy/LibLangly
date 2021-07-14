@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits;
 using System.Traits.Concepts;
 
 namespace Numbersome {
@@ -10,7 +11,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<nint, TEnumerator> values) where TEnumerator : IEnumerator<nint> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<nint, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<nint>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
@@ -30,7 +31,7 @@ namespace Numbersome {
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<nuint, TEnumerator> values) where TEnumerator : IEnumerator<nuint> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<nuint, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<nuint>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
@@ -50,7 +51,7 @@ namespace Numbersome {
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
-		public static Single Min<TEnumerator>([AllowNull] this ISequence<SByte, TEnumerator> values) where TEnumerator : IEnumerator<SByte> {
+		public static Single Min<TEnumerator>([AllowNull] this ISequence<SByte, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<SByte>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Single.NaN;
 			}
@@ -69,7 +70,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Single Min<TEnumerator>([AllowNull] this ISequence<Byte, TEnumerator> values) where TEnumerator : IEnumerator<Byte> {
+		public static Single Min<TEnumerator>([AllowNull] this ISequence<Byte, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<Byte>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Single.NaN;
 			}
@@ -88,7 +89,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Single Min<TEnumerator>([AllowNull] this ISequence<Int16, TEnumerator> values) where TEnumerator : IEnumerator<Int16> {
+		public static Single Min<TEnumerator>([AllowNull] this ISequence<Int16, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<Int16>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Single.NaN;
 			}
@@ -108,7 +109,7 @@ namespace Numbersome {
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
-		public static Single Min<TEnumerator>([AllowNull] this ISequence<UInt16, TEnumerator> values) where TEnumerator : IEnumerator<UInt16> {
+		public static Single Min<TEnumerator>([AllowNull] this ISequence<UInt16, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<UInt16>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Single.NaN;
 			}
@@ -127,7 +128,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<Int32, TEnumerator> values) where TEnumerator : IEnumerator<Int32> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<Int32, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<Int32>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
@@ -147,7 +148,7 @@ namespace Numbersome {
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<UInt32, TEnumerator> values) where TEnumerator : IEnumerator<UInt32> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<UInt32, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<UInt32>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
@@ -166,7 +167,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<Int64, TEnumerator> values) where TEnumerator : IEnumerator<Int64> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<Int64, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<Int64>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
@@ -186,7 +187,7 @@ namespace Numbersome {
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<UInt64, TEnumerator> values) where TEnumerator : IEnumerator<UInt64> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<UInt64, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<UInt64>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
@@ -205,7 +206,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Single Min<TEnumerator>([AllowNull] this ISequence<Single, TEnumerator> values) where TEnumerator : IEnumerator<Single> {
+		public static Single Min<TEnumerator>([AllowNull] this ISequence<Single, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<Single>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Single.NaN;
 			}
@@ -224,7 +225,7 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the minimum of.</param>
 		/// <returns>The minimum of the <paramref name="values"/>.</returns>
-		public static Double Min<TEnumerator>([AllowNull] this ISequence<Double, TEnumerator> values) where TEnumerator : IEnumerator<Double> {
+		public static Double Min<TEnumerator>([AllowNull] this ISequence<Double, TEnumerator> values) where TEnumerator : notnull, ICount, ICurrent<Double>, IMoveNext, IReset {
 			if (values is null || values.Count == 0) {
 				return Double.NaN;
 			}
