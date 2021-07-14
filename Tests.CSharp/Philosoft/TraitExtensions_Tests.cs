@@ -11,7 +11,7 @@ namespace Philosoft {
 		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Add(list, values);
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -19,7 +19,7 @@ namespace Philosoft {
 		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Add(list, values.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -29,7 +29,7 @@ namespace Philosoft {
 			fixed (Int32* vals = values) {
 				TraitExtensions.Add(list, vals, values.Length);
 			}
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -37,7 +37,7 @@ namespace Philosoft {
 		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Add(list, (ReadOnlyMemory<Int32>)values.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -45,7 +45,7 @@ namespace Philosoft {
 		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Add(list, (ReadOnlySpan<Int32>)values.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -53,7 +53,7 @@ namespace Philosoft {
 		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Add(list, values.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -62,7 +62,7 @@ namespace Philosoft {
 		public void Fold(Int32 expected, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(elements);
 			Int32 actual = TraitExtensions.Fold(list, (a, b) => a + b, 0);
-			Assert(actual).Equals(expected);
+			Assert.That(actual).Equals(expected);
 		}
 
 		[Theory]
@@ -76,7 +76,7 @@ namespace Philosoft {
 		public void Insert_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Insert(list, index, elements);
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -90,7 +90,7 @@ namespace Philosoft {
 		public void Insert_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Insert(list, index, values.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -106,7 +106,7 @@ namespace Philosoft {
 			fixed (Int32* elmts = elements) {
 				TraitExtensions.Insert(list, index, elmts, elements.Length);
 			}
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -120,7 +120,7 @@ namespace Philosoft {
 		public void Insert_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Insert(list, index, (ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -134,7 +134,7 @@ namespace Philosoft {
 		public void Insert_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Insert(list, index, (ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -148,7 +148,7 @@ namespace Philosoft {
 		public void Insert_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Insert(list, index, elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -157,7 +157,7 @@ namespace Philosoft {
 		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
 		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] elements, Int32 element) {
 			SinglyLinkedList<Int32> list = new(elements);
-			Assert(TraitExtensions.Occurrences(list, element)).Equals(expected);
+			Assert.That(TraitExtensions.Occurrences(list, element)).Equals(expected);
 		}
 
 		[Theory]
@@ -168,7 +168,7 @@ namespace Philosoft {
 		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
 		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(elements);
-			Assert(TraitExtensions.Occurrences(list, (x) => x % 2 == 0)).Equals(expected);
+			Assert.That(TraitExtensions.Occurrences(list, (x) => x % 2 == 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -177,7 +177,7 @@ namespace Philosoft {
 		public void Postpend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Postpend(list, elements);
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -186,7 +186,7 @@ namespace Philosoft {
 		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Postpend(list, elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -197,7 +197,7 @@ namespace Philosoft {
 			fixed (Int32* elmts = elements) {
 				TraitExtensions.Postpend(list, elmts, elements.Length);
 			}
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -206,7 +206,7 @@ namespace Philosoft {
 		public void Postpend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Postpend(list, (ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -215,7 +215,7 @@ namespace Philosoft {
 		public void Postpend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Postpend(list, (ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -224,7 +224,7 @@ namespace Philosoft {
 		public void Postpend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Postpend(list, elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -233,7 +233,7 @@ namespace Philosoft {
 		public void Prepend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Prepend(list, elements);
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -242,7 +242,7 @@ namespace Philosoft {
 		public void Prepend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Prepend(list, elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -253,7 +253,7 @@ namespace Philosoft {
 			fixed (Int32* elmts = elements) {
 				TraitExtensions.Prepend(list, elmts, elements.Length);
 			}
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -262,7 +262,7 @@ namespace Philosoft {
 		public void Prepend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Prepend(list, (ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -271,7 +271,7 @@ namespace Philosoft {
 		public void Prepend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Prepend(list, (ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -280,7 +280,7 @@ namespace Philosoft {
 		public void Prepend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Prepend(list, elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -289,7 +289,7 @@ namespace Philosoft {
 		public void Push_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Push(list, elements);
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -298,7 +298,7 @@ namespace Philosoft {
 		public void Push_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Push(list, elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -307,7 +307,7 @@ namespace Philosoft {
 		public void Push_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Push(list, (ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -318,7 +318,7 @@ namespace Philosoft {
 			fixed (Int32* elmts = elements) {
 				TraitExtensions.Push(list, elmts, elements.Length);
 			}
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -327,7 +327,7 @@ namespace Philosoft {
 		public void Push_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Push(list, elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -336,7 +336,7 @@ namespace Philosoft {
 		public void Push_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(initial);
 			TraitExtensions.Push(list, (ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert(list).Equals(expected);
+			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
@@ -344,7 +344,7 @@ namespace Philosoft {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 		public void ToArray([DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = new(elements);
-			Assert(TraitExtensions.ToArray(list)).Equals(elements);
+			Assert.That(TraitExtensions.ToArray(list)).Equals(elements);
 		}
 	}
 }

@@ -26,24 +26,36 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			// Save the starting position for backtracking
 			Int32 start = location;
+			// Consume the start of the range
 			From.Consume(source, ref location, out exception, trace);
+			// If that failed, the range can't be present here, so abort
 			if (exception is not null) return;
+			// Try parsing the end of the range
 			To.Consume(source, ref location, out exception, trace);
+			// While we don't have the end, continue trying to find it
 			while (exception is not null) {
+				// If we're at the end of the source, break out
 				if (location == source.Length) break;
 				// Check for the escape before checking for the end of the range
 				if (Escape.IsConsumeHeader(source, location)) {
+					// It might be here, so try actually consuming the escape
 					Escape.Consume(source, ref location, out exception, trace);
 					exception = NoMatch; // We need an error to continue the loop, and this is the current error
 				}
+				// If we're at the end of the source, break out
 				if (location == source.Length) break;
+				// Check for the end
 				if (To.IsConsumeHeader(source, location)) {
+					// It might be here, so try actually consuming the end
 					To.Consume(source, ref location, out exception, trace);
 				} else {
+					// Nothing matched, so advance to the next position
 					location++;
 				}
 			}
+			// A partial error occured, so backtrack
 			if (exception is not null) {
 				location = start;
 			}

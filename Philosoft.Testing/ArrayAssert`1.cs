@@ -6,8 +6,6 @@ namespace System.Traits.Testing {
 	/// <summary>
 	/// Represents a <see cref="Tests"/> asserter.
 	/// </summary>
-	[ExcludeFromCodeCoverage]
-	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "This isn't really possible given what this class is, and how it's meant to be used. What this analyzer is trying to catch isn't an issue, anyways.")]
 	public readonly ref struct ArrayAssert<T> {
 		/// <summary>
 		/// Initializes a new <see cref="ArrayAssert{T}"/>.
@@ -52,9 +50,25 @@ namespace System.Traits.Testing {
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.
 		/// </summary>
+		/// <param name="expected">The expected <see cref="Array"/>.</param>
+		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
+		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
+		public ArrayAssert<T> Equals([AllowNull] T[] expected, [DisallowNull] String additionalMessage) => Equals(expected.AsSpan(), additionalMessage);
+
+		/// <summary>
+		/// Asserts that the instance equals the <paramref name="expected"/> span.
+		/// </summary>
 		/// <param name="expected">The expected <see cref="Memory{T}"/>.</param>
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
 		public ArrayAssert<T> Equals(Memory<T> expected) => Equals(expected.Span);
+
+		/// <summary>
+		/// Asserts that the instance equals the <paramref name="expected"/> span.
+		/// </summary>
+		/// <param name="expected">The expected <see cref="Memory{T}"/>.</param>
+		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
+		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
+		public ArrayAssert<T> Equals(Memory<T> expected, [DisallowNull] String additionalMessage) => Equals(expected.Span, additionalMessage);
 
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.
@@ -66,9 +80,25 @@ namespace System.Traits.Testing {
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.
 		/// </summary>
+		/// <param name="expected">The expected <see cref="ReadOnlyMemory{T}"/>.</param>
+		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
+		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
+		public ArrayAssert<T> Equals(ReadOnlyMemory<T> expected, [DisallowNull] String additionalMessage) => Equals(expected.Span, additionalMessage);
+
+		/// <summary>
+		/// Asserts that the instance equals the <paramref name="expected"/> span.
+		/// </summary>
 		/// <param name="expected">The expected <see cref="Span{T}"/>.</param>
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
 		public ArrayAssert<T> Equals(Span<T> expected) => Equals((ReadOnlySpan<T>)expected);
+
+		/// <summary>
+		/// Asserts that the instance equals the <paramref name="expected"/> span.
+		/// </summary>
+		/// <param name="expected">The expected <see cref="Span{T}"/>.</param>
+		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
+		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
+		public ArrayAssert<T> Equals(Span<T> expected, [DisallowNull] String additionalMessage) => Equals((ReadOnlySpan<T>)expected, additionalMessage);
 
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.
@@ -83,6 +113,22 @@ namespace System.Traits.Testing {
 			return this;
 		Throw:
 			throw new AssertException($"The instance did not equal what was expected.\nActual: {Print(5, Actual)}\nExpected: {Print(5, expected)}");
+		}
+
+		/// <summary>
+		/// Asserts that the instance equals the <paramref name="expected"/> span.
+		/// </summary>
+		/// <param name="expected">The expected <see cref="ReadOnlySpan{T}"/>.</param>
+		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
+		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
+		public ArrayAssert<T> Equals(ReadOnlySpan<T> expected, [DisallowNull] String additionalMessage) {
+			if (Actual.Length != expected.Length) goto Throw;
+			for (Int32 i = 0; i < Actual.Length; i++) {
+				if (!Object.Equals(Actual[i], expected[i])) goto Throw;
+			}
+			return this;
+		Throw:
+			throw new AssertException($"The instance did not equal what was expected.\nActual: {Print(5, Actual)}\nExpected: {Print(5, expected)}\n{additionalMessage}");
 		}
 
 		private String Print(Int32 amount, ReadOnlySpan<T> span) {

@@ -3,10 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace System.Traits.Testing {
 	/// <summary>
-	/// Represents a <see cref="Tests"/> asserter.
+	/// Represents a <see cref="Tests"/> configurer.
 	/// </summary>
-	/// <remarks>Unlike others, this asserter only exists for <c>That(actual)</c> style extension methods.</remarks>
-	public readonly ref struct Assert {
+	public readonly ref struct Config {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		public override Boolean Equals([AllowNull] Object obj) => throw new NotSupportedException();

@@ -26,4 +26,19 @@
 	  <ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'" >
+		<ProjectReference Include="..\Philosoft.BehavioralAttributes.Analyzers\Philosoft.BehavioralAttributes.Analyzers.csproj"/>
+		<ProjectReference Include="..\Philosoft.Testing.Analyzers\Philosoft.Testing.Analyzers.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'" >
+		<ProjectReference Include="..\Philosoft.BehavioralAttributes.Analyzers\Philosoft.BehavioralAttributes.Analyzers.csproj"/>
+		<ProjectReference Include="..\Philosoft.Testing.Analyzers\Philosoft.Testing.Analyzers.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net5.0'" >
+		<ProjectReference Include="..\Philosoft.BehavioralAttributes.Analyzers\Philosoft.BehavioralAttributes.Analyzers.csproj"/>
+		<ProjectReference Include="..\Philosoft.Testing.Analyzers\Philosoft.Testing.Analyzers.csproj" />
+	</ItemGroup>
+
 </Project>
