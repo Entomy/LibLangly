@@ -2793,7 +2793,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Byte___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BByte%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L73">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Byte___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{Byte,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;Byte, TEnumerator&gt;)</h4>
@@ -2803,7 +2803,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Product&lt;TEnumerator&gt;(this ISequence&lt;Byte, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Byte&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Byte&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2860,7 +2860,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Double___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BDouble%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L227">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L228">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Double___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{Double,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;Double, TEnumerator&gt;)</h4>
@@ -2870,7 +2870,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;Double, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Double&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Double&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2927,7 +2927,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Int16___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BInt16%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L91">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L92">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Int16___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{Int16,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;Int16, TEnumerator&gt;)</h4>
@@ -2937,7 +2937,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Product&lt;TEnumerator&gt;(this ISequence&lt;Int16, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Int16&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Int16&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2994,7 +2994,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Int32___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BInt32%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L130">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L131">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Int32___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{Int32,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;Int32, TEnumerator&gt;)</h4>
@@ -3004,7 +3004,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;Int32, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Int32&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Int32&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3061,7 +3061,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Int64___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BInt64%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L169">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L170">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Int64___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{Int64,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;Int64, TEnumerator&gt;)</h4>
@@ -3071,7 +3071,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;Int64, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Int64&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Int64&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3128,7 +3128,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_nint___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7Bnint%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L14">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_nint___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{nint,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;nint, TEnumerator&gt;)</h4>
@@ -3138,7 +3138,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;nint&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3195,7 +3195,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_nuint___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7Bnuint%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L33">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_nuint___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{nuint,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;nuint, TEnumerator&gt;)</h4>
@@ -3205,7 +3205,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;nuint&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3262,7 +3262,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_SByte___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BSByte%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L52">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L53">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_SByte___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{SByte,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;SByte, TEnumerator&gt;)</h4>
@@ -3272,7 +3272,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Product&lt;TEnumerator&gt;(this ISequence&lt;SByte, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;SByte&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;SByte&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3329,7 +3329,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Single___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BSingle%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L208">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L209">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_Single___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{Single,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;Single, TEnumerator&gt;)</h4>
@@ -3339,7 +3339,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Product&lt;TEnumerator&gt;(this ISequence&lt;Single, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Single&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Single&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3396,7 +3396,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_UInt16___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BUInt16%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L110">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L111">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_UInt16___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{UInt16,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;UInt16, TEnumerator&gt;)</h4>
@@ -3406,7 +3406,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Product&lt;TEnumerator&gt;(this ISequence&lt;UInt16, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;UInt16&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;UInt16&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3463,7 +3463,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_UInt32___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BUInt32%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L149">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L150">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_UInt32___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{UInt32,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;UInt32, TEnumerator&gt;)</h4>
@@ -3473,7 +3473,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;UInt32, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;UInt32&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;UInt32&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3530,7 +3530,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_UInt64___0__.md&amp;value=---%0Auid%3A%20Numbersome.ArithmeticExtensions.Product%60%601(System.Traits.Concepts.ISequence%7BUInt64%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L188">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Arithmetic/Product.cs/#L189">View Source</a>
   </span>
   <a id="Numbersome_ArithmeticExtensions_Product_" data-uid="Numbersome.ArithmeticExtensions.Product*"></a>
   <h4 id="Numbersome_ArithmeticExtensions_Product__1_System_Traits_Concepts_ISequence_UInt64___0__" data-uid="Numbersome.ArithmeticExtensions.Product``1(System.Traits.Concepts.ISequence{UInt64,``0})">Product&lt;TEnumerator&gt;(ISequence&lt;UInt64, TEnumerator&gt;)</h4>
@@ -3540,7 +3540,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Product&lt;TEnumerator&gt;(this ISequence&lt;UInt64, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;UInt64&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;UInt64&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4858,7 +4858,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Sum&lt;TEnumerator&gt;(this ISequence&lt;Byte, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Byte&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Byte&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4925,7 +4925,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;Double, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Double&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Double&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4992,7 +4992,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Sum&lt;TEnumerator&gt;(this ISequence&lt;Int16, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Int16&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Int16&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5059,7 +5059,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;Int32, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Int32&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Int32&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5126,7 +5126,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;Int64, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Int64&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Int64&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5193,7 +5193,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;nint&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5260,7 +5260,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;nuint&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5327,7 +5327,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Sum&lt;TEnumerator&gt;(this ISequence&lt;SByte, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;SByte&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;SByte&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5394,7 +5394,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Sum&lt;TEnumerator&gt;(this ISequence&lt;Single, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;Single&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;Single&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5461,7 +5461,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Single Sum&lt;TEnumerator&gt;(this ISequence&lt;UInt16, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;UInt16&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;UInt16&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5528,7 +5528,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;UInt32, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;UInt32&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;UInt32&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5595,7 +5595,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;UInt64, TEnumerator&gt; values)
-    where TEnumerator : IEnumerator&lt;UInt64&gt;</code></pre>
+    where TEnumerator : ICount, ICurrent&lt;UInt64&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
