@@ -152,6 +152,8 @@ namespace Collectathon.Lists {
 				Prepend(element);
 			} else if (index == Count) {
 				Postpend(element);
+			} else if (Head is null || Tail is null) {
+				Add(element);
 			} else if (Count > 0) {
 				SinglyLinkedListNode<TElement> P = null!;
 				SinglyLinkedListNode<TElement>? N = Head;
@@ -192,7 +194,7 @@ namespace Collectathon.Lists {
 		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] TElement element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
 			} else {
@@ -206,7 +208,7 @@ namespace Collectathon.Lists {
 		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend([AllowNull] TElement element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
 				Head = new SinglyLinkedListNode<TElement>(element, next: null);

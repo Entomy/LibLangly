@@ -577,6 +577,8 @@ namespace Stringier {
 				Prepend(element);
 			} else if (index == Count) {
 				Postpend(element);
+			} else if (Head is null || Tail is null) {
+				Add(element);
 			} else {
 				Node N = Head;
 				Int32 i = 0;
@@ -645,6 +647,8 @@ namespace Stringier {
 				Prepend(element);
 			} else if (index == Count) {
 				Postpend(element);
+			} else if (Head is null || Tail is null) {
+				Add(element);
 			} else {
 				Node N = Head;
 				Int32 i = 0;
@@ -713,6 +717,8 @@ namespace Stringier {
 				Prepend(element);
 			} else if (index == Count) {
 				Postpend(element);
+			} else if (Head is null || Tail is null) {
+				Add(element);
 			} else {
 				Node N = Head;
 				Int32 i = 0;
@@ -777,7 +783,7 @@ namespace Stringier {
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(Char element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
 			} else {
@@ -791,7 +797,7 @@ namespace Stringier {
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] params Char[] element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
 			} else {
@@ -805,7 +811,7 @@ namespace Stringier {
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] String element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
 			} else {
@@ -819,7 +825,7 @@ namespace Stringier {
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(Char element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
 				Head = new CharNode(element, next: null, previous: null);
@@ -832,7 +838,7 @@ namespace Stringier {
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend([AllowNull] params Char[] element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
 				Head = new ArrayNode(element, next: null, previous: null);
@@ -845,7 +851,7 @@ namespace Stringier {
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend([AllowNull] String element) {
-			if (Count > 0) {
+			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
 				Head = new StringNode(element, next: null, previous: null);
