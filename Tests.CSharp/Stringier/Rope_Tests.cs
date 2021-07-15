@@ -206,7 +206,8 @@ namespace Stringier {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Postpend_Memory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = new(initial);
-			Assert.That(rope + elements.AsMemory()).Equals(expected);
+			rope.Postpend(elements.AsMemory());
+			Assert.That(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -225,7 +226,8 @@ namespace Stringier {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Postpend_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = new(initial);
-			Assert.That(rope + (ReadOnlyMemory<Char>)elements.AsMemory()).Equals(expected);
+			rope.Postpend((ReadOnlyMemory<Char>)elements.AsMemory());
+			Assert.That(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -266,7 +268,8 @@ namespace Stringier {
 		[InlineData(new Char[] { 'c', 'd', 'e', 'a', 'b' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Prepend_Memory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = new(initial);
-			Assert.That(elements.AsMemory() + rope).Equals(expected);
+			rope.Prepend(elements.AsMemory());
+			Assert.That(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -285,7 +288,8 @@ namespace Stringier {
 		[InlineData(new Char[] { 'c', 'd', 'e', 'a', 'b' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Prepend_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = new(initial);
-			Assert.That((ReadOnlyMemory<Char>)elements.AsMemory() + rope).Equals(expected);
+			rope.Prepend((ReadOnlyMemory<Char>)elements.AsMemory());
+			Assert.That(rope).Equals(expected);
 		}
 
 		[Theory]

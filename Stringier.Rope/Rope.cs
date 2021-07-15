@@ -13,17 +13,17 @@ namespace Stringier {
 	/// </summary>
 	[DebuggerDisplay("{ToString(),nq}")]
 	public sealed partial class Rope :
-		IAddMemory<Char>, IAdd<String>,
+		IAdd<Char>, IAdd<String>, IAdd<Char[]>,
 		IClear,
 		IEquatable<Rope>, IEquatable<Char>,
 #if NETCOREAPP3_0_OR_GREATER
 		IEquatable<Rune>,
 #endif
-		IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
+		IEquatable<String>, IEquatable<Char[]>,
 		IIndex<Int32, Char>,
-		IInsertMemory<Int32, Char>, IInsert<Int32, String>,
-		IPostpendMemory<Char>, IPostpend<String>,
-		IPrependMemory<Char>, IPrepend<String>,
+		IInsert<Int32, Char>, IInsert<Int32, String>, IInsert<Int32, Char[]>,
+		IPostpend<Char>, IPostpend<String>, IPostpend<Char[]>,
+		IPrepend<Char>, IPrepend<String>, IPrepend<Char[]>,
 		IRemove<Char>,
 		IReplace<Char>,
 		ISequence<Char, Rope.Enumerator> {
@@ -64,20 +64,6 @@ namespace Stringier {
 		/// <param name="elements">The initial elements of the rope.</param>
 		[LinksNewNode]
 		public Rope([DisallowNull] params Char[] elements) : this() => Add(elements);
-
-		/// <summary>
-		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
-		/// </summary>
-		/// <param name="elements">The initial elements of the rope.</param>
-		[LinksNewNode]
-		public Rope(Memory<Char> elements) : this() => Add(elements);
-
-		/// <summary>
-		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
-		/// </summary>
-		/// <param name="elements">The initial elements of the rope.</param>
-		[LinksNewNode]
-		public Rope(ReadOnlyMemory<Char> elements) : this() => Add(elements);
 
 		/// <summary>
 		/// Gets the number of <see cref="Char"/> contained in this collection.
@@ -152,38 +138,6 @@ namespace Stringier {
 		/// <param name="right">The righthand text.</param>
 		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
 		public static Boolean operator !=([AllowNull] Char[] left, [AllowNull] Rope right) => !right?.Equals(left) ?? (left is not null && left.Length > 0);
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=([AllowNull] Rope left, Memory<Char> right) => !(left?.Equals(right) ?? right.IsEmpty);
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=(Memory<Char> left, [AllowNull] Rope right) => !(right?.Equals(left) ?? left.IsEmpty);
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=([AllowNull] Rope left, ReadOnlyMemory<Char> right) => !(left?.Equals(right) ?? right.IsEmpty);
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=(ReadOnlyMemory<Char> left, [AllowNull] Rope right) => !(right?.Equals(left) ?? left.IsEmpty);
 
 		/// <summary>
 		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
@@ -280,40 +234,6 @@ namespace Stringier {
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
 		[LinksNewNode]
 		[return: NotNull]
-		public static Rope operator +([AllowNull] Rope left, Memory<Char> right) {
-			if (left is not null) {
-				left.Postpend(right);
-				return left;
-			} else {
-				return new(right);
-			}
-		}
-
-		/// <summary>
-		/// Concats the two texts.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
-		[LinksNewNode]
-		[return: NotNull]
-		public static Rope operator +([AllowNull] Rope left, ReadOnlyMemory<Char> right) {
-			if (left is not null) {
-				left.Postpend(right);
-				return left;
-			} else {
-				return new(right);
-			}
-		}
-
-		/// <summary>
-		/// Concats the two texts.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
-		[LinksNewNode]
-		[return: NotNull]
 		public static Rope operator +(Char left, [AllowNull] Rope right) {
 			if (right is not null) {
 				right.Prepend(left);
@@ -358,40 +278,6 @@ namespace Stringier {
 				return new(left);
 			} else {
 				return null;
-			}
-		}
-
-		/// <summary>
-		/// Concats the two texts.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
-		[LinksNewNode]
-		[return: NotNull]
-		public static Rope operator +(Memory<Char> left, [AllowNull] Rope right) {
-			if (right is not null) {
-				right.Prepend(left);
-				return right;
-			} else {
-				return new(left);
-			}
-		}
-
-		/// <summary>
-		/// Concats the two texts.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
-		[LinksNewNode]
-		[return: NotNull]
-		public static Rope operator +(ReadOnlyMemory<Char> left, [AllowNull] Rope right) {
-			if (right is not null) {
-				right.Prepend(left);
-				return right;
-			} else {
-				return new(left);
 			}
 		}
 
@@ -441,38 +327,6 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==([AllowNull] Rope left, Memory<Char> right) => left?.Equals(right) ?? right.IsEmpty;
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==(Memory<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==([AllowNull] Rope left, ReadOnlyMemory<Char> right) => left?.Equals(right) ?? right.IsEmpty;
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==(ReadOnlyMemory<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
-
-		/// <summary>
-		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
-		/// </summary>
-		/// <param name="left">The lefthand text.</param>
-		/// <param name="right">The righthand text.</param>
-		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
 		public static Boolean operator ==([AllowNull] Rope left, Span<Char> right) => left?.Equals(right) ?? right.IsEmpty;
 
 		/// <summary>
@@ -512,21 +366,6 @@ namespace Stringier {
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Add(ArraySegment<Char> elements) => Postpend(elements);
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Add(Memory<Char> elements) => Postpend(elements);
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Add(ReadOnlyMemory<Char> elements) => Postpend(elements);
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add([AllowNull] String element) => Postpend(element);
 
 		/// <inheritdoc/>
@@ -547,10 +386,6 @@ namespace Stringier {
 				return Equals(other);
 			case Char[] other:
 				return Equals(other);
-			case Memory<Char> other:
-				return Equals(other);
-			case ReadOnlyMemory<Char> other:
-				return Equals(other);
 			default:
 				return false;
 			}
@@ -570,10 +405,6 @@ namespace Stringier {
 			case String other:
 				return Equals(other, casing);
 			case Char[] other:
-				return Equals(other, casing);
-			case Memory<Char> other:
-				return Equals(other, casing);
-			case ReadOnlyMemory<Char> other:
 				return Equals(other, casing);
 			default:
 				return false;
@@ -649,38 +480,6 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public Boolean Equals([AllowNull] Char[] other, Case casing) => Equals(other.AsSpan(), casing);
-
-		/// <summary>
-		/// Determines whether the specified object is equal to the current object.
-		/// </summary>
-		/// <param name="other">The object to compare with the current object.</param>
-		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(Memory<Char> other) => Equals(other.Span);
-
-		/// <summary>
-		/// Determines whether the specified object is equal to the current object.
-		/// </summary>
-		/// <param name="other">The object to compare with the current object.</param>
-		/// <param name="casing">The casing of the comparison.</param>
-		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
-		public Boolean Equals(Memory<Char> other, Case casing) => Equals(other.Span, casing);
-
-		/// <summary>
-		/// Determines whether the specified object is equal to the current object.
-		/// </summary>
-		/// <param name="other">The object to compare with the current object.</param>
-		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(ReadOnlyMemory<Char> other) => Equals(other.Span);
-
-		/// <summary>
-		/// Determines whether the specified object is equal to the current object.
-		/// </summary>
-		/// <param name="other">The object to compare with the current object.</param>
-		/// <param name="casing">The casing of the comparison.</param>
-		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
-		public Boolean Equals(ReadOnlyMemory<Char> other, Case casing) => Equals(other.Span, casing);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
@@ -839,33 +638,18 @@ namespace Stringier {
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, ArraySegment<Char> elements) => Insert(index, elements.AsMemory());
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, [AllowNull] params Char[] elements) => Insert(index, elements.AsMemory());
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, Memory<Char> elements) => Insert(index, (ReadOnlyMemory<Char>)elements);
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, ReadOnlyMemory<Char> elements) {
+		public void Insert(Int32 index, [AllowNull] params Char[] element) {
 			if (index == 0) {
-				Prepend(elements);
+				Prepend(element);
 			} else if (index == Count) {
-				Postpend(elements);
+				Postpend(element);
 			} else {
 				Node N = Head;
 				Int32 i = 0;
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, elements);
+					(Node head, Node tail) = N.Insert(index - i, element);
 					// Replace this node with the chain section
 					Head = head;
 					Tail = tail;
@@ -875,7 +659,7 @@ namespace Stringier {
 					// Get the surrounding nodes
 					Node next = N.Next;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, elements);
+					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
 					tail.Next = next;
 					// Replace this node with the chain section
@@ -890,7 +674,7 @@ namespace Stringier {
 					// Get the surrounding nodes
 					Node prev = N.Previous;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, elements);
+					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					// Replace this node with the chain section
@@ -906,7 +690,7 @@ namespace Stringier {
 					Node prev = N.Previous;
 					Node next = N.Next;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, elements);
+					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					tail.Next = next;
@@ -915,14 +699,77 @@ namespace Stringier {
 					next.Previous = tail;
 				}
 				// Increment the counter
-				Count += elements.Length;
+				Count += element.Length;
 			}
 		}
 
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, [AllowNull] String element) => Insert(index, element.AsMemory());
+		public void Insert(Int32 index, [AllowNull] String element) {
+			if (index == 0) {
+				Prepend(element);
+			} else if (index == Count) {
+				Postpend(element);
+			} else {
+				Node N = Head;
+				Int32 i = 0;
+				// Will the element be inserted into the only node in the chain?
+				if (ReferenceEquals(Head, Tail)) {
+					// Insert the element into the node, getting back a chain section
+					(Node head, Node tail) = N.Insert(index - i, element);
+					// Replace this node with the chain section
+					Head = head;
+					Tail = tail;
+				} else
+				// Will the element be inserted into the head node?
+				if (index <= Head.Count) {
+					// Get the surrounding nodes
+					Node next = N.Next;
+					// Insert the element into the node, getting back a chain section
+					(Node head, Node tail) = N.Insert(index - i, element);
+					// Link the chain section into the chain
+					tail.Next = next;
+					// Replace this node with the chain section
+					Head = head;
+					next.Previous = tail;
+				} else
+				// Will the element be inserted into the tail node?
+				if (index > Count - Tail.Count) {
+					// Set to the tail node
+					N = Tail;
+					i = Count - Tail.Count;
+					// Get the surrounding nodes
+					Node prev = N.Previous;
+					// Insert the element into the node, getting back a chain section
+					(Node head, Node tail) = N.Insert(index - i, element);
+					// Link the chain section into the chain
+					head.Previous = prev;
+					// Replace this node with the chain section
+					Tail = tail;
+					prev.Next = head;
+				} else {
+					// Seeks to the node the element will be inserted in, and calculate the index offset (i)
+					while (N is not null && index > i + N.Count) {
+						i += N.Count;
+						N = N.Next;
+					}
+					// Get the surrounding nodes
+					Node prev = N.Previous;
+					Node next = N.Next;
+					// Insert the element into the node, getting back a chain section
+					(Node head, Node tail) = N.Insert(index - i, element);
+					// Link the chain section into the chain
+					head.Previous = prev;
+					tail.Next = next;
+					// Replace this node with the chain section
+					prev.Next = head;
+					next.Previous = tail;
+				}
+				// Increment the counter
+				Count += element.Length;
+			}
+		}
 
 		/// <inheritdoc/>
 		[LinksNewNode]
@@ -941,36 +788,30 @@ namespace Stringier {
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend([AllowNull] params Char[] elements) => Postpend(elements.AsMemory());
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend(ArraySegment<Char> elements) => Postpend(elements.AsMemory());
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend(Memory<Char> elements) => Postpend((ReadOnlyMemory<Char>)elements);
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend(ReadOnlyMemory<Char> elements) {
+		public void Postpend([AllowNull] params Char[] element) {
 			if (Count > 0) {
-				Tail!.Next = Tail!.Postpend(elements);
+				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
 			} else {
-				Head = new MemoryNode(elements, next: null, previous: null);
+				Head = new ArrayNode(element, next: null, previous: null);
 				Tail = Head;
 			}
-			Count += elements.Length;
+			Count += element.Length;
 		}
 
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend([AllowNull] String element) => Postpend(element.AsMemory());
+		public void Postpend([AllowNull] String element) {
+			if (Count > 0) {
+				Tail!.Next = Tail!.Postpend(element);
+				Tail = Tail.Next;
+			} else {
+				Head = new StringNode(element, next: null, previous: null);
+				Tail = Head;
+			}
+			Count += element.Length;
+		}
 
 		/// <inheritdoc/>
 		[LinksNewNode]
@@ -988,35 +829,28 @@ namespace Stringier {
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend([AllowNull] params Char[] elements) => Prepend(elements.AsMemory());
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend(ArraySegment<Char> elements) => Prepend(elements.AsMemory());
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend(Memory<Char> elements) => Prepend((ReadOnlyMemory<Char>)elements);
-
-		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend(ReadOnlyMemory<Char> elements) {
+		public void Prepend([AllowNull] params Char[] element) {
 			if (Count > 0) {
-				Head = Head!.Prepend(elements);
+				Head = Head!.Prepend(element);
 			} else {
-				Head = new MemoryNode(elements, next: null, previous: null);
+				Head = new ArrayNode(element, next: null, previous: null);
 				Tail = Head;
 			}
-			Count += elements.Length;
+			Count += element.Length;
 		}
 
 		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend([AllowNull] String element) => Prepend(element.AsMemory());
+		public void Prepend([AllowNull] String element) {
+			if (Count > 0) {
+				Head = Head!.Prepend(element);
+			} else {
+				Head = new StringNode(element, next: null, previous: null);
+				Tail = Head;
+			}
+			Count += element.Length;
+		}
 
 		/// <inheritdoc/>
 		[MaybeUnlinksNode]

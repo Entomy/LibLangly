@@ -9,35 +9,7 @@ namespace System.Traits.Concepts {
 		/// <param name="collection">The elements in this collection.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static TElement[] Grow<TElement>([AllowNull] TElement[] collection) => GrowKernel<TElement>(collection.AsSpan());
-
-		/// <summary>
-		/// Grows this collection by a computed factor.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Memory<TElement> Grow<TElement>(Memory<TElement> collection) => GrowKernel<TElement>(collection.Span);
-
-		/// <summary>
-		/// Grows this collection by a computed factor.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static ReadOnlyMemory<TElement> Grow<TElement>(ReadOnlyMemory<TElement> collection) => GrowKernel<TElement>(collection.Span);
-
-		/// <summary>
-		/// Grows this collection by a computed factor.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Span<TElement> Grow<TElement>(Span<TElement> collection) => GrowKernel<TElement>(collection);
-
-		/// <summary>
-		/// Grows this collection by a computed factor.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static ReadOnlySpan<TElement> Grow<TElement>(ReadOnlySpan<TElement> collection) => GrowKernel<TElement>(collection);
+		public static TElement[] Grow<TElement>([DisallowNull] TElement[] collection) => Resize(collection, (Int32)(((collection?.Length ?? 0) + 4) * φ));
 
 		/// <summary>
 		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
@@ -46,53 +18,13 @@ namespace System.Traits.Concepts {
 		/// <param name="minimum">The minimum allowed size.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static TElement[] Grow<TElement>([AllowNull] TElement[] collection, Int32 minimum) => GrowKernel<TElement>(collection.AsSpan(), minimum);
-
-		/// <summary>
-		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		/// <param name="minimum">The minimum allowed size.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Memory<TElement> Grow<TElement>(Memory<TElement> collection, Int32 minimum) => GrowKernel<TElement>(collection.Span, minimum);
-
-		/// <summary>
-		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		/// <param name="minimum">The minimum allowed size.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static ReadOnlyMemory<TElement> Grow<TElement>(ReadOnlyMemory<TElement> collection, Int32 minimum) => GrowKernel<TElement>(collection.Span, minimum);
-
-		/// <summary>
-		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		/// <param name="minimum">The minimum allowed size.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Span<TElement> Grow<TElement>(Span<TElement> collection, Int32 minimum) => GrowKernel<TElement>(collection, minimum);
-
-		/// <summary>
-		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
-		/// </summary>
-		/// <param name="collection">The elements in this collection.</param>
-		/// <param name="minimum">The minimum allowed size.</param>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static ReadOnlySpan<TElement> Grow<TElement>(ReadOnlySpan<TElement> collection, Int32 minimum) => GrowKernel<TElement>(collection, minimum);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		private static TElement[] GrowKernel<TElement>(ReadOnlySpan<TElement> collection) => ResizeKernel(collection, (Int32)((collection.Length + 4) * φ));
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		private static TElement[] GrowKernel<TElement>(ReadOnlySpan<TElement> collection, Int32 minimum) {
-			Double size = collection.Length;
+		public static TElement[] Grow<TElement>([DisallowNull] TElement[] collection, Int32 minimum) {
+			Double size = collection?.Length ?? 0.0;
 			while (size < minimum) {
 				size += 4.0;
 				size *= φ;
 			}
-			return ResizeKernel(collection, (Int32)size);
+			return Resize(collection, (Int32)size);
 		}
 	}
 }

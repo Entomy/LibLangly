@@ -47,12 +47,20 @@ namespace Stringier {
 			public abstract (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element);
 
 			/// <summary>
-			/// Inserts the <paramref name="elements"/> into this <see cref="Node"/> at the specified <paramref name="index"/>.
+			/// Inserts the <paramref name="element"/> into this <see cref="Node"/> at the specified <paramref name="index"/>.
 			/// </summary>
-			/// <param name="index">The position at which to insert the <paramref name="elements"/>.</param>
-			/// <param name="elements">The element to insert.</param>
+			/// <param name="index">The position at which to insert the <paramref name="element"/>.</param>
+			/// <param name="element">The element to insert.</param>
 			/// <returns>A chain section representing the insert.</returns>
-			public abstract (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements);
+			public abstract (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String element);
+
+			/// <summary>
+			/// Inserts the <paramref name="element"/> into this <see cref="Node"/> at the specified <paramref name="index"/>.
+			/// </summary>
+			/// <param name="index">The position at which to insert the <paramref name="element"/>.</param>
+			/// <param name="element">The element to insert.</param>
+			/// <returns>A chain section representing the insert.</returns>
+			public abstract (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] element);
 
 			/// <summary>
 			/// Postpends the <paramref name="element"/> onto this <see cref="Node"/>.
@@ -66,13 +74,24 @@ namespace Stringier {
 			}
 
 			/// <summary>
-			/// Postpends the <paramref name="elements"/> onto this <see cref="Node"/>.
+			/// Postpends the <paramref name="element"/> onto this <see cref="Node"/>.
 			/// </summary>
-			/// <param name="elements">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to postpend.</param>
+			/// <param name="element">The <see cref="String"/> to postpend.</param>
 			/// <returns>The postpended <see cref="Node"/>.</returns>
 			[return: NotNull]
-			public Node Postpend(ReadOnlyMemory<Char> elements) {
-				Next = new MemoryNode(elements, next: null, previous: this);
+			public Node Postpend([DisallowNull] String element) {
+				Next = new StringNode(element, next: null, previous: this);
+				return Next;
+			}
+
+			/// <summary>
+			/// Postpends the <paramref name="element"/> onto this <see cref="Node"/>.
+			/// </summary>
+			/// <param name="element">The <see cref="Array"/> of <see cref="Char"/> to postpend.</param>
+			/// <returns>The postpended <see cref="Node"/>.</returns>
+			[return: NotNull]
+			public Node Postpend([DisallowNull] Char[] element) {
+				Next = new ArrayNode(element, next: null, previous: this);
 				return Next;
 			}
 
@@ -85,12 +104,20 @@ namespace Stringier {
 			public Node Prepend([AllowNull] Char element) => new CharNode(element, next: this, previous: null);
 
 			/// <summary>
-			/// Prepends the <paramref name="elements"/> onto this <see cref="Node"/>.
+			/// Prepends the <paramref name="element"/> onto this <see cref="Node"/>.
 			/// </summary>
-			/// <param name="elements">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to prepend.</param>
+			/// <param name="element">The <see cref="String"/> to prepend.</param>
 			/// <returns>The prepended <see cref="Node"/>.</returns>
 			[return: NotNull]
-			public Node Prepend(ReadOnlyMemory<Char> elements) => new MemoryNode(elements, next: this, previous: null);
+			public Node Prepend([DisallowNull] String element) => new StringNode(element, next: this, previous: null);
+
+			/// <summary>
+			/// Prepends the <paramref name="element"/> onto this <see cref="Node"/>.
+			/// </summary>
+			/// <param name="element">The <see cref="Array"/> of <see cref="Char"/> to prepend.</param>
+			/// <returns>The prepended <see cref="Node"/>.</returns>
+			[return: NotNull]
+			public Node Prepend([DisallowNull] Char[] element) => new ArrayNode(element, next: this, previous: null);
 
 			/// <summary>
 			/// 

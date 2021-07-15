@@ -29,7 +29,7 @@ namespace Stringier {
 			/// <inheritdoc/>
 			public MemoryNode this[Range range] {
 				get {
-					(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
+					(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
 					return Slice(offset, length);
 				}
 			}
@@ -39,10 +39,20 @@ namespace Stringier {
 			public override Int32 Count => Memory.Length;
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Char element) => Collection.Contains(Memory, Count, element);
+			public override Boolean Contains([AllowNull] Char element) {
+				for (Int32 i = 0; i < Count; i++) {
+					if (Equals(Memory.Span[i], element)) { return true; }
+				}
+				return false;
+			}
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => Collection.Contains(Memory, Count, predicate);
+			public override Boolean Contains([AllowNull] Predicate<Char> predicate) {
+				for (Int32 i = 0; i < Count; i++) {
+					if (predicate?.Invoke(Memory.Span[i]) ?? false) { return true; }
+				}
+				return false;
+			}
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
@@ -67,21 +77,43 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements) {
+			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String elements) {
 				Node head;
 				Node tail;
 				if (index == 0) {
 					tail = this;
-					head = new MemoryNode(elements, previous: null, next: tail);
+					head = new StringNode(elements, previous: null, next: tail);
 					tail.Previous = head;
 				} else if (index == Count) {
 					head = this;
-					tail = new MemoryNode(elements, previous: head, next: null);
+					tail = new StringNode(elements, previous: head, next: null);
 					head.Next = tail;
 				} else {
 					head = Slice(0, index);
 					tail = Slice(index, Count - index);
-					Node mid = new MemoryNode(elements, previous: head, next: tail);
+					Node mid = new StringNode(elements, previous: head, next: tail);
+					head.Next = mid;
+					tail.Previous = mid;
+				}
+				return (head, tail);
+			}
+
+			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] elements) {
+				Node head;
+				Node tail;
+				if (index == 0) {
+					tail = this;
+					head = new ArrayNode(elements, previous: null, next: tail);
+					tail.Previous = head;
+				} else if (index == Count) {
+					head = this;
+					tail = new ArrayNode(elements, previous: head, next: null);
+					head.Next = tail;
+				} else {
+					head = Slice(0, index);
+					tail = Slice(index, Count - index);
+					Node mid = new ArrayNode(elements, previous: head, next: tail);
 					head.Next = mid;
 					tail.Previous = mid;
 				}
@@ -153,7 +185,7 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public MemoryNode Slice(Int32 start, Int32 length) => new MemoryNode(Memory.Slice((Int32)start, (Int32)length), previous: null, next: null);
+			public MemoryNode Slice(Int32 start, Int32 length) => new MemoryNode(Memory.Slice(start, length), previous: null, next: null);
 
 			/// <inheritdoc/>
 			[return: NotNull]

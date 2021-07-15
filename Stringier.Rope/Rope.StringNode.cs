@@ -6,47 +6,44 @@ using System.Traits.Concepts;
 namespace Stringier {
 	public partial class Rope {
 		/// <summary>
-		/// Represents a node of a <see cref="Rope"/> whos backing is pointed to, and probably in unmanaged memory.
+		/// Represents a node of a <see cref="Rope"/>, whos backing is a <see cref="String"/>.
 		/// </summary>
-		private sealed unsafe class PointerNode : Node, ISlice<PointerNode> {
+		private sealed class StringNode : Node, ISlice<MemoryNode> {
 			/// <summary>
 			/// The elements contained in this node.
 			/// </summary>
-			private readonly Char* Pointer;
+			[DisallowNull, NotNull]
+			private readonly String String;
 
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
 			/// </summary>
-			/// <param name="pointer">The elements contained in this node.</param>
-			/// <param name="length">The length of the <paramref name="pointer"/>.</param>
+			/// <param name="string">The elements contained in this node.</param>
 			/// <param name="next">The next node in the list.</param>
 			/// <param name="previous">The previous node in the list.</param>
-			public PointerNode([DisallowNull] Char* pointer, Int32 length, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) {
-				Pointer = pointer;
-				Count = length;
-			}
+			public StringNode([DisallowNull] String @string, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) => String = @string;
 
 			/// <inheritdoc/>
-			public override Char this[Int32 index] => Pointer[index];
+			public override Char this[Int32 index] => String[index];
 
 #if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>
-			public PointerNode this[Range range] {
+			public MemoryNode this[Range range] {
 				get {
-					(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
+					(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
 					return Slice(offset, length);
 				}
 			}
 #endif
 
 			/// <inheritdoc/>
-			public override Int32 Count { get; }
+			public override Int32 Count => String.Length;
 
 			/// <inheritdoc/>
-			public override Boolean Contains(Char element) => Collection.Contains(Pointer, Count, element);
+			public override Boolean Contains([AllowNull] Char element) => Collection.Contains(String, Count, element);
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => Collection.Contains(Pointer, Count, predicate);
+			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => Collection.Contains(String, Count, predicate);
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
@@ -126,7 +123,7 @@ namespace Stringier {
 				// Iterate through the node
 				for (Int32 i = 0; i < Count; i++) {
 					// Determine whether a match occurred or not
-					if (!Equals(Pointer[i], search)) {
+					if (!Equals(String[i], search)) {
 						continue;
 					}
 					// If we're replacing the very start
@@ -140,13 +137,13 @@ namespace Stringier {
 						// If head hasn't been reassigned
 						if (ReferenceEquals(head, this)) {
 							// Do so now
-							head = new PointerNode(&Pointer[o], i - o, previous: tail, next: null);
+							head = new MemoryNode(String.AsMemory(o, i - o), previous: tail, next: null);
 							tail = head;
 						} else {
 							// If there's reusable elements
 							if (i > o) {
 								// Add them
-								tail.Next = new PointerNode(&Pointer[o], i - o, previous: tail, next: null);
+								tail.Next = new MemoryNode(String.AsMemory(o, i - o), previous: tail, next: null);
 								tail = tail.Next;
 							}
 						}
@@ -162,7 +159,7 @@ namespace Stringier {
 					// Had anything been replaced?
 					if (!ReferenceEquals(head, this)) {
 						// Attach the remaining parts
-						tail.Next = new PointerNode(&Pointer[o], (Int32)Count - o, previous: tail, next: null);
+						tail.Next = new MemoryNode(String.AsMemory(o), previous: tail, next: null);
 						tail = tail.Next;
 					}
 				}
@@ -170,16 +167,20 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			[return: MaybeNull]
-			public PointerNode Slice() => Slice(0, Count);
+			[return: NotNull]
+			public MemoryNode Slice() => Slice(0, Count);
 
 			/// <inheritdoc/>
-			[return: MaybeNull]
-			public PointerNode Slice(Int32 start) => Slice(start, Count - start);
+			[return: NotNull]
+			public MemoryNode Slice(Int32 start) => Slice(start, Count - start);
 
 			/// <inheritdoc/>
-			[return: MaybeNull]
-			public PointerNode Slice(Int32 start, Int32 length) => new PointerNode(&Pointer[(Int32)start], (Int32)length, previous: null, next: null);
+			[return: NotNull]
+			public MemoryNode Slice(Int32 start, Int32 length) => new MemoryNode(String.AsMemory(start, length), previous: null, next: null);
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public override String ToString() => String;
 		}
 	}
 }

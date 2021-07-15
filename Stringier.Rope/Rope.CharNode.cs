@@ -55,18 +55,39 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements) {
+			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String element) {
 				Node head;
 				Node tail;
 				switch (index) {
 				case 0:
 					tail = this;
-					head = new MemoryNode(elements, previous: null, next: tail);
+					head = new StringNode(element, previous: null, next: tail);
 					tail.Previous = head;
 					break;
 				case 1:
 					head = this;
-					tail = new MemoryNode(elements, previous: head, next: null);
+					tail = new StringNode(element, previous: head, next: null);
+					head.Next = tail;
+					break;
+				default:
+					throw new IndexOutOfRangeException();
+				}
+				return (head, tail);
+			}
+
+			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] element) {
+				Node head;
+				Node tail;
+				switch (index) {
+				case 0:
+					tail = this;
+					head = new ArrayNode(element, previous: null, next: tail);
+					tail.Previous = head;
+					break;
+				case 1:
+					head = this;
+					tail = new ArrayNode(element, previous: head, next: null);
 					head.Next = tail;
 					break;
 				default:

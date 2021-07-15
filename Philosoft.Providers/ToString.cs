@@ -11,43 +11,7 @@ namespace System.Traits.Concepts {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>([AllowNull] TElement[] elements) => ToString(elements.AsSpan());
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(Memory<TElement> elements) => ToString(elements.Span);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(ReadOnlyMemory<TElement> elements) => ToString(elements.Span);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(Span<TElement> elements) => ToString((ReadOnlySpan<TElement>)elements);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(ReadOnlySpan<TElement> elements) {
+		public static String ToString<TElement>([DisallowNull] TElement[] elements) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < elements.Length; i++) {
 				if (i == elements.Length) {
@@ -68,47 +32,7 @@ namespace System.Traits.Concepts {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TIndex, TElement>([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements) => ToString(indicies.AsSpan(), elements.AsSpan());
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(Memory<TIndex> indicies, Memory<TElement> elements) => ToString(indicies.Span, elements.Span);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(ReadOnlyMemory<TIndex> indicies, ReadOnlyMemory<TElement> elements) => ToString(indicies.Span, elements.Span);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(Span<TIndex> indicies, Span<TElement> elements) => ToString((ReadOnlySpan<TIndex>)indicies, (ReadOnlySpan<TElement>)elements);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(ReadOnlySpan<TIndex> indicies, ReadOnlySpan<TElement> elements) {
+		public static String ToString<TIndex, TElement>([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < indicies.Length; i++) {
 				if (i == indicies.Length) {
@@ -155,47 +79,7 @@ namespace System.Traits.Concepts {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>([AllowNull] TElement[] elements, Int32 amount) => ToString(elements.AsSpan(), amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(Memory<TElement> elements, Int32 amount) => ToString(elements.Span, amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(ReadOnlyMemory<TElement> elements, Int32 amount) => ToString(elements.Span, amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(Span<TElement> elements, Int32 amount) => ToString((ReadOnlySpan<TElement>)elements, amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>(ReadOnlySpan<TElement> elements, Int32 amount) {
+		public static String ToString<TElement>([DisallowNull] TElement[] elements, Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < elements.Length; i++) {
 				if (i + 1 == elements.Length) {
@@ -220,51 +104,7 @@ namespace System.Traits.Concepts {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TIndex, TElement>([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements, Int32 amount) => ToString(indicies.AsSpan(), elements.AsSpan(), amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(Memory<TIndex> indicies, Memory<TElement> elements, Int32 amount) => ToString(indicies.Span, elements.Span, amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(ReadOnlyMemory<TIndex> indicies, ReadOnlyMemory<TElement> elements, Int32 amount) => ToString(indicies.Span, elements.Span, amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(Span<TIndex> indicies, Span<TElement> elements, Int32 amount) => ToString((ReadOnlySpan<TIndex>)indicies, (ReadOnlySpan<TElement>)elements, amount);
-
-		/// <summary>
-		/// Returns a string that represents this sequence.
-		/// </summary>
-		/// <param name="indicies">The indicies of this sequence.</param>
-		/// <param name="elements">The elements of this sequence.</param>
-		/// <param name="amount">The maximum amount of elements to display.</param>
-		/// <returns>A <see cref="String"/> representing this collection.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>(ReadOnlySpan<TIndex> indicies, ReadOnlySpan<TElement> elements, Int32 amount) {
+		public static String ToString<TIndex, TElement>([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements, Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < indicies.Length; i++) {
 				if (i + 1 == indicies.Length) {
