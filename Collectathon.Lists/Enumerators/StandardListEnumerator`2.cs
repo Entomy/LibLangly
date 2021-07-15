@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
-using System.Traits.Concepts;
 
 namespace Collectathon.Enumerators {
 	/// <summary>
@@ -11,7 +10,7 @@ namespace Collectathon.Enumerators {
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	/// <typeparam name="TNode">The type of the nodes being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct StandardListEnumerator<TElement, TNode> : IEnumerator<TElement> where TNode : class, IElement<TElement>, INext<TNode> {
+	public struct StandardListEnumerator<TElement, TNode> : ICount, ICurrent<TElement?>, IMoveNext, IReset where TNode : class, IElement<TElement>, INext<TNode> {
 		/// <summary>
 		/// The head node.
 		/// </summary>
@@ -42,8 +41,7 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		[MaybeNull]
-		public TElement Current => N.Element;
+		public TElement? Current => N.Element;
 
 		/// <inheritdoc/>
 		public Int32 Count { get; }

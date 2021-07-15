@@ -12,7 +12,7 @@ namespace Collectathon.Enumerators {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct DeckEnumerator<TElement> : IEnumerator<TElement> {
+	public struct DeckEnumerator<TElement> : ICount, ICurrent<TElement?>, IMoveNext, IReset {
 		/// <summary>
 		/// The elements of this deck.
 		/// </summary>
@@ -20,7 +20,7 @@ namespace Collectathon.Enumerators {
 		/// This uses array parallelism together with <see cref="Dealt"/>.
 		/// </remarks>
 		[DisallowNull, NotNull]
-		private readonly ReadOnlyMemory<TElement?> Cards;
+		private readonly TElement?[] Cards;
 
 		/// <summary>
 		/// Whether each corresponding card was dealt.
@@ -29,7 +29,7 @@ namespace Collectathon.Enumerators {
 		/// This uses array parallelism together with <see cref="Cards"/>.
 		/// </remarks>
 		[DisallowNull, NotNull]
-		private ReadOnlyMemory<Boolean> Dealt;
+		private readonly Boolean[] Dealt;
 
 		/// <summary>
 		/// Whether to list cards that have been dealt?
@@ -49,7 +49,7 @@ namespace Collectathon.Enumerators {
 		/// <summary>
 		/// Initializes a new <see cref="DeckEnumerator{TElement}"/>.
 		/// </summary>
-		public DeckEnumerator(ReadOnlyMemory<TElement?> cards, ReadOnlyMemory<Boolean> dealt, Boolean listDealt, Boolean listRemaining) {
+		public DeckEnumerator([DisallowNull] TElement?[] cards, [DisallowNull] Boolean[] dealt, Boolean listDealt, Boolean listRemaining) {
 			Cards = cards;
 			Dealt = dealt;
 			ListDealt = listDealt;
@@ -58,14 +58,13 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		[MaybeNull]
-		public TElement Current => Cards.Span[i];
+		public TElement? Current => Cards[i];
 
 		/// <inheritdoc/>
 		public Int32 Count {
 			get {
 				Int32 c = 0;
-				foreach (Boolean dlt in Dealt.Span) {
+				foreach (Boolean dlt in Dealt) {
 					c += dlt ? (ListDealt ? 1 : 0) : (ListRemaining ? 1 : 0);
 				}
 				return c;
@@ -75,7 +74,7 @@ namespace Collectathon.Enumerators {
 		/// <inheritdoc/>
 		public Boolean MoveNext() {
 			++i;
-			while ((ListDealt && Dealt.Span[i]) || (ListRemaining && !Dealt.Span[i])) {
+			while ((ListDealt && Dealt[i]) || (ListRemaining && !Dealt[i])) {
 				i++;
 			}
 			return i < Count;
