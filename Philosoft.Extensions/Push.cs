@@ -115,7 +115,7 @@ namespace System {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to push.</param>
-		public static void Push<TElement, TEnumerator>([DisallowNull] this IPush<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
+		public static void Push<TElement, TEnumerator>([DisallowNull] this IPush<TElement> collection, [AllowNull] IGetEnumerator<TElement, TEnumerator> elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Push(element);

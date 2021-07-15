@@ -151,7 +151,7 @@ namespace System {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		public static void Add<TElement, TEnumerator>([DisallowNull] this IAdd<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
+		public static void Add<TElement, TEnumerator>([DisallowNull] this IAdd<TElement> collection, [AllowNull] IGetEnumerator<TElement, TEnumerator> elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Add(element);
