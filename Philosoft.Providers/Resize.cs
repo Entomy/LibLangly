@@ -10,8 +10,8 @@ namespace System.Traits.Concepts {
 		/// <param name="capacity">The new capacity of the collection.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static TElement?[] Resize<TElement>([DisallowNull] TElement?[] collection, Int32 capacity) {
-			TElement?[] newBuffer = new TElement?[capacity];
+		public static TElement[] Resize<TElement>([DisallowNull] TElement[] collection, Int32 capacity) {
+			TElement[] newBuffer = new TElement[capacity];
 			collection.AsSpan(0, capacity > collection.Length ? collection.Length : capacity).CopyTo(newBuffer);
 			return newBuffer;
 		}

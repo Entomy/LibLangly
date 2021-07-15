@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using System.Traits.Concepts;
 using Numbersome;
 
 namespace System {
@@ -13,10 +12,10 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
-		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, [AllowNull] TElement element) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
+		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, TElement element) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			TEnumerator enumerator = collection.GetEnumerator();
 			while (enumerator.MoveNext()) {
-				if (!Equals(enumerator.Current, element)) return false;
+				if (!Equals(enumerator.Current, element)) { return false; }
 			}
 			return true;
 		}
@@ -29,7 +28,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="elements"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
-		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, [AllowNull] params TElement[] elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext => ContainsOnly(collection, elements.AsSpan());
+		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, params TElement[]? elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext => ContainsOnly(collection, elements.AsSpan());
 
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="elements"/>.
@@ -59,7 +58,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="elements"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
-		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, Span<TElement> elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext => ContainsOnly(collection, (ReadOnlySpan<TElement?>)elements);
+		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, Span<TElement> elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext => ContainsOnly(collection, (ReadOnlySpan<TElement>)elements);
 
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="elements"/>.
@@ -74,7 +73,7 @@ namespace System {
 			TEnumerator enumerator = collection.GetEnumerator();
 			while (enumerator.MoveNext()) {
 				for (Int32 i = 0; i < elements.Length; i++) {
-					if (!Equals(enumerator.Current, elements[i])) found[i] = true;
+					if (!Equals(enumerator.Current, elements[i])) { found[i] = true; }
 				}
 			}
 			return found.ContainsOnlyTrue();
@@ -88,9 +87,9 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="predicate">The predicate describing the element to attempt to find.</param>
 		/// <returns><see langword="true"/> if an element described by the <paramref name="predicate"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
-		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, [AllowNull] Predicate<TElement> predicate) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
+		public static Boolean ContainsOnly<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, Predicate<TElement>? predicate) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			foreach (TElement? item in collection) {
-				if (!(predicate?.Invoke(item) ?? item is null)) return false;
+				if (!(predicate?.Invoke(item) ?? item is null)) { return false; }
 			}
 			return true;
 		}
