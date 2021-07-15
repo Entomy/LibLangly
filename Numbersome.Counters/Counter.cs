@@ -15,7 +15,6 @@ namespace Numbersome {
 		IAdd<TElement>,
 		IClear,
 		IContains<TElement>,
-		IIndexReadOnly<TElement, Int32>,
 		ISequence<(TElement? Element, Int32 Count), Counter<TElement>.Enumerator> {
 		/// <summary>
 		/// The elements of this <see cref="Counter{TElement}"/>.
@@ -95,11 +94,15 @@ namespace Numbersome {
 			}
 		}
 
-		/// <inheritdoc/>
-		public Int32 this[[AllowNull] TElement index] {
+		/// <summary>
+		/// Gets the count of the specified <paramref name="element"/>.
+		/// </summary>
+		/// <param name="element">The element to get the count of.</param>
+		/// <returns>The count of the <paramref name="element"/>.</returns>
+		public Int32 this[TElement? element] {
 			get {
 				for (nint i = 0; i < count; i++) {
-					if (Equals(Elements[i], index)) {
+					if (Equals(Elements[i], element)) {
 						return Counts[i];
 					}
 				}
