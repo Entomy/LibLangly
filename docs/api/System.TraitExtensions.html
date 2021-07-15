@@ -722,20 +722,20 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Add__2_IAdd___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Add%60%602(IAdd%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Add__2_IAdd___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Add%60%602(IAdd%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Add.cs/#L154">View Source</a>
   </span>
   <a id="System_TraitExtensions_Add_" data-uid="System.TraitExtensions.Add*"></a>
-  <h4 id="System_TraitExtensions_Add__2_IAdd___0__ISequence___0___1__" data-uid="System.TraitExtensions.Add``2(IAdd{``0},ISequence{``0,``1})">Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Add__2_IAdd___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Add``2(IAdd{``0},IGetEnumerator{``0,``1})">Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Adds the elements to this collection, one by one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Add&lt;TElement, TEnumerator&gt;(this IAdd&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TElement, TEnumerator&gt;(this IAdd&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -754,7 +754,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to add.</p>
 </td>
@@ -782,25 +782,25 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="System_TraitExtensions_Add__2_IAdd___0__ISequence___0___1___remarks">Remarks</h5>
+  <h5 id="System_TraitExtensions_Add__2_IAdd___0__IGetEnumerator___0___1___remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Contains__2_ISequence___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Contains%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Contains__2_IGetEnumerator___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Contains%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L14">View Source</a>
   </span>
   <a id="System_TraitExtensions_Contains_" data-uid="System.TraitExtensions.Contains*"></a>
-  <h4 id="System_TraitExtensions_Contains__2_ISequence___0___1____0_" data-uid="System.TraitExtensions.Contains``2(ISequence{``0,``1},``0)">Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</h4>
+  <h4 id="System_TraitExtensions_Contains__2_IGetEnumerator___0___1____0_" data-uid="System.TraitExtensions.Contains``2(IGetEnumerator{``0,``1},``0)">Contains&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, TElement element)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -813,7 +813,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -865,20 +865,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Contains__2_ISequence___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Contains%60%602(ISequence%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Contains__2_IGetEnumerator___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Contains%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Contains.cs/#L31">View Source</a>
   </span>
   <a id="System_TraitExtensions_Contains_" data-uid="System.TraitExtensions.Contains*"></a>
-  <h4 id="System_TraitExtensions_Contains__2_ISequence___0___1__Predicate___0__" data-uid="System.TraitExtensions.Contains``2(ISequence{``0,``1},Predicate{``0})">Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_Contains__2_IGetEnumerator___0___1__Predicate___0__" data-uid="System.TraitExtensions.Contains``2(IGetEnumerator{``0,``1},Predicate{``0})">Contains&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any elements described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean Contains&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -891,7 +891,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -943,20 +943,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_ISequence___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L14">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAll_" data-uid="System.TraitExtensions.ContainsAll*"></a>
-  <h4 id="System_TraitExtensions_ContainsAll__2_ISequence___0___1____0___" data-uid="System.TraitExtensions.ContainsAll``2(ISequence{``0,``1},``0[])">ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</h4>
+  <h4 id="System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1____0___" data-uid="System.TraitExtensions.ContainsAll``2(IGetEnumerator{``0,``1},``0[])">ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement[])</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -969,7 +969,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1021,20 +1021,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_ISequence___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(ISequence%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L25">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L24">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAll_" data-uid="System.TraitExtensions.ContainsAll*"></a>
-  <h4 id="System_TraitExtensions_ContainsAll__2_ISequence___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsAll``2(ISequence{``0,``1},ArraySegment{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsAll``2(IGetEnumerator{``0,``1},ArraySegment{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1047,7 +1047,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1099,20 +1099,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_ISequence___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(ISequence%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L34">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAll_" data-uid="System.TraitExtensions.ContainsAll*"></a>
-  <h4 id="System_TraitExtensions_ContainsAll__2_ISequence___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsAll``2(ISequence{``0,``1},Memory{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsAll``2(IGetEnumerator{``0,``1},Memory{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1125,7 +1125,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1177,20 +1177,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_ISequence___0___1__ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(ISequence%7B%60%600%2C%60%601%7D%2CReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L45">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L44">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAll_" data-uid="System.TraitExtensions.ContainsAll*"></a>
-  <h4 id="System_TraitExtensions_ContainsAll__2_ISequence___0___1__ReadOnlyMemory___0__" data-uid="System.TraitExtensions.ContainsAll``2(ISequence{``0,``1},ReadOnlyMemory{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__ReadOnlyMemory___0__" data-uid="System.TraitExtensions.ContainsAll``2(IGetEnumerator{``0,``1},ReadOnlyMemory{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1203,7 +1203,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1255,20 +1255,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_ISequence___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(ISequence%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L65">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L64">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAll_" data-uid="System.TraitExtensions.ContainsAll*"></a>
-  <h4 id="System_TraitExtensions_ContainsAll__2_ISequence___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsAll``2(ISequence{``0,``1},ReadOnlySpan{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsAll``2(IGetEnumerator{``0,``1},ReadOnlySpan{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1281,7 +1281,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1333,20 +1333,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_ISequence___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(ISequence%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAll%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAll.cs/#L54">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAll_" data-uid="System.TraitExtensions.ContainsAll*"></a>
-  <h4 id="System_TraitExtensions_ContainsAll__2_ISequence___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsAll``2(ISequence{``0,``1},Span{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAll__2_IGetEnumerator___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsAll``2(IGetEnumerator{``0,``1},Span{``0})">ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains all of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAll&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1359,7 +1359,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1411,20 +1411,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_ISequence___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L14">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAny_" data-uid="System.TraitExtensions.ContainsAny*"></a>
-  <h4 id="System_TraitExtensions_ContainsAny__2_ISequence___0___1____0___" data-uid="System.TraitExtensions.ContainsAny``2(ISequence{``0,``1},``0[])">ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</h4>
+  <h4 id="System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1____0___" data-uid="System.TraitExtensions.ContainsAny``2(IGetEnumerator{``0,``1},``0[])">ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement[])</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1437,7 +1437,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1489,20 +1489,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_ISequence___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(ISequence%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L25">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L24">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAny_" data-uid="System.TraitExtensions.ContainsAny*"></a>
-  <h4 id="System_TraitExtensions_ContainsAny__2_ISequence___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsAny``2(ISequence{``0,``1},ArraySegment{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsAny``2(IGetEnumerator{``0,``1},ArraySegment{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1515,7 +1515,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1567,20 +1567,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_ISequence___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(ISequence%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L34">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAny_" data-uid="System.TraitExtensions.ContainsAny*"></a>
-  <h4 id="System_TraitExtensions_ContainsAny__2_ISequence___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsAny``2(ISequence{``0,``1},Memory{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsAny``2(IGetEnumerator{``0,``1},Memory{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1593,7 +1593,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1645,20 +1645,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_ISequence___0___1__ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(ISequence%7B%60%600%2C%60%601%7D%2CReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L45">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L44">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAny_" data-uid="System.TraitExtensions.ContainsAny*"></a>
-  <h4 id="System_TraitExtensions_ContainsAny__2_ISequence___0___1__ReadOnlyMemory___0__" data-uid="System.TraitExtensions.ContainsAny``2(ISequence{``0,``1},ReadOnlyMemory{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__ReadOnlyMemory___0__" data-uid="System.TraitExtensions.ContainsAny``2(IGetEnumerator{``0,``1},ReadOnlyMemory{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1671,7 +1671,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1723,20 +1723,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_ISequence___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(ISequence%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L65">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L64">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAny_" data-uid="System.TraitExtensions.ContainsAny*"></a>
-  <h4 id="System_TraitExtensions_ContainsAny__2_ISequence___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsAny``2(ISequence{``0,``1},ReadOnlySpan{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsAny``2(IGetEnumerator{``0,``1},ReadOnlySpan{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1749,7 +1749,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1801,20 +1801,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_ISequence___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(ISequence%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsAny%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsAny.cs/#L54">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsAny_" data-uid="System.TraitExtensions.ContainsAny*"></a>
-  <h4 id="System_TraitExtensions_ContainsAny__2_ISequence___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsAny``2(ISequence{``0,``1},Span{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsAny__2_IGetEnumerator___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsAny``2(IGetEnumerator{``0,``1},Span{``0})">ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any of the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsAny&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1827,7 +1827,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1879,20 +1879,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L16">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0_" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},``0)">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1____0_" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},``0)">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, TElement element)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1905,7 +1905,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -1957,20 +1957,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1____0___.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L32">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1____0___" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},``0[])">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1____0___" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},``0[])">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement[])</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1983,7 +1983,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2035,20 +2035,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__ArraySegment___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CArraySegment%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L42">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},ArraySegment{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__ArraySegment___0__" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},ArraySegment{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ArraySegment&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2061,7 +2061,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2113,20 +2113,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__Memory___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L52">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},Memory{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__Memory___0__" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},Memory{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2139,7 +2139,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2191,20 +2191,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L91">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Predicate___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},Predicate{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__Predicate___0__" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},Predicate{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains any elements described by the <code data-dev-comment-type="paramref" class="paramref">predicate</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2217,7 +2217,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2269,20 +2269,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L72">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},ReadOnlySpan{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__ReadOnlySpan___0__" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},ReadOnlySpan{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2295,7 +2295,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2347,20 +2347,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(ISequence%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__Span___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.ContainsOnly%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CSpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/ContainsOnly.cs/#L62">View Source</a>
   </span>
   <a id="System_TraitExtensions_ContainsOnly_" data-uid="System.TraitExtensions.ContainsOnly*"></a>
-  <h4 id="System_TraitExtensions_ContainsOnly__2_ISequence___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsOnly``2(ISequence{``0,``1},Span{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_ContainsOnly__2_IGetEnumerator___0___1__Span___0__" data-uid="System.TraitExtensions.ContainsOnly``2(IGetEnumerator{``0,``1},Span{``0})">ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static Boolean ContainsOnly&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2373,7 +2373,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2727,20 +2727,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Fold__2_ISequence___0___1__Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Fold%60%602(ISequence%7B%60%600%2C%60%601%7D%2CFunc%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Fold__2_IGetEnumerator___0___1__Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Fold%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CFunc%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Fold.cs/#L20">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Fold.cs/#L19">View Source</a>
   </span>
   <a id="System_TraitExtensions_Fold_" data-uid="System.TraitExtensions.Fold*"></a>
-  <h4 id="System_TraitExtensions_Fold__2_ISequence___0___1__Func___0___0___0____0_" data-uid="System.TraitExtensions.Fold``2(ISequence{``0,``1},Func{``0,``0,``0},``0)">Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <h4 id="System_TraitExtensions_Fold__2_IGetEnumerator___0___1__Func___0___0___0____0_" data-uid="System.TraitExtensions.Fold``2(IGetEnumerator{``0,``1},Func{``0,``0,``0},``0)">Fold&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
   <div class="markdown level1 summary"><p>Folds the collection into a single element as described by <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2753,7 +2753,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -2809,7 +2809,7 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="System_TraitExtensions_Fold__2_ISequence___0___1__Func___0___0___0____0__remarks">Remarks</h5>
+  <h5 id="System_TraitExtensions_Fold__2_IGetEnumerator___0___1__Func___0___0___0____0__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
 <p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
 </div>
@@ -3495,20 +3495,20 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Insert__2_IInsert_Int32___0__Int32_ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Insert%60%602(IInsert%7BInt32%2C%60%600%7D%2CInt32%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Insert__2_IInsert_Int32___0__Int32_IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Insert%60%602(IInsert%7BInt32%2C%60%600%7D%2CInt32%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Insert.cs/#L118">View Source</a>
   </span>
   <a id="System_TraitExtensions_Insert_" data-uid="System.TraitExtensions.Insert*"></a>
-  <h4 id="System_TraitExtensions_Insert__2_IInsert_Int32___0__Int32_ISequence___0___1__" data-uid="System.TraitExtensions.Insert``2(IInsert{Int32,``0},Int32,ISequence{``0,``1})">Insert&lt;TElement, TEnumerator&gt;(IInsert&lt;Int32, TElement&gt;, Int32, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Insert__2_IInsert_Int32___0__Int32_IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Insert``2(IInsert{Int32,``0},Int32,IGetEnumerator{``0,``1})">Insert&lt;TElement, TEnumerator&gt;(IInsert&lt;Int32, TElement&gt;, Int32, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, one by one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Insert&lt;TElement, TEnumerator&gt;(this IInsert&lt;Int32, TElement&gt; collection, Int32 index, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Insert&lt;TElement, TEnumerator&gt;(this IInsert&lt;Int32, TElement&gt; collection, Int32 index, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3533,7 +3533,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to insert.</p>
 </td>
@@ -5989,20 +5989,20 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Occurrences__2_ISequence___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Occurrences%60%602(ISequence%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Occurrences__2_IGetEnumerator___0___1____0_.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Occurrences%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Occurrences.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Occurrences.cs/#L14">View Source</a>
   </span>
   <a id="System_TraitExtensions_Occurrences_" data-uid="System.TraitExtensions.Occurrences*"></a>
-  <h4 id="System_TraitExtensions_Occurrences__2_ISequence___0___1____0_" data-uid="System.TraitExtensions.Occurrences``2(ISequence{``0,``1},``0)">Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</h4>
+  <h4 id="System_TraitExtensions_Occurrences__2_IGetEnumerator___0___1____0_" data-uid="System.TraitExtensions.Occurrences``2(IGetEnumerator{``0,``1},``0)">Occurrences&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement)</h4>
   <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, TElement element)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6015,7 +6015,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -6067,20 +6067,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Occurrences__2_ISequence___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Occurrences%60%602(ISequence%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Occurrences__2_IGetEnumerator___0___1__Predicate___0__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Occurrences%60%602(IGetEnumerator%7B%60%600%2C%60%601%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Occurrences.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Occurrences.cs/#L32">View Source</a>
   </span>
   <a id="System_TraitExtensions_Occurrences_" data-uid="System.TraitExtensions.Occurrences*"></a>
-  <h4 id="System_TraitExtensions_Occurrences__2_ISequence___0___1__Predicate___0__" data-uid="System.TraitExtensions.Occurrences``2(ISequence{``0,``1},Predicate{``0})">Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
+  <h4 id="System_TraitExtensions_Occurrences__2_IGetEnumerator___0___1__Predicate___0__" data-uid="System.TraitExtensions.Occurrences``2(IGetEnumerator{``0,``1},Predicate{``0})">Occurrences&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IGetEnumerator&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6093,7 +6093,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>This collection.</p>
 </td>
@@ -6743,20 +6743,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Postpend__2_IPostpend___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Postpend%60%602(IPostpend%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Postpend__2_IPostpend___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Postpend%60%602(IPostpend%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Postpend.cs/#L118">View Source</a>
   </span>
   <a id="System_TraitExtensions_Postpend_" data-uid="System.TraitExtensions.Postpend*"></a>
-  <h4 id="System_TraitExtensions_Postpend__2_IPostpend___0__ISequence___0___1__" data-uid="System.TraitExtensions.Postpend``2(IPostpend{``0},ISequence{``0,``1})">Postpend&lt;TElement, TEnumerator&gt;(IPostpend&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Postpend__2_IPostpend___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Postpend``2(IPostpend{``0},IGetEnumerator{``0,``1})">Postpend&lt;TElement, TEnumerator&gt;(IPostpend&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Postpends the elements onto this object, one by one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Postpend&lt;TElement, TEnumerator&gt;(this IPostpend&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Postpend&lt;TElement, TEnumerator&gt;(this IPostpend&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6775,7 +6775,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to postpend.</p>
 </td>
@@ -7403,20 +7403,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Prepend__2_IPrepend___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Prepend%60%602(IPrepend%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Prepend__2_IPrepend___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Prepend%60%602(IPrepend%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Prepend.cs/#L118">View Source</a>
   </span>
   <a id="System_TraitExtensions_Prepend_" data-uid="System.TraitExtensions.Prepend*"></a>
-  <h4 id="System_TraitExtensions_Prepend__2_IPrepend___0__ISequence___0___1__" data-uid="System.TraitExtensions.Prepend``2(IPrepend{``0},ISequence{``0,``1})">Prepend&lt;TElement, TEnumerator&gt;(IPrepend&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Prepend__2_IPrepend___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Prepend``2(IPrepend{``0},IGetEnumerator{``0,``1})">Prepend&lt;TElement, TEnumerator&gt;(IPrepend&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Prepends the elements onto this object, one by one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Prepend&lt;TElement, TEnumerator&gt;(this IPrepend&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Prepend&lt;TElement, TEnumerator&gt;(this IPrepend&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7435,7 +7435,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to prepend.</p>
 </td>
@@ -8063,20 +8063,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Push__2_IPush___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Push%60%602(IPush%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Push__2_IPush___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Push%60%602(IPush%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Push.cs/#L118">View Source</a>
   </span>
   <a id="System_TraitExtensions_Push_" data-uid="System.TraitExtensions.Push*"></a>
-  <h4 id="System_TraitExtensions_Push__2_IPush___0__ISequence___0___1__" data-uid="System.TraitExtensions.Push``2(IPush{``0},ISequence{``0,``1})">Push&lt;TElement, TEnumerator&gt;(IPush&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Push__2_IPush___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Push``2(IPush{``0},IGetEnumerator{``0,``1})">Push&lt;TElement, TEnumerator&gt;(IPush&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Pushs the elements onto this collection, one by one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Push&lt;TElement, TEnumerator&gt;(this IPush&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Push&lt;TElement, TEnumerator&gt;(this IPush&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8095,7 +8095,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to push.</p>
 </td>
@@ -8913,20 +8913,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Remove__2_IRemove___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Remove%60%602(IRemove%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Remove__2_IRemove___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Remove%60%602(IRemove%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Remove.cs/#L93">View Source</a>
   </span>
   <a id="System_TraitExtensions_Remove_" data-uid="System.TraitExtensions.Remove*"></a>
-  <h4 id="System_TraitExtensions_Remove__2_IRemove___0__ISequence___0___1__" data-uid="System.TraitExtensions.Remove``2(IRemove{``0},ISequence{``0,``1})">Remove&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Remove__2_IRemove___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Remove``2(IRemove{``0},IGetEnumerator{``0,``1})">Remove&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Remove&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Remove&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8945,7 +8945,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to remove.</p>
 </td>
@@ -9414,20 +9414,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_RemoveFirst__2_IRemove___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.RemoveFirst%60%602(IRemove%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_RemoveFirst__2_IRemove___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.RemoveFirst%60%602(IRemove%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/RemoveFirst.cs/#L93">View Source</a>
   </span>
   <a id="System_TraitExtensions_RemoveFirst_" data-uid="System.TraitExtensions.RemoveFirst*"></a>
-  <h4 id="System_TraitExtensions_RemoveFirst__2_IRemove___0__ISequence___0___1__" data-uid="System.TraitExtensions.RemoveFirst``2(IRemove{``0},ISequence{``0,``1})">RemoveFirst&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_RemoveFirst__2_IRemove___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.RemoveFirst``2(IRemove{``0},IGetEnumerator{``0,``1})">RemoveFirst&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RemoveFirst&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void RemoveFirst&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9446,7 +9446,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to remove.</p>
 </td>
@@ -9915,20 +9915,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_RemoveLast__2_IRemove___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.RemoveLast%60%602(IRemove%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_RemoveLast__2_IRemove___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.RemoveLast%60%602(IRemove%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/RemoveLast.cs/#L93">View Source</a>
   </span>
   <a id="System_TraitExtensions_RemoveLast_" data-uid="System.TraitExtensions.RemoveLast*"></a>
-  <h4 id="System_TraitExtensions_RemoveLast__2_IRemove___0__ISequence___0___1__" data-uid="System.TraitExtensions.RemoveLast``2(IRemove{``0},ISequence{``0,``1})">RemoveLast&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_RemoveLast__2_IRemove___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.RemoveLast``2(IRemove{``0},IGetEnumerator{``0,``1})">RemoveLast&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RemoveLast&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void RemoveLast&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9947,7 +9947,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to remove.</p>
 </td>
@@ -10628,20 +10628,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Write__2_IWrite___0__ISequence___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Write%60%602(IWrite%7B%60%600%7D%2CISequence%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_TraitExtensions_Write__2_IWrite___0__IGetEnumerator___0___1__.md&amp;value=---%0Auid%3A%20System.TraitExtensions.Write%60%602(IWrite%7B%60%600%7D%2CIGetEnumerator%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Extensions/Write.cs/#L101">View Source</a>
   </span>
   <a id="System_TraitExtensions_Write_" data-uid="System.TraitExtensions.Write*"></a>
-  <h4 id="System_TraitExtensions_Write__2_IWrite___0__ISequence___0___1__" data-uid="System.TraitExtensions.Write``2(IWrite{``0},ISequence{``0,``1})">Write&lt;TElement, TEnumerator&gt;(IWrite&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <h4 id="System_TraitExtensions_Write__2_IWrite___0__IGetEnumerator___0___1__" data-uid="System.TraitExtensions.Write``2(IWrite{``0},IGetEnumerator{``0,``1})">Write&lt;TElement, TEnumerator&gt;(IWrite&lt;TElement&gt;, IGetEnumerator&lt;TElement, TEnumerator&gt;)</h4>
   <div class="markdown level1 summary"><p>Writes the <code data-dev-comment-type="paramref" class="paramref">elements</code>, one by one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Write&lt;TElement, TEnumerator&gt;(this IWrite&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-    where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Write&lt;TElement, TEnumerator&gt;(this IWrite&lt;TElement&gt; collection, IGetEnumerator&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : ICurrent&lt;TElement&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10660,7 +10660,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="xref">IGetEnumerator</span>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The values to write.</p>
 </td>
