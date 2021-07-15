@@ -12,7 +12,7 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="range">The zero-based range of the elements.</param>
 		/// <returns>A slice that consists of all the elements of the current collection within the <paramref name="range"/>.</returns>
-		[MaybeNull, AllowNull]
+		[DisallowNull, NotNull]
 		TResult this[Range range] { get; }
 #endif
 
@@ -20,7 +20,7 @@ namespace System.Traits {
 		/// Forms a slice out of the collection.
 		/// </summary>
 		/// <returns>A slice that consists of all elements of the current collection.</returns>
-		[return: MaybeNull]
+		[return: NotNull]
 		TResult Slice();
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="start">The index at which to begin the slice</param>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
-		[return: MaybeNull]
+		[return: NotNull]
 		TResult Slice(Int32 start);
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace System.Traits {
 		/// <param name="start">The index at which to begin the slice.</param>
 		/// <param name="length">The desired length for the slice.</param>
 		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
-		[return: MaybeNull]
+		[return: NotNull]
 		TResult Slice(Int32 start, Int32 length);
 	}
 }

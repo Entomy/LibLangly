@@ -31,6 +31,7 @@ namespace Stringier {
 
 #if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>
+			[DisallowNull, NotNull]
 			public PointerNode this[Range range] {
 				get {
 					(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
@@ -170,16 +171,16 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			[return: MaybeNull]
+			[return: NotNull]
 			public PointerNode Slice() => Slice(0, Count);
 
 			/// <inheritdoc/>
-			[return: MaybeNull]
+			[return: NotNull]
 			public PointerNode Slice(Int32 start) => Slice(start, Count - start);
 
 			/// <inheritdoc/>
-			[return: MaybeNull]
-			public PointerNode Slice(Int32 start, Int32 length) => new PointerNode(&Pointer[(Int32)start], (Int32)length, previous: null, next: null);
+			[return: NotNull]
+			public PointerNode Slice(Int32 start, Int32 length) => new PointerNode(&Pointer[start], length, previous: null, next: null);
 		}
 	}
 }
