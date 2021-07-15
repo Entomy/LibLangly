@@ -10,7 +10,7 @@ namespace System.Traits.Concepts {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to postpend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Postpend<TElement>([DisallowNull] TElement[] collection, ref Int32 count, [AllowNull] TElement element) => collection[count++] = element;
+		public static void Postpend<TElement>([DisallowNull] TElement?[] collection, ref Int32 count, TElement? element) => collection[count++] = element;
 
 		/// <summary>
 		/// Postpends the elements onto this object, as a batch.
@@ -19,7 +19,7 @@ namespace System.Traits.Concepts {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="elements">The elements to postpend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Postpend<TElement>([DisallowNull] TElement[] collection, ref Int32 count, ReadOnlySpan<TElement> elements) {
+		public static void Postpend<TElement>([DisallowNull] TElement?[] collection, ref Int32 count, ReadOnlySpan<TElement?> elements) {
 			elements.CopyTo(collection.AsSpan(count));
 			count += elements.Length;
 		}

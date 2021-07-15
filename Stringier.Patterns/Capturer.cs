@@ -26,7 +26,7 @@ namespace Stringier.Patterns {
 		/// <param name="capture">The <see cref="Capture"/> object to capture into.</param>
 		internal Capturer([DisallowNull] Pattern pattern, [DisallowNull, NotNull] out Capture capture) {
 			Pattern = pattern;
-			capture = CapStore;
+			capture = CapStore!;
 		}
 
 		/// <inheritdoc/>
