@@ -50,8 +50,8 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
-				Node head;
-				Node tail;
+				Node? head;
+				Node? tail;
 				if (index == 0) {
 					tail = this;
 					head = new CharNode(element, previous: null, next: tail);
@@ -72,8 +72,8 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String element) {
-				Node head;
-				Node tail;
+				Node? head;
+				Node? tail;
 				if (index == 0) {
 					tail = this;
 					head = new StringNode(element, previous: null, next: tail);
@@ -94,8 +94,8 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] element) {
-				Node head;
-				Node tail;
+				Node? head;
+				Node? tail;
 				if (index == 0) {
 					tail = this;
 					head = new ArrayNode(element, previous: null, next: tail);
@@ -121,7 +121,7 @@ namespace Stringier {
 			public override (Node Head, Node Tail) Replace([AllowNull] Char search, [AllowNull] Char replace) {
 				Node head = this;
 				Node tail = this;
-				Node prev = null;
+				Node? prev = null;
 				Int32 o = 0;
 				// Iterate through the node
 				for (Int32 i = 0; i < Count; i++) {

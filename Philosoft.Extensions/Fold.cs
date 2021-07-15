@@ -17,9 +17,9 @@ namespace System {
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
 		[return: MaybeNull]
-		public static TElement Fold<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
-			TElement result = identity;
-			foreach (TElement item in collection) {
+		public static TElement Fold<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement?, TEnumerator> collection, [DisallowNull] Func<TElement?, TElement?, TElement?> func, TElement? identity) where TEnumerator : notnull, ICurrent<TElement?>, IMoveNext {
+			TElement? result = identity;
+			foreach (TElement? item in collection) {
 				result = func(result, item);
 			}
 			return result;

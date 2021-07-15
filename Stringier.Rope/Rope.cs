@@ -580,7 +580,7 @@ namespace Stringier {
 			} else if (Head is null || Tail is null) {
 				Add(element);
 			} else {
-				Node N = Head;
+				Node? N = Head;
 				Int32 i = 0;
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
@@ -593,7 +593,7 @@ namespace Stringier {
 				// Will the element be inserted into the head node?
 				if (index <= Head.Count) {
 					// Get the surrounding nodes
-					Node next = N.Next;
+					Node? next = N.Next;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -608,7 +608,7 @@ namespace Stringier {
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
-					Node prev = N.Previous;
+					Node? prev = N.Previous;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -623,8 +623,8 @@ namespace Stringier {
 						N = N.Next;
 					}
 					// Get the surrounding nodes
-					Node prev = N.Previous;
-					Node next = N.Next;
+					Node? prev = N.Previous;
+					Node? next = N.Next;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -650,7 +650,7 @@ namespace Stringier {
 			} else if (Head is null || Tail is null) {
 				Add(element);
 			} else {
-				Node N = Head;
+				Node? N = Head;
 				Int32 i = 0;
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
@@ -663,7 +663,7 @@ namespace Stringier {
 				// Will the element be inserted into the head node?
 				if (index <= Head.Count) {
 					// Get the surrounding nodes
-					Node next = N.Next;
+					Node? next = N.Next;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -678,7 +678,7 @@ namespace Stringier {
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
-					Node prev = N.Previous;
+					Node? prev = N.Previous;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -693,8 +693,8 @@ namespace Stringier {
 						N = N.Next;
 					}
 					// Get the surrounding nodes
-					Node prev = N.Previous;
-					Node next = N.Next;
+					Node? prev = N.Previous;
+					Node? next = N.Next;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -720,7 +720,7 @@ namespace Stringier {
 			} else if (Head is null || Tail is null) {
 				Add(element);
 			} else {
-				Node N = Head;
+				Node? N = Head;
 				Int32 i = 0;
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
@@ -733,7 +733,7 @@ namespace Stringier {
 				// Will the element be inserted into the head node?
 				if (index <= Head.Count) {
 					// Get the surrounding nodes
-					Node next = N.Next;
+					Node? next = N.Next;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -748,7 +748,7 @@ namespace Stringier {
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
-					Node prev = N.Previous;
+					Node? prev = N.Previous;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -763,8 +763,8 @@ namespace Stringier {
 						N = N.Next;
 					}
 					// Get the surrounding nodes
-					Node prev = N.Previous;
-					Node next = N.Next;
+					Node? prev = N.Previous;
+					Node? next = N.Next;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain

@@ -9,9 +9,9 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="source">The source to load data from.</param>
-		public static void Load<TElement>([DisallowNull] this IWrite<TElement> collection, [AllowNull] IRead<TElement> source) {
+		public static void Load<TElement>([DisallowNull] this IWrite<TElement?> collection, IRead<TElement?>? source) {
 			if (source is not null) {
-				source.Read(out TElement element);
+				source.Read(out TElement? element);
 				collection.Write(element);
 			}
 		}
@@ -23,7 +23,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="amount">The amount of elements to load.</param>
 		/// <param name="source">The source to load data from.</param>
-		public static void Load<TElement>([DisallowNull] this IWrite<TElement> collection, Int32 amount, [AllowNull] IRead<TElement> source) {
+		public static void Load<TElement>([DisallowNull] this IWrite<TElement?> collection, Int32 amount, IRead<TElement?>? source) {
 			for (Int32 i = 0; i < amount; i++) {
 				collection.Load(source);
 			}

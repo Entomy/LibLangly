@@ -127,7 +127,7 @@ namespace Stringier {
 			public override (Node Head, Node Tail) Replace([AllowNull] Char search, [AllowNull] Char replace) {
 				Node head = this;
 				Node tail = this;
-				Node prev = null;
+				Node? prev = null;
 				Int32 o = 0;
 				// Iterate through the node
 				for (Int32 i = 0; i < Count; i++) {

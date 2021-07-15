@@ -109,10 +109,14 @@ namespace Collectathon.Lists {
 		[UnlinksNode]
 		[return: MaybeNull]
 		public TElement Dequeue() {
-			SinglyLinkedListNode<TElement> oldHead = Head;
-			Head = Head.Next;
-			oldHead.Unlink();
-			return oldHead.Element;
+			if (Head is not null) {
+				SinglyLinkedListNode<TElement> oldHead = Head;
+				Head = Head.Next;
+				oldHead.Unlink();
+				return oldHead.Element;
+			} else {
+				throw new InvalidOperationException("Can't dequeue an element from an empty collection.");
+			}
 		}
 
 		/// <inheritdoc/>
@@ -184,10 +188,14 @@ namespace Collectathon.Lists {
 		[UnlinksNode]
 		[return: MaybeNull]
 		public TElement Pop() {
-			SinglyLinkedListNode<TElement> oldHead = Head;
-			Head = Head.Next;
-			oldHead.Unlink();
-			return oldHead.Element;
+			if (Head is not null) {
+				SinglyLinkedListNode<TElement> oldHead = Head;
+				Head = Head.Next;
+				oldHead.Unlink();
+				return oldHead.Element;
+			} else {
+				throw new InvalidOperationException("Can't pop an element off an empty collection.");
+			}
 		}
 
 		/// <inheritdoc/>
