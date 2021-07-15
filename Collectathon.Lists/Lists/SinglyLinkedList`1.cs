@@ -91,17 +91,19 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		public void Clear() {
-			Collection.Clear(Head);
-			Head = null;
-			Tail = null;
-			Count = 0;
+			if (Head is not null) {
+				Collection.Clear(Head);
+				Head = null;
+				Tail = null;
+				Count = 0;
+			}
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
+		public Boolean Contains([AllowNull] TElement element) => Head is not null ? Collection.Contains(Head, element) : false;
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Head, predicate);
+		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Head is not null ? Collection.Contains(Head, predicate) : false;
 
 		/// <inheritdoc/>
 		[UnlinksNode]
@@ -230,7 +232,11 @@ namespace Collectathon.Lists {
 		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Head, search, replace);
+		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+			if (Head is not null) {
+				Collection.Replace(Head, search, replace);
+			}
+		}
 
 		/// <inheritdoc/>
 		[return: NotNull]

@@ -85,10 +85,12 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		public void Clear() {
-			Collection.Clear(Head);
-			Head = null;
-			Tail = null;
-			Count = 0;
+			if (Head is not null) {
+				Collection.Clear(Head);
+				Head = null;
+				Tail = null;
+				Count = 0;
+			}
 		}
 
 		/// <inheritdoc/>

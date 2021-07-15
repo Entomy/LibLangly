@@ -52,8 +52,8 @@ namespace System.Traits.Concepts {
 		/// <param name="count">The amount of elements in this collection.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: MaybeNull, NotNullIfNotNull("head")]
-		public static String ToString<TNode>([AllowNull] TNode head, Int32 count) where TNode : class, INext<TNode> {
+		[return: NotNull]
+		public static String ToString<TNode>(TNode? head, Int32 count) where TNode : class, INext<TNode?> {
 			StringBuilder builder = new StringBuilder();
 			if (head is not null) {
 				TNode? N = head;
@@ -128,8 +128,8 @@ namespace System.Traits.Concepts {
 		/// <param name="amount">The maximum amount of elements to display.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: MaybeNull, NotNullIfNotNull("head")]
-		public static String ToString<TNode>([AllowNull] TNode head, Int32 count, Int32 amount) where TNode : class, INext<TNode> {
+		[return: NotNull]
+		public static String ToString<TNode>(TNode? head, Int32 count, Int32 amount) where TNode : class, INext<TNode?> {
 			StringBuilder builder = new StringBuilder();
 			if (head is not null) {
 				TNode? N = head;

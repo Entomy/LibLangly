@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Traits;
 using System.Traits.Concepts;
 
 namespace Stringier {
@@ -46,15 +45,6 @@ namespace Stringier {
 			public Int32 Count => Rope.Count;
 
 			/// <inheritdoc/>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			public void Dispose() { /* No-op */ }
-
-			/// <inheritdoc/>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			[return: NotNull]
-			public IEnumerator<Char> GetEnumerator() => this;
-
-			/// <inheritdoc/>
 			public Boolean MoveNext() {
 				// If the list has been set to null
 				if (Rope is null) {
@@ -96,14 +86,6 @@ namespace Stringier {
 				N = default;
 				i = -1;
 			}
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			public override String ToString() => Collection.ToString(Rope.Head, Rope.Count);
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			public String ToString(Int32 amount) => Collection.ToString(Rope.Head, Rope.Count, amount);
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace Collectathon.Nodes {
 		IContains<TElement>,
 		ICount,
 		IElement<TElement>,
-		INext<SinglyLinkedListNode<TElement>>,
+		INext<SinglyLinkedListNode<TElement>?>,
 		IReplace<TElement>,
 		IUnlink {
 		/// <summary>
