@@ -15,15 +15,14 @@ namespace Numbersome {
 		IAdd<TElement>,
 		IClear,
 		IContains<TElement>,
-		ISequence<(TElement? Element, Int32 Count), Counter<TElement>.Enumerator> {
+		ISequence<(TElement Element, Int32 Count), Counter<TElement>.Enumerator> {
 		/// <summary>
 		/// The elements of this <see cref="Counter{TElement}"/>.
 		/// </summary>
 		/// <remarks>
 		/// This uses array parallelism together with <see cref="Counts"/>.
 		/// </remarks>
-		[DisallowNull, NotNull]
-		private TElement?[] Elements;
+		private TElement[] Elements;
 
 		/// <summary>
 		/// The counts of this <see cref="Counter{TElement}"/>.
@@ -31,7 +30,6 @@ namespace Numbersome {
 		/// <remarks>
 		/// This uses array parallelism together with <see cref="Elements"/>.
 		/// </remarks>
-		[DisallowNull, NotNull]
 		private Int32[] Counts;
 
 		/// <summary>
@@ -61,36 +59,42 @@ namespace Numbersome {
 		/// <summary>
 		/// Get the element with the highest count.
 		/// </summary>
-		[MaybeNull]
 		public TElement Highest {
 			get {
-				TElement? Element = default;
-				Int32 Count = Int32.MinValue;
-				for (Int32 i = 0; i < count; i++) {
-					if (Count < Counts[i]) {
-						Element = Elements[i];
-						Count = Counts[i];
+				if (count > 0) {
+					TElement Element = default!; // Since we know the count is greater than 0, we will iterate through the elements, and this will be set to something valid.
+					Int32 Count = Int32.MinValue;
+					for (Int32 i = 0; i < count; i++) {
+						if (Count < Counts[i]) {
+							Element = Elements[i];
+							Count = Counts[i];
+						}
 					}
+					return Element;
+				} else {
+					throw new InvalidOperationException("Can not get the highest count element of an empty counter.");
 				}
-				return Element;
 			}
 		}
 
 		/// <summary>
 		/// Get the element with the lowest count.
 		/// </summary>
-		[MaybeNull]
 		public TElement Lowest {
 			get {
-				TElement? Element = default;
-				Int32 Count = Int32.MaxValue;
-				for (Int32 i = 0; i < count; i++) {
-					if (Count > Counts[i]) {
-						Element = Elements[i];
-						Count = Counts[i];
+				if (count > 0) {
+					TElement Element = default!; // Since we know the count is greater than 0, we will iterate through the elements, and this will be set to something valid.
+					Int32 Count = Int32.MaxValue;
+					for (Int32 i = 0; i < count; i++) {
+						if (Count > Counts[i]) {
+							Element = Elements[i];
+							Count = Counts[i];
+						}
 					}
+					return Element;
+				} else {
+					throw new InvalidOperationException("Can not get the lowest count element of an empty counter.");
 				}
-				return Element;
 			}
 		}
 
@@ -99,7 +103,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="element">The element to get the count of.</param>
 		/// <returns>The count of the <paramref name="element"/>.</returns>
-		public Int32 this[TElement? element] {
+		public Int32 this[TElement element] {
 			get {
 				for (nint i = 0; i < count; i++) {
 					if (Equals(Elements[i], element)) {
@@ -112,7 +116,7 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[MaybeResizes]
-		public void Add([AllowNull] TElement element) {
+		public void Add(TElement element) {
 			for (Int32 i = 0; i < count; i++) {
 				if (Equals(Elements[i], element)) {
 					Counts[i]++;
@@ -139,21 +143,18 @@ namespace Numbersome {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Elements.Length, element);
+		public Boolean Contains(TElement element) => Collection.Contains(Elements, Elements.Length, element);
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Elements, Elements.Length, predicate);
+		public Boolean Contains(Predicate<TElement>? predicate) => Collection.Contains(Elements, Elements.Length, predicate);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public Enumerator GetEnumerator() => new Enumerator(Elements, Counts, count);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(Elements, count);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Elements, count);
 	}
 }

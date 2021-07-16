@@ -8,10 +8,10 @@ namespace Numbersome {
 		/// Provides enumeration over a <see cref="Counter{TElement}"/>.
 		/// </summary>
 		[StructLayout(LayoutKind.Auto)]
-		public struct Enumerator : IEnumerator<(TElement? Element, Int32 Count)> {
-			private readonly ReadOnlyMemory<TElement?> Elements;
+		public struct Enumerator : IEnumerator<(TElement Element, Int32 Count)> {
+			private readonly TElement[] Elements;
 
-			private readonly ReadOnlyMemory<Int32> Counts;
+			private readonly Int32[] Counts;
 
 			private Int32 i;
 
@@ -21,7 +21,7 @@ namespace Numbersome {
 			/// <param name="elements">The elements to enumerate over.</param>
 			/// <param name="counts">The counts to enumerate over.</param>
 			/// <param name="count">The total amount of allocated indicies in <paramref name="elements"/> and <paramref name="counts"/>.</param>
-			public Enumerator(ReadOnlyMemory<TElement?> elements, ReadOnlyMemory<Int32> counts, Int32 count) {
+			public Enumerator(TElement[] elements, Int32[] counts, Int32 count) {
 				Elements = elements;
 				Counts = counts;
 				Count = count;
@@ -29,7 +29,7 @@ namespace Numbersome {
 			}
 
 			/// <inheritdoc/>
-			public (TElement? Element, Int32 Count) Current => (Elements.Span[i], Counts.Span[i]);
+			public (TElement Element, Int32 Count) Current => (Elements[i], Counts[i]);
 
 			/// <inheritdoc/>
 			public Int32 Count { get; private set; }
