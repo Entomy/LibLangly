@@ -78,16 +78,13 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">ICount</span></div>
-    <div><span class="xref">ICurrent</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IMoveNext</span></div>
-    <div><span class="xref">IReset</span></div>
+    <div><span class="xref">IEnumerator</span>&lt;TElement&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Enumerators.html">Collectathon.Enumerators</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Enumerators_StandardListEnumerator_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct StandardListEnumerator&lt;TElement, TNode&gt; : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset where TNode : class, IElement&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct StandardListEnumerator&lt;TElement, TNode&gt; : IEnumerator&lt;TElement&gt; where TNode : class, IElement&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -117,7 +114,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_StandardListEnumerator_2__ctor__1_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.StandardListEnumerator%602.%23ctor(%601%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L35">View Source</a>
   </span>
   <a id="Collectathon_Enumerators_StandardListEnumerator_2__ctor_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.#ctor*"></a>
   <h4 id="Collectathon_Enumerators_StandardListEnumerator_2__ctor__1_Int32_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.#ctor(`1,Int32)">StandardListEnumerator(TNode, Int32)</h4>
@@ -159,7 +156,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_StandardListEnumerator_2_Count.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.StandardListEnumerator%602.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L47">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L46">View Source</a>
   </span>
   <a id="Collectathon_Enumerators_StandardListEnumerator_2_Count_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.Count*"></a>
   <h4 id="Collectathon_Enumerators_StandardListEnumerator_2_Count" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.Count">Count</h4>
@@ -189,7 +186,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_StandardListEnumerator_2_Current.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.StandardListEnumerator%602.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L43">View Source</a>
   </span>
   <a id="Collectathon_Enumerators_StandardListEnumerator_2_Current_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.Current*"></a>
   <h4 id="Collectathon_Enumerators_StandardListEnumerator_2_Current" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.Current">Current</h4>
@@ -221,7 +218,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_StandardListEnumerator_2_MoveNext.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.StandardListEnumerator%602.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L50">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L49">View Source</a>
   </span>
   <a id="Collectathon_Enumerators_StandardListEnumerator_2_MoveNext_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.MoveNext*"></a>
   <h4 id="Collectathon_Enumerators_StandardListEnumerator_2_MoveNext" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.MoveNext">MoveNext()</h4>
@@ -251,7 +248,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Enumerators_StandardListEnumerator_2_Reset.md&amp;value=---%0Auid%3A%20Collectathon.Enumerators.StandardListEnumerator%602.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Enumerators/StandardListEnumerator`2.cs/#L59">View Source</a>
   </span>
   <a id="Collectathon_Enumerators_StandardListEnumerator_2_Reset_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.Reset*"></a>
   <h4 id="Collectathon_Enumerators_StandardListEnumerator_2_Reset" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.Reset">Reset()</h4>
@@ -263,16 +260,7 @@
   </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">ICount</span>
-  </div>
-  <div>
-      <span class="xref">ICurrent&lt;&gt;</span>
-  </div>
-  <div>
-      <span class="xref">IMoveNext</span>
-  </div>
-  <div>
-      <span class="xref">IReset</span>
+      <span class="xref">IEnumerator&lt;&gt;</span>
   </div>
 </article>
           </div>
