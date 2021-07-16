@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace Collectathon.Enumerators {
 	/// <summary>
@@ -10,18 +10,17 @@ namespace Collectathon.Enumerators {
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	/// <typeparam name="TNode">The type of the nodes being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct StandardListEnumerator<TElement, TNode> : ICount, ICurrent<TElement?>, IMoveNext, IReset where TNode : class, IElement<TElement>, INext<TNode> {
+	public struct StandardListEnumerator<TElement, TNode> : IEnumerator<TElement>
+		where TNode : class, IElement<TElement>, INext<TNode?> {
 		/// <summary>
 		/// The head node.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		private readonly TNode Head;
+		private readonly TNode? Head;
 
 		/// <summary>
 		/// The current node.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		private TNode N;
+		private TNode? N;
 
 		/// <summary>
 		/// Whether enumeration is active or not.
@@ -33,7 +32,7 @@ namespace Collectathon.Enumerators {
 		/// </summary>
 		/// <param name="head">The head node of the list.</param>
 		/// <param name="length">The length of the sequence.</param>
-		public StandardListEnumerator([AllowNull] TNode head, Int32 length) {
+		public StandardListEnumerator(TNode? head, Int32 length) {
 			Head = head;
 			N = null;
 			Active = true;
@@ -41,7 +40,7 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		public TElement? Current => N.Element;
+		public TElement Current => N.Element;
 
 		/// <inheritdoc/>
 		public Int32 Count { get; }

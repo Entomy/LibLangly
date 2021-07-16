@@ -39,8 +39,8 @@ namespace Collectathon.Lists {
 		/// </summary>
 		/// <param name="entries">The initial entries of the list.</param>
 		[LinksNewNode(1)]
-		public SinglyLinkedList(params (TIndex Index, TElement? Element)[] entries) {
-			foreach ((TIndex Index, TElement? Element) in entries) {
+		public SinglyLinkedList(params (TIndex Index, TElement Element)[] entries) {
+			foreach ((TIndex Index, TElement Element) in entries) {
 				Insert(Index, Element);
 			}
 		}
