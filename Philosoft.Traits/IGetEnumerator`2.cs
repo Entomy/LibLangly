@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type has an associated enumerator.
 	/// </summary>
@@ -11,7 +9,6 @@ namespace System.Traits {
 		/// Returns an enumerator that iterates through the sequence.
 		/// </summary>
 		/// <returns>An enumerator that can be used to iterate through the collection.</returns>
-		[return: NotNull]
 		TEnumerator GetEnumerator();
 	}
 }

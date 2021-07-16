@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have its elements replaced.
 	/// </summary>
@@ -12,6 +10,6 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="search">The element to replace.</param>
 		/// <param name="replace">The element to use instead.</param>
-		void Replace([AllowNull] TSearch search, [AllowNull] TReplace replace);
+		void Replace(TSearch search, TReplace replace);
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using Numbersome;
 
 namespace System.Traits.Concepts {
@@ -13,7 +11,7 @@ namespace System.Traits.Concepts {
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if all of the <paramref name="elements"/> are contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean ContainsAll<TElement>([DisallowNull] TElement[] collection, Int32 count, ReadOnlySpan<TElement> elements) {
+		public static Boolean ContainsAll<TElement>(TElement[] collection, Int32 count, ReadOnlySpan<TElement> elements) {
 			Boolean[] found = new Boolean[elements.Length];
 			for (Int32 c = 0; c < count; c++) {
 				for (Int32 e = 0; e < elements.Length; e++) {
@@ -32,7 +30,7 @@ namespace System.Traits.Concepts {
 		/// <returns><see langword="true"/> if all of the <paramref name="elements"/> are contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static unsafe Boolean ContainsAll<TElement>([DisallowNull] TElement* collection, Int32 count, ReadOnlySpan<TElement> elements) where TElement : unmanaged {
+		public static unsafe Boolean ContainsAll<TElement>(TElement* collection, Int32 count, ReadOnlySpan<TElement> elements) where TElement : unmanaged {
 			Boolean[] found = new Boolean[elements.Length];
 			for (Int32 c = 0; c < count; c++) {
 				for (Int32 e = 0; e < elements.Length; e++) {
@@ -49,7 +47,7 @@ namespace System.Traits.Concepts {
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if all of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean ContainsAll<TNode, TElement>([DisallowNull] TNode head, ReadOnlySpan<TElement> elements) where TNode : class, IContains<TElement>, INext<TNode> {
+		public static Boolean ContainsAll<TNode, TElement>(TNode head, ReadOnlySpan<TElement> elements) where TNode : class, IContains<TElement>, INext<TNode?> {
 			Boolean[] found = new Boolean[elements.Length];
 			TNode? N = head;
 			while (N is not null) {

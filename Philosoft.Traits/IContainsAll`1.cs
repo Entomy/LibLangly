@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can contain elements, and test against those.
 	/// </summary>
@@ -11,6 +9,6 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="elements">The elements to attempt to find.</param>
 		/// <returns><see langword="true"/> if all of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-		Boolean ContainsAll([AllowNull] params TElement[] elements);
+		Boolean ContainsAll(params TElement[]? elements);
 	}
 }

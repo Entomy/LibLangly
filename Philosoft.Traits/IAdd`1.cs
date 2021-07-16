@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements added to it.
 	/// </summary>
@@ -13,6 +11,6 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add([AllowNull] TElement element);
+		void Add(TElement element);
 	}
 }

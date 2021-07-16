@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 using System.Traits.Concepts;
 
 namespace Stringier {
@@ -13,14 +12,12 @@ namespace Stringier {
 			/// <summary>
 			/// The rope being enumerated.
 			/// </summary>
-			[AllowNull, MaybeNull]
-			private Rope Rope;
+			private Rope? Rope;
 
 			/// <summary>
 			/// The current node.
 			/// </summary>
-			[AllowNull, MaybeNull]
-			private Node N;
+			private Node? N;
 
 			/// <summary>
 			/// The index offset within <see cref="N"/>.
@@ -31,14 +28,13 @@ namespace Stringier {
 			/// Initializes a new <see cref="Enumerator"/>.
 			/// </summary>
 			/// <param name="rope">The rope to enumerate.</param>
-			public Enumerator([DisallowNull] Rope rope) {
+			public Enumerator(Rope rope) {
 				Rope = rope;
 				N = default;
 				i = -1;
 			}
 
 			/// <inheritdoc/>
-			[MaybeNull]
 			public Char Current => N[i];
 
 			/// <inheritdoc/>

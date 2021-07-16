@@ -21,13 +21,11 @@ namespace Collectathon.Pools {
 		/// <remarks>
 		/// This uses array parallelism together with <see cref="dealt"/>.
 		/// </remarks>
-		[DisallowNull, NotNull]
 		private readonly TElement[] cards;
 
 		/// <summary>
 		/// The random number generator used for shuffling.
 		/// </summary>
-		[DisallowNull, NotNull]
 		private readonly Numbersome.Random Random = new();
 
 		/// <summary>
@@ -36,8 +34,7 @@ namespace Collectathon.Pools {
 		/// <remarks>
 		/// This uses array parallelism together with <see cref="cards"/>.
 		/// </remarks>
-		[DisallowNull, NotNull]
-		private Boolean[] dealt;
+		private readonly Boolean[] dealt;
 
 		/// <summary>
 		/// The "card" index; the current top of the deck.
@@ -48,7 +45,7 @@ namespace Collectathon.Pools {
 		/// Initializes a new <see cref="Deck{TElement}"/>.
 		/// </summary>
 		/// <param name="elements">The elements in the deck.</param>
-		public Deck([DisallowNull] params TElement[] elements) {
+		public Deck(params TElement[] elements) {
 			cards = elements;
 			dealt = new Boolean[elements.Length];
 			Shuffle();
@@ -83,37 +80,41 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) {
+		public Boolean Contains(TElement element) {
 			for (Int32 i = 0; i < cards.Length; i++) {
 				if (Equals(cards[i], element)) {
-					if (!dealt[i]) return true;
+					if (!dealt[i]) { return true; }
 				}
 			}
 			return false;
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) {
+		public Boolean Contains(Predicate<TElement>? predicate) {
 			for (Int32 i = 0; i < cards.Length; i++) {
 				if (predicate?.Invoke(cards[i]) ?? cards[i] is null) {
-					if (!dealt[i]) return true;
+					if (!dealt[i]) { return true; }
 				}
 			}
 			return false;
 		}
 
 		/// <inheritdoc/>
-		public Boolean ContainsAll([AllowNull] params TElement[] elements) {
-			foreach (TElement element in elements) {
-				if (!Contains(element)) return false;
+		public Boolean ContainsAll(params TElement[]? elements) {
+			if (elements is not null) {
+				foreach (TElement element in elements) {
+					if (!Contains(element)) { return false; }
+				}
 			}
 			return true;
 		}
 
 		/// <inheritdoc/>
-		public Boolean ContainsAny([AllowNull] params TElement[] elements) {
-			foreach (TElement element in elements) {
-				if (Contains(element)) return true;
+		public Boolean ContainsAny(params TElement[]? elements) {
+			if (elements is not null) {
+				foreach (TElement element in elements) {
+					if (Contains(element)) { return true; }
+				}
 			}
 			return false;
 		}
@@ -122,9 +123,8 @@ namespace Collectathon.Pools {
 		/// Deals the next element from the deck.
 		/// </summary>
 		/// <returns>The next <typeparamref name="TElement"/>.</returns>
-		[return: MaybeNull]
 		public TElement Deal() {
-			Peek(out TElement? element);
+			Peek(out TElement element);
 			dealt[i] = true;
 			return element;
 		}
@@ -134,7 +134,7 @@ namespace Collectathon.Pools {
 		/// </summary>
 		/// <param name="amount">The amount of elements to deal.</param>
 		/// <returns>An <see cref="System.Collections.Generic.IEnumerable{T}"/> of <typeparamref name="TElement"/>.</returns>
-		public System.Collections.Generic.IEnumerable<TElement?> Deal(nint amount) {
+		public System.Collections.Generic.IEnumerable<TElement> Deal(nint amount) {
 			for (Int32 i = 0; i < amount; i++) {
 				yield return Deal();
 			}
@@ -144,7 +144,7 @@ namespace Collectathon.Pools {
 		public DeckEnumerator<TElement> GetEnumerator() => new DeckEnumerator<TElement>(cards, dealt, listDealt: true, listRemaining: true);
 
 		/// <inheritdoc/>
-		public void Peek([MaybeNull] out TElement element) {
+		public void Peek(out TElement element) {
 			while (dealt[i]) {
 				Shuffle();
 			}
@@ -152,7 +152,6 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
 		public TElement Peek() {
 			while (dealt[i]) {
 				Shuffle();
@@ -161,7 +160,7 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		public void Remove([AllowNull] TElement element) {
+		public void Remove(TElement element) {
 			for (Int32 i = 0; i < cards.Length; i++) {
 				if (Equals(cards[i], element)) {
 					dealt[i] = true;
@@ -170,7 +169,7 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		public void RemoveFirst([AllowNull] TElement element) {
+		public void RemoveFirst(TElement element) {
 			for (Int32 i = 0; i < cards.Length; i++) {
 				if (Equals(cards[i], element)) {
 					dealt[i] = true;
@@ -180,7 +179,7 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		public void RemoveLast([AllowNull] TElement element) {
+		public void RemoveLast(TElement element) {
 			for (Int32 i = cards.Length - 1; i >= 0; i--) {
 				if (Equals(cards[i], element)) {
 					dealt[i] = true;
@@ -203,11 +202,9 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(cards);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(cards, amount);
 	}
 }

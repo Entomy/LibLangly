@@ -8,12 +8,12 @@
 		/// Postpends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to postpend.</param>
-		void Postpend(Span<TElement?> elements);
+		void Postpend(Span<TElement> elements);
 
 		/// <summary>
 		/// Postpends the elements onto this object, a batch.
 		/// </summary>
 		/// <param name="elements">The elements to postpend.</param>
-		void Postpend(ReadOnlySpan<TElement?> elements);
+		void Postpend(ReadOnlySpan<TElement> elements);
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements prepended onto it.
 	/// </summary>
@@ -10,6 +8,6 @@ namespace System.Traits {
 		/// Prepends the element onto this object.
 		/// </summary>
 		/// <param name="element">The element to prepend.</param>
-		void Prepend([AllowNull] TElement element);
+		void Prepend(TElement element);
 	}
 }

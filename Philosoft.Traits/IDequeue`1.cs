@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have elements dequeued from it.
 	/// </summary>
@@ -10,7 +8,6 @@ namespace System.Traits {
 		/// Dequeues the next element.
 		/// </summary>
 		/// <returns>The next element.</returns>
-		[return: MaybeNull]
 		TElement Dequeue();
 	}
 }

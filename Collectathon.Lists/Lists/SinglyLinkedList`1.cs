@@ -31,14 +31,12 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// The head node of the list; the first element.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		private SinglyLinkedListNode<TElement> Head;
+		private SinglyLinkedListNode<TElement>? Head;
 
 		/// <summary>
 		/// The tail node of the list; the last element.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		private SinglyLinkedListNode<TElement> Tail;
+		private SinglyLinkedListNode<TElement>? Tail;
 
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
@@ -50,9 +48,11 @@ namespace Collectathon.Lists {
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
 		[MaybeLinksNewNode(1)]
-		public SinglyLinkedList([DisallowNull] params TElement?[] elements) {
-			foreach (TElement? element in elements) {
-				Add(element);
+		public SinglyLinkedList(params TElement[]? elements) {
+			if (elements is not null) {
+				foreach (TElement element in elements) {
+					Add(element);
+				}
 			}
 		}
 
@@ -60,7 +60,6 @@ namespace Collectathon.Lists {
 		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
 		public TElement this[Int32 index] {
 			get {
 				SinglyLinkedListNode<TElement>? N = Head;
@@ -87,7 +86,7 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		[MaybeLinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Add([AllowNull] TElement element) => Postpend(element);
+		public void Add(TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
 		public void Clear() {
@@ -100,14 +99,13 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Head is not null ? Collection.Contains(Head, element) : false;
+		public Boolean Contains(TElement element) => Head is not null ? Collection.Contains(Head, element) : false;
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Head is not null ? Collection.Contains(Head, predicate) : false;
+		public Boolean Contains(Predicate<TElement>? predicate) => Head is not null ? Collection.Contains(Head, predicate) : false;
 
 		/// <inheritdoc/>
 		[UnlinksNode]
-		[return: MaybeNull]
 		public TElement Dequeue() {
 			if (Head is not null) {
 				SinglyLinkedListNode<TElement> oldHead = Head;
@@ -121,12 +119,12 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
-		public void Enqueue([AllowNull] TElement element) => Postpend(element);
+		public void Enqueue(TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
-		public override Boolean Equals([AllowNull] Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
-			case SinglyLinkedList<TElement?> other:
+			case SinglyLinkedList<TElement> other:
 				return Equals(other);
 			case System.Collections.Generic.IEnumerable<TElement> other:
 				return Equals(other);
@@ -136,22 +134,18 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals([AllowNull] SinglyLinkedList<TElement?> other) => Collection.Equals(this, other);
+		public Boolean Equals(SinglyLinkedList<TElement>? other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
-		public Boolean Equals([AllowNull] System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);
+		public Boolean Equals(System.Collections.Generic.IEnumerable<TElement>? other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
 		public StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>> GetEnumerator() => new StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>>(Head, Count);
 
 		/// <inheritdoc/>
-		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
-		public override Int32 GetHashCode() => base.GetHashCode();
-
-		/// <inheritdoc/>
 		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, [AllowNull] TElement element) {
+		public void Insert(Int32 index, TElement element) {
 			if (index == 0) {
 				Prepend(element);
 			} else if (index == Count) {
@@ -178,15 +172,13 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
 		public TElement Peek() => Head.Element;
 
 		/// <inheritdoc/>
-		public void Peek([MaybeNull] out TElement element) => element = Head.Element;
+		public void Peek(out TElement element) => element = Head.Element;
 
 		/// <inheritdoc/>
 		[UnlinksNode]
-		[return: MaybeNull]
 		public TElement Pop() {
 			if (Head is not null) {
 				SinglyLinkedListNode<TElement> oldHead = Head;
@@ -201,7 +193,7 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend([AllowNull] TElement element) {
+		public void Postpend(TElement element) {
 			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
@@ -215,7 +207,7 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend([AllowNull] TElement element) {
+		public void Prepend(TElement element) {
 			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
@@ -227,33 +219,31 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
-		public void Push([AllowNull] TElement element) => Prepend(element);
+		public void Push(TElement element) => Prepend(element);
 
 		/// <inheritdoc/>
 		[UnlinksNode]
-		public void Remove([AllowNull] TElement element) => throw new NotImplementedException();
+		public void Remove(TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		[UnlinksNode]
-		public void RemoveFirst([AllowNull] TElement element) => throw new NotImplementedException();
+		public void RemoveFirst(TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		[UnlinksNode]
-		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
+		public void RemoveLast(TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+		public void Replace(TElement search, TElement replace) {
 			if (Head is not null) {
 				Collection.Replace(Head, search, replace);
 			}
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(Head, Count);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 	}
 }

@@ -22,14 +22,12 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// The head node of the list; the first element.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		protected SinglyLinkedListNode<TIndex, TElement> Head;
+		protected SinglyLinkedListNode<TIndex, TElement>? Head;
 
 		/// <summary>
 		/// The tail node of the list; the second element.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		protected SinglyLinkedListNode<TIndex, TElement> Tail;
+		protected SinglyLinkedListNode<TIndex, TElement>? Tail;
 
 		/// <summary>
 		/// initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/>.
@@ -41,7 +39,7 @@ namespace Collectathon.Lists {
 		/// </summary>
 		/// <param name="entries">The initial entries of the list.</param>
 		[LinksNewNode(1)]
-		public SinglyLinkedList([DisallowNull] params (TIndex Index, TElement? Element)[] entries) {
+		public SinglyLinkedList(params (TIndex Index, TElement? Element)[] entries) {
 			foreach ((TIndex Index, TElement? Element) in entries) {
 				Insert(Index, Element);
 			}
@@ -51,8 +49,7 @@ namespace Collectathon.Lists {
 		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
-		public TElement this[[DisallowNull] TIndex index] {
+		public TElement this[TIndex index] {
 			get {
 				SinglyLinkedListNode<TIndex, TElement>? N = Head;
 				for (nint i = 0; N is not null; i++) {
@@ -75,14 +72,6 @@ namespace Collectathon.Lists {
 			}
 		}
 
-		/// <summary>
-		/// Converts the <paramref name="entries"/> to a <see cref="SinglyLinkedList{TElement}"/>.
-		/// </summary>
-		/// <param name="entries">The entries to convert to a list.</param>
-		[return: MaybeNull, NotNullIfNotNull("elements")]
-
-		public static implicit operator SinglyLinkedList<TIndex, TElement>([AllowNull] (TIndex Index, TElement Element)[] entries) => entries is not null ? new(entries) : null;
-
 		/// <inheritdoc/>
 		public void Clear() {
 			if (Head is not null) {
@@ -98,7 +87,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
-		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		public void Insert(TIndex index, TElement element) {
 			if (Count > 0) {
 				Tail!.Next = Tail!.Postpend(index, element);
 				Tail = Tail.Next;
@@ -110,11 +99,9 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(Head, Count);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 	}
 }

@@ -8,12 +8,12 @@
 		/// Enqueues the elements into this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to enqueue.</param>
-		void Enqueue(Span<TElement?> elements);
+		void Enqueue(Span<TElement> elements);
 
 		/// <summary>
 		/// Enqueues the elements into this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to enqueue.</param>
-		void Enqueue(ReadOnlySpan<TElement?> elements);
+		void Enqueue(ReadOnlySpan<TElement> elements);
 	}
 }

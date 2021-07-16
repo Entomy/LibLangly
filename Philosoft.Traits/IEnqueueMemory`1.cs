@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements enqueued into it, with additional array and memory operations.
 	/// </summary>
@@ -10,24 +8,24 @@ namespace System.Traits {
 		/// Enqueues the elements into this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to enqueue.</param>
-		void Enqueue([AllowNull] params TElement?[] elements);
+		void Enqueue(params TElement[]? elements);
 
 		/// <summary>
 		/// Enqueues the elements into this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to enqueue.</param>
-		void Enqueue(ArraySegment<TElement?> elements);
+		void Enqueue(ArraySegment<TElement> elements);
 
 		/// <summary>
 		/// Enqueues the elements into this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to enqueue.</param>
-		void Enqueue(Memory<TElement?> elements);
+		void Enqueue(Memory<TElement> elements);
 
 		/// <summary>
 		/// Enqueues the elements into this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to enqueue.</param>
-		void Enqueue(ReadOnlyMemory<TElement?> elements);
+		void Enqueue(ReadOnlyMemory<TElement> elements);
 	}
 }

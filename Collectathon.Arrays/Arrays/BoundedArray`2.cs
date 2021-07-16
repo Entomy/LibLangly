@@ -17,7 +17,7 @@ namespace Collectathon.Arrays {
 		IClear,
 		IInsert<TIndex, TElement>,
 		IList<TIndex, TElement>,
-		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>>
+		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<TIndex, TElement>>
 		where TIndex : notnull {
 		/// <summary>
 		/// The indicies of this <see cref="BoundedArray{TIndex, TElement}"/>.
@@ -27,7 +27,7 @@ namespace Collectathon.Arrays {
 		/// <summary>
 		/// The elements of this <see cref="BoundedArray{TIndex, TElement}"/>.
 		/// </summary>
-		private readonly TElement?[] Elements;
+		private readonly TElement[] Elements;
 
 		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
@@ -35,7 +35,7 @@ namespace Collectathon.Arrays {
 		/// <param name="capacity">The maximum capacity.</param>
 		public BoundedArray(Int32 capacity) {
 			Indicies = new TIndex[capacity];
-			Elements = new TElement?[capacity];
+			Elements = new TElement[capacity];
 		}
 
 		/// <inheritdoc/>
@@ -45,8 +45,7 @@ namespace Collectathon.Arrays {
 		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
-		public TElement this[[DisallowNull] TIndex index] {
+		public TElement this[TIndex index] {
 			get {
 				for (Int32 i = 0; i < Count; i++) {
 					if (Equals(Indicies[i], index)) {
@@ -70,20 +69,16 @@ namespace Collectathon.Arrays {
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
+		public Boolean Contains(TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Elements, Count, predicate);
+		public Boolean Contains(Predicate<TElement>? predicate) => Collection.Contains(Elements, Count, predicate);
 
 		/// <inheritdoc/>
-		public ArrayEnumerator<TIndex, TElement?> GetEnumerator() => new ArrayEnumerator<TIndex, TElement?>(Indicies, Elements, Count);
+		public ArrayEnumerator<TIndex, TElement> GetEnumerator() => new ArrayEnumerator<TIndex, TElement>(Indicies, Elements, Count);
 
 		/// <inheritdoc/>
-		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
-		public override Int32 GetHashCode() => base.GetHashCode();
-
-		/// <inheritdoc/>
-		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		public void Insert(TIndex index, TElement element) {
 			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Indicies[i], index)) {
 					return;
@@ -93,14 +88,12 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Elements, Count, search, replace);
+		public void Replace(TElement search, TElement replace) => Collection.Replace(Elements, Count, search, replace);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(Indicies, Elements);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Indicies, Elements, amount);
 
 		/// <summary>
@@ -109,7 +102,7 @@ namespace Collectathon.Arrays {
 		/// <param name="index">The index of the element to add.</param>
 		/// <param name="element">The element to add.</param>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		private void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		private void Add(TIndex index, TElement element) {
 			if (Count < Capacity) {
 				Indicies[Count] = index;
 				Elements[Count] = element;

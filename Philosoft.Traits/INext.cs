@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can move to a next instance.
 	/// </summary>
@@ -11,7 +9,6 @@ namespace System.Traits {
 		/// <summary>
 		/// The next node in the collection.
 		/// </summary>
-		[AllowNull, MaybeNull]
 		TSelf Next { get; }
 	}
 }

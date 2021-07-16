@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can be written to.
 	/// </summary>
@@ -10,6 +8,6 @@ namespace System.Traits {
 		/// Writes a <paramref name="element"/>.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value to write.</param>
-		void Write([AllowNull] TElement element);
+		void Write(TElement element);
 	}
 }

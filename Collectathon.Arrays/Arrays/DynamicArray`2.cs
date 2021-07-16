@@ -17,32 +17,29 @@ namespace Collectathon.Arrays {
 		IClear,
 		IInsert<TIndex, TElement>,
 		IResize,
-		ISequence<(TIndex Index, TElement? Element), ArrayEnumerator<TIndex, TElement?>>
+		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<TIndex, TElement>>
 		where TIndex : notnull {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>
-		[SuppressMessage("Naming", "AV1706:Identifier contains an abbreviation or is too short", Justification = "Phi is a well known math constant.")]
 		private const Double φ = 1.6180339887_4989484820_4586834365_6381177203_0917980576_2862135448_6227052604_6281890244_9707207204_1893911374_8475408807_5386891752;
 
 		/// <summary>
 		/// The indicies of this <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
-		[DisallowNull, NotNull]
 		private TIndex[] Indicies;
 
 		/// <summary>
 		/// The elements of this <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
-		[DisallowNull, NotNull]
-		private TElement?[] Elements;
+		private TElement[] Elements;
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
 		public DynamicArray() {
 			Indicies = Array.Empty<TIndex>();
-			Elements = Array.Empty<TElement?>();
+			Elements = Array.Empty<TElement>();
 		}
 
 		/// <summary>
@@ -51,7 +48,7 @@ namespace Collectathon.Arrays {
 		/// <param name="capacity">The maximum capacity.</param>
 		public DynamicArray(Int32 capacity) {
 			Indicies = new TIndex[capacity];
-			Elements = new TElement?[capacity];
+			Elements = new TElement[capacity];
 		}
 
 		/// <inheritdoc/>
@@ -64,8 +61,7 @@ namespace Collectathon.Arrays {
 		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
-		public TElement this[[DisallowNull] TIndex index] {
+		public TElement this[TIndex index] {
 			get {
 				for (Int32 i = 0; i < Count; i++) {
 					if (Equals(Indicies[i], index)) {
@@ -89,20 +85,16 @@ namespace Collectathon.Arrays {
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
+		public Boolean Contains(TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => Collection.Contains(Elements, Count, predicate);
+		public Boolean Contains(Predicate<TElement>? predicate) => Collection.Contains(Elements, Count, predicate);
 
 		/// <inheritdoc/>
 		public ArrayEnumerator<TIndex, TElement> GetEnumerator() => new ArrayEnumerator<TIndex, TElement>(Indicies, Elements, Count);
 
 		/// <inheritdoc/>
-		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
-		public override Int32 GetHashCode() => base.GetHashCode();
-
-		/// <inheritdoc/>
-		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		public void Insert(TIndex index, TElement element) {
 			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Indicies[i], index)) {
 					return;
@@ -112,7 +104,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Elements, Count, search, replace);
+		public void Replace(TElement search, TElement replace) => Collection.Replace(Elements, Count, search, replace);
 
 		/// <inheritdoc/>
 		public void Resize(Int32 capacity) {
@@ -121,15 +113,13 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(Indicies, Elements);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Indicies, Elements, amount);
 
 		/// <inheritdoc/>
-		private void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		private void Add(TIndex index, TElement element) {
 			if (Count == Capacity) {
 				Grow();
 			}

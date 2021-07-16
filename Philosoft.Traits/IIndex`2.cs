@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type is indexable, read and write.
 	/// </summary>
@@ -12,13 +10,11 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="index">The index of the element to get.</param>
 		/// <returns>The element at the specified index.</returns>
-		[AllowNull, MaybeNull]
-		new TElement this[[DisallowNull] TIndex index] { get; set; }
+		new TElement this[TIndex index] { get; set; }
 
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
-		TElement IIndexReadOnly<TIndex, TElement>.this[[DisallowNull] TIndex index] => this[index];
+		TElement IIndexReadOnly<TIndex, TElement>.this[TIndex index] => this[index];
 #endif
 	}
 }

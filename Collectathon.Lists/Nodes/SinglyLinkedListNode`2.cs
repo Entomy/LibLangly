@@ -12,7 +12,7 @@ namespace Collectathon.Nodes {
 		ICount,
 		IElement<TElement>,
 		IIndex<TIndex>,
-		INext<SinglyLinkedListNode<TIndex, TElement>>,
+		INext<SinglyLinkedListNode<TIndex, TElement>?>,
 		IReplace<TElement>,
 		IUnlink
 		where TIndex : notnull {
@@ -22,7 +22,7 @@ namespace Collectathon.Nodes {
 		/// <param name="index">The index of the <paramref name="element"/>.</param>
 		/// <param name="element">The element contained in this node.</param>
 		/// <param name="next">The next node in the list.</param>
-		public SinglyLinkedListNode([DisallowNull] TIndex index, [AllowNull] TElement element, [AllowNull] SinglyLinkedListNode<TIndex, TElement> next) {
+		public SinglyLinkedListNode(TIndex index, TElement element, SinglyLinkedListNode<TIndex, TElement>? next) {
 			Index = index;
 			Element = element;
 			Next = next;
@@ -32,40 +32,34 @@ namespace Collectathon.Nodes {
 		public Int32 Count => 1;
 
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
 		public TElement Element { get; set; }
 
 		/// <inheritdoc/>
-		[DisallowNull, NotNull]
 		public TIndex Index { get; set; }
 
 		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
-		public SinglyLinkedListNode<TIndex, TElement> Next { get; set; }
+		public SinglyLinkedListNode<TIndex, TElement>? Next { get; set; }
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Equals(Element, element);
+		public Boolean Contains(TElement element) => Equals(Element, element);
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => predicate?.Invoke(Element) ?? Element is null;
+		public Boolean Contains(Predicate<TElement>? predicate) => predicate?.Invoke(Element) ?? Element is null;
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		public SinglyLinkedListNode<TIndex, TElement> Postpend([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		public SinglyLinkedListNode<TIndex, TElement> Postpend(TIndex index, TElement element) {
 			Next = new SinglyLinkedListNode<TIndex, TElement>(index, element, next: null);
 			return Next;
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		public SinglyLinkedListNode<TIndex, TElement> Prepend([DisallowNull] TIndex index, [AllowNull] TElement element) => new SinglyLinkedListNode<TIndex, TElement>(index, element, next: this);
+		public SinglyLinkedListNode<TIndex, TElement> Prepend(TIndex index, TElement element) => new SinglyLinkedListNode<TIndex, TElement>(index, element, next: this);
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Element = !Equals(Element, search) ? Element : replace;
+		public void Replace(TElement search, TElement replace) => Element = !Equals(Element, search) ? Element : replace;
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		public override String ToString() => $"{Index}{Element?.ToString() ?? ""}";
+		public override String ToString() => $"{Index}:{Element?.ToString() ?? "null"}";
 
 		/// <inheritdoc/>
 		public void Unlink() => Next = null;

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
-using System.Traits.Concepts;
 using Collectathon.Pools;
 
 namespace Collectathon.Enumerators {
@@ -12,15 +10,14 @@ namespace Collectathon.Enumerators {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct DeckEnumerator<TElement> : ICount, ICurrent<TElement?>, IMoveNext, IReset {
+	public struct DeckEnumerator<TElement> : ICount, ICurrent<TElement>, IMoveNext, IReset {
 		/// <summary>
 		/// The elements of this deck.
 		/// </summary>
 		/// <remarks>
 		/// This uses array parallelism together with <see cref="Dealt"/>.
 		/// </remarks>
-		[DisallowNull, NotNull]
-		private readonly TElement?[] Cards;
+		private readonly TElement[] Cards;
 
 		/// <summary>
 		/// Whether each corresponding card was dealt.
@@ -28,7 +25,6 @@ namespace Collectathon.Enumerators {
 		/// <remarks>
 		/// This uses array parallelism together with <see cref="Cards"/>.
 		/// </remarks>
-		[DisallowNull, NotNull]
 		private readonly Boolean[] Dealt;
 
 		/// <summary>
@@ -49,7 +45,7 @@ namespace Collectathon.Enumerators {
 		/// <summary>
 		/// Initializes a new <see cref="DeckEnumerator{TElement}"/>.
 		/// </summary>
-		public DeckEnumerator([DisallowNull] TElement?[] cards, [DisallowNull] Boolean[] dealt, Boolean listDealt, Boolean listRemaining) {
+		public DeckEnumerator(TElement[] cards, Boolean[] dealt, Boolean listDealt, Boolean listRemaining) {
 			Cards = cards;
 			Dealt = dealt;
 			ListDealt = listDealt;
@@ -58,7 +54,7 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		public TElement? Current => Cards[i];
+		public TElement Current => Cards[i];
 
 		/// <inheritdoc/>
 		public Int32 Count {

@@ -8,12 +8,12 @@
 		/// Pushes the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to push.</param>
-		void Push(Span<TElement?> elements);
+		void Push(Span<TElement> elements);
 
 		/// <summary>
 		/// Pushes the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to push.</param>
-		void Push(ReadOnlySpan<TElement?> elements);
+		void Push(ReadOnlySpan<TElement> elements);
 	}
 }

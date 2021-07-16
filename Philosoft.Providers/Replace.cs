@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace System.Traits.Concepts {
 	public static partial class Collection {
@@ -11,7 +10,7 @@ namespace System.Traits.Concepts {
 		/// <param name="search">The element to replace.</param>
 		/// <param name="replace">The element to use instead.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Replace<TElement>([DisallowNull] TElement?[] collection, Int32 count, [AllowNull] TElement search, [AllowNull] TElement replace) {
+		public static void Replace<TElement>(TElement[] collection, Int32 count, TElement search, TElement replace) {
 			for (Int32 i = 0; i < count; i++) {
 				if (Equals(collection[i], search)) {
 					collection[i] = replace;
@@ -26,7 +25,7 @@ namespace System.Traits.Concepts {
 		/// <param name="search">The element to replace.</param>
 		/// <param name="replace">The element to use instead.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Replace<TNode, TElement>([DisallowNull] TNode head, [AllowNull] TElement search, [AllowNull] TElement replace) where TNode : class, INext<TNode>, IReplace<TElement> {
+		public static void Replace<TNode, TElement>(TNode head, TElement search, TElement replace) where TNode : class, INext<TNode?>, IReplace<TElement> {
 			TNode? N = head;
 			while (N is not null) {
 				N.Replace(search, replace);

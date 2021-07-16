@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type is indexable by reference, read and write.
 	/// </summary>
@@ -12,6 +10,6 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="index">The index of the element to get a reference for.</param>
 		/// <returns>A reference to the element at the specified index.</returns>
-		new ref TElement this[[DisallowNull] TIndex index] { get; }
+		new ref TElement this[TIndex index] { get; }
 	}
 }

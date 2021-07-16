@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier {
 	public partial class Rope {
@@ -12,7 +11,7 @@ namespace Stringier {
 			/// </summary>
 			private readonly Char Char;
 
-			public CharNode(Char @char, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) => Char = @char;
+			public CharNode(Char @char, Node? next, Node? previous) : base(next, previous) => Char = @char;
 
 			/// <inheritdoc/>
 			public override Char this[Int32 index] {
@@ -28,13 +27,13 @@ namespace Stringier {
 			public override Int32 Count => 1;
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Char element) => Equals(Char, element);
+			public override Boolean Contains(Char element) => Equals(Char, element);
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => predicate?.Invoke(Char) ?? false;
+			public override Boolean Contains(Predicate<Char>? predicate) => predicate?.Invoke(Char) ?? false;
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, Char element) {
 				Node head;
 				Node tail;
 				switch (index) {
@@ -55,7 +54,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, String element) {
 				Node head;
 				Node tail;
 				switch (index) {
@@ -76,7 +75,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, Char[] element) {
 				Node head;
 				Node tail;
 				switch (index) {
@@ -97,7 +96,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Remove([AllowNull] Char element) => throw new NotImplementedException();
+			public override (Node Head, Node Tail) Remove(Char element) => throw new NotImplementedException();
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Replace(Char search, Char replace) {
@@ -110,7 +109,6 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public override String ToString() => Char.ToString();
 		}
 	}

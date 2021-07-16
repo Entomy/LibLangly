@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can move to a parent instance.
 	/// </summary>
@@ -11,7 +9,6 @@ namespace System.Traits {
 		/// <summary>
 		/// The parent node in the collection.
 		/// </summary>
-		[MaybeNull]
 		TSelf Parent { get; }
 	}
 }

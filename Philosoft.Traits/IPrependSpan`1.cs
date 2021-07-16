@@ -8,12 +8,12 @@
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(Span<TElement?> elements);
+		void Prepend(Span<TElement> elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(ReadOnlySpan<TElement?> elements);
+		void Prepend(ReadOnlySpan<TElement> elements);
 	}
 }

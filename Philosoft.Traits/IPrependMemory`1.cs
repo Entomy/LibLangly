@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements prepended onto it, with additional array and memory operations.
 	/// </summary>
@@ -10,24 +8,24 @@ namespace System.Traits {
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend([AllowNull] params TElement?[] elements);
+		void Prepend(params TElement[] elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(ArraySegment<TElement?> elements);
+		void Prepend(ArraySegment<TElement> elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(Memory<TElement?> elements);
+		void Prepend(Memory<TElement> elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(ReadOnlyMemory<TElement?> elements);
+		void Prepend(ReadOnlyMemory<TElement> elements);
 	}
 }

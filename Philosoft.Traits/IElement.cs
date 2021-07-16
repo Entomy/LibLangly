@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type contains an element.
 	/// </summary>
@@ -8,7 +6,6 @@ namespace System.Traits {
 		/// <summary>
 		/// The element contained in this instance.
 		/// </summary>
-		[MaybeNull]
 		TElement Element { get; }
 	}
 }

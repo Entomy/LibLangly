@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have elements removed from it.
 	/// </summary>
@@ -10,18 +8,18 @@ namespace System.Traits {
 		/// Removes all instances of the element from this object.
 		/// </summary>
 		/// <param name="element">The element to remove.</param>
-		void Remove([AllowNull] TElement element);
+		void Remove(TElement element);
 
 		/// <summary>
 		/// Removes the first instance of the element from this object.
 		/// </summary>
 		/// <param name="element">The element to remove.</param>
-		void RemoveFirst([AllowNull] TElement element);
+		void RemoveFirst(TElement element);
 
 		/// <summary>
 		/// Removes the last instance of the element from this object.
 		/// </summary>
 		/// <param name="element">The element to remove.</param>
-		void RemoveLast([AllowNull] TElement element);
+		void RemoveLast(TElement element);
 	}
 }

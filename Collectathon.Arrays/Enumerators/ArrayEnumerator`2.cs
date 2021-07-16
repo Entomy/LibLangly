@@ -10,18 +10,16 @@ namespace Collectathon.Enumerators {
 	/// <typeparam name="TIndex">The type of the indicies being enumerated.</typeparam>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct ArrayEnumerator<TIndex, TElement> : IEnumerator<(TIndex Index, TElement? Element)> where TIndex : notnull {
+	public struct ArrayEnumerator<TIndex, TElement> : IEnumerator<(TIndex Index, TElement Element)> where TIndex : notnull {
 		/// <summary>
 		/// The <see cref="Array"/> of indicies being enumerated.
 		/// </summary>
-		[DisallowNull, NotNull]
 		private readonly TIndex[] Indicies;
 
 		/// <summary>
 		/// The <see cref="Array"/> of elements being enumerated.
 		/// </summary>
-		[DisallowNull, NotNull]
-		private readonly TElement?[] Elements;
+		private readonly TElement[] Elements;
 
 		/// <summary>
 		/// The current index into the array./
@@ -37,7 +35,7 @@ namespace Collectathon.Enumerators {
 		/// <remarks>
 		/// At first it might seem like <paramref name="length"/> is superfluous, as <see cref="ReadOnlyMemory{T}"/> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <paramref name="length"/> is the actually used portion.
 		/// </remarks>
-		public ArrayEnumerator([DisallowNull] TIndex[] indicies, [DisallowNull] TElement?[] elements, Int32 length) {
+		public ArrayEnumerator([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements, Int32 length) {
 			Indicies = indicies;
 			Elements = elements;
 			Count = length;
@@ -45,8 +43,7 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		[MaybeNull]
-		public (TIndex Index, TElement? Element) Current => (Indicies[i], Elements[i]);
+		public (TIndex Index, TElement Element) Current => (Indicies[i], Elements[i]);
 
 		/// <inheritdoc/>
 		public Int32 Count { get; }

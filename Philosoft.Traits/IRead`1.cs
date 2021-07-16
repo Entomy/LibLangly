@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can be read from.
 	/// </summary>
@@ -10,6 +8,6 @@ namespace System.Traits {
 		/// Reads a <typeparamref name="TElement"/>.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was read.</param>
-		void Read([MaybeNull] out TElement element);
+		void Read(out TElement element);
 	}
 }

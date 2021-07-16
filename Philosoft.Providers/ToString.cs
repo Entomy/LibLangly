@@ -10,8 +10,7 @@ namespace System.Traits.Concepts {
 		/// <param name="elements">The elements of this sequence.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>([DisallowNull] TElement[] elements) {
+		public static String ToString<TElement>(TElement[] elements) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < elements.Length; i++) {
 				if (i == elements.Length) {
@@ -31,8 +30,7 @@ namespace System.Traits.Concepts {
 		/// <param name="elements">The elements of this sequence.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements) {
+		public static String ToString<TIndex, TElement>(TIndex[] indicies, TElement[] elements) where TIndex : notnull {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < indicies.Length; i++) {
 				if (i == indicies.Length) {
@@ -52,7 +50,6 @@ namespace System.Traits.Concepts {
 		/// <param name="count">The amount of elements in this collection.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
 		public static String ToString<TNode>(TNode? head, Int32 count) where TNode : class, INext<TNode?> {
 			StringBuilder builder = new StringBuilder();
 			if (head is not null) {
@@ -78,8 +75,7 @@ namespace System.Traits.Concepts {
 		/// <param name="amount">The maximum amount of elements to display.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TElement>([DisallowNull] TElement[] elements, Int32 amount) {
+		public static String ToString<TElement>(TElement[] elements, Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < elements.Length; i++) {
 				if (i + 1 == elements.Length) {
@@ -103,8 +99,7 @@ namespace System.Traits.Concepts {
 		/// <param name="amount">The maximum amount of elements to display.</param>
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[return: NotNull]
-		public static String ToString<TIndex, TElement>([DisallowNull] TIndex[] indicies, [DisallowNull] TElement[] elements, Int32 amount) {
+		public static String ToString<TIndex, TElement>(TIndex[] indicies, TElement[] elements, Int32 amount) where TIndex : notnull {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < indicies.Length; i++) {
 				if (i + 1 == indicies.Length) {

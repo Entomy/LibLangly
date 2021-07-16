@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace System.Traits.Concepts {
 	public static partial class Collection {
@@ -11,7 +10,7 @@ namespace System.Traits.Concepts {
 		/// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
 		/// <param name="element">The element to insert.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Insert<TElement>([DisallowNull] TElement?[] collection, ref Int32 count, Int32 index, [AllowNull] TElement element) {
+		public static void Insert<TElement>(TElement[] collection, ref Int32 count, Int32 index, TElement element) {
 			collection.AsSpan(index, count - index).CopyTo(collection.AsSpan(index + 1));
 			collection[index] = element;
 			count++;
@@ -25,7 +24,7 @@ namespace System.Traits.Concepts {
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Insert<TElement>([DisallowNull] TElement?[] collection, ref Int32 count, Int32 index, ReadOnlySpan<TElement?> elements) {
+		public static void Insert<TElement>(TElement[] collection, ref Int32 count, Int32 index, ReadOnlySpan<TElement> elements) {
 			collection.AsSpan(index, count - index).CopyTo(collection.AsSpan(index + elements.Length));
 			elements.CopyTo(collection.AsSpan(index));
 			count += elements.Length;

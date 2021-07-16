@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have elements inserted into it.
 	/// </summary>
@@ -12,6 +10,6 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
 		/// <param name="element">The element to insert.</param>
-		void Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
+		void Insert(TIndex index, TElement element);
 	}
 }

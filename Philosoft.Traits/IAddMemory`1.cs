@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements added to it, with additional array and memory operations.
 	/// </summary>
@@ -13,7 +11,7 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add([AllowNull] params TElement?[] elements);
+		void Add(params TElement[]? elements);
 
 		/// <summary>
 		/// Adds the elements to this object, as a batch.
@@ -22,7 +20,7 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add(ArraySegment<TElement?> elements);
+		void Add(ArraySegment<TElement> elements);
 
 		/// <summary>
 		/// Adds the elements to this object, as a batch.
@@ -31,7 +29,7 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add(Memory<TElement?> elements);
+		void Add(Memory<TElement> elements);
 
 		/// <summary>
 		/// Adds the elements to this object, as a batch.
@@ -40,6 +38,6 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add(ReadOnlyMemory<TElement?> elements);
+		void Add(ReadOnlyMemory<TElement> elements);
 	}
 }

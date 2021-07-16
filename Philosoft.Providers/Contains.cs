@@ -11,7 +11,7 @@ namespace System.Traits.Concepts {
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains([DisallowNull] String collection, Int32 count, Char element) {
+		public static Boolean Contains(String collection, Int32 count, Char element) {
 			if (collection is not null) {
 				for (Int32 i = 0; i < count; i++) {
 					if (Equals(collection[i], element)) { return true; }
@@ -28,7 +28,7 @@ namespace System.Traits.Concepts {
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>([DisallowNull] TElement[] collection, Int32 count, [AllowNull] TElement element) {
+		public static Boolean Contains<TElement>(TElement[] collection, Int32 count, TElement element) {
 			if (collection is not null) {
 				for (Int32 i = 0; i < count; i++) {
 					if (Equals(collection[i], element)) { return true; }
@@ -46,7 +46,7 @@ namespace System.Traits.Concepts {
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static unsafe Boolean Contains<TElement>([DisallowNull] TElement* collection, Int32 count, [AllowNull] TElement element) where TElement : unmanaged {
+		public static unsafe Boolean Contains<TElement>(TElement* collection, Int32 count, TElement element) where TElement : unmanaged {
 			if (collection is not null) {
 				for (Int32 i = 0; i < count; i++) {
 					if (Equals(collection[i], element)) { return true; }
@@ -62,7 +62,7 @@ namespace System.Traits.Concepts {
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TNode, TElement>([DisallowNull] TNode head, [AllowNull] TElement element) where TNode : class, IContains<TElement>, INext<TNode> {
+		public static Boolean Contains<TNode, TElement>(TNode head, TElement element) where TNode : class, IContains<TElement>, INext<TNode?> {
 			TNode? N = head;
 			while (N is not null) {
 				if (N.Contains(element)) { return true; }
@@ -79,7 +79,7 @@ namespace System.Traits.Concepts {
 		/// <param name="predicate">A <see cref="Predicate{T}"/> describing the element to attempt to find.</param>
 		/// <returns><see langword="true"/> if an element described by the <paramref name="predicate"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains([DisallowNull] String collection, Int32 count, [AllowNull] Predicate<Char> predicate) {
+		public static Boolean Contains(String collection, Int32 count, Predicate<Char>? predicate) {
 			if (collection is not null) {
 				for (Int32 i = 0; i < count; i++) {
 					if (predicate?.Invoke(collection[i]) ?? false) { return true; }
@@ -96,7 +96,7 @@ namespace System.Traits.Concepts {
 		/// <param name="predicate">A <see cref="Predicate{T}"/> describing the element to attempt to find.</param>
 		/// <returns><see langword="true"/> if an element described by the <paramref name="predicate"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>([DisallowNull] TElement[] collection, Int32 count, [AllowNull] Predicate<TElement> predicate) {
+		public static Boolean Contains<TElement>(TElement[] collection, Int32 count, Predicate<TElement>? predicate) {
 			if (collection is not null) {
 				for (Int32 i = 0; i < count; i++) {
 					if (predicate?.Invoke(collection[i]) ?? collection[i] is null) { return true; }
@@ -114,7 +114,7 @@ namespace System.Traits.Concepts {
 		/// <returns><see langword="true"/> if an element described by the <paramref name="predicate"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static unsafe Boolean Contains<TElement>([DisallowNull] TElement* collection, Int32 count, [AllowNull] Predicate<TElement> predicate) where TElement : unmanaged {
+		public static unsafe Boolean Contains<TElement>(TElement* collection, Int32 count, Predicate<TElement>? predicate) where TElement : unmanaged {
 			if (collection is not null) {
 				for (Int32 i = 0; i < count; i++) {
 					if (predicate?.Invoke(collection[i]) ?? false) { return true; }
@@ -130,7 +130,7 @@ namespace System.Traits.Concepts {
 		/// <param name="predicate">A <see cref="Predicate{T}"/> describing the element to attempt to find.</param>
 		/// <returns><see langword="true"/> if an element described by the <paramref name="predicate"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TNode, TElement>([DisallowNull] TNode head, [AllowNull] Predicate<TElement> predicate) where TNode : class, IContains<TElement>, INext<TNode> {
+		public static Boolean Contains<TNode, TElement>(TNode head, Predicate<TElement>? predicate) where TNode : class, IContains<TElement>, INext<TNode?> {
 			TNode? N = head;
 			while (N is not null) {
 				if (N.Contains(predicate)) { return true; }

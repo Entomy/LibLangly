@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the collection can have elements inserted into it.
 	/// </summary>
@@ -12,14 +10,14 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		void Insert([DisallowNull] TIndex index, Span<TElement?> elements);
+		void Insert(TIndex index, Span<TElement> elements);
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, as a batch.
 		/// </summary>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		void Insert([DisallowNull] TIndex index, ReadOnlySpan<TElement?> elements);
+		void Insert(TIndex index, ReadOnlySpan<TElement> elements);
 	}
 }
 

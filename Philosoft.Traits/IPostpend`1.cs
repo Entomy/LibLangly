@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements postpended onto it.
 	/// </summary>
@@ -10,6 +8,6 @@ namespace System.Traits {
 		/// Postpends the element onto this object.
 		/// </summary>
 		/// <param name="element">The element to postpend.</param>
-		void Postpend([AllowNull] TElement element);
+		void Postpend(TElement element);
 	}
 }

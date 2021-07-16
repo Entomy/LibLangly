@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have its first element peeked at.
 	/// </summary>
@@ -10,13 +8,12 @@ namespace System.Traits {
 		/// Peeks at thefirst element.
 		/// </summary>
 		/// <returns>The <typeparamref name="TElement"/> value that was peeked.</returns>
-		[return: MaybeNull]
 		public TElement Peek();
 
 		/// <summary>
 		/// Peeks at the first element.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was peeked.</param>
-		void Peek([MaybeNull] out TElement element);
+		void Peek(out TElement element);
 	}
 }

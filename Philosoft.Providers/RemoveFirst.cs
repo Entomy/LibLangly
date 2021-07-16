@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace System.Traits.Concepts {
 	public static partial class Collection {
@@ -10,7 +9,7 @@ namespace System.Traits.Concepts {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to remove.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void RemoveFirst<TElement>([DisallowNull] TElement[] collection, ref Int32 count, [AllowNull] TElement element) {
+		public static void RemoveFirst<TElement>(TElement[] collection, ref Int32 count, TElement element) {
 			for (Int32 i = 0; i < count; i++) {
 				if (Equals(collection[i], element)) {
 					collection.AsSpan(i).CopyTo(collection.AsSpan(--i));

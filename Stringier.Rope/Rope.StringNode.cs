@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using System.Traits.Concepts;
 
@@ -12,7 +11,6 @@ namespace Stringier {
 			/// <summary>
 			/// The elements contained in this node.
 			/// </summary>
-			[DisallowNull, NotNull]
 			private readonly String String;
 
 			/// <summary>
@@ -21,7 +19,7 @@ namespace Stringier {
 			/// <param name="string">The elements contained in this node.</param>
 			/// <param name="next">The next node in the list.</param>
 			/// <param name="previous">The previous node in the list.</param>
-			public StringNode([DisallowNull] String @string, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) => String = @string;
+			public StringNode(String @string, Node? next, Node? previous) : base(next, previous) => String = @string;
 
 			/// <inheritdoc/>
 			public override Char this[Int32 index] => String[index];
@@ -40,13 +38,13 @@ namespace Stringier {
 			public override Int32 Count => String.Length;
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Char element) => Collection.Contains(String, Count, element);
+			public override Boolean Contains(Char element) => Collection.Contains(String, Count, element);
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => Collection.Contains(String, Count, predicate);
+			public override Boolean Contains(Predicate<Char>? predicate) => Collection.Contains(String, Count, predicate);
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, Char element) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -68,7 +66,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, String element) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -90,7 +88,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, Char[] element) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -112,10 +110,10 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Remove([AllowNull] Char element) => throw new NotImplementedException();
+			public override (Node Head, Node Tail) Remove(Char element) => throw new NotImplementedException();
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Replace([AllowNull] Char search, [AllowNull] Char replace) {
+			public override (Node Head, Node Tail) Replace(Char search, Char replace) {
 				Node head = this;
 				Node tail = this;
 				Node? prev = null;
@@ -167,19 +165,15 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public MemoryNode Slice() => Slice(0, Count);
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public MemoryNode Slice(Int32 start) => Slice(start, Count - start);
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public MemoryNode Slice(Int32 start, Int32 length) => new MemoryNode(String.AsMemory(start, length), previous: null, next: null);
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public override String ToString() => String;
 		}
 	}

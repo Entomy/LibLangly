@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits {
+﻿namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have elements enqueued into it.
 	/// </summary>
@@ -10,6 +8,6 @@ namespace System.Traits {
 		/// Enqueues the element into this object.
 		/// </summary>
 		/// <param name="element">The element to enqueue.</param>
-		void Enqueue([AllowNull] TElement element);
+		void Enqueue(TElement element);
 	}
 }

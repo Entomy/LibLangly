@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits.Concepts {
+﻿namespace System.Traits.Concepts {
 	/// <summary>
 	/// Indicates the type is a sequence of <typeparamref name="TElement"/>.
 	/// </summary>
@@ -14,7 +12,6 @@ namespace System.Traits.Concepts {
 		/// Returns a string that represents this sequence, with no more than <paramref name="amount"/> elements.
 		/// </summary>
 		/// <param name="amount">The maximum amount of elements to display.</param>
-		[return: NotNull]
 		String ToString(Int32 amount);
 	}
 }

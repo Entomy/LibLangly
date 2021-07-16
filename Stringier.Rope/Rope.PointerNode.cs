@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using System.Traits.Concepts;
 
@@ -21,7 +20,7 @@ namespace Stringier {
 			/// <param name="length">The length of the <paramref name="pointer"/>.</param>
 			/// <param name="next">The next node in the list.</param>
 			/// <param name="previous">The previous node in the list.</param>
-			public PointerNode([DisallowNull] Char* pointer, Int32 length, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) {
+			public PointerNode(Char* pointer, Int32 length, Node? next, Node? previous) : base(next, previous) {
 				Pointer = pointer;
 				Count = length;
 			}
@@ -31,7 +30,6 @@ namespace Stringier {
 
 #if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>
-			[DisallowNull, NotNull]
 			public PointerNode this[Range range] {
 				get {
 					(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
@@ -47,10 +45,10 @@ namespace Stringier {
 			public override Boolean Contains(Char element) => Collection.Contains(Pointer, Count, element);
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Predicate<Char> predicate) => Collection.Contains(Pointer, Count, predicate);
+			public override Boolean Contains(Predicate<Char>? predicate) => Collection.Contains(Pointer, Count, predicate);
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, Char element) {
 				Node? head;
 				Node? tail;
 				if (index == 0) {
@@ -72,7 +70,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] String element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, String element) {
 				Node? head;
 				Node? tail;
 				if (index == 0) {
@@ -94,7 +92,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(Int32 index, [DisallowNull] Char[] element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, Char[] element) {
 				Node? head;
 				Node? tail;
 				if (index == 0) {
@@ -116,10 +114,10 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Remove([AllowNull] Char element) => throw new NotImplementedException();
+			public override (Node Head, Node Tail) Remove(Char element) => throw new NotImplementedException();
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Replace([AllowNull] Char search, [AllowNull] Char replace) {
+			public override (Node Head, Node Tail) Replace(Char search, Char replace) {
 				Node head = this;
 				Node tail = this;
 				Node? prev = null;
@@ -163,7 +161,7 @@ namespace Stringier {
 					// Had anything been replaced?
 					if (!ReferenceEquals(head, this)) {
 						// Attach the remaining parts
-						tail.Next = new PointerNode(&Pointer[o], (Int32)Count - o, previous: tail, next: null);
+						tail.Next = new PointerNode(&Pointer[o], Count - o, previous: tail, next: null);
 						tail = tail.Next;
 					}
 				}
@@ -171,15 +169,12 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public PointerNode Slice() => Slice(0, Count);
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public PointerNode Slice(Int32 start) => Slice(start, Count - start);
 
 			/// <inheritdoc/>
-			[return: NotNull]
 			public PointerNode Slice(Int32 start, Int32 length) => new PointerNode(&Pointer[start], length, previous: null, next: null);
 		}
 	}
