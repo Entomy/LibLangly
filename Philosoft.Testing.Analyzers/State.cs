@@ -9,7 +9,7 @@ namespace System.Traits.Testing {
 		/// The path to the test files on disk.
 		/// </summary>
 		[DisallowNull, NotNull]
-		private static String path;
+		private static String path = $".{IO.Path.DirectorySeparatorChar}";
 
 		/// <summary>
 		/// The path to the test files on disk.
@@ -20,7 +20,7 @@ namespace System.Traits.Testing {
 			set {
 				// We don't want to deal with returning a null path, so just make it valid right now
 				if (value is null) {
-					path = ".\\";
+					path = $".{IO.Path.DirectorySeparatorChar}";
 				} else {
 					// If we have a path, make sure it has the appropriate stuff
 					String? prefix = value.StartsWith($".{IO.Path.DirectorySeparatorChar}") ? "" : $".{IO.Path.DirectorySeparatorChar}";
