@@ -5,8 +5,6 @@ using System.Text;
 using System.Traits;
 using System.Traits.Concepts;
 
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant. Microsoft's own MemberNotNullAttribute violates CLS Compliance.
-
 namespace Stringier {
 	/// <summary>
 	/// Represent a Rope, a type of dynamic text structure.
@@ -355,17 +353,14 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(Char element) => Postpend(element);
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add([AllowNull] params Char[] elements) => Postpend(elements);
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add([AllowNull] String element) => Postpend(element);
 
 		/// <inheritdoc/>
@@ -571,7 +566,6 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, Char element) {
 			if (index == 0) {
 				Prepend(element);
@@ -640,9 +634,11 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
+		[MaybeLinksNewNode]
 		public void Insert(Int32 index, [AllowNull] params Char[] element) {
+			if (element is null) {
+				return;
+			}
 			if (index == 0) {
 				Prepend(element);
 			} else if (index == Count) {
@@ -710,9 +706,11 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
+		[MaybeLinksNewNode]
 		public void Insert(Int32 index, [AllowNull] String element) {
+			if (element is null) {
+				return;
+			}
 			if (index == 0) {
 				Prepend(element);
 			} else if (index == Count) {
@@ -781,7 +779,6 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(Char element) {
 			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
@@ -794,9 +791,11 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
+		[MaybeLinksNewNode]
 		public void Postpend([AllowNull] params Char[] element) {
+			if (element is null) {
+				return;
+			}
 			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
@@ -808,9 +807,11 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
+		[MaybeLinksNewNode]
 		public void Postpend([AllowNull] String element) {
+			if (element is null) {
+				return;
+			}
 			if (Head is not null && Tail is not null) {
 				Tail!.Next = Tail!.Postpend(element);
 				Tail = Tail.Next;
@@ -823,7 +824,6 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(Char element) {
 			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
@@ -835,9 +835,11 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
+		[MaybeLinksNewNode]
 		public void Prepend([AllowNull] params Char[] element) {
+			if (element is null) {
+				return;
+			}
 			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
@@ -848,9 +850,11 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
+		[MaybeLinksNewNode]
 		public void Prepend([AllowNull] String element) {
+			if (element is null) {
+				return;
+			}
 			if (Head is not null && Tail is not null) {
 				Head = Head!.Prepend(element);
 			} else {
@@ -906,7 +910,6 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() {
 			StringBuilder builder = new StringBuilder();
 			if (Head is not null) {
@@ -921,7 +924,6 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public String ToString(Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			if (Head is not null) {

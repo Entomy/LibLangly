@@ -103,10 +103,10 @@ namespace Numbersome {
 		public static Set<TElement> Range<TElement>([DisallowNull] TElement lower, [DisallowNull] TElement upper) where TElement : IComparable<TElement> => new((element) => lower.CompareTo(element) <= 0 && element.CompareTo(upper) <= 0);
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) => Predicate(element);
+		public Boolean Contains(TElement element) => Predicate(element);
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] Predicate<TElement> predicate) => throw new NotImplementedException();
+		public Boolean Contains(Predicate<TElement>? predicate) => throw new NotImplementedException();
 
 		/// <summary>
 		/// Returns the compliment of the <paramref name="set"/>.
