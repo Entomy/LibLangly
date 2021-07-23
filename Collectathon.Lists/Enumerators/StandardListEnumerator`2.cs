@@ -40,7 +40,7 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		public TElement Current => N.Element;
+		public TElement Current => N!.Element; // MoveNext() ensures this isn't null so long as it returns `true`. Manual use of an enumerator is considered dangerous anyways.
 
 		/// <inheritdoc/>
 		public Int32 Count { get; }

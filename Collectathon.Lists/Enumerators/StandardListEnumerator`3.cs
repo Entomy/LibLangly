@@ -36,7 +36,7 @@ namespace Collectathon.Enumerators {
 		}
 
 		/// <inheritdoc/>
-		public (TIndex Index, TElement Element) Current => (N.Index, N.Element);
+		public (TIndex Index, TElement Element) Current => (N!.Index, N!.Element); // MoveNext() ensures this isn't null so long as it returns `true`. Manual use of an enumerator is considered dangerous anyways.
 
 		/// <inheritdoc/>
 		public Int32 Count { get; }

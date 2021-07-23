@@ -5,7 +5,7 @@
 	/// <typeparam name="TElement"></typeparam>
 	public interface IPop<out TElement> {
 		/// <summary>
-		/// Pops the top element off this object..
+		/// Pops the top element off this object.
 		/// </summary>
 		/// <returns>The top element.</returns>
 		TElement Pop();

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using Numbersome;
 
-namespace System.Traits.Concepts {
+namespace System.Traits.Providers {
 	public static partial class Collection {
 		/// <summary>
 		/// Determines whether this collection contains all of the specified <paramref name="elements"/>.

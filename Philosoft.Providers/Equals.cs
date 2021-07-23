@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Traits.Concepts;
 
-namespace System.Traits.Concepts {
+namespace System.Traits.Providers {
 	public static partial class Collection {
 		/// <summary>
 		/// Determines whether the specified sequences are considered equal.

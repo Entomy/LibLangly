@@ -31,14 +31,15 @@ namespace Stringier {
 			public Enumerator(Rope rope) {
 				Rope = rope;
 				N = default;
+				Count = rope.Count;
 				i = -1;
 			}
 
 			/// <inheritdoc/>
-			public Char Current => N[i];
+			public Char Current => N![i]; // MoveNext() ensures this isn't null so long as it returns `true`. Manual use of an enumerator is considered dangerous anyways.
 
 			/// <inheritdoc/>
-			public Int32 Count => Rope.Count;
+			public Int32 Count { get; }
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() {

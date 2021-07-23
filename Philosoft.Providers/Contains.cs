@@ -1,7 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-namespace System.Traits.Concepts {
+namespace System.Traits.Providers {
 	public static partial class Collection {
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.

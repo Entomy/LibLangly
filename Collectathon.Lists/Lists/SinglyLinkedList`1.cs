@@ -3,10 +3,9 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using System.Traits.Concepts;
+using System.Traits.Providers;
 using Collectathon.Nodes;
 using Collectathon.Enumerators;
-
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant. Microsoft's own MemberNotNullAttribute violates CLS Compliance.
 
 namespace Collectathon.Lists {
 	/// <summary>
@@ -61,41 +60,18 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		public TElement this[Int32 index] {
-			get {
-				SinglyLinkedListNode<TElement>? N = Head;
-				for (Int32 i = 0; N is not null; i++) {
-					if (i == index) {
-						return N.Element;
-					}
-					N = N.Next;
-				}
-				throw new IndexOutOfRangeException();
-			}
-			set {
-				SinglyLinkedListNode<TElement>? N = Head;
-				for (Int32 i = 0; N is not null; i++) {
-					if (i == index) {
-						N.Element = value;
-					}
-					N = N.Next;
-				}
-				throw new IndexOutOfRangeException();
-			}
+			get => Collection.Index<TElement, SinglyLinkedListNode<TElement>>(Head, Count, index);
+			set => Collection.Index(Head, Count, index, value);
 		}
 
 		/// <inheritdoc/>
 		[MaybeLinksNewNode(1)]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
 		public void Clear() {
-			if (Head is not null) {
-				Collection.Clear(Head);
-				Head = null;
-				Tail = null;
-				Count = 0;
-			}
+			Collection.Clear(ref Head, ref Tail);
+			Count = 0;
 		}
 
 		/// <inheritdoc/>
@@ -107,14 +83,9 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		[UnlinksNode]
 		public TElement Dequeue() {
-			if (Head is not null) {
-				SinglyLinkedListNode<TElement> oldHead = Head;
-				Head = Head.Next;
-				oldHead.Unlink();
-				return oldHead.Element;
-			} else {
-				throw new InvalidOperationException("Can't dequeue an element from an empty collection.");
-			}
+			Collection.Dequeue(ref Head, ref Tail, out TElement element);
+			Count--;
+			return element;
 		}
 
 		/// <inheritdoc/>
@@ -144,76 +115,48 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(Int32 index, TElement element) {
-			if (index == 0) {
-				Prepend(element);
-			} else if (index == Count) {
-				Postpend(element);
-			} else if (Head is null || Tail is null) {
-				Add(element);
-			} else if (Count > 0) {
-				SinglyLinkedListNode<TElement> P = null!;
-				SinglyLinkedListNode<TElement>? N = Head;
-				Int32 i = 0;
-				while (N is not null) {
-					P = N;
-					N = N.Next;
-					i++;
-					if (i == index) break;
-				}
-				P.Next = new SinglyLinkedListNode<TElement>(element, next: N);
-				Count++;
-			} else {
-				Head = new SinglyLinkedListNode<TElement>(element, next: null);
-				Tail = Head;
-				Count++;
-			}
+		public unsafe void Insert(Int32 index, TElement element) {
+			Collection.Insert(ref Head, ref Tail, Count, index, element, &NewNode);
+			Count++;
 		}
 
 		/// <inheritdoc/>
-		public TElement Peek() => Head.Element;
-
-		/// <inheritdoc/>
-		public void Peek(out TElement element) => element = Head.Element;
-
-		/// <inheritdoc/>
-		[UnlinksNode]
-		public TElement Pop() {
+		public TElement Peek() {
 			if (Head is not null) {
-				SinglyLinkedListNode<TElement> oldHead = Head;
-				Head = Head.Next;
-				oldHead.Unlink();
-				return oldHead.Element;
+				return Head.Element;
 			} else {
 				throw new InvalidOperationException("Can't pop an element off an empty collection.");
 			}
 		}
 
 		/// <inheritdoc/>
-		[LinksNewNode(1)]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Postpend(TElement element) {
-			if (Head is not null && Tail is not null) {
-				Tail!.Next = Tail!.Postpend(element);
-				Tail = Tail.Next;
+		public void Peek(out TElement element) {
+			if (Head is not null) {
+				element = Head.Element;
 			} else {
-				Head = new SinglyLinkedListNode<TElement>(element, next: null);
-				Tail = Head;
+				throw new InvalidOperationException("Can't pop an element off an empty collection.");
 			}
+		}
+
+		/// <inheritdoc/>
+		[UnlinksNode]
+		public TElement Pop() {
+			Collection.Pop(ref Head, ref Tail, out TElement element);
+			Count--;
+			return element;
+		}
+
+		/// <inheritdoc/>
+		[LinksNewNode(1)]
+		public unsafe void Postpend(TElement element) {
+			Collection.Postpend(ref Head, ref Tail, element, &NewNode);
 			Count++;
 		}
 
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
-		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Prepend(TElement element) {
-			if (Head is not null && Tail is not null) {
-				Head = Head!.Prepend(element);
-			} else {
-				Head = new SinglyLinkedListNode<TElement>(element, next: null);
-				Tail = Head;
-			}
+		public unsafe void Prepend(TElement element) {
+			Collection.Prepend(ref Head, ref Tail, element, &NewNode);
 			Count++;
 		}
 
@@ -245,5 +188,12 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
+
+		/// <summary>
+		/// Creates a new node with no linkage.
+		/// </summary>
+		/// <param name="element">The element to put into the node.</param>
+		/// <returns>A new, unlinked, node containing the <paramref name="element"/>.</returns>
+		private static SinglyLinkedListNode<TElement> NewNode(TElement element) => new SinglyLinkedListNode<TElement>(element, next: null);
 	}
 }

@@ -11,7 +11,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="element">The element to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, [AllowNull] TElement element) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
+		public static nint Occurrences<TElement, TEnumerator>(this IGetEnumerator<TElement, TEnumerator> collection, TElement element) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			nint count = 0;
 			foreach (TElement item in collection) {
 				if (Equals(element, item)) {
@@ -29,10 +29,10 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement, TEnumerator> collection, [AllowNull] Predicate<TElement> predicate) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
+		public static nint Occurrences<TElement, TEnumerator>(this IGetEnumerator<TElement, TEnumerator> collection, Predicate<TElement>? predicate) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			nint count = 0;
 			foreach (TElement item in collection) {
-				if (predicate(item)) {
+				if (predicate?.Invoke(item) ?? item is null) {
 					count++;
 				}
 			}

@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace System.Traits.Concepts {
+namespace System.Traits.Providers {
 	public static partial class Collection {
 		/// <summary>
 		/// Returns a string that represents this sequence.

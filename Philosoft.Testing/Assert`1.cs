@@ -10,13 +10,12 @@ namespace System.Traits.Testing {
 		/// Initializes a new <see cref="Assert{T}"/>.
 		/// </summary>
 		/// <param name="actual">The actual object being asserted.</param>
-		public Assert([AllowNull] T actual) => Actual = actual;
+		public Assert(T actual) => Actual = actual;
 
 		/// <summary>
 		/// The actual object being asserted.
 		/// </summary>
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		[AllowNull, MaybeNull]
 		public T Actual { get; }
 
 		/// <summary>
@@ -24,8 +23,8 @@ namespace System.Traits.Testing {
 		/// </summary>
 		/// <param name="expected">The expected object.</param>
 		/// <returns>This <see cref="Assert{T}"/>.</returns>
-		new public Assert<T> Equals([AllowNull] Object expected) {
-			if (!Equals(Actual, expected)) {
+		new public Assert<T> Equals(Object? expected) {
+			if (!(Actual?.Equals(expected) ?? expected is null)) {
 				throw new AssertException($"The instance did not equal what was expected.\nActual: {Actual}\nExpected: {expected}");
 			}
 			return this;
@@ -37,8 +36,8 @@ namespace System.Traits.Testing {
 		/// <param name="expected">The expected object.</param>
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <see cref="Assert{T}"/>.</returns>
-		public Assert<T> Equals([AllowNull] Object expected, [DisallowNull] String additionalMessage) {
-			if (!Equals(Actual, expected)) {
+		public Assert<T> Equals(Object? expected, String additionalMessage) {
+			if (!(Actual?.Equals(expected) ?? expected is null)) {
 				throw new AssertException($"The instance did not equal what was expected.\nActual: {Actual}\nExpected: {expected}\n{additionalMessage}");
 			}
 			return this;
@@ -49,8 +48,8 @@ namespace System.Traits.Testing {
 		/// </summary>
 		/// <param name="expected">The expected object.</param>
 		/// <returns>This <see cref="Assert{T}"/>.</returns>
-		public Assert<T> Equals([AllowNull] T expected) {
-			if (!Equals(Actual, expected)) {
+		public Assert<T> Equals(T expected) {
+			if (!(Actual?.Equals(expected) ?? expected is null)) {
 				throw new AssertException($"The instance did not equal what was expected.\nActual: {Actual}\nExpected: {expected}");
 			}
 			return this;
@@ -63,7 +62,7 @@ namespace System.Traits.Testing {
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <see cref="Assert{T}"/>.</returns>
 		public Assert<T> Equals([AllowNull] T expected, [DisallowNull] String additionalMessage) {
-			if (!Equals(Actual, expected)) {
+			if (!(Actual?.Equals(expected) ?? expected is null)) {
 				throw new AssertException($"The instance did not equal what was expected.\nActual: {Actual}\nExpected: {expected}\n{additionalMessage}");
 			}
 			return this;
@@ -107,8 +106,8 @@ namespace System.Traits.Testing {
 		/// <typeparam name="TExpected">The expected type.</typeparam>
 		/// <returns>This <see cref="Assert{T}"/>.</returns>
 		public Assert<T> Type<TExpected>() {
-			if (!Equals(Actual.GetType(), typeof(TExpected))) {
-				throw new AssertException($"The instance was not of the expected type.\nActual: {Actual.GetType()}\nExpected: {typeof(TExpected)}");
+			if (!Equals(Actual?.GetType(), typeof(TExpected))) {
+				throw new AssertException($"The instance was not of the expected type.\nActual: {Actual?.GetType() ?? typeof(Object)}\nExpected: {typeof(TExpected)}");
 			}
 			return this;
 		}
@@ -120,8 +119,8 @@ namespace System.Traits.Testing {
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <see cref="Assert{T}"/>.</returns>
 		public Assert<T> Type<TExpected>([DisallowNull] String additionalMessage) {
-			if (!Equals(Actual.GetType(), typeof(TExpected))) {
-				throw new AssertException($"The instance was not of the expected type.\nActual: {Actual.GetType()}\nExpected: {typeof(TExpected)}\n{additionalMessage}");
+			if (!Equals(Actual?.GetType(), typeof(TExpected))) {
+				throw new AssertException($"The instance was not of the expected type.\nActual: {Actual?.GetType() ?? typeof(Object)}\nExpected: {typeof(TExpected)}\n{additionalMessage}");
 			}
 			return this;
 		}

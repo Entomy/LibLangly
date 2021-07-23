@@ -5,10 +5,10 @@
 	/// <remarks>
 	/// This would be like the previous node in a list.
 	/// </remarks>
-	public interface IPrevious<out TSelf> {
+	public interface IPrevious<TSelf> {
 		/// <summary>
 		/// The next node in the collection.
 		/// </summary>
-		TSelf Previous { get; }
+		TSelf Previous { get; set; }
 	}
 }

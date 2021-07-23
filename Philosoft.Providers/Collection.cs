@@ -1,4 +1,4 @@
-﻿namespace System.Traits.Concepts {
+﻿namespace System.Traits.Providers {
 	/// <summary>
 	/// Provides various operations to help with developing collections.
 	/// </summary>

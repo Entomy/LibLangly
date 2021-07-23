@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace System.Traits.Concepts {
+namespace System.Traits.Providers {
 	public static partial class Collection {
 		/// <summary>
 		/// Replaces all instances of <paramref name="search"/> with <paramref name="replace"/>.

@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using System.Traits.Concepts;
+using System.Traits.Providers;
 
 namespace Numbersome {
 	/// <summary>

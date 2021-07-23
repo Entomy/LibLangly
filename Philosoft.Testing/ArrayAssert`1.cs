@@ -11,7 +11,7 @@ namespace System.Traits.Testing {
 		/// Initializes a new <see cref="ArrayAssert{T}"/>.
 		/// </summary>
 		/// <param name="actual">The actual array being asserted.</param>
-		public ArrayAssert([AllowNull] T[] actual) => Actual = actual;
+		public ArrayAssert(T[] actual) => Actual = actual;
 
 		/// <summary>
 		/// Initializes a new <see cref="ArrayAssert{T}"/>.
@@ -38,14 +38,14 @@ namespace System.Traits.Testing {
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
 		[DoesNotReturn]
 		[Obsolete("Spans do not support equality comparisons to Object.", error: true)]
-		new public ArrayAssert<T> Equals([AllowNull] Object expected) => throw new NotSupportedException($"Spans can not be compared to {typeof(Object)}.");
+		new public ArrayAssert<T> Equals(Object? expected) => throw new NotSupportedException($"Spans can not be compared to {typeof(Object)}.");
 
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.
 		/// </summary>
 		/// <param name="expected">The expected <see cref="Array"/>.</param>
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
-		public ArrayAssert<T> Equals([AllowNull] params T[] expected) => Equals(expected.AsSpan());
+		public ArrayAssert<T> Equals(params T[]? expected) => Equals(expected.AsSpan());
 
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.
@@ -53,7 +53,7 @@ namespace System.Traits.Testing {
 		/// <param name="expected">The expected <see cref="Array"/>.</param>
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
-		public ArrayAssert<T> Equals([AllowNull] T[] expected, [DisallowNull] String additionalMessage) => Equals(expected.AsSpan(), additionalMessage);
+		public ArrayAssert<T> Equals(T[]? expected, [DisallowNull] String additionalMessage) => Equals(expected.AsSpan(), additionalMessage);
 
 		/// <summary>
 		/// Asserts that the instance equals the <paramref name="expected"/> span.

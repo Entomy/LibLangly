@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Traits;
 using System.Traits.Concepts;
+using System.Traits.Providers;
 
 namespace Stringier {
 	/// <summary>
@@ -366,12 +367,8 @@ namespace Stringier {
 		/// <inheritdoc/>
 		[UnlinksNode]
 		public void Clear() {
-			if (Head is not null) {
-				Collection.Clear(Head);
-				Head = null;
-				Tail = null;
-				Count = 0;
-			}
+			Collection.Clear(ref Head, ref Tail);
+			Count = 0;
 		}
 
 		/// <inheritdoc/>
@@ -587,7 +584,7 @@ namespace Stringier {
 				// Will the element be inserted into the head node?
 				if (index <= Head.Count) {
 					// Get the surrounding nodes
-					Node? next = N.Next;
+					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -602,7 +599,7 @@ namespace Stringier {
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
-					Node? prev = N.Previous;
+					Node prev = N.Previous!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -617,8 +614,8 @@ namespace Stringier {
 						N = N.Next;
 					}
 					// Get the surrounding nodes
-					Node? prev = N.Previous;
-					Node? next = N.Next;
+					Node prev = N!.Previous!;
+					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -659,7 +656,7 @@ namespace Stringier {
 				// Will the element be inserted into the head node?
 				if (index <= Head.Count) {
 					// Get the surrounding nodes
-					Node? next = N.Next;
+					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -674,7 +671,7 @@ namespace Stringier {
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
-					Node? prev = N.Previous;
+					Node prev = N.Previous!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -689,8 +686,8 @@ namespace Stringier {
 						N = N.Next;
 					}
 					// Get the surrounding nodes
-					Node? prev = N.Previous;
-					Node? next = N.Next;
+					Node prev = N!.Previous!;
+					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -731,7 +728,7 @@ namespace Stringier {
 				// Will the element be inserted into the head node?
 				if (index <= Head.Count) {
 					// Get the surrounding nodes
-					Node? next = N.Next;
+					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -746,7 +743,7 @@ namespace Stringier {
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
-					Node? prev = N.Previous;
+					Node prev = N.Previous!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -761,8 +758,8 @@ namespace Stringier {
 						N = N.Next;
 					}
 					// Get the surrounding nodes
-					Node? prev = N.Previous;
-					Node? next = N.Next;
+					Node prev = N!.Previous!;
+					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
 					(Node head, Node tail) = N.Insert(index - i, element);
 					// Link the chain section into the chain
@@ -931,7 +928,7 @@ namespace Stringier {
 				Int32 i = 0;
 				while (N is not null) {
 					if (i + N.Count > amount) {
-						_ = builder.Append(N.ToString().Substring(0, amount - i)).Append("...");
+						_ = builder.Append(N?.ToString()?.Substring(0, amount - i) ?? "").Append("...");
 						break;
 					} else {
 						_ = builder.Append(N);

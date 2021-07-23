@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Traits;
-using System.Traits.Concepts;
+using System.Traits.Providers;
 
 namespace Stringier {
 	public partial class Rope {

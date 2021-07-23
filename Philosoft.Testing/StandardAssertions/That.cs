@@ -9,7 +9,7 @@ namespace System.Traits.Testing {
 		/// <param name="_">This <see cref="Assert"/>.</param>
 		/// <param name="actual">The instance of <typeparamref name="T"/> to make assertions against.</param>
 		/// <returns>An <see cref="Assert{T}"/> instance.</returns>
-		public static Assert<T> That<T>(this Assert _, [AllowNull] T actual) => new Assert<T>(actual);
+		public static Assert<T> That<T>(this Assert _, T actual) => new Assert<T>(actual);
 
 		/// <summary>
 		/// Prepares <paramref name="action"/> to make assertions against it.
@@ -17,7 +17,7 @@ namespace System.Traits.Testing {
 		/// <param name="_">This <see cref="Assert"/>.</param>
 		/// <param name="action">The <see cref="Action"/> to make assertions against.</param>
 		/// <returns>An <see cref="Assert{T}"/> instance.</returns>
-		public static Assert<Action> That(this Assert _, [AllowNull] Action action) => new Assert<Action>(action);
+		public static Assert<Action> That(this Assert _, Action action) => new Assert<Action>(action);
 
 		/// <summary>
 		/// Prepares <paramref name="actual"/> to make assertions against it.
@@ -26,7 +26,7 @@ namespace System.Traits.Testing {
 		/// <param name="_">This <see cref="Assert"/>.</param>
 		/// <param name="actual">The instance of <see cref="Array"/> to make assertions against.</param>
 		/// <returns>A <see cref="ArrayAssert{T}"/> instance.</returns>
-		public static ArrayAssert<T> That<T>(this Assert _, [AllowNull] T[] actual) => new ArrayAssert<T>(actual);
+		public static ArrayAssert<T> That<T>(this Assert _, T[] actual) => new ArrayAssert<T>(actual);
 
 		/// <summary>
 		/// Prepares <paramref name="actual"/> to make assertions against it.

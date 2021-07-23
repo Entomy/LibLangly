@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using System.Traits.Concepts;
+using System.Traits.Providers;
 using Collectathon.Nodes;
 using Collectathon.Enumerators;
 
@@ -75,7 +76,7 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		public void Clear() {
 			if (Head is not null) {
-				Collection.Clear(Head);
+				Collection.Clear(ref Head, ref Tail);
 				Head = null;
 				Tail = null;
 				Count = 0;
