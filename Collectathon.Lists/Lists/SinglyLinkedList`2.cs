@@ -23,12 +23,12 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// The head node of the list; the first element.
 		/// </summary>
-		protected SinglyLinkedListNode<TIndex, TElement>? Head;
+		private SinglyLinkedListNode<TIndex, TElement>? Head;
 
 		/// <summary>
 		/// The tail node of the list; the second element.
 		/// </summary>
-		protected SinglyLinkedListNode<TIndex, TElement>? Tail;
+		private SinglyLinkedListNode<TIndex, TElement>? Tail;
 
 		/// <summary>
 		/// initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/>.
