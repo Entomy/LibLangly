@@ -17,7 +17,7 @@ namespace Stringier.Patterns {
 		/// The <see cref="Pattern"/> to read to.
 		/// </summary>
 		[DisallowNull, NotNull]
-		protected readonly Pattern To;
+		new protected readonly Pattern To;
 
 		/// <summary>
 		/// Initialize a new <see cref="Ranger"/> with the given <paramref name="from"/> and <paramref name="to"/> nodes.
