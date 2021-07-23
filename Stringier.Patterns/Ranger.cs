@@ -37,10 +37,10 @@ namespace Stringier.Patterns {
 		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Int32 start = location;
 			From.Consume(source, ref location, out exception, trace);
-			if (exception is not null) return;
+			if (exception is not null) { return; }
 			To.Consume(source, ref location, out exception, trace);
 			while (exception is not null) {
-				if (++location == source.Length) break;
+				if (++location == source.Length) { break; }
 				if (To.IsConsumeHeader(source, location)) {
 					To.Consume(source, ref location, out exception, trace);
 				}

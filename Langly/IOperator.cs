@@ -6,6 +6,6 @@ namespace Langly {
 	/// </summary>
 	public partial interface IOperator : ILexeme {
 		/// <inheritdoc/>
-		Boolean ILexeme.Static => true;
+		Boolean ILexeme.IsStatic => true;
 	}
 }

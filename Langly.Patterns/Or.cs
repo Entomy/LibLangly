@@ -12,6 +12,6 @@ namespace Langly.Patterns {
 		public Or(Int32 location) : base(location, 2) { }
 
 		/// <inheritdoc/>
-		public override Boolean Static => true;
+		public override Boolean IsStatic => true;
 	}
 }

@@ -774,7 +774,6 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Rune"/> value.</returns>
 		public unsafe Rune NextRune() {
-		TryAgain:
 			Read(out Int32 scalar);
 			if (scalar < 0) {
 				scalar = Math.Abs(scalar);

@@ -22,6 +22,6 @@ namespace Langly {
 		public Int32 Location { get; set; }
 
 		/// <inheritdoc/>
-		public abstract Boolean Static { get; }
+		public abstract Boolean IsStatic { get; }
 	}
 }

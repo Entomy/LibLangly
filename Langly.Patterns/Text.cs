@@ -13,6 +13,6 @@ namespace Langly.Patterns {
 		public Text(Int32 location, Int32 length) : base(location, length) { }
 
 		/// <inheritdoc/>
-		public override Boolean Static => true;
+		public override Boolean IsStatic => true;
 	}
 }

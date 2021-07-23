@@ -18,6 +18,6 @@ namespace Langly {
 		/// <summary>
 		/// Can this lexeme be statically evaluated?
 		/// </summary>
-		Boolean Static { get; }
+		Boolean IsStatic { get; }
 	}
 }
