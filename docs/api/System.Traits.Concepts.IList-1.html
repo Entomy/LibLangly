@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IList&lt;TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,20 +88,17 @@
       <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains__0_">IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
-      <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains_System_Nullable_Predicate__0___">IContains&lt;TElement&gt;.Contains(Nullable&lt;Predicate&lt;TElement&gt;&gt;)</a>
+      <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains_System_Predicate__0__">IContains&lt;TElement&gt;.Contains(Predicate&lt;TElement&gt;)</a>
     </div>
     <div>
       <a class="xref" href="System.Traits.ICount.html#System_Traits_ICount_Count">ICount.Count</a>
-    </div>
-    <div>
-      <a class="xref" href="System.Traits.IIndexReadOnly-2.html#System_Traits_IIndexReadOnly_2_Item__0_">IIndexReadOnly&lt;Int32, TElement&gt;.Item[Int32]</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.Concepts.html">System.Traits.Concepts</a></h6>
   <h6><strong>Assembly</strong>: Philosoft.Concepts.dll</h6>
   <h5 id="System_Traits_Concepts_IList_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IList&lt;TElement&gt; : IList&lt;Int32, TElement&gt;, IIndex&lt;Int32, TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, IReadOnlyList&lt;TElement&gt;, IReadOnlyList&lt;Int32, TElement&gt;, IContains&lt;TElement&gt;, ICount, IIndexReadOnly&lt;Int32, TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IList&lt;TElement&gt; : IList&lt;int, TElement&gt;, IIndex&lt;int, TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, IReadOnlyList&lt;TElement&gt;, IReadOnlyList&lt;int, TElement&gt;, IContains&lt;TElement&gt;, ICount, IIndexReadOnly&lt;int, TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -119,6 +116,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Map__1_System_Traits_Concepts_IList_System_Int32___0__System_Func___0___0__">TraitExtensions.Map&lt;TElement&gt;(IList&lt;Int32, TElement&gt;, Func&lt;TElement, TElement&gt;)</a>
+  </div>
 </article>
           </div>
           

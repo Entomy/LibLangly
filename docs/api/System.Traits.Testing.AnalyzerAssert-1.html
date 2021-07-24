@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct AnalyzerAssert&lt;TAnalyzer&gt;
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -76,11 +76,33 @@
   <div class="markdown level0 summary"><p>Represents a <a class="xref" href="System.Traits.Testing.Tests.html">Tests</a> asserter.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.Testing.html">System.Traits.Testing</a></h6>
   <h6><strong>Assembly</strong>: Philosoft.Testing.Analyzers.dll</h6>
   <h5 id="System_Traits_Testing_AnalyzerAssert_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct AnalyzerAssert&lt;TAnalyzer&gt;
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public ref readonly struct AnalyzerAssert&lt;TAnalyzer&gt;
     where TAnalyzer : DiagnosticAnalyzer, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -105,19 +127,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1__ctor_String_.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.%23ctor(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1__ctor_System_String_.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Testing.Analyzers/AnalyzerAssert.cs/#L58">View Source</a>
   </span>
   <a id="System_Traits_Testing_AnalyzerAssert_1__ctor_" data-uid="System.Traits.Testing.AnalyzerAssert`1.#ctor*"></a>
-  <h4 id="System_Traits_Testing_AnalyzerAssert_1__ctor_String_" data-uid="System.Traits.Testing.AnalyzerAssert`1.#ctor(String)">AnalyzerAssert(String)</h4>
+  <h4 id="System_Traits_Testing_AnalyzerAssert_1__ctor_System_String_" data-uid="System.Traits.Testing.AnalyzerAssert`1.#ctor(System.String)">AnalyzerAssert(String)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="System.Traits.Testing.AnalyzerAssert-1.html">AnalyzerAssert&lt;TAnalyzer&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AnalyzerAssert(String file)</code></pre>
+    <pre><code class="lang-csharp hljs">public AnalyzerAssert(string file)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -130,7 +152,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">file</span></td>
         <td><p>The filename of the source to analyze.</p>
 </td>
@@ -153,7 +175,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String Case { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly string Case { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,7 +187,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -184,7 +206,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String Extension { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly string Extension { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,7 +218,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -215,7 +237,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String Language { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly string Language { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,93 +249,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 id="System_Traits_Testing_AnalyzerAssert_1_Language_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This uses the constants in <see cref="!:LanguageNames"></see> for consistencies sake.</p>
+  <div class="markdown level1 remarks"><p>This uses the constants in <a class="xref" href="https://docs.microsoft.com/dotnet/api/microsoft.codeanalysis.languagenames">LanguageNames</a> for consistencies sake.</p>
 </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_Equals_Object_.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Testing.Analyzers/AnalyzerAssert.cs/#L112">View Source</a>
-  </span>
-  <a id="System_Traits_Testing_AnalyzerAssert_1_Equals_" data-uid="System.Traits.Testing.AnalyzerAssert`1.Equals*"></a>
-  <h4 id="System_Traits_Testing_AnalyzerAssert_1_Equals_Object_" data-uid="System.Traits.Testing.AnalyzerAssert`1.Equals(Object)">Equals(Object)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Boolean Equals(Object obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Object</span></td>
-        <td><span class="parametername">obj</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_GetHashCode.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Testing.Analyzers/AnalyzerAssert.cs/#L117">View Source</a>
-  </span>
-  <a id="System_Traits_Testing_AnalyzerAssert_1_GetHashCode_" data-uid="System.Traits.Testing.AnalyzerAssert`1.GetHashCode*"></a>
-  <h4 id="System_Traits_Testing_AnalyzerAssert_1_GetHashCode" data-uid="System.Traits.Testing.AnalyzerAssert`1.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Int32 GetHashCode()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_Reports.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.Reports%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -328,7 +273,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AnalyzerAssert&lt;TAnalyzer&gt; Reports()</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly AnalyzerAssert&lt;TAnalyzer&gt; Reports()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -348,19 +293,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_Reports_String_.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.Reports(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_Reports_System_String_.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.Reports(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Testing.Analyzers/AnalyzerAssert.cs/#L80">View Source</a>
   </span>
   <a id="System_Traits_Testing_AnalyzerAssert_1_Reports_" data-uid="System.Traits.Testing.AnalyzerAssert`1.Reports*"></a>
-  <h4 id="System_Traits_Testing_AnalyzerAssert_1_Reports_String_" data-uid="System.Traits.Testing.AnalyzerAssert`1.Reports(String)">Reports(String)</h4>
+  <h4 id="System_Traits_Testing_AnalyzerAssert_1_Reports_System_String_" data-uid="System.Traits.Testing.AnalyzerAssert`1.Reports(System.String)">Reports(String)</h4>
   <div class="markdown level1 summary"><p>Asserts that when this source is analyzed, it reports a diagnostic with the <code data-dev-comment-type="paramref" class="paramref">id</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AnalyzerAssert&lt;TAnalyzer&gt; Reports(String id)</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly AnalyzerAssert&lt;TAnalyzer&gt; Reports(string id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -373,7 +318,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">id</span></td>
         <td><p>The identifier of the expected diagnostic.</p>
 </td>
@@ -398,19 +343,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_Reports_String___.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.Reports(String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_Reports_System_String___.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.Reports(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Testing.Analyzers/AnalyzerAssert.cs/#L96">View Source</a>
   </span>
   <a id="System_Traits_Testing_AnalyzerAssert_1_Reports_" data-uid="System.Traits.Testing.AnalyzerAssert`1.Reports*"></a>
-  <h4 id="System_Traits_Testing_AnalyzerAssert_1_Reports_String___" data-uid="System.Traits.Testing.AnalyzerAssert`1.Reports(String[])">Reports(String[])</h4>
+  <h4 id="System_Traits_Testing_AnalyzerAssert_1_Reports_System_String___" data-uid="System.Traits.Testing.AnalyzerAssert`1.Reports(System.String[])">Reports(String[])</h4>
   <div class="markdown level1 summary"><p>Asserts that when this source is analyzed, it reports each diagnostic in the specified <code data-dev-comment-type="paramref" class="paramref">ids</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AnalyzerAssert&lt;TAnalyzer&gt; Reports(params String[] ids)</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly AnalyzerAssert&lt;TAnalyzer&gt; Reports(params string[] ids)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -423,7 +368,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span>[]</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
         <td><span class="parametername">ids</span></td>
         <td><p>The identifiers of the expected diagnostics.</p>
 </td>
@@ -443,36 +388,6 @@
         <td><a class="xref" href="System.Traits.Testing.AnalyzerAssert-1.html">AnalyzerAssert</a>&lt;TAnalyzer&gt;</td>
         <td><p>This <a class="xref" href="System.Traits.Testing.AnalyzerAssert-1.html">AnalyzerAssert&lt;TAnalyzer&gt;</a>.</p>
 </td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Testing_AnalyzerAssert_1_ToString.md&amp;value=---%0Auid%3A%20System.Traits.Testing.AnalyzerAssert%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Testing.Analyzers/AnalyzerAssert.cs/#L122">View Source</a>
-  </span>
-  <a id="System_Traits_Testing_AnalyzerAssert_1_ToString_" data-uid="System.Traits.Testing.AnalyzerAssert`1.ToString*"></a>
-  <h4 id="System_Traits_Testing_AnalyzerAssert_1_ToString" data-uid="System.Traits.Testing.AnalyzerAssert`1.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td></td>
       </tr>
     </tbody>
   </table>

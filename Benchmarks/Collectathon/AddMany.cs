@@ -5,10 +5,10 @@ using Collectathon.Arrays;
 using Collectathon.Lists;
 using MSFT = System.Collections.Generic;
 
-namespace Langly {
+namespace Collectathon {
 	[SimpleJob(RuntimeMoniker.Net50)]
 	[MemoryDiagnoser]
-	public class AddSingle {
+	public class AddMany {
 		private static C5.ArrayList<Int32> c5_arraylist = new C5.ArrayList<Int32>(32);
 
 		private static C5.CircularQueue<Int32> c5_circularqueue = new C5.CircularQueue<Int32>(32);
@@ -53,83 +53,114 @@ namespace Langly {
 
 		private static MSFT.Stack<Int32> msft_stack = new MSFT.Stack<Int32>(32);
 
-		[Benchmark]
-		public void C5_ArrayList() => c5_arraylist.Add(1);
+		[Params(new Int32[] { 1 }, new Int32[] { 1, 2, 3, 4, 5, 6, 7, 8 }, new Int32[] { 3, 1, 4, 2, 7, 5, 8, 6 }, new Int32[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 }, new Int32[] { 3, 1, 4, 2, 7, 5, 8, 6, 11, 9, 12, 10, 15, 13, 16, 14, 17, 18, 21, 19, 22, 20, 25, 23, 26, 24, 29, 27, 30, 28, 32, 31 })]
+		public Int32[] Items { get; set; }
 
 		[Benchmark]
-		public void C5_CircularQueue() => c5_circularqueue.Enqueue(1);
+		public void C5_ArrayList() => c5_arraylist.AddAll(Items);
 
 		[Benchmark]
-		public void C5_HashBag() => c5_hashbag.Add(1);
+		public void C5_CircularQueue() {
+			foreach (Int32 item in Items) {
+				c5_circularqueue.Enqueue(item);
+			}
+		}
 
 		[Benchmark]
-		public void C5_HashedArrayList() => c5_hashedarraylist.Add(1);
+		public void C5_HashBag() => c5_hashbag.AddAll(Items);
 
 		[Benchmark]
-		public void C5_HashedLinkedList() => c5_hashedlinkedlist.Add(1);
+		public void C5_HashedArrayList() => c5_hashedarraylist.AddAll(Items);
 
 		[Benchmark]
-		public void C5_HashSet() => c5_hashset.Add(1);
+		public void C5_HashedLinkedList() => c5_hashedlinkedlist.AddAll(Items);
 
 		[Benchmark]
-		public void C5_IntervalHeap() => c5_intervalheap.Add(1);
+		public void C5_HashSet() => c5_hashset.AddAll(Items);
 
 		[Benchmark]
-		public void C5_LinkedList() => c5_linkedlist.Add(1);
+		public void C5_IntervalHeap() => c5_intervalheap.AddAll(Items);
 
 		[Benchmark]
-		public void C5_SortedArray() => c5_sortedarray.Add(1);
+		public void C5_LinkedList() => c5_linkedlist.AddAll(Items);
 
 		[Benchmark]
-		public void C5_TreeBag() => c5_treebag.Add(1);
+		public void C5_SortedArray() => c5_sortedarray.AddAll(Items);
 
 		[Benchmark]
-		public void C5_TreeSet() => c5_treeset.Add(1);
+		public void C5_TreeBag() => c5_treebag.AddAll(Items);
 
 		[Benchmark]
-		public void Collectathon_BoundedArray() => collectathon_boundedarray.Add(1);
+		public void C5_TreeSet() => c5_treeset.AddAll(Items);
 
 		[Benchmark]
-		public void Collectathon_DynamicArray() => collectathon_dynamicarray.Add(1);
+		public void Collectathon_BoundedArray() => collectathon_boundedarray.Add(Items);
 
 		[Benchmark]
-		public void Collectathon_SinglyLinkedList() => collectathon_singlylinkedlist.Add(1);
+		public void Collectathon_DynamicArray() => collectathon_dynamicarray.Add(Items);
 
 		[Benchmark]
-		public void NetFabric_DoublyLinkedList() => netfabric_doublylinkedlist.AddLast(1);
+		public void Collectathon_SinglyLinkedList() => collectathon_singlylinkedlist.Add(Items);
 
 		[Benchmark]
-		public void MSFT_HashSet() => msft_hashset.Add(1);
+		public void NetFabric_Doubly_LinkedList() => netfabric_doublylinkedlist.AddLast(Items);
 
 		[Benchmark]
-		public void MSFT_LinkedList() => msft_linkedlist.AddLast(1);
+		public void MSFT_HashSet() {
+			foreach (Int32 item in Items) {
+				msft_hashset.Add(item);
+			}
+		}
 
 		[Benchmark]
-		public void MSFT_List() => msft_list.Add(1);
+		public void MSFT_LinkedList() {
+			foreach (Int32 item in Items) {
+				msft_linkedlist.AddLast(item);
+			}
+		}
 
 		[Benchmark]
-		public void MSFT_Queue() => msft_queue.Enqueue(1);
+		public void MSFT_List() => msft_list.AddRange(Items);
 
 		[Benchmark]
-		public void MSFT_SegmentedList() => msft_segmentedlist.Add(1);
+		public void MSFT_Queue() {
+			foreach (Int32 item in Items) {
+				msft_queue.Enqueue(item);
+			}
+		}
 
 		[Benchmark]
-		public void MSFT_SortedSet() => msft_sortedset.Add(1);
+		public void MSFT_SegmentedList() {
+			foreach (Int32 item in Items) {
+				msft_segmentedlist.Add(item);
+			}
+		}
 
 		[Benchmark]
-		public void MSFT_Stack() => msft_stack.Push(1);
+		public void MSFT_SortedSet() {
+			foreach (Int32 item in Items) {
+				msft_sortedset.Add(item);
+			}
+		}
+
+		[Benchmark]
+		public void MSFT_Stack() {
+			foreach (Int32 item in Items) {
+				msft_stack.Push(item);
+			}
+		}
 
 		[IterationCleanup]
 		public void IterationCleanup() {
 			c5_arraylist.Clear();
-			if (c5_circularqueue.Count > 0) {
+			while (c5_circularqueue.Count > 0) {
 				_ = c5_circularqueue.Dequeue(); // There's no Clear() so we have to do this
 			}
 			c5_hashbag.Clear();
 			c5_hashedarraylist.Clear();
 			c5_hashedlinkedlist.Clear();
 			c5_hashset.Clear();
-			if (c5_intervalheap.Count > 0) {
+			while (c5_intervalheap.Count > 0) {
 				_ = c5_intervalheap.DeleteMax(); // There's no Clear() so we have to do this
 			}
 			c5_linkedlist.Clear();

@@ -8,7 +8,7 @@
     <title>Testing </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Testing ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,26 +86,26 @@
 <p>When digging through the test protocol .NET uses, it was clear nothing required the test framework to be tied to the test discoverer or test runner. I'm not 100% certain if the test discoverer and test runner have to be tied together, but it's fine if they are. So, if a test framework was developed with <em>no</em> dependency on the other two components, we can start to address these issues. <a href="https://www.nuget.org/packages?q=Philosoft.Testing"><code>Philosoft.Testing</code></a> does exactly this!</p>
 <p>To use the framework, simply include the <code>System.Traits.Testing</code> namespace, and derive your test class from <code>Tests</code>. Testing is done through fluent-style assertions, which enables the framework to provide you with <em>only</em> the relevant assertions for the type you're working with. You can easily see what the framework is doing, and don't have to mess around with the framework converting types behind your back. Now you have access to an <code>Assert</code> property within your test methods.</p>
 <p><code>Assert</code> provides an extensible source for assertions. Originally, I thought providing some overloads of <code>Assert()</code> would be fine. Imagine Samuel Jackson saying: It was not fine. When writing an extender to support testing Roslyn Analyzers with a much friendlier approach, the problem became clear: we can't provide a good experience for extension methods on <code>Test</code> to handle new situations. Providing an <code>Assert</code> property and having extenders operate off the associated type works though. So, setting up an assertion looks like the follow:</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+<a href="#tabpanel_bHGHmlrG6S_cs" role="tab" aria-controls="tabpanel_bHGHmlrG6S_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB</a>
+<a href="#tabpanel_bHGHmlrG6S_vb" role="tab" aria-controls="tabpanel_bHGHmlrG6S_vb" data-tab="vb" tabindex="-1">VB</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_fs" data-tab="fs" tabindex="-1">F#</a>
+<a href="#tabpanel_bHGHmlrG6S_fs" role="tab" aria-controls="tabpanel_bHGHmlrG6S_fs" data-tab="fs" tabindex="-1">F#</a>
 </li>
 </ul>
-<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+<section id="tabpanel_bHGHmlrG6S_cs" role="tabpanel" data-tab="cs">
 
 <pre><code class="lang-csharp">[Theory]
 public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
 	Assert.That(actual);
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-visualbasic">&lt;Theory&gt;
 Public Sub TestMethod(Of T)(actual As T, expected As String)
@@ -113,7 +113,7 @@ Public Sub TestMethod(Of T)(actual As T, expected As String)
 End Sub
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-fsharp">[&lt;Theory&gt;]
 let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
@@ -123,26 +123,26 @@ let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
 </div>
 
 <p>From there you call assertions off the type returned by <code>.That(actual)</code>, which, thanks to IntelliSense and strong typing, only shows relevant assertions for whatever <code>T</code> is in your case. Of course, you don't have to write generic test methods, but this is a generic example. Let's do a simple assertion.</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S-1">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+<a href="#tabpanel_bHGHmlrG6S-1_cs" role="tab" aria-controls="tabpanel_bHGHmlrG6S-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB</a>
+<a href="#tabpanel_bHGHmlrG6S-1_vb" role="tab" aria-controls="tabpanel_bHGHmlrG6S-1_vb" data-tab="vb" tabindex="-1">VB</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_fs" data-tab="fs" tabindex="-1">F#</a>
+<a href="#tabpanel_bHGHmlrG6S-1_fs" role="tab" aria-controls="tabpanel_bHGHmlrG6S-1_fs" data-tab="fs" tabindex="-1">F#</a>
 </li>
 </ul>
-<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+<section id="tabpanel_bHGHmlrG6S-1_cs" role="tabpanel" data-tab="cs">
 
 <pre><code class="lang-csharp">[Theory]
 public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
 	Assert.That(actual.ToString()).Equals(expected);
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-visualbasic">&lt;Theory&gt;
 Public Sub TestMethod(Of T)(actual As T, expected As String)
@@ -150,7 +150,7 @@ Public Sub TestMethod(Of T)(actual As T, expected As String)
 End Sub
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-fsharp">[&lt;Theory&gt;]
 let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
@@ -160,33 +160,33 @@ let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
 </div>
 
 <p>This is exactly identical to <code>Assert.Equal(expected, actual.ToString())</code> or similar in other frameworks. However, because of how easily extensible the framework is, we can actually write our intentions even more clear:</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S-2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+<a href="#tabpanel_bHGHmlrG6S-2_cs" role="tab" aria-controls="tabpanel_bHGHmlrG6S-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB</a>
+<a href="#tabpanel_bHGHmlrG6S-2_vb" role="tab" aria-controls="tabpanel_bHGHmlrG6S-2_vb" data-tab="vb" tabindex="-1">VB</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-2_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_fs" data-tab="fs" tabindex="-1">F#</a>
+<a href="#tabpanel_bHGHmlrG6S-2_fs" role="tab" aria-controls="tabpanel_bHGHmlrG6S-2_fs" data-tab="fs" tabindex="-1">F#</a>
 </li>
 </ul>
-<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+<section id="tabpanel_bHGHmlrG6S-2_cs" role="tabpanel" data-tab="cs">
 
 <pre><code class="lang-csharp">[Theory]
 public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
 	Assert.That(actual).ToString(expected);
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-visualbasic">Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual).ToString(expected)
 End Sub
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q-2_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S-2_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-fsharp">[&lt;Theory&gt;]
 let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
@@ -196,19 +196,19 @@ let testMethod&lt;'t&gt; (actual:'t) (expected:string) =
 </div>
 
 <p>Now we can go even further. Let's say in our case, <code>T</code> is some collection which, when converted to a string has the same length as the collections element count: that is, there's no formatting. For example, let's say an incredibly inefficient BigNum which links together the digits. We could do full property testing easily, like follows:</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S-3">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+<a href="#tabpanel_bHGHmlrG6S-3_cs" role="tab" aria-controls="tabpanel_bHGHmlrG6S-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB</a>
+<a href="#tabpanel_bHGHmlrG6S-3_vb" role="tab" aria-controls="tabpanel_bHGHmlrG6S-3_vb" data-tab="vb" tabindex="-1">VB</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-3_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_fs" data-tab="fs" tabindex="-1">F#</a>
+<a href="#tabpanel_bHGHmlrG6S-3_fs" role="tab" aria-controls="tabpanel_bHGHmlrG6S-3_fs" data-tab="fs" tabindex="-1">F#</a>
 </li>
 </ul>
-<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+<section id="tabpanel_bHGHmlrG6S-3_cs" role="tabpanel" data-tab="cs">
 
 <pre><code class="lang-csharp">[Theory]
 public void TestMethod(BadBigNum actual, String expected) =&gt;
@@ -217,7 +217,7 @@ public void TestMethod(BadBigNum actual, String expected) =&gt;
 		.ToString(expected);
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-visualbasic">&lt;Theory&gt;
 Public Sub TestMethod(actual As BadBigNum, expected As String)
@@ -227,7 +227,7 @@ Public Sub TestMethod(actual As BadBigNum, expected As String)
 End Sub
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q-3_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_bHGHmlrG6S-3_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-fsharp">[&lt;Theory&gt;]
 let testMethod (actual:BadBigNum) (expected:String) =

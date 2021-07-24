@@ -2,12 +2,11 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using Collectathon.Arrays;
-using Numbersome;
 
-namespace Langly {
+namespace Numbersome {
 	[SimpleJob(RuntimeMoniker.Net50)]
 	[MemoryDiagnoser]
-	public class Product {
+	public class Sum {
 		private readonly BoundedArray<Byte> @byte = new(1, 2, 3, 4, 5);
 
 		private readonly BoundedArray<Double> @double = new(1.0, 2.0, 3.0, 4.0, 5.0);
@@ -17,15 +16,15 @@ namespace Langly {
 		private readonly BoundedArray<Single> single = new(1f, 2f, 3f, 4f, 5f);
 
 		[Benchmark]
-		public void Byte() => @byte.Product();
+		public void Byte() => @byte.Sum();
 
 		[Benchmark]
-		public void Double() => @double.Product();
+		public void Double() => @double.Sum();
 
 		[Benchmark]
-		public void Int32() => int32.Product();
+		public void Int32() => int32.Sum();
 
 		[Benchmark]
-		public void Single() => single.Product();
+		public void Single() => single.Sum();
 	}
 }

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct Rope.Enumerator
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -78,13 +78,38 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerator</span>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="System.Traits.ICurrent-1.html">ICurrent</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a></div>
+    <div><a class="xref" href="System.Traits.IReset.html">IReset</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Rope.dll</h6>
   <h5 id="Stringier_Rope_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;Char&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;char&gt;, ICount, ICurrent&lt;char&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -129,15 +154,16 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Count.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L41">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L42">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Count_" data-uid="Stringier.Rope.Enumerator.Count*"></a>
   <h4 id="Stringier_Rope_Enumerator_Count" data-uid="Stringier.Rope.Enumerator.Count">Count</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int32 Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly int Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -149,7 +175,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -159,15 +185,16 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Current.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L38">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L39">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Current_" data-uid="Stringier.Rope.Enumerator.Current*"></a>
   <h4 id="Stringier_Rope_Enumerator_Current" data-uid="Stringier.Rope.Enumerator.Current">Current</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the element in the collection at the current position of the enumerator.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Char Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly char Current { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -179,8 +206,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The element in the collection at the current position of the enumerator.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -191,15 +219,16 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L45">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_MoveNext_" data-uid="Stringier.Rope.Enumerator.MoveNext*"></a>
   <h4 id="Stringier_Rope_Enumerator_MoveNext" data-uid="Stringier.Rope.Enumerator.MoveNext">MoveNext()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Advances the enumerator to the next element of the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean MoveNext()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool MoveNext()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -211,8 +240,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the enumerator was successfully advanced to the next element; <span class="xref">false</span> if the enumerator has passed the end of the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -221,11 +251,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L81">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L82">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Reset_" data-uid="Stringier.Rope.Enumerator.Reset*"></a>
   <h4 id="Stringier_Rope_Enumerator_Reset" data-uid="Stringier.Rope.Enumerator.Reset">Reset()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the object to its initial state.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -233,7 +264,19 @@
   </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerator&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICurrent-1.html">ICurrent&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReset.html">IReset</a>
   </div>
 </article>
           </div>

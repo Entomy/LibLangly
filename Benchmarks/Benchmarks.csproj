@@ -6,14 +6,15 @@
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<RootNamespace>Langly</RootNamespace>
+		<RootNamespace></RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="BenchmarkDotNet" Version="0.13.0" />
 	  <PackageReference Include="C5" Version="2.5.3" />
+	  <PackageReference Include="EasyConsoleStd" Version="2.0.0" />
+	  <PackageReference Include="Figgle" Version="0.4.0" />
 	  <PackageReference Include="NetFabric.DoublyLinkedList" Version="3.0.0" />
-	  <PackageReference Include="Spectre.Console" Version="0.41.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,6 +23,11 @@
 	  <ProjectReference Include="..\Numbersome\Numbersome.csproj" />
 	  <ProjectReference Include="..\Philosoft\Philosoft.csproj" />
 	  <ProjectReference Include="..\Stringier\Stringier.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Stringier\" />
+	  <Folder Include="Philosoft\" />
 	</ItemGroup>
 
 </Project>

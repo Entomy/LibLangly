@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class UTF16
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,11 +81,35 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">UTF16</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Encodings.dll</h6>
   <h5 id="Stringier_UTF16_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class UTF16 : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class UTF16</code></pre>
   </div>
   <h5 id="Stringier_UTF16_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Most of these helpers assume working with a UTF-16 stream, not a buffer. This is important because it enables us to more easily support stream decoding. Buffered data doesn't need special considerations, so these operations still work with buffers.</p>
@@ -94,19 +118,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsFirstUnit_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsFirstUnit(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsFirstUnit_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsFirstUnit(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L297">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsFirstUnit_" data-uid="Stringier.UTF16.IsFirstUnit*"></a>
-  <h4 id="Stringier_UTF16_IsFirstUnit_Char_" data-uid="Stringier.UTF16.IsFirstUnit(Char)">IsFirstUnit(Char)</h4>
+  <h4 id="Stringier_UTF16_IsFirstUnit_System_Char_" data-uid="Stringier.UTF16.IsFirstUnit(System.Char)">IsFirstUnit(Char)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">char</code> the first unit of a UTF-16 sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsFirstUnit(Char char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsFirstUnit(char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -119,9 +143,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">char</span></td>
-        <td><p>The <see cref="!:Char"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to check.</p>
 </td>
       </tr>
     </tbody>
@@ -136,7 +160,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if the first unit of a UTF-16 sequence; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -144,19 +168,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsFirstUnit_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsFirstUnit(UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsFirstUnit_System_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsFirstUnit(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L289">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsFirstUnit_" data-uid="Stringier.UTF16.IsFirstUnit*"></a>
-  <h4 id="Stringier_UTF16_IsFirstUnit_UInt16_" data-uid="Stringier.UTF16.IsFirstUnit(UInt16)">IsFirstUnit(UInt16)</h4>
+  <h4 id="Stringier_UTF16_IsFirstUnit_System_UInt16_" data-uid="Stringier.UTF16.IsFirstUnit(System.UInt16)">IsFirstUnit(UInt16)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">unit</code> the first unit of a UTF-16 sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsFirstUnit(UInt16 unit)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static bool IsFirstUnit(ushort unit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -169,9 +194,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">unit</span></td>
-        <td><p>The <see cref="!:UInt16"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> to check.</p>
 </td>
       </tr>
     </tbody>
@@ -186,7 +211,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if the first unit of a UTF-16 sequence; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -194,19 +219,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsHighSurrogate_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsHighSurrogate(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsHighSurrogate_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsHighSurrogate(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L312">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsHighSurrogate_" data-uid="Stringier.UTF16.IsHighSurrogate*"></a>
-  <h4 id="Stringier_UTF16_IsHighSurrogate_Char_" data-uid="Stringier.UTF16.IsHighSurrogate(Char)">IsHighSurrogate(Char)</h4>
+  <h4 id="Stringier_UTF16_IsHighSurrogate_System_Char_" data-uid="Stringier.UTF16.IsHighSurrogate(System.Char)">IsHighSurrogate(Char)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">char</code> a high surrogate?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsHighSurrogate(Char char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsHighSurrogate(char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -219,9 +244,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">char</span></td>
-        <td><p>The <see cref="!:UInt32"></see> interpreted as a codepoint.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> interpreted as a codepoint.</p>
 </td>
       </tr>
     </tbody>
@@ -236,7 +261,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if high surrogate; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -244,19 +269,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsHighSurrogate_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsHighSurrogate(UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsHighSurrogate_System_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsHighSurrogate(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L304">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsHighSurrogate_" data-uid="Stringier.UTF16.IsHighSurrogate*"></a>
-  <h4 id="Stringier_UTF16_IsHighSurrogate_UInt32_" data-uid="Stringier.UTF16.IsHighSurrogate(UInt32)">IsHighSurrogate(UInt32)</h4>
+  <h4 id="Stringier_UTF16_IsHighSurrogate_System_UInt32_" data-uid="Stringier.UTF16.IsHighSurrogate(System.UInt32)">IsHighSurrogate(UInt32)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">codePoint</code> a high surrogate?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsHighSurrogate(UInt32 codePoint)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static bool IsHighSurrogate(uint codePoint)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -269,9 +295,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
         <td><span class="parametername">codePoint</span></td>
-        <td><p>The <see cref="!:UInt32"></see> interpreted as a codepoint.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> interpreted as a codepoint.</p>
 </td>
       </tr>
     </tbody>
@@ -286,7 +312,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if high surrogate; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -294,19 +320,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsLowSurrogate_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsLowSurrogate(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsLowSurrogate_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsLowSurrogate(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L327">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsLowSurrogate_" data-uid="Stringier.UTF16.IsLowSurrogate*"></a>
-  <h4 id="Stringier_UTF16_IsLowSurrogate_Char_" data-uid="Stringier.UTF16.IsLowSurrogate(Char)">IsLowSurrogate(Char)</h4>
+  <h4 id="Stringier_UTF16_IsLowSurrogate_System_Char_" data-uid="Stringier.UTF16.IsLowSurrogate(System.Char)">IsLowSurrogate(Char)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">char</code> a low surrogate?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsLowSurrogate(Char char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsLowSurrogate(char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -319,9 +345,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">char</span></td>
-        <td><p>The <see cref="!:Char"></see> interpreted as a codepoint.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> interpreted as a codepoint.</p>
 </td>
       </tr>
     </tbody>
@@ -336,7 +362,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if low surrogate; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -344,19 +370,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsLowSurrogate_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsLowSurrogate(UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsLowSurrogate_System_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsLowSurrogate(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L319">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsLowSurrogate_" data-uid="Stringier.UTF16.IsLowSurrogate*"></a>
-  <h4 id="Stringier_UTF16_IsLowSurrogate_UInt32_" data-uid="Stringier.UTF16.IsLowSurrogate(UInt32)">IsLowSurrogate(UInt32)</h4>
+  <h4 id="Stringier_UTF16_IsLowSurrogate_System_UInt32_" data-uid="Stringier.UTF16.IsLowSurrogate(System.UInt32)">IsLowSurrogate(UInt32)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">codePoint</code> a low surrogate?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsLowSurrogate(UInt32 codePoint)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static bool IsLowSurrogate(uint codePoint)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -369,9 +396,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
         <td><span class="parametername">codePoint</span></td>
-        <td><p>The <see cref="!:UInt32"></see> interpreted as a codepoint.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> interpreted as a codepoint.</p>
 </td>
       </tr>
     </tbody>
@@ -386,7 +413,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if low surrogate; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -394,19 +421,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsSurrogate_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsSurrogate(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsSurrogate_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsSurrogate(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L342">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsSurrogate_" data-uid="Stringier.UTF16.IsSurrogate*"></a>
-  <h4 id="Stringier_UTF16_IsSurrogate_Char_" data-uid="Stringier.UTF16.IsSurrogate(Char)">IsSurrogate(Char)</h4>
+  <h4 id="Stringier_UTF16_IsSurrogate_System_Char_" data-uid="Stringier.UTF16.IsSurrogate(System.Char)">IsSurrogate(Char)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">char</code> a surrogate value?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsSurrogate(Char char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsSurrogate(char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -419,9 +446,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">char</span></td>
-        <td><p>The <see cref="!:Char"></see> interpreted as a codepoint.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> interpreted as a codepoint.</p>
 </td>
       </tr>
     </tbody>
@@ -436,7 +463,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if a surrogate value; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -444,19 +471,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsSurrogate_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsSurrogate(UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_IsSurrogate_System_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.IsSurrogate(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L334">View Source</a>
   </span>
   <a id="Stringier_UTF16_IsSurrogate_" data-uid="Stringier.UTF16.IsSurrogate*"></a>
-  <h4 id="Stringier_UTF16_IsSurrogate_UInt32_" data-uid="Stringier.UTF16.IsSurrogate(UInt32)">IsSurrogate(UInt32)</h4>
+  <h4 id="Stringier_UTF16_IsSurrogate_System_UInt32_" data-uid="Stringier.UTF16.IsSurrogate(System.UInt32)">IsSurrogate(UInt32)</h4>
   <div class="markdown level1 summary"><p>Is the <code data-dev-comment-type="paramref" class="paramref">codePoint</code> a surrogate value?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean IsSurrogate(UInt32 codePoint)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static bool IsSurrogate(uint codePoint)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -469,9 +497,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
         <td><span class="parametername">codePoint</span></td>
-        <td><p>The <see cref="!:UInt32"></see> interpreted as a codepoint.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> interpreted as a codepoint.</p>
 </td>
       </tr>
     </tbody>
@@ -486,7 +514,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><span class="xref">true</span> if a surrogate value; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -494,19 +522,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_NextUnitRange_Char_Char__Char__.md&amp;value=---%0Auid%3A%20Stringier.UTF16.NextUnitRange(Char%2CChar%40%2CChar%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_NextUnitRange_System_Char_System_Char__System_Char__.md&amp;value=---%0Auid%3A%20Stringier.UTF16.NextUnitRange(System.Char%2CSystem.Char%40%2CSystem.Char%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L373">View Source</a>
   </span>
   <a id="Stringier_UTF16_NextUnitRange_" data-uid="Stringier.UTF16.NextUnitRange*"></a>
-  <h4 id="Stringier_UTF16_NextUnitRange_Char_Char__Char__" data-uid="Stringier.UTF16.NextUnitRange(Char,Char@,Char@)">NextUnitRange(Char, out Char, out Char)</h4>
+  <h4 id="Stringier_UTF16_NextUnitRange_System_Char_System_Char__System_Char__" data-uid="Stringier.UTF16.NextUnitRange(System.Char,System.Char@,System.Char@)">NextUnitRange(Char, out Char, out Char)</h4>
   <div class="markdown level1 summary"><p>Get the valid range the next unit after <code data-dev-comment-type="paramref" class="paramref">char</code> can be within.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void NextUnitRange(Char char, out Char lower, out Char upper)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void NextUnitRange(char char, out char lower, out char upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -519,43 +547,44 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">char</span></td>
-        <td><p>The <see cref="!:Char"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to check.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">lower</span></td>
-        <td><p>The lower bound of the next <see cref="!:Char"></see>.</p>
+        <td><p>The lower bound of the next <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">upper</span></td>
-        <td><p>The upper bound of the next <see cref="!:Char"></see>.</p>
+        <td><p>The upper bound of the next <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_UTF16_NextUnitRange_Char_Char__Char___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is meant to be similar in design to <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_NextUnitRange_Byte_Byte__Byte__">NextUnitRange(Byte, out Byte, out Byte)</a> and so it works the same way, even though it could be made not to for UTF-16 specifically. This variant gets a specific range for the next code unit when possible, and otherwise returns the full range from 0x0000..0xFFFF.</p>
+  <h5 id="Stringier_UTF16_NextUnitRange_System_Char_System_Char__System_Char___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is meant to be similar in design to <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_NextUnitRange_System_Byte_System_Byte__System_Byte__">NextUnitRange(Byte, out Byte, out Byte)</a> and so it works the same way, even though it could be made not to for UTF-16 specifically. This variant gets a specific range for the next code unit when possible, and otherwise returns the full range from 0x0000..0xFFFF.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_NextUnitRange_UInt16_UInt16__UInt16__.md&amp;value=---%0Auid%3A%20Stringier.UTF16.NextUnitRange(UInt16%2CUInt16%40%2CUInt16%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_NextUnitRange_System_UInt16_System_UInt16__System_UInt16__.md&amp;value=---%0Auid%3A%20Stringier.UTF16.NextUnitRange(System.UInt16%2CSystem.UInt16%40%2CSystem.UInt16%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L353">View Source</a>
   </span>
   <a id="Stringier_UTF16_NextUnitRange_" data-uid="Stringier.UTF16.NextUnitRange*"></a>
-  <h4 id="Stringier_UTF16_NextUnitRange_UInt16_UInt16__UInt16__" data-uid="Stringier.UTF16.NextUnitRange(UInt16,UInt16@,UInt16@)">NextUnitRange(UInt16, out UInt16, out UInt16)</h4>
+  <h4 id="Stringier_UTF16_NextUnitRange_System_UInt16_System_UInt16__System_UInt16__" data-uid="Stringier.UTF16.NextUnitRange(System.UInt16,System.UInt16@,System.UInt16@)">NextUnitRange(UInt16, out UInt16, out UInt16)</h4>
   <div class="markdown level1 summary"><p>Get the valid range the next unit after <code data-dev-comment-type="paramref" class="paramref">unit</code> can be within.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void NextUnitRange(UInt16 unit, out UInt16 lower, out UInt16 upper)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static void NextUnitRange(ushort unit, out ushort lower, out ushort upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -568,43 +597,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">unit</span></td>
-        <td><p>The <see cref="!:UInt16"></see> to check.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> to check.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">lower</span></td>
-        <td><p>The lower bound of the next <see cref="!:UInt16"></see>.</p>
+        <td><p>The lower bound of the next <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a>.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">upper</span></td>
-        <td><p>The upper bound of the next <see cref="!:UInt16"></see>.</p>
+        <td><p>The upper bound of the next <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_UTF16_NextUnitRange_UInt16_UInt16__UInt16___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is meant to be similar in design to <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_NextUnitRange_Byte_Byte__Byte__">NextUnitRange(Byte, out Byte, out Byte)</a> and so it works the same way, even though it could be made not to for UTF-16 specifically. This variant gets a specific range for the next code unit when possible, and otherwise returns the full range from 0x0000..0xFFFF.</p>
+  <h5 id="Stringier_UTF16_NextUnitRange_System_UInt16_System_UInt16__System_UInt16___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is meant to be similar in design to <a class="xref" href="Stringier.UTF8.html#Stringier_UTF8_NextUnitRange_System_Byte_System_Byte__System_Byte__">NextUnitRange(Byte, out Byte, out Byte)</a> and so it works the same way, even though it could be made not to for UTF-16 specifically. This variant gets a specific range for the next code unit when possible, and otherwise returns the full range from 0x0000..0xFFFF.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_SequenceLength_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.SequenceLength(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_SequenceLength_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.SequenceLength(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L400">View Source</a>
   </span>
   <a id="Stringier_UTF16_SequenceLength_" data-uid="Stringier.UTF16.SequenceLength*"></a>
-  <h4 id="Stringier_UTF16_SequenceLength_Char_" data-uid="Stringier.UTF16.SequenceLength(Char)">SequenceLength(Char)</h4>
+  <h4 id="Stringier_UTF16_SequenceLength_System_Char_" data-uid="Stringier.UTF16.SequenceLength(System.Char)">SequenceLength(Char)</h4>
   <div class="markdown level1 summary"><p>What is the length of the UTF-16 sequence, assuming <code data-dev-comment-type="paramref" class="paramref">char</code> is the first unit in the sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Int32 SequenceLength(Char char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int SequenceLength(char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -617,7 +646,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">char</span></td>
         <td><p>The first code unit in the sequence.</p>
 </td>
@@ -634,7 +663,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><p>The length of the sequence, or 0 if <code data-dev-comment-type="paramref" class="paramref">char</code> is not the first unit, or is an invalid unit.</p>
 </td>
       </tr>
@@ -642,19 +671,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_SequenceLength_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.SequenceLength(UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_UTF16_SequenceLength_System_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.UTF16.SequenceLength(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Encodings/UTF16.cs/#L384">View Source</a>
   </span>
   <a id="Stringier_UTF16_SequenceLength_" data-uid="Stringier.UTF16.SequenceLength*"></a>
-  <h4 id="Stringier_UTF16_SequenceLength_UInt16_" data-uid="Stringier.UTF16.SequenceLength(UInt16)">SequenceLength(UInt16)</h4>
+  <h4 id="Stringier_UTF16_SequenceLength_System_UInt16_" data-uid="Stringier.UTF16.SequenceLength(System.UInt16)">SequenceLength(UInt16)</h4>
   <div class="markdown level1 summary"><p>What is the length of the UTF-16 sequence, assuming <code data-dev-comment-type="paramref" class="paramref">unit</code> is the first unit in the sequence?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Int32 SequenceLength(UInt16 unit)</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static int SequenceLength(ushort unit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -667,7 +697,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">unit</span></td>
         <td><p>The first code unit in the sequence.</p>
 </td>
@@ -684,7 +714,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><p>The length of the sequence, or 0 if <code data-dev-comment-type="paramref" class="paramref">unit</code> is not the first unit, or is an invalid unit.</p>
 </td>
       </tr>

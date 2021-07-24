@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using MSFT = System.Collections.Generic;
 
 namespace Langly {
-	public static partial class Program {
+	public static class BenchmarkExtensions {
 		//! Here we provide extensions that simplifying benchmarking code.
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

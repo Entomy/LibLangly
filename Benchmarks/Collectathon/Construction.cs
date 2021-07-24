@@ -6,7 +6,7 @@ using Collectathon.Lists;
 using Numbersome;
 using MSFT = System.Collections.Generic;
 
-namespace Langly {
+namespace Collectathon {
 	[SimpleJob(RuntimeMoniker.Net50)]
 	[MemoryDiagnoser]
 	public class Construction {

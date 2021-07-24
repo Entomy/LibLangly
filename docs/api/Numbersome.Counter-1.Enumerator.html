@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct Counter&lt;TElement&gt;.Enumerator
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -78,31 +78,56 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerator</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TElement, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="System.Traits.ICurrent-1.html">ICurrent</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TElement, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a></div>
+    <div><a class="xref" href="System.Traits.IReset.html">IReset</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
   <h6><strong>Assembly</strong>: Numbersome.Counters.dll</h6>
   <h5 id="Numbersome_Counter_1_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;(TElement Element, Int32 Count)&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;(TElement Element, int Count)&gt;, ICount, ICurrent&lt;(TElement Element, int Count)&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Enumerator__ctor__0___Int32___Int32_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Enumerator.%23ctor(%600%5B%5D%2CInt32%5B%5D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Enumerator__ctor__0___System_Int32___System_Int32_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Enumerator.%23ctor(%600%5B%5D%2CSystem.Int32%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.Enumerator.cs/#L24">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Enumerator__ctor_" data-uid="Numbersome.Counter`1.Enumerator.#ctor*"></a>
-  <h4 id="Numbersome_Counter_1_Enumerator__ctor__0___Int32___Int32_" data-uid="Numbersome.Counter`1.Enumerator.#ctor(`0[],Int32[],Int32)">Enumerator(TElement[], Int32[], Int32)</h4>
+  <h4 id="Numbersome_Counter_1_Enumerator__ctor__0___System_Int32___System_Int32_" data-uid="Numbersome.Counter`1.Enumerator.#ctor(`0[],System.Int32[],System.Int32)">Enumerator(TElement[], Int32[], Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Numbersome.Counter-1.Enumerator.html">Counter&lt;TElement&gt;.Enumerator</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Enumerator(TElement[] elements, Int32[] counts, Int32 count)</code></pre>
+    <pre><code class="lang-csharp hljs">public Enumerator(TElement[] elements, int[] counts, int count)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -121,13 +146,13 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span>[]</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>[]</td>
         <td><span class="parametername">counts</span></td>
         <td><p>The counts to enumerate over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">count</span></td>
         <td><p>The total amount of allocated indicies in <code data-dev-comment-type="paramref" class="paramref">elements</code> and <code data-dev-comment-type="paramref" class="paramref">counts</code>.</p>
 </td>
@@ -145,11 +170,12 @@
   </span>
   <a id="Numbersome_Counter_1_Enumerator_Count_" data-uid="Numbersome.Counter`1.Enumerator.Count*"></a>
   <h4 id="Numbersome_Counter_1_Enumerator_Count" data-uid="Numbersome.Counter`1.Enumerator.Count">Count</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int32 Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Count { readonly get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -161,7 +187,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -175,11 +201,12 @@
   </span>
   <a id="Numbersome_Counter_1_Enumerator_Current_" data-uid="Numbersome.Counter`1.Enumerator.Current*"></a>
   <h4 id="Numbersome_Counter_1_Enumerator_Current" data-uid="Numbersome.Counter`1.Enumerator.Current">Current</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the element in the collection at the current position of the enumerator.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public (TElement Element, Int32 Count) Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly (TElement Element, int Count) Current { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -191,8 +218,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;</td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TElement, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td><p>The element in the collection at the current position of the enumerator.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -207,11 +235,12 @@
   </span>
   <a id="Numbersome_Counter_1_Enumerator_MoveNext_" data-uid="Numbersome.Counter`1.Enumerator.MoveNext*"></a>
   <h4 id="Numbersome_Counter_1_Enumerator_MoveNext" data-uid="Numbersome.Counter`1.Enumerator.MoveNext">MoveNext()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Advances the enumerator to the next element of the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean MoveNext()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool MoveNext()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -223,8 +252,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the enumerator was successfully advanced to the next element; <span class="xref">false</span> if the enumerator has passed the end of the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -237,7 +267,8 @@
   </span>
   <a id="Numbersome_Counter_1_Enumerator_Reset_" data-uid="Numbersome.Counter`1.Enumerator.Reset*"></a>
   <h4 id="Numbersome_Counter_1_Enumerator_Reset" data-uid="Numbersome.Counter`1.Enumerator.Reset">Reset()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the object to its initial state.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -245,7 +276,19 @@
   </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerator&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICurrent-1.html">ICurrent&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReset.html">IReset</a>
   </div>
 </article>
           </div>

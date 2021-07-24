@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISequence&lt;TElement, TEnumerator&gt;
    ">
-    <meta name="generator" content="docfx 2.56.7.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -89,7 +89,7 @@
   <h6><strong>Assembly</strong>: Philosoft.Concepts.dll</h6>
   <h5 id="System_Traits_Concepts_ISequence_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ISequence&lt;out TElement, TEnumerator&gt; : ICount, IGetEnumerator&lt;TElement, TEnumerator&gt; where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ISequence&lt;TElement, TEnumerator&gt; : ICount, IGetEnumerator&lt;TElement, TEnumerator&gt; where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -119,19 +119,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_ISequence_2_ToString_Int32_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.ISequence%602.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_ISequence_2_ToString_System_Int32_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.ISequence%602.ToString(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/ISequence`2.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/ISequence`2.cs/#L19">View Source</a>
   </span>
   <a id="System_Traits_Concepts_ISequence_2_ToString_" data-uid="System.Traits.Concepts.ISequence`2.ToString*"></a>
-  <h4 id="System_Traits_Concepts_ISequence_2_ToString_Int32_" data-uid="System.Traits.Concepts.ISequence`2.ToString(Int32)">ToString(Int32)</h4>
+  <h4 id="System_Traits_Concepts_ISequence_2_ToString_System_Int32_" data-uid="System.Traits.Concepts.ISequence`2.ToString(System.Int32)">ToString(Int32)</h4>
   <div class="markdown level1 summary"><p>Returns a string that represents this sequence, with no more than <code data-dev-comment-type="paramref" class="paramref">amount</code> elements.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">String ToString(Int32 amount)</code></pre>
+    <pre><code class="lang-csharp hljs">string ToString(int amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,7 +144,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">amount</span></td>
         <td><p>The maximum amount of elements to display.</p>
 </td>
@@ -161,11 +161,102 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_IGetEnumerator___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_IGetEnumerator___0___1__System_Predicate___0__">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_IGetEnumerator___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_IGetEnumerator___0___1__System_ArraySegment___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_IGetEnumerator___0___1__System_Memory___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_IGetEnumerator___0___1__System_ReadOnlyMemory___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_IGetEnumerator___0___1__System_Span___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_IGetEnumerator___0___1__System_ReadOnlySpan___0__">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_IGetEnumerator___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_IGetEnumerator___0___1__System_ArraySegment___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_IGetEnumerator___0___1__System_Memory___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_IGetEnumerator___0___1__System_ReadOnlyMemory___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_IGetEnumerator___0___1__System_Span___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_IGetEnumerator___0___1__System_ReadOnlySpan___0__">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1____0_">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1____0___">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1__System_ArraySegment___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1__System_Memory___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1__System_Span___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1__System_ReadOnlySpan___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsOnly__2_System_Traits_IGetEnumerator___0___1__System_Predicate___0__">TraitExtensions.ContainsOnly&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1____0___">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1__System_ArraySegment___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, ArraySegment&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1__System_Memory___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_Concepts_ISequence___0___1__System_Span___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__2_System_Traits_IGetEnumerator___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_IGetEnumerator___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_IGetEnumerator___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(IGetEnumerator&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_Concepts_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Numbersome.StatisticsExtensions.html#Numbersome_StatisticsExtensions_Mode__2_System_Traits_Concepts_ISequence___0___1__">StatisticsExtensions.Mode&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
 </article>
           </div>
           
