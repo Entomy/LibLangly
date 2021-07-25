@@ -9,7 +9,7 @@ using Collectathon.Enumerators;
 
 namespace Collectathon.Lists {
 	/// <summary>
-	/// Represents a singly-linked list.
+	/// Represents an associative singly-linked list.
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the elements.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the list.</typeparam>

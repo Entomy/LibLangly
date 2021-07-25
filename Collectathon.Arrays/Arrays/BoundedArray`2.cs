@@ -7,7 +7,7 @@ using Collectathon.Enumerators;
 
 namespace Collectathon.Arrays {
 	/// <summary>
-	/// Represents an associative bounded array, a type of flexible array who's size can not grow above its capacity, but can freely resize below that capacity.
+	/// Represents an associative bounded array, a type of flexible array whos' size can not grow above its capacity, but can freely resize below that capacity.
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the array.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
