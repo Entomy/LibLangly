@@ -33,9 +33,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: 'Release'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: 'Documentation'
