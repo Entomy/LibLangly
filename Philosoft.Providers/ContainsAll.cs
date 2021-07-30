@@ -1,5 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
-using Numbersome;
 
 namespace System.Traits.Providers {
 	public static partial class Collection {
@@ -15,10 +14,13 @@ namespace System.Traits.Providers {
 			Boolean[] found = new Boolean[elements.Length];
 			for (Int32 c = 0; c < count; c++) {
 				for (Int32 e = 0; e < elements.Length; e++) {
-					if (Equals(collection[c], elements[e])) found[e] = true;
+					if (Equals(collection[c], elements[e])) { found[e] = true; }
 				}
 			}
-			return found.ContainsOnlyTrue();
+			foreach (Boolean fnd in found) {
+				if (!fnd) { return false; }
+			}
+			return true;
 		}
 
 		/// <summary>
@@ -34,10 +36,13 @@ namespace System.Traits.Providers {
 			Boolean[] found = new Boolean[elements.Length];
 			for (Int32 c = 0; c < count; c++) {
 				for (Int32 e = 0; e < elements.Length; e++) {
-					if (Equals(collection[c], elements[e])) found[e] = true;
+					if (Equals(collection[c], elements[e])) { found[e] = true; }
 				}
 			}
-			return found.ContainsOnlyTrue();
+			foreach (Boolean fnd in found) {
+				if (!fnd) { return false; }
+			}
+			return true;
 		}
 
 		/// <summary>
@@ -52,11 +57,14 @@ namespace System.Traits.Providers {
 			TNode? N = head;
 			while (N is not null) {
 				for (Int32 i = 0; i < elements.Length; i++) {
-					if (N.Contains(elements[i])) found[i] = true;
+					if (N.Contains(elements[i])) { found[i] = true; }
 				}
 				N = N.Next;
 			}
-			return found.ContainsOnlyTrue();
+			foreach (Boolean fnd in found) {
+				if (!fnd) { return false; }
+			}
+			return true;
 		}
 	}
 }

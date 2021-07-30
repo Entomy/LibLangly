@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Numbersome;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -76,7 +75,10 @@ namespace System {
 					if (!Equals(enumerator.Current, elements[i])) { found[i] = true; }
 				}
 			}
-			return found.ContainsOnlyTrue();
+			foreach (Boolean fnd in found) {
+				if (!fnd) { return false; }
+			}
+			return true;
 		}
 
 		/// <summary>
