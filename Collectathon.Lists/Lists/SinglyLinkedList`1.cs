@@ -18,8 +18,8 @@ namespace Collectathon.Lists {
 		IClear,
 		IContains<TElement>,
 		IEquatable<SinglyLinkedList<TElement>>,
-		IIndex<Int32, TElement>,
-		IInsert<Int32, TElement>,
+		IIndex<Index, TElement>,
+		IInsert<Index, TElement>,
 		IPostpend<TElement>,
 		IPrepend<TElement>,
 		IQueue<TElement>,
@@ -59,9 +59,33 @@ namespace Collectathon.Lists {
 		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
-		public TElement this[Int32 index] {
-			get => Collection.Index<TElement, SinglyLinkedListNode<TElement>>(Head, Count, index);
-			set => Collection.Index(Head, Count, index, value);
+		public TElement this[Index index] {
+			get {
+				Int32 idx = index.GetOffset(Count);
+				if (idx < Count) {
+					SinglyLinkedListNode<TElement>? N = Head;
+					for (Int32 i = 0; N is not null; i++) {
+						if (i == idx) {
+							return N.Element;
+						}
+						N = N.Next;
+					}
+				}
+				throw new IndexOutOfRangeException();
+			}
+			set {
+				Int32 idx = index.GetOffset(Count);
+				if (idx < Count) {
+					SinglyLinkedListNode<TElement>? N = Head;
+					for (Int32 i = 0; N is not null; i++) {
+						if (i == idx) {
+							N.Element = value;
+						}
+						N = N.Next;
+					}
+				}
+				throw new IndexOutOfRangeException();
+			}
 		}
 
 		/// <inheritdoc/>
@@ -115,7 +139,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[LinksNewNode(1)]
-		public unsafe void Insert(Int32 index, TElement element) {
+		public unsafe void Insert(Index index, TElement element) {
 			Collection.Insert(ref Head, ref Tail, Count, index, element, &NewNode);
 			Count++;
 		}

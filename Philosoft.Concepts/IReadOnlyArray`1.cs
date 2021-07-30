@@ -3,7 +3,7 @@
 	/// Indicates the type can be used as a read-only array.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	public interface IReadOnlyArray<TElement> : IReadOnlyArray<Int32, TElement>, ISlice<ReadOnlyMemory<TElement>> {
+	public interface IReadOnlyArray<TElement> : IReadOnlyArray<Index, TElement>, ISlice<ReadOnlyMemory<TElement>> {
 		/// <summary>
 		/// Forms a slice out of the collection.
 		/// </summary>

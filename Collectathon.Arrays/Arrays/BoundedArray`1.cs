@@ -17,7 +17,7 @@ namespace Collectathon.Arrays {
 		IArray<TElement>,
 		IClear,
 		IEquatable<BoundedArray<TElement>>,
-		IInsertSpan<Int32, TElement>,
+		IInsertSpan<Index, TElement>,
 		IList<TElement>,
 		IPostpendSpan<TElement>,
 		IPrependSpan<TElement>,
@@ -60,7 +60,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public TElement this[Int32 index] {
+		public TElement this[Index index] {
 			get => Elements[index];
 			set => Elements[index] = value;
 		}
@@ -172,7 +172,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, TElement element) {
+		public void Insert(Index index, TElement element) {
 			if (Count < Capacity) {
 				Collection.Insert(Elements, ref count, index, element);
 			} else {
@@ -182,27 +182,27 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, params TElement[]? elements) => Insert(index, elements.AsSpan());
+		public void Insert(Index index, params TElement[]? elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, ArraySegment<TElement> elements) => Insert(index, elements.AsSpan());
+		public void Insert(Index index, ArraySegment<TElement> elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, Memory<TElement> elements) => Insert(index, elements.Span);
+		public void Insert(Index index, Memory<TElement> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, ReadOnlyMemory<TElement> elements) => Insert(index, elements.Span);
+		public void Insert(Index index, ReadOnlyMemory<TElement> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, Span<TElement> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
+		public void Insert(Index index, Span<TElement> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public void Insert(Int32 index, ReadOnlySpan<TElement> elements) {
+		public void Insert(Index index, ReadOnlySpan<TElement> elements) {
 			if (Count + elements.Length <= Capacity) {
 				Collection.Insert(Elements, ref count, index, elements);
 			} else {

@@ -3,7 +3,7 @@
 	/// Indicates the type can be used as an array.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	public interface IArray<TElement> : IArray<Int32, TElement>, IReadOnlyArray<TElement>, IShift, ISlice<Memory<TElement>> {
+	public interface IArray<TElement> : IArray<Index, TElement>, IReadOnlyArray<TElement>, IShift, ISlice<Memory<TElement>> {
 		/// <summary>
 		/// Forms a slice out of the collection.
 		/// </summary>

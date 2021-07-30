@@ -19,8 +19,8 @@ namespace Stringier {
 		IEquatable<Rune>,
 #endif
 		IEquatable<String>, IEquatable<Char[]>,
-		IIndex<Int32, Char>,
-		IInsert<Int32, Char>, IInsert<Int32, String>, IInsert<Int32, Char[]>,
+		IIndex<Index, Char>,
+		IInsert<Index, Char>, IInsert<Index, String>, IInsert<Index, Char[]>,
 		IPostpend<Char>, IPostpend<String>, IPostpend<Char[]>,
 		IPrepend<Char>, IPrepend<String>, IPrepend<Char[]>,
 		IRemove<Char>,
@@ -81,19 +81,20 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="index">The index of the <see cref="Char"/> to get.</param>
 		/// <returns>The <see cref="Char"/> at the specified <paramref name="index"/>.</returns>
-		public Char this[Int32 index] {
+		public Char this[Index index] {
 			get {
-				if (0 > index || index >= Count) {
+				Int32 idx = index.GetOffset(Count);
+				if (0 > idx || idx >= Count) {
 					throw new IndexOutOfRangeException();
 				}
 				Node? N = Head;
 				Int32 i = 0;
 				// Seeks to the node the element is in, and calculate the index offset (i)
-				while (N is not null && index >= i + N.Count) {
+				while (N is not null && idx >= i + N.Count) {
 					i += N.Count;
 					N = N.Next;
 				}
-				return N is not null ? N[index - i] : throw new IndexOutOfRangeException();
+				return N is not null ? N[idx - i] : throw new IndexOutOfRangeException();
 			}
 			set => throw new NotImplementedException();
 		}
@@ -497,7 +498,7 @@ namespace Stringier {
 		/// <param name="other">The object to compare with the current object.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(ReadOnlySpan<Char> other) {
-			if (Count != other.Length) return false;
+			if (Count != other.Length) { return false; }
 			Int32 i = 0;
 			foreach (Char item in this) {
 				if (!item.Equals(other[i++])) {
@@ -515,7 +516,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a valid <see cref="Case"/> value.</exception>
 		public Boolean Equals(ReadOnlySpan<Char> other, Case casing) {
-			if (Count != other.Length) return false;
+			if (Count != other.Length) { return false; }
 			Int32 i = 0;
 			switch (casing) {
 			case Case.Insensitive:
@@ -563,10 +564,11 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[LinksNewNode]
-		public void Insert(Int32 index, Char element) {
-			if (index == 0) {
+		public void Insert(Index index, Char element) {
+			Int32 idx = index.GetOffset(Count);
+			if (idx == 0) {
 				Prepend(element);
-			} else if (index == Count) {
+			} else if (idx == Count) {
 				Postpend(element);
 			} else if (Head is null || Tail is null) {
 				Add(element);
@@ -576,17 +578,17 @@ namespace Stringier {
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Replace this node with the chain section
 					Head = head;
 					Tail = tail;
 				} else
 				// Will the element be inserted into the head node?
-				if (index <= Head.Count) {
+				if (idx <= Head.Count) {
 					// Get the surrounding nodes
 					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					tail.Next = next;
 					// Replace this node with the chain section
@@ -594,14 +596,14 @@ namespace Stringier {
 					next.Previous = tail;
 				} else
 				// Will the element be inserted into the tail node?
-				if (index > Count - Tail.Count) {
+				if (idx > Count - Tail.Count) {
 					// Set to the tail node
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
 					Node prev = N.Previous!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					// Replace this node with the chain section
@@ -609,7 +611,7 @@ namespace Stringier {
 					prev.Next = head;
 				} else {
 					// Seeks to the node the element will be inserted in, and calculate the index offset (i)
-					while (N is not null && index > i + N.Count) {
+					while (N is not null && idx > i + N.Count) {
 						i += N.Count;
 						N = N.Next;
 					}
@@ -617,7 +619,7 @@ namespace Stringier {
 					Node prev = N!.Previous!;
 					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					tail.Next = next;
@@ -632,13 +634,14 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MaybeLinksNewNode]
-		public void Insert(Int32 index, [AllowNull] params Char[] element) {
+		public void Insert(Index index, [AllowNull] params Char[] element) {
+			Int32 idx = index.GetOffset(Count);
 			if (element is null) {
 				return;
 			}
-			if (index == 0) {
+			if (idx == 0) {
 				Prepend(element);
-			} else if (index == Count) {
+			} else if (idx == Count) {
 				Postpend(element);
 			} else if (Head is null || Tail is null) {
 				Add(element);
@@ -648,17 +651,17 @@ namespace Stringier {
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Replace this node with the chain section
 					Head = head;
 					Tail = tail;
 				} else
 				// Will the element be inserted into the head node?
-				if (index <= Head.Count) {
+				if (idx <= Head.Count) {
 					// Get the surrounding nodes
 					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					tail.Next = next;
 					// Replace this node with the chain section
@@ -666,14 +669,14 @@ namespace Stringier {
 					next.Previous = tail;
 				} else
 				// Will the element be inserted into the tail node?
-				if (index > Count - Tail.Count) {
+				if (idx > Count - Tail.Count) {
 					// Set to the tail node
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
 					Node prev = N.Previous!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					// Replace this node with the chain section
@@ -681,7 +684,7 @@ namespace Stringier {
 					prev.Next = head;
 				} else {
 					// Seeks to the node the element will be inserted in, and calculate the index offset (i)
-					while (N is not null && index > i + N.Count) {
+					while (N is not null && idx > i + N.Count) {
 						i += N.Count;
 						N = N.Next;
 					}
@@ -689,7 +692,7 @@ namespace Stringier {
 					Node prev = N!.Previous!;
 					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					tail.Next = next;
@@ -704,13 +707,14 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MaybeLinksNewNode]
-		public void Insert(Int32 index, [AllowNull] String element) {
+		public void Insert(Index index, [AllowNull] String element) {
+			Int32 idx = index.GetOffset(Count);
 			if (element is null) {
 				return;
 			}
-			if (index == 0) {
+			if (idx == 0) {
 				Prepend(element);
-			} else if (index == Count) {
+			} else if (idx == Count) {
 				Postpend(element);
 			} else if (Head is null || Tail is null) {
 				Add(element);
@@ -720,17 +724,17 @@ namespace Stringier {
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Replace this node with the chain section
 					Head = head;
 					Tail = tail;
 				} else
 				// Will the element be inserted into the head node?
-				if (index <= Head.Count) {
+				if (idx <= Head.Count) {
 					// Get the surrounding nodes
 					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					tail.Next = next;
 					// Replace this node with the chain section
@@ -738,14 +742,14 @@ namespace Stringier {
 					next.Previous = tail;
 				} else
 				// Will the element be inserted into the tail node?
-				if (index > Count - Tail.Count) {
+				if (idx > Count - Tail.Count) {
 					// Set to the tail node
 					N = Tail;
 					i = Count - Tail.Count;
 					// Get the surrounding nodes
 					Node prev = N.Previous!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					// Replace this node with the chain section
@@ -753,7 +757,7 @@ namespace Stringier {
 					prev.Next = head;
 				} else {
 					// Seeks to the node the element will be inserted in, and calculate the index offset (i)
-					while (N is not null && index > i + N.Count) {
+					while (N is not null && idx > i + N.Count) {
 						i += N.Count;
 						N = N.Next;
 					}
@@ -761,7 +765,7 @@ namespace Stringier {
 					Node prev = N!.Previous!;
 					Node next = N.Next!;
 					// Insert the element into the node, getting back a chain section
-					(Node head, Node tail) = N.Insert(index - i, element);
+					(Node head, Node tail) = N.Insert(idx - i, element);
 					// Link the chain section into the chain
 					head.Previous = prev;
 					tail.Next = next;
