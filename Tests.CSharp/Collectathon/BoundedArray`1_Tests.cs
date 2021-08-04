@@ -6,7 +6,8 @@ using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class BoundedArray1_Tests : Tests, IAddContract {
+	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract {
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
 		public void Add_Array<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
@@ -19,6 +20,7 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Element), MemberType = typeof(AddContractData))]
 		public void Add_Element<TElement>(TElement[] initial, TElement element, TElement[] expected) {
@@ -31,6 +33,7 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
 		public void Add_Memory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
@@ -43,6 +46,7 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
 		public void Add_ReadOnlyMemory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
@@ -55,6 +59,7 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
 		public void Add_ReadOnlySpan<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
@@ -67,6 +72,7 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
 		public void Add_Segment<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
@@ -79,6 +85,7 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
 		public void Add_Span<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
@@ -91,12 +98,13 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Clear([DisallowNull] Int32[] initial) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(ClearContractData.Clear), MemberType = typeof(ClearContractData))]
+		public void Clear<TElement>(TElement[] initial) {
+			BoundedArray<TElement> array = new(initial);
 			array.Clear();
+			Assert.That(array).Count(0);
 		}
 
 		[Theory]

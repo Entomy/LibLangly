@@ -72,7 +72,7 @@ namespace System.Traits.Testing.Contracts {
 	/// <summary>
 	/// Represents data used with <see cref="IAddContract"/>.
 	/// </summary>
-	public sealed class AddContractData : ContractData {
+	public sealed class AddContractData {
 		/// <summary>
 		/// Test data for <see cref="IAddContract.Add_Element{TElement}(TElement[], TElement, TElement[])"/>.
 		/// </summary>
