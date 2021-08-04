@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits.Testing;
+using System.Traits.Testing.Contracts;
 using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class BoundedArray1_Tests : Tests {
+	public class BoundedArray1_Tests : Tests, IAddContract {
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Array<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add(elements);
 				Assert.That(array).Equals(expected);
@@ -19,22 +20,21 @@ namespace Collectathon {
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
-		[InlineData(new Int32[] { 1, 2, }, new Int32[] { 1 }, 2)]
-		public void Add_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(AddContractData.Add_Element), MemberType = typeof(AddContractData))]
+		public void Add_Element<TElement>(TElement[] initial, TElement element, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count < array.Capacity) {
-				array.Add(value);
+				array.Add(element);
 				Assert.That(array).Equals(expected);
 			} else {
-				Assert.That(() => array.Add(value)).Throws<InvalidOperationException>();
+				Assert.That(() => array.Add(element)).Throws<InvalidOperationException>();
 			}
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Memory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add(elements.AsMemory());
 				Assert.That(array).Equals(expected);
@@ -44,33 +44,45 @@ namespace Collectathon {
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_ReadOnlyMemory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
-				array.Add((ReadOnlyMemory<Int32>)elements.AsMemory());
+				array.Add((ReadOnlyMemory<TElement>)elements.AsMemory());
 				Assert.That(array).Equals(expected);
 			} else {
-				Assert.That(() => array.Add((ReadOnlyMemory<Int32>)elements.AsMemory())).Throws<InvalidOperationException>();
+				Assert.That(() => array.Add((ReadOnlyMemory<TElement>)elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_ReadOnlySpan<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
-				array.Add((ReadOnlySpan<Int32>)elements.AsSpan());
+				array.Add((ReadOnlySpan<TElement>)elements.AsSpan());
 				Assert.That(array).Equals(expected);
 			} else {
-				Assert.That(() => array.Add((ReadOnlySpan<Int32>)elements.AsSpan())).Throws<InvalidOperationException>();
+				Assert.That(() => array.Add((ReadOnlySpan<TElement>)elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Segment<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Add(elements.AsSpan());
+				Assert.That(array).Equals(expected);
+			} else {
+				Assert.That(() => array.Add(elements.AsSpan())).Throws<InvalidOperationException>();
+			}
+		}
+
+		[Theory]
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Span<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add(elements.AsSpan());
 				Assert.That(array).Equals(expected);

@@ -1,67 +1,66 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits.Testing;
+using System.Traits.Testing.Contracts;
 using Collectathon.Lists;
 using Xunit;
 
 namespace Collectathon {
-	public class SinglyLinkedList1_Tests : Tests {
+	public class SinglyLinkedList1_Tests : Tests, IAddContract {
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> list = new(initial);
-			list.Add(values);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Array<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add(elements);
 			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
-		[InlineData(new Int32[] { 1, 2, }, new Int32[] { 1 }, 2)]
-		public void Add_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
-			SinglyLinkedList<Int32> list = new(initial);
-			list.Add(value);
+		[MemberData(nameof(AddContractData.Add_Element), MemberType = typeof(AddContractData))]
+		public void Add_Element<TElement>(TElement[] initial, TElement element, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add(element);
 			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> list = new(initial);
-			list.Add(values.AsMemory());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Memory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add(elements.AsMemory());
 			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public unsafe void Add_Pointer([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> list = new(initial);
-			fixed (Int32* vals = values) {
-				list.Add(vals, values.Length);
-			}
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_ReadOnlyMemory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add((ReadOnlyMemory<TElement>)elements.AsMemory());
 			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> list = new(initial);
-			list.Add((ReadOnlyMemory<Int32>)values.AsMemory());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_ReadOnlySpan<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add((ReadOnlySpan<TElement>)elements.AsSpan());
 			Assert.That(list).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> list = new(initial);
-			list.Add((ReadOnlySpan<Int32>)values.AsSpan());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Segment<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add(new ArraySegment<TElement>(elements));
 			Assert.That(list).Equals(expected);
+
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> list = new(initial);
-			list.Add(values.AsSpan());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Span<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			SinglyLinkedList<TElement> list = new(initial);
+			list.Add(elements.AsSpan());
 			Assert.That(list).Equals(expected);
 		}
 

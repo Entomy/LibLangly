@@ -1,67 +1,66 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits.Testing;
+using System.Traits.Testing.Contracts;
 using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class DynamicArray1_Tests : Tests {
+	public class DynamicArray1_Tests : Tests, IAddContract {
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			DynamicArray<Int32> array = new(initial);
-			array.Add(values);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Array<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add(elements);
+			Assert.That(array).Equals(expected);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(AddContractData.Add_Element), MemberType = typeof(AddContractData))]
+		public void Add_Element<TElement>(TElement[] initial, TElement element, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add(element);
 			Assert.That(array).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
-		[InlineData(new Int32[] { 1, 2, }, new Int32[] { 1 }, 2)]
-		public void Add_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
-			DynamicArray<Int32> array = new(initial);
-			array.Add(value);
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Memory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add(elements.AsMemory());
 			Assert.That(array).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			DynamicArray<Int32> array = new(initial);
-			array.Add(values.AsMemory());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_ReadOnlyMemory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add((ReadOnlyMemory<TElement>)elements.AsMemory());
 			Assert.That(array).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public unsafe void Add_Pointer([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			DynamicArray<Int32> array = new(initial);
-			fixed (Int32* vals = values) {
-				array.Add(vals, values.Length);
-			}
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_ReadOnlySpan<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add((ReadOnlySpan<TElement>)elements.AsSpan());
 			Assert.That(array).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			DynamicArray<Int32> array = new(initial);
-			array.Add((ReadOnlyMemory<Int32>)values.AsMemory());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Segment<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add(new ArraySegment<TElement>(elements));
 			Assert.That(array).Equals(expected);
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			DynamicArray<Int32> array = new(initial);
-			array.Add((ReadOnlySpan<Int32>)values.AsSpan());
-			Assert.That(array).Equals(expected);
-		}
-
-		[Theory]
-		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
-		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
-			DynamicArray<Int32> array = new(initial);
-			array.Add(values.AsSpan());
+		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
+		public void Add_Span<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Add(elements.AsSpan());
 			Assert.That(array).Equals(expected);
 		}
 
