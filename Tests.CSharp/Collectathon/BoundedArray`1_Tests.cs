@@ -6,7 +6,7 @@ using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract, IPostpendContract {
+	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract, IPostpendContract, IReplaceContract {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
@@ -396,21 +396,17 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
-		[InlineData(new Int32[] { 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 0)]
-		[InlineData(new Int32[] { 1, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 0)]
-		[InlineData(new Int32[] { 1, 2, 0, 4, 5, }, new Int32[] { 1, 2, 3, 4, 5 }, 3, 0)]
-		[InlineData(new Int32[] { 1, 2, 3, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, 0)]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, 0)]
-		[InlineData(new Int32[] { 0, 2, 0, 2, 0 }, new Int32[] { 1, 2, 1, 2, 1 }, 1, 0)]
-		[InlineData(new Int32[] { 0, 0, 0, 0, 0 }, new Int32[] { 1, 1, 1, 1, 1 }, 1, 0)]
-		public void Replace([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 search, Int32 replace) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(ReplaceContractData.Replace_Simple), MemberType = typeof(ReplaceContractData))]
+		public void Replace_Simple<TElement>(TElement[] initial, TElement search, TElement replace, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			array.Replace(search, replace);
 			Assert.That(array).Equals(expected);
 		}
+
+		/// <inheritdoc/>
+		public void Replace_Complex<TElement, TSearch, TReplace>(TElement[] initial, TSearch search, TReplace replace, TElement[] expected) => throw new NotImplementedException();
 
 		[Theory]
 		[InlineData(new Int32[] { }, new Int32[] { })]
