@@ -106,9 +106,9 @@ namespace System.Traits.Testing {
 		/// <param name="expected">The expected <see cref="ReadOnlySpan{T}"/>.</param>
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
 		public ArrayAssert<T> Equals(ReadOnlySpan<T> expected) {
-			if (Actual.Length != expected.Length) goto Throw;
+			if (Actual.Length != expected.Length) { goto Throw; }
 			for (Int32 i = 0; i < Actual.Length; i++) {
-				if (!Object.Equals(Actual[i], expected[i])) goto Throw;
+				if (!Object.Equals(Actual[i], expected[i])) { goto Throw; }
 			}
 			return this;
 		Throw:
@@ -122,9 +122,9 @@ namespace System.Traits.Testing {
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <see cref="ArrayAssert{T}"/>.</returns>
 		public ArrayAssert<T> Equals(ReadOnlySpan<T> expected, [DisallowNull] String additionalMessage) {
-			if (Actual.Length != expected.Length) goto Throw;
+			if (Actual.Length != expected.Length) { goto Throw; }
 			for (Int32 i = 0; i < Actual.Length; i++) {
-				if (!Object.Equals(Actual[i], expected[i])) goto Throw;
+				if (!Object.Equals(Actual[i], expected[i])) { goto Throw; }
 			}
 			return this;
 		Throw:

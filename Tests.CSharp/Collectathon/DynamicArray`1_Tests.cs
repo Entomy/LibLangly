@@ -6,7 +6,7 @@ using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class DynamicArray1_Tests : Tests, IAddContract, IClearContract {
+	public class DynamicArray1_Tests : Tests, IAddContract, IClearContract, IPostpendContract {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
@@ -90,14 +90,6 @@ namespace Collectathon {
 			Assert.That(val).Equals(exp);
 			DynamicArray<Int32> dval = elements is not null ? new DynamicArray<Int32>(elements) : null;
 			Assert.That(val).Equals(dval);
-		}
-
-		[Theory]
-		[InlineData(0, new Int32[] { })]
-		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Fold(Int32 expected, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(elements);
-			Assert.That(array.Fold((a, b) => a + b, 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -200,86 +192,65 @@ namespace Collectathon {
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(0, new Int32[] { 1, 2, 3, 4, 5 }, 0)]
-		[InlineData(3, new Int32[] { 1, 2, 1, 2, 1 }, 1)]
-		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
-		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] elements, Int32 element) {
-			DynamicArray<Int32> array = new(elements);
-			Assert.That(array.Occurrences(element)).Equals(expected);
-		}
-
-		[Theory]
-		[InlineData(0, new Int32[] { })]
-		[InlineData(0, new Int32[] { 1 })]
-		[InlineData(0, new Int32[] { 1, 1, 1, 1, 1 })]
-		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 })]
-		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
-		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(elements);
-			Assert.That(array.Occurrences((x) => x % 2 == 0)).Equals(expected);
-		}
-
-		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Array<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
 			array.Postpend(elements);
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
-		public void Postpend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
-			DynamicArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Element), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Element<TElement>(TElement[] initial, TElement element, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
 			array.Postpend(element);
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Memory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
 			array.Postpend(elements.AsMemory());
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public unsafe void Postpend_Pointer([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(initial);
-			fixed (Int32* elmts = elements) {
-				array.Postpend(elmts, elements.Length);
-			}
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_ReadOnlyMemory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Postpend((ReadOnlyMemory<TElement>)elements.AsMemory());
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(initial);
-			array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory());
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_ReadOnlySpan<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Postpend((ReadOnlySpan<TElement>)elements.AsSpan());
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(initial);
-			array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan());
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Segment<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
+			array.Postpend(new ArraySegment<TElement>(elements));
 			Assert.That(array).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			DynamicArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Span<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			DynamicArray<TElement> array = new(initial);
 			array.Postpend(elements.AsSpan());
 			Assert.That(array).Equals(expected);
 		}

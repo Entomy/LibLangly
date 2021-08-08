@@ -6,7 +6,7 @@ using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract {
+	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract, IPostpendContract {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
@@ -121,14 +121,6 @@ namespace Collectathon {
 		}
 
 		[Theory]
-		[InlineData(0, new Int32[] { })]
-		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Fold(Int32 expected, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(elements);
-			Assert.That(array.Fold((a, b) => a + b, 0)).Equals(expected);
-		}
-
-		[Theory]
 		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
 		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
 		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
@@ -236,31 +228,11 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(0, new Int32[] { 1, 2, 3, 4, 5 }, 0)]
-		[InlineData(3, new Int32[] { 1, 2, 1, 2, 1 }, 1)]
-		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
-		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] elements, Int32 element) {
-			BoundedArray<Int32> array = new(elements);
-			Assert.That(array.Occurrences(element)).Equals(expected);
-		}
-
-		[Theory]
-		[InlineData(0, new Int32[] { })]
-		[InlineData(0, new Int32[] { 1 })]
-		[InlineData(0, new Int32[] { 1, 1, 1, 1, 1 })]
-		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 })]
-		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
-		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(elements);
-			Assert.That(array.Occurrences((x) => x % 2 == 0)).Equals(expected);
-		}
-
-		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Array<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend(elements);
 				Assert.That(array).Equals(expected);
@@ -269,10 +241,11 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
-		public void Postpend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Element), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Element<TElement>(TElement[] initial, TElement element, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count < array.Capacity) {
 				array.Postpend(element);
 				Assert.That(array).Equals(expected);
@@ -281,11 +254,11 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Memory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend(elements.AsMemory());
 				Assert.That(array).Equals(expected);
@@ -294,37 +267,50 @@ namespace Collectathon {
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_ReadOnlyMemory<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
-				array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory());
+				array.Postpend((ReadOnlyMemory<TElement>)elements.AsMemory());
 				Assert.That(array).Equals(expected);
 			} else {
-				Assert.That(() => array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory())).Throws<InvalidOperationException>();
+				Assert.That(() => array.Postpend((ReadOnlyMemory<TElement>)elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_ReadOnlySpan<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
-				array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan());
+				array.Postpend((ReadOnlySpan<TElement>)elements.AsSpan());
 				Assert.That(array).Equals(expected);
 			} else {
-				Assert.That(() => array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan())).Throws<InvalidOperationException>();
+				Assert.That(() => array.Postpend((ReadOnlySpan<TElement>)elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
-		public void Postpend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
-			BoundedArray<Int32> array = new(initial);
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Segment<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Postpend(new ArraySegment<TElement>(elements));
+				Assert.That(array).Equals(expected);
+			} else {
+				Assert.That(() => array.Postpend(elements.AsSpan())).Throws<InvalidOperationException>();
+			}
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(PostpendContractData.Postpend_Elements), MemberType = typeof(PostpendContractData))]
+		public void Postpend_Span<TElement>(TElement[] initial, TElement[] elements, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend(elements.AsSpan());
 				Assert.That(array).Equals(expected);
