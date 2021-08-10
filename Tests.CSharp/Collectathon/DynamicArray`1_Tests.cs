@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits.Testing;
 using System.Traits.Testing.Contracts;
-using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {

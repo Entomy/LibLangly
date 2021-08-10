@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Collectathon.Lists;
 
 namespace Collectathon.Nodes {
 	/// <summary>

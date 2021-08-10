@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Traits.Testing;
-using Collectathon.Pools;
+using Collectathon;
 using Xunit;
 
 namespace Collectathon {

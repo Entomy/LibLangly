@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Traits.Concepts;
 using System.Traits.Testing;
-using Collectathon.Arrays;
+using Collectathon;
 using Xunit;
 
 namespace Numbersome {

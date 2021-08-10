@@ -5,57 +5,41 @@ using System.Traits.Concepts;
 using System.Traits.Providers;
 using Collectathon.Enumerators;
 
-namespace Collectathon.Arrays {
+namespace Collectathon {
 	/// <summary>
-	/// Represents an associative dynamic array, a type of flexible array who's capacity can freely grow and shrink.
+	/// Represents an associative bounded array, a type of flexible array whos' size can not grow above its capacity, but can freely resize below that capacity.
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the array.</typeparam>
-	/// <typeparam name="TElement">The type of the elements of the array.</typeparam>
+	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
 	[DebuggerDisplay("{ToString(5),nq}")]
-	public sealed class DynamicArray<TIndex, TElement> :
+	public sealed class BoundedArray<TIndex, TElement> :
 		IArray<TIndex, TElement>,
 		IClear,
 		IInsert<TIndex, TElement>,
-		IResize,
+		IList<TIndex, TElement>,
 		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<TIndex, TElement>>
 		where TIndex : notnull {
 		/// <summary>
-		/// Phi, the golden ratio.
+		/// The indicies of this <see cref="BoundedArray{TIndex, TElement}"/>.
 		/// </summary>
-		private const Double φ = 1.6180339887_4989484820_4586834365_6381177203_0917980576_2862135448_6227052604_6281890244_9707207204_1893911374_8475408807_5386891752;
+		private readonly TIndex[] Indicies;
 
 		/// <summary>
-		/// The indicies of this <see cref="DynamicArray{TIndex, TElement}"/>.
+		/// The elements of this <see cref="BoundedArray{TIndex, TElement}"/>.
 		/// </summary>
-		private TIndex[] Indicies;
+		private readonly TElement[] Elements;
 
 		/// <summary>
-		/// The elements of this <see cref="DynamicArray{TIndex, TElement}"/>.
-		/// </summary>
-		private TElement[] Elements;
-
-		/// <summary>
-		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/>.
-		/// </summary>
-		public DynamicArray() {
-			Indicies = Array.Empty<TIndex>();
-			Elements = Array.Empty<TElement>();
-		}
-
-		/// <summary>
-		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
+		/// Initializes a new <see cref="BoundedArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public DynamicArray(Int32 capacity) {
+		public BoundedArray(Int32 capacity) {
 			Indicies = new TIndex[capacity];
 			Elements = new TElement[capacity];
 		}
 
 		/// <inheritdoc/>
-		public Int32 Capacity {
-			get => Indicies.Length;
-			set => Resize(value);
-		}
+		public Int32 Capacity => Indicies.Length;
 
 		/// <inheritdoc/>
 		public Int32 Count { get; private set; }
@@ -107,35 +91,24 @@ namespace Collectathon.Arrays {
 		public void Replace(TElement search, TElement replace) => Collection.Replace(Elements, Count, search, replace);
 
 		/// <inheritdoc/>
-		public void Resize(Int32 capacity) {
-			Indicies = Collection.Resize(Indicies, capacity);
-			Elements = Collection.Resize(Elements, capacity);
-		}
-
-		/// <inheritdoc/>
 		public override String ToString() => Collection.ToString(Indicies, Elements);
 
 		/// <inheritdoc/>
 		public String ToString(Int32 amount) => Collection.ToString(Indicies, Elements, amount);
 
-		/// <inheritdoc/>
-		private void Add(TIndex index, TElement element) {
-			if (Count == Capacity) {
-				Grow();
-			}
-			Indicies[Count] = index;
-			Elements[Count] = element;
-			Count++;
-		}
-
 		/// <summary>
-		/// Grows this collection by a computed factor.
+		/// Adds an element to this object.
 		/// </summary>
-		private void Grow() {
-			if (Capacity >= 8) {
-				Resize((Int32)(Capacity * φ));
+		/// <param name="index">The index of the element to add.</param>
+		/// <param name="element">The element to add.</param>
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		private void Add(TIndex index, TElement element) {
+			if (Count < Capacity) {
+				Indicies[Count] = index;
+				Elements[Count] = element;
+				Count++;
 			} else {
-				Resize(13);
+				throw new InvalidOperationException();
 			}
 		}
 	}

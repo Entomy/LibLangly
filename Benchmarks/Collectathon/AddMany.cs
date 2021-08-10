@@ -1,8 +1,6 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using Collectathon.Arrays;
-using Collectathon.Lists;
 using MSFT = System.Collections.Generic;
 
 namespace Collectathon {

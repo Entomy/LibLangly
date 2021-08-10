@@ -1,5 +1,5 @@
 ﻿using System;
-using Collectathon.Arrays;
+using Collectathon;
 using Numbersome;
 using Xunit;
 

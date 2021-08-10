@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
-using Collectathon.Pools;
 
 namespace Collectathon.Enumerators {
 	/// <summary>

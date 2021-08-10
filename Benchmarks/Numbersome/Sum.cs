@@ -1,7 +1,7 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using Collectathon.Arrays;
+using Collectathon;
 
 namespace Numbersome {
 	[SimpleJob(RuntimeMoniker.Net50)]

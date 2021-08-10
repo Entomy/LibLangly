@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits.Testing;
-using Collectathon.Lists;
+using Collectathon;
 using Xunit;
 
 namespace Philosoft {

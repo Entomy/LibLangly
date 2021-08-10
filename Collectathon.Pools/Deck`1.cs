@@ -4,7 +4,7 @@ using System.Traits.Concepts;
 using System.Traits.Providers;
 using Collectathon.Enumerators;
 
-namespace Collectathon.Pools {
+namespace Collectathon {
 	/// <summary>
 	/// Represents a deck, a type of retention pool in which the objects can be shuffled and randomly accessed like a deck of cards.
 	/// </summary>

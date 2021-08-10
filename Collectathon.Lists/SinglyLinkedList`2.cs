@@ -7,7 +7,7 @@ using System.Traits.Providers;
 using Collectathon.Nodes;
 using Collectathon.Enumerators;
 
-namespace Collectathon.Lists {
+namespace Collectathon {
 	/// <summary>
 	/// Represents an associative singly-linked list.
 	/// </summary>
