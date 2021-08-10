@@ -377,37 +377,37 @@ namespace Collectathon.Arrays {
 		public Span<TElement> Slice() => Elements.AsSpan();
 
 		/// <inheritdoc/>
-		public Span<TElement> Slice(Int32 start) => Elements.AsSpan(start);
+		public Span<TElement> Slice(Index start) => Elements.AsSpan(start.GetOffset(Count));
 
 		/// <inheritdoc/>
-		public Span<TElement> Slice(Int32 start, Int32 length) => Elements.AsSpan(start, length);
+		public Span<TElement> Slice(Index start, Int32 length) => Elements.AsSpan(start.GetOffset(Count), length);
 
 		/// <inheritdoc/>
 		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice() => Elements.AsSpan();
 
 		/// <inheritdoc/>
-		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice(Int32 start) => Elements.AsSpan(start);
+		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice(Index start) => Elements.AsSpan(start.GetOffset(Count));
 
 		/// <inheritdoc/>
-		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice(Int32 start, Int32 length) => Elements.AsSpan(start, length);
+		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice(Index start, Int32 length) => Elements.AsSpan(start.GetOffset(Count), length);
 
 		/// <inheritdoc/>
 		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice() => Elements.AsMemory();
 
 		/// <inheritdoc/>
-		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice(Int32 start) => Elements.AsMemory(start);
+		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice(Index start) => Elements.AsMemory(start.GetOffset(Count));
 
 		/// <inheritdoc/>
-		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
+		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice(Index start, Int32 length) => Elements.AsMemory(start.GetOffset(Count), length);
 
 		/// <inheritdoc/>
 		Memory<TElement> ISlice<Memory<TElement>>.Slice() => Elements.AsMemory();
 
 		/// <inheritdoc/>
-		Memory<TElement> ISlice<Memory<TElement>>.Slice(Int32 start) => Elements.AsMemory(start);
+		Memory<TElement> ISlice<Memory<TElement>>.Slice(Index start) => Elements.AsMemory(start.GetOffset(Count));
 
 		/// <inheritdoc/>
-		Memory<TElement> ISlice<Memory<TElement>>.Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
+		Memory<TElement> ISlice<Memory<TElement>>.Slice(Index start, Int32 length) => Elements.AsMemory(start.GetOffset(Count), length);
 
 		/// <inheritdoc/>
 		public sealed override String ToString() => Collection.ToString(Elements);

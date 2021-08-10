@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits;
+﻿using System.Traits;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -7,7 +6,7 @@ namespace System {
 		/// Invokes the next <see cref="Action"/> in the queue.
 		/// </summary>
 		/// <param name="queue">This queue.</param>
-		public static void Invoke([DisallowNull] this IDequeue<Action> queue) => queue.Dequeue()?.Invoke();
+		public static void Invoke(this IDequeue<Action> queue) => queue.Dequeue()?.Invoke();
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T}"/> in the queue.
@@ -15,7 +14,7 @@ namespace System {
 		/// <typeparam name="T">The type of the parameter of the method that this delegate encapsulates.</typeparam>
 		/// <param name="queue">This queue.</param>
 		/// <param name="obj">The parameter of the method that this delegate encapsulates.</param>
-		public static void Invoke<T>([DisallowNull] this IDequeue<Action<T>> queue, T obj) => queue.Dequeue()?.Invoke(obj);
+		public static void Invoke<T>(this IDequeue<Action<T>> queue, T obj) => queue.Dequeue()?.Invoke(obj);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2}"/> in the queue.
@@ -25,7 +24,7 @@ namespace System {
 		/// <param name="queue">This queue.</param>
 		/// <param name="arg1">The first parameter of the method that this delegate encapsulates.</param>
 		/// <param name="arg2">The second parameter of the method that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2>([DisallowNull] this IDequeue<Action<T1, T2>> queue, T1 arg1, T2 arg2) => queue.Dequeue()?.Invoke(arg1, arg2);
+		public static void Invoke<T1, T2>(this IDequeue<Action<T1, T2>> queue, T1 arg1, T2 arg2) => queue.Dequeue()?.Invoke(arg1, arg2);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3}"/> in the queue.
@@ -37,7 +36,7 @@ namespace System {
 		/// <param name="arg1">The first parameter of the method that this delegate encapsulates.</param>
 		/// <param name="arg2">The second parameter of the method that this delegate encapsulates.</param>
 		/// <param name="arg3">The third parameter of the method that this delegate encapsultates.</param>
-		public static void Invoke<T1, T2, T3>([DisallowNull] this IDequeue<Action<T1, T2, T3>> queue, T1 arg1, T2 arg2, T3 arg3) => queue.Dequeue()?.Invoke(arg1, arg2, arg3);
+		public static void Invoke<T1, T2, T3>(this IDequeue<Action<T1, T2, T3>> queue, T1 arg1, T2 arg2, T3 arg3) => queue.Dequeue()?.Invoke(arg1, arg2, arg3);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5}"/> in the queue.
@@ -51,7 +50,7 @@ namespace System {
 		/// <param name="arg2">The second parameter of the method that this delegate encapsulates.</param>
 		/// <param name="arg3">The third parameter of the method that this delegate encapsultates.</param>
 		/// <param name="arg4">The fourth parameter of the method that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4);
+		public static void Invoke<T1, T2, T3, T4>(this IDequeue<Action<T1, T2, T3, T4>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5}"/> in the queue.
@@ -67,7 +66,7 @@ namespace System {
 		/// <param name="arg3">The third parameter of the method that this delegate encapsultates.</param>
 		/// <param name="arg4">The fourth parameter of the method that this delegate encapsulates.</param>
 		/// <param name="arg5">The fifth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5);
+		public static void Invoke<T1, T2, T3, T4, T5>(this IDequeue<Action<T1, T2, T3, T4, T5>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6}"/> in the queue.
@@ -85,7 +84,7 @@ namespace System {
 		/// <param name="arg4">The fourth parameter of the method that this delegate encapsulates.</param>
 		/// <param name="arg5">The fifth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg6">The sixth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6);
+		public static void Invoke<T1, T2, T3, T4, T5, T6>(this IDequeue<Action<T1, T2, T3, T4, T5, T6>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7}"/> in the queue.
@@ -105,7 +104,7 @@ namespace System {
 		/// <param name="arg5">The fifth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg6">The sixth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg7">The seventh parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8}"/> in the queue.
@@ -127,7 +126,7 @@ namespace System {
 		/// <param name="arg6">The sixth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg7">The seventh parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg8">The eighth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> in the queue.
@@ -151,7 +150,7 @@ namespace System {
 		/// <param name="arg7">The seventh parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg8">The eighth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg9">The ninth paramter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> in the queue.
@@ -177,7 +176,7 @@ namespace System {
 		/// <param name="arg8">The eighth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg9">The ninth paramter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg10">The tenth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> in the queue.
@@ -205,7 +204,7 @@ namespace System {
 		/// <param name="arg9">The ninth paramter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg10">The tenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg11">The eleventh parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> in the queue.
@@ -235,7 +234,7 @@ namespace System {
 		/// <param name="arg10">The tenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg11">The eleventh parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg12">The twelvth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> in the queue.
@@ -267,7 +266,7 @@ namespace System {
 		/// <param name="arg11">The eleventh parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg12">The twelvth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg13">The thirteenth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> in the queue.
@@ -301,7 +300,7 @@ namespace System {
 		/// <param name="arg12">The twelvth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg13">The thirteenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg14">The fourteenth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> in the queue.
@@ -337,7 +336,7 @@ namespace System {
 		/// <param name="arg13">The thirteenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg14">The fourteenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg15">The fifteenth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
 
 		/// <summary>
 		/// Invokes the next <see cref="Action{T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16}"/> in the queue.
@@ -375,6 +374,6 @@ namespace System {
 		/// <param name="arg14">The fourteenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg15">The fifteenth parameter of the argument that this delegate encapsulates.</param>
 		/// <param name="arg16">The sixteenth parameter of the argument that this delegate encapsulates.</param>
-		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>([DisallowNull] this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15, T16 arg16) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16);
+		public static void Invoke<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(this IDequeue<Action<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>> queue, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15, T16 arg16) => queue.Dequeue()?.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16);
 	}
 }

@@ -24,7 +24,7 @@
 		/// </summary>
 		/// <param name="start">The index at which to begin the slice</param>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
-		TResult Slice(Int32 start);
+		TResult Slice(Index start);
 
 		/// <summary>
 		/// Forms a slice out of the current span starting at a specified index for a specified length.
@@ -32,6 +32,6 @@
 		/// <param name="start">The index at which to begin the slice.</param>
 		/// <param name="length">The desired length for the slice.</param>
 		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
-		TResult Slice(Int32 start, Int32 length);
+		TResult Slice(Index start, Int32 length);
 	}
 }

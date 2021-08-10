@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits;
+﻿using System.Traits;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -7,7 +6,7 @@ namespace System {
 		/// Grows the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static void Grow([DisallowNull] this IResize collection) {
+		public static void Grow(this IResize collection) {
 			if (collection.Capacity >= 8) {
 				collection.Resize((Int32)(collection.Capacity * φ));
 			} else {
@@ -20,7 +19,7 @@ namespace System {
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="minimum">The minimum allowed size.</param>
-		public static void Grow([DisallowNull] this IResize collection, nint minimum) {
+		public static void Grow(this IResize collection, nint minimum) {
 			Double size = collection.Capacity;
 			while (size < minimum) {
 				size += 4.0;

@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits;
+﻿using System.Traits;
 using System.Traits.Concepts;
 
 namespace System {
@@ -11,7 +10,7 @@ namespace System {
 		/// <param name="array">The array to copy items into.</param>
 		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
 		/// <exception cref="ArgumentNullException">The destination is <see langword="null"/>.</exception>
-		public static void CopyTo<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, [DisallowNull] TElement[] array) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => CopyTo(collection, array.AsSpan());
+		public static void CopyTo<TElement, TEnumerator>(this ISequence<TElement, TEnumerator> collection, TElement[] array) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => CopyTo(collection, array.AsSpan());
 
 		/// <summary>
 		/// Copies all the elements of the current sequence into an array.
@@ -20,7 +19,7 @@ namespace System {
 		/// <param name="array">The array to copy items into.</param>
 		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
 		/// <exception cref="ArgumentNullException">The destination is <see langword="null"/>.</exception>
-		public static void CopyTo<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, ArraySegment<TElement> array) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => CopyTo(collection, array.AsSpan());
+		public static void CopyTo<TElement, TEnumerator>(this ISequence<TElement, TEnumerator> collection, ArraySegment<TElement> array) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => CopyTo(collection, array.AsSpan());
 
 		/// <summary>
 		/// Copies all the elements of the current sequence into a memory region.
@@ -28,7 +27,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="memory">The memory to copy items into.</param>
 		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
-		public static void CopyTo<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, Memory<TElement> memory) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => CopyTo(collection, memory.Span);
+		public static void CopyTo<TElement, TEnumerator>(this ISequence<TElement, TEnumerator> collection, Memory<TElement> memory) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset => CopyTo(collection, memory.Span);
 
 		/// <summary>
 		/// Copyes all the elements of the current sequence into the span.
@@ -36,7 +35,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="span">The span to copy items into.</param>
 		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
-		public static void CopyTo<TElement, TEnumerator>([DisallowNull] this ISequence<TElement, TEnumerator> collection, Span<TElement> span) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
+		public static void CopyTo<TElement, TEnumerator>(this ISequence<TElement, TEnumerator> collection, Span<TElement> span) where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
 			if (collection.Count > span.Length) {
 				throw new ArgumentException("The destination is shorter than this sequence.", nameof(span));
 			}

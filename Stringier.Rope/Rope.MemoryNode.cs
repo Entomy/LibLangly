@@ -177,10 +177,16 @@ namespace Stringier {
 			public MemoryNode Slice() => Slice(0, Count);
 
 			/// <inheritdoc/>
-			public MemoryNode Slice(Int32 start) => Slice(start, Count - start);
+			public MemoryNode Slice(Index start) {
+				Int32 strt = start.GetOffset(Count);
+				return Slice(strt, Count - strt);
+			}
 
 			/// <inheritdoc/>
-			public MemoryNode Slice(Int32 start, Int32 length) => new MemoryNode(Memory.Slice(start, length), previous: null, next: null);
+			public MemoryNode Slice(Index start, Int32 length) {
+				Int32 strt = start.GetOffset(Count);
+				return new MemoryNode(Memory.Slice(strt, length), previous: null, next: null);
+			}
 
 			/// <inheritdoc/>
 			public override String ToString() => Memory.ToString();

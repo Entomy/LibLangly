@@ -172,10 +172,16 @@ namespace Stringier {
 			public PointerNode Slice() => Slice(0, Count);
 
 			/// <inheritdoc/>
-			public PointerNode Slice(Int32 start) => Slice(start, Count - start);
+			public PointerNode Slice(Index start) {
+				Int32 strt = start.GetOffset(Count);
+				return Slice(strt, Count - strt);
+			}
 
 			/// <inheritdoc/>
-			public PointerNode Slice(Int32 start, Int32 length) => new PointerNode(&Pointer[start], length, previous: null, next: null);
+			public PointerNode Slice(Index start, Int32 length) {
+				Int32 strt = start.GetOffset(Count);
+				return new PointerNode(&Pointer[strt], length, previous: null, next: null);
+			}
 		}
 	}
 }

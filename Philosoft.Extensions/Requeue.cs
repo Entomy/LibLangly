@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits.Concepts;
+﻿using System.Traits.Concepts;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -8,6 +7,6 @@ namespace System {
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
 		/// <param name="queue">This queue.</param>
-		public static void Requeue<TElement>([DisallowNull] this IQueue<TElement> queue) => queue.Enqueue(queue.Dequeue());
+		public static void Requeue<TElement>(this IQueue<TElement> queue) => queue.Enqueue(queue.Dequeue());
 	}
 }

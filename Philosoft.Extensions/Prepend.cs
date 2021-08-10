@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits;
-using System.Traits.Concepts;
+﻿using System.Traits;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -9,14 +7,14 @@ namespace System {
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend([DisallowNull] this IPrepend<Char> collection, [AllowNull] String elements) => Prepend(collection, elements.AsSpan());
+		public static void Prepend(this IPrepend<Char> collection, String? elements) => Prepend(collection, elements.AsSpan());
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend([DisallowNull] this IPrependMemory<Char> collection, [AllowNull] String elements) => collection.Prepend(elements.AsMemory());
+		public static void Prepend(this IPrependMemory<Char> collection, String? elements) => collection.Prepend(elements.AsMemory());
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -24,7 +22,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, [AllowNull] params TElement[] elements) => Prepend(collection, elements.AsSpan());
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, params TElement[]? elements) => Prepend(collection, elements.AsSpan());
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -32,7 +30,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, ArraySegment<TElement> elements) => Prepend(collection, elements.AsSpan());
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, ArraySegment<TElement> elements) => Prepend(collection, elements.AsSpan());
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -40,7 +38,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, Memory<TElement> elements) => Prepend(collection, elements.Span);
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, Memory<TElement> elements) => Prepend(collection, elements.Span);
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -48,7 +46,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, ReadOnlyMemory<TElement> elements) => Prepend(collection, elements.Span);
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, ReadOnlyMemory<TElement> elements) => Prepend(collection, elements.Span);
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -56,7 +54,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, Span<TElement> elements) => Prepend(collection, (ReadOnlySpan<TElement>)elements);
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, Span<TElement> elements) => Prepend(collection, (ReadOnlySpan<TElement>)elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -64,7 +62,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, ReadOnlySpan<TElement> elements) {
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, ReadOnlySpan<TElement> elements) {
 			for (Int32 i = elements.Length - 1; i >= 0; i--) {
 				collection.Prepend(elements[i]);
 			}
@@ -78,7 +76,7 @@ namespace System {
 		/// <param name="elements">The elements to prepend.</param>
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
 		[CLSCompliant(false)]
-		public static unsafe void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, [DisallowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+		public static unsafe void Prepend<TElement>(this IPrepend<TElement> collection, TElement* elements, Int32 length) where TElement : unmanaged {
 			for (Int32 i = length - 1; i >= 0; i--) {
 				collection.Prepend(elements[i]);
 			}
@@ -92,7 +90,7 @@ namespace System {
 		/// <param name="elements">The elements to prepend.</param>
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
 		[CLSCompliant(false)]
-		public static unsafe void Prepend<TElement>([DisallowNull] this IPrependSpan<TElement> collection, [DisallowNull] TElement* elements, Int32 length) where TElement : unmanaged => collection.Prepend(new Span<TElement>(elements, length));
+		public static unsafe void Prepend<TElement>(this IPrependSpan<TElement> collection, TElement* elements, Int32 length) where TElement : unmanaged => collection.Prepend(new Span<TElement>(elements, length));
 
 		/// <summary>
 		/// Prepends the elements onto this object, one by one.
@@ -100,7 +98,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, [AllowNull] Collections.Generic.IEnumerable<TElement> elements) {
+		public static void Prepend<TElement>(this IPrepend<TElement> collection, Collections.Generic.IEnumerable<TElement>? elements) {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Prepend(element);
@@ -115,7 +113,7 @@ namespace System {
 		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
-		public static void Prepend<TElement, TEnumerator>([DisallowNull] this IPrepend<TElement> collection, [AllowNull] IGetEnumerator<TElement, TEnumerator> elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
+		public static void Prepend<TElement, TEnumerator>(this IPrepend<TElement> collection, IGetEnumerator<TElement, TEnumerator>? elements) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Prepend(element);

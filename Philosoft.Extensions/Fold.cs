@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits;
+﻿using System.Traits;
 
 namespace System {
 	public static partial class TraitExtensions {
@@ -16,8 +15,7 @@ namespace System {
 		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
-		[return: MaybeNull]
-		public static TElement Fold<TElement, TEnumerator>([DisallowNull] this IGetEnumerator<TElement?, TEnumerator> collection, [DisallowNull] Func<TElement?, TElement?, TElement?> func, TElement? identity) where TEnumerator : notnull, ICurrent<TElement?>, IMoveNext {
+		public static TElement Fold<TElement, TEnumerator>(this IGetEnumerator<TElement, TEnumerator> collection, Func<TElement, TElement, TElement> func, TElement identity) where TEnumerator : notnull, ICurrent<TElement>, IMoveNext {
 			TElement? result = identity;
 			foreach (TElement? item in collection) {
 				result = func(result, item);
