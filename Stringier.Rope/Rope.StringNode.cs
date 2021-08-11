@@ -24,7 +24,6 @@ namespace Stringier {
 			/// <inheritdoc/>
 			public override Char this[Int32 index] => String[index];
 
-#if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>
 			public MemoryNode this[Range range] {
 				get {
@@ -32,7 +31,6 @@ namespace Stringier {
 					return Slice(offset, length);
 				}
 			}
-#endif
 
 			/// <inheritdoc/>
 			public override Int32 Count => String.Length;

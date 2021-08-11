@@ -5,7 +5,7 @@ using System.Traits.Testing.Contracts;
 using Xunit;
 
 namespace Collectathon {
-	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract, IPostpendContract, IReplaceContract {
+	public class BoundedArray1_Tests : Tests, IAddContract, IClearContract, IPostpendContract, IReplaceContract, ISliceContract {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(AddContractData.Add_Elements), MemberType = typeof(AddContractData))]
@@ -463,43 +463,39 @@ namespace Collectathon {
 			Assert.That(array >> amount).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Slice([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
-			BoundedArray<Int32> array = new(initial);
-			Span<Int32> slice = array.Slice();
+		[MemberData(nameof(SliceContractData.Slice), MemberType = typeof(SliceContractData))]
+		public void Slice<TElement>(TElement[] initial, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
+			Span<TElement> slice = array.Slice();
 			Assert.That(slice).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
-		[InlineData(new Int32[] { }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
-		[InlineData(new Int32[] { 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 3)]
-		[InlineData(new Int32[] { 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 4)]
-		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 5)]
-		public void Slice_Range([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 end) {
-			BoundedArray<Int32> array = new(initial);
-			Span<Int32> slice = array[start..end];
+		[MemberData(nameof(SliceContractData.Slice_Range), MemberType = typeof(SliceContractData))]
+		public void Slice_Range<TElement>(TElement[] initial, Range range, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
+			Span<TElement> slice = array[range];
 			Assert.That(slice).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
-		[InlineData(new Int32[] { 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
-		public void Slice_Start([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start) {
-			BoundedArray<Int32> array = new(initial);
-			Span<Int32> slice = array.Slice(start);
+		[MemberData(nameof(SliceContractData.Slice_Start), MemberType = typeof(SliceContractData))]
+		public void Slice_Start<TElement>(TElement[] initial, Index start, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
+			Span<TElement> slice = array.Slice(start);
 			Assert.That(slice).Equals(expected);
 		}
 
+		/// <inheritdoc/>
 		[Theory]
-		[InlineData(new Int32[] { 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 2)]
-		[InlineData(new Int32[] { 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 2)]
-		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 4)]
-		public void Slice_Start_Length([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 length) {
-			BoundedArray<Int32> array = new(initial);
-			Span<Int32> slice = array.Slice(start, length);
+		[MemberData(nameof(SliceContractData.Slice_Start_Length), MemberType = typeof(SliceContractData))]
+		public void Slice_Start_Length<TElement>(TElement[] initial, Index start, Int32 length, TElement[] expected) {
+			BoundedArray<TElement> array = new(initial);
+			Span<TElement> slice = array.Slice(start, length);
 			Assert.That(slice).Equals(expected);
 		}
 

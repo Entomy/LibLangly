@@ -4,14 +4,12 @@
 	/// </summary>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	public interface ISlice<out TResult> {
-#if !NETSTANDARD1_3
 		/// <summary>
 		/// Gets a slice out of the collection within the specified range.
 		/// </summary>
 		/// <param name="range">The zero-based range of the elements.</param>
 		/// <returns>A slice that consists of all the elements of the current collection within the <paramref name="range"/>.</returns>
 		TResult this[Range range] { get; }
-#endif
 
 		/// <summary>
 		/// Forms a slice out of the collection.
@@ -22,7 +20,7 @@
 		/// <summary>
 		/// Forms a slice out of the collection that begins at a specified index.
 		/// </summary>
-		/// <param name="start">The index at which to begin the slice</param>
+		/// <param name="start">The index at which to begin the slice.</param>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
 		TResult Slice(Index start);
 

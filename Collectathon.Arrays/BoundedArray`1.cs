@@ -65,7 +65,6 @@ namespace Collectathon {
 			set => Elements[index] = value;
 		}
 
-#if !NETSTANDARD1_3
 		/// <inheritdoc/>
 		public Span<TElement> this[Range range] {
 			get {
@@ -89,7 +88,6 @@ namespace Collectathon {
 				return Elements.AsMemory(offset, length);
 			}
 		}
-#endif
 
 		/// <summary>
 		/// Shifts the <paramref name="array"/> left by <paramref name="amount"/>.
