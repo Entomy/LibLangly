@@ -10,6 +10,6 @@ namespace Langly {
 			new Option("Add - Single", (_) => Task.Run(() => BenchmarkRunner.Run<AddSingle>())),
 			new Option("Construction", (_) => Task.Run(() => BenchmarkRunner.Run<Construction>())),
 			new Option("Contains", (_) => Task.Run(() => BenchmarkRunner.Run<Contains>())),
-			new Option("Index", (_) => Task.Run(() => BenchmarkRunner.Run<Index>()))) { }
+			new Option("Index", (_) => Task.Run(() => BenchmarkRunner.Run<Collectathon.Index>()))) { }
 	}
 }

@@ -1,6 +1,4 @@
-﻿#if NETCOREAPP3_0_OR_GREATER
-using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -13,7 +11,6 @@ namespace Numbersome {
 		/// <returns>(<paramref name="x"/> * <paramref name="y"/>) + <paramref name="z"/>, rounded as one ternary operation.</returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.fusedmultiplyadd"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Double FusedMultiplyAdd(this Double x, Double y, Double z) => Math.FusedMultiplyAdd(x, y, z);
+		public static T FusedMultiplyAdd<T>(this T x, T y, T z) where T : IFloatingPoint<T> => T.FusedMultiplyAdd(x, y, z);
 	}
 }
-#endif

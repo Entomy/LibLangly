@@ -1,6 +1,4 @@
-﻿#if NET5_0_OR_GREATER
-using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -38,4 +36,3 @@ namespace Numbersome {
 		public static UInt64 BigMul(this UInt64 a, UInt64 b, out UInt64 low) => Math.BigMul(a, b, out low);
 	}
 }
-#endif
