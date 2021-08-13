@@ -1,6 +1,4 @@
-﻿#if NETCOREAPP3_0_OR_GREATER
-using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -12,7 +10,6 @@ namespace Numbersome {
 		/// <returns><paramref name="x"/> * 2^<paramref name="n"/> computed efficiently.</returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.scaleb"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Double ScaleB(this Double x, Int32 n) => Math.ScaleB(x, n);
+		public static T ScaleB<T, TInteger>(this T x, TInteger n) where T : IFloatingPoint<T> where TInteger : IBinaryInteger<TInteger> => T.ScaleB(x, n);
 	}
 }
-#endif

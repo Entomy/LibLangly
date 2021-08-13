@@ -154,13 +154,6 @@ namespace Numbersome {
 		}
 
 		[Fact]
-		public void Ceiling_Decimal() {
-			IStack<Decimal> stack = new BoundedArray<Decimal>(0.5m);
-			stack.Ceiling();
-			Assert.That(stack.Pop()).Equals(Math.Ceiling(0.5m));
-		}
-
-		[Fact]
 		public void Ceiling_Double() {
 			IStack<Double> stack = new BoundedArray<Double>(0.5);
 			stack.Ceiling();
@@ -242,13 +235,6 @@ namespace Numbersome {
 			IStack<Double> stack = new BoundedArray<Double>(2.0);
 			stack.Exp();
 			Assert.That(stack.Pop()).Equals(Math.Exp(2.0));
-		}
-
-		[Fact]
-		public void Floor_Decimal() {
-			IStack<Decimal> stack = new BoundedArray<Decimal>(0.5m);
-			stack.Floor();
-			Assert.That(stack.Pop()).Equals(Math.Floor(0.5m));
 		}
 
 		[Fact]
@@ -501,13 +487,6 @@ namespace Numbersome {
 			IStack<Double> stack = new BoundedArray<Double>(0.5);
 			stack.Truncate();
 			Assert.That(stack.Pop()).Equals(Math.Truncate(0.5));
-		}
-
-		[Fact]
-		public void Truncate_Decimal() {
-			IStack<Decimal> stack = new BoundedArray<Decimal>(0.5m);
-			stack.Truncate();
-			Assert.That(stack.Pop()).Equals(Math.Truncate(0.5m));
 		}
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Traits.Concepts;
 
 namespace Numbersome {
@@ -12,12 +10,12 @@ namespace Numbersome {
 		/// <returns></returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.sqrt"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Double Sqrt(this Double d) => Math.Sqrt(d);
+		public static T Sqrt<T>(this T d) where T : IFloatingPoint<T> => T.Sqrt(d);
 
 		/// <summary>
 		/// Takes the square root of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
 		/// </summary>
 		/// <param name="stack">This stack.</param>
-		public static void Sqrt([DisallowNull] this IStack<Double> stack) => stack.Push(stack.Pop().Sqrt());
+		public static void Sqrt<T>(this IStack<T> stack) where T : IFloatingPoint<T> => stack.Push(stack.Pop().Sqrt());
 	}
 }
