@@ -128,6 +128,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSource Aggregate&lt;TSource, TEnumerator&gt;(this IGetEnumerator&lt;TSource, TEnumerator&gt; source, Func&lt;TSource, TSource, TSource&gt; func)
+
     where TEnumerator : ICurrent&lt;TSource&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -206,6 +207,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TAccumulate Aggregate&lt;TSource, TAccumulate, TEnumerator&gt;(this IGetEnumerator&lt;TSource, TEnumerator&gt; source, TAccumulate seed, Func&lt;TAccumulate, TSource, TAccumulate&gt; func)
+
     where TEnumerator : ICurrent&lt;TSource&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -295,6 +297,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Aggregate&lt;TSource, TAccumulate, TResult, TEnumerator&gt;(this IGetEnumerator&lt;TSource, TEnumerator&gt; source, TAccumulate seed, Func&lt;TAccumulate, TSource, TAccumulate&gt; func, Func&lt;TAccumulate, TResult&gt; resultSelector)
+
     where TEnumerator : ICurrent&lt;TSource&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -395,6 +398,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool All&lt;TSource, TEnumerator&gt;(this IGetEnumerator&lt;TSource, TEnumerator&gt; source, Func&lt;TSource, bool&gt; predicate)
+
     where TEnumerator : ICurrent&lt;TSource&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -473,6 +477,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Any&lt;TSource, TEnumerator&gt;(this IGetEnumerator&lt;TSource, TEnumerator&gt; source)
+
     where TEnumerator : ICurrent&lt;TSource&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -545,6 +550,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Any&lt;TSource, TEnumerator&gt;(this IGetEnumerator&lt;TSource, TEnumerator&gt; source, Func&lt;TSource, bool&gt; predicate)
+
     where TEnumerator : ICurrent&lt;TSource&gt;, IMoveNext</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

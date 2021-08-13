@@ -9,7 +9,7 @@ namespace Numbersome {
 		[Fact]
 		public void Compliment() {
 			Set<Int32> singles = Set<Int32>.Range(0, 9);
-			Set<Int32> nonSingles = !singles;
+			Set<Int32> nonSingles = ~singles;
 			Assert.True(nonSingles.Contains(-10));
 			Assert.False(nonSingles.Contains(0));
 			Assert.False(nonSingles.Contains(5));

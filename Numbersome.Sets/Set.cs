@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Traits;
 
@@ -12,7 +11,12 @@ namespace Numbersome {
 	/// <para>A set is a collection in which any element can only exist once. All other collections are technically multi-sets, if you need such. Furthermore, sets don't care about data being ordered.</para>
 	/// <para>Unlike <see cref="System.Collections.Generic.ISet{T}"/> this adheres to Set Theory and Set Algebra, so its behavior should not be surprising, and existing techniques and solutions can easily be translated.</para>
 	/// </remarks>
-	public class Set<TElement> : IContains<TElement> {
+	public class Set<TElement> :
+#if NET6_0_OR_GREATER
+		IBitwiseOperators<Set<TElement>, Set<TElement>, Set<TElement>>,
+		ISubtractionOperators<Set<TElement>, Set<TElement>, Set<TElement>>,
+#endif
+		IContains<TElement> {
 		/// <summary>
 		/// The <see cref="Predicate{T}"/> used to determine inclusion into the set.
 		/// </summary>
@@ -59,7 +63,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="set">This set.</param>
 		/// <returns>The compliment of the <paramref name="set"/>.</returns>
-		public static Set<TElement> operator !(Set<TElement>? set) => new(Compliment(set));
+		public static Set<TElement> operator ~(Set<TElement>? set) => new(Compliment(set));
 
 		/// <summary>
 		/// Returns the intersection of <paramref name="left"/> and <paramref name="right"/>.
