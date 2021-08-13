@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<EnablePreviewFeatures>True</EnablePreviewFeatures>
+		<Description>Provides various trigonometric extensions.</Description>
+		<PackageTags>number, numbers, numeric, numerics, math, maths, mathematic, mathematics, trig, trigonometry, trigonometric</PackageTags>
+		<AssemblyName>Numbersome.Trigonometry</AssemblyName>
+		<RootNamespace>Numbersome</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Numbersome.Arithmetic\Numbersome.Arithmetic.csproj" />
+	</ItemGroup>
+
+</Project>
