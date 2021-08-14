@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Diagnostics.CodeAnalysis;
 
 namespace System.Traits.Testing {
 	public static partial class StandardAssertions {
@@ -10,12 +9,10 @@ namespace System.Traits.Testing {
 		/// <param name="assert">This <see cref="Assert{T}"/>.</param>
 		/// <param name="expected">The expected count of iterations.</param>
 		/// <returns>This <paramref name="assert"/>.</returns>
-		public static Assert<T?> EnumerationCount<T>(this Assert<T?> assert, Int32 expected) where T : IEnumerable {
+		public static Assert<T> EnumerationCount<T>(this Assert<T> assert, Int32 expected) where T : IEnumerable {
 			Int32 a = 0;
-			if (assert.Actual is not null) {
-				IEnumerator act = assert.Actual.GetEnumerator();
-				while (act.MoveNext()) { a++; }
-			}
+			IEnumerator act = assert.Actual.GetEnumerator();
+			while (act.MoveNext()) { a++; }
 			if (a != expected) {
 				throw new AssertException($"The count of elements enumerated was not what was expected.\nActual: {a}\nExpected: {expected}");
 			}
@@ -30,12 +27,10 @@ namespace System.Traits.Testing {
 		/// <param name="expected">The expected count of iterations.</param>
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <paramref name="assert"/>.</returns>
-		public static Assert<T?> EnumerationCount<T>(this Assert<T?> assert, Int32 expected, [DisallowNull] String additionalMessage) where T : IEnumerable {
+		public static Assert<T> EnumerationCount<T>(this Assert<T> assert, Int32 expected, String additionalMessage) where T : IEnumerable {
 			Int32 a = 0;
-			if (assert.Actual is not null) {
-				IEnumerator act = assert.Actual.GetEnumerator();
-				while (act.MoveNext()) { a++; }
-			}
+			IEnumerator act = assert.Actual.GetEnumerator();
+			while (act.MoveNext()) { a++; }
 			if (a != expected) {
 				throw new AssertException($"The count of elements enumerated was not what was expected.\nActual: {a}\nExpected: {expected}\n{additionalMessage}");
 			}

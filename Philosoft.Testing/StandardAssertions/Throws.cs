@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits.Testing {
+﻿namespace System.Traits.Testing {
 	public static partial class StandardAssertions {
 		/// <summary>
 		/// Asserts that the <see cref="Action"/> throws a <typeparamref name="TException"/>.
@@ -26,7 +24,7 @@ namespace System.Traits.Testing {
 		/// <param name="assert">This <see cref="Assert{T}"/>.</param>
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <paramref name="assert"/>.</returns>
-		public static Assert<Action> Throws<TException>(this Assert<Action> assert, [DisallowNull] String additionalMessage) where TException : Exception {
+		public static Assert<Action> Throws<TException>(this Assert<Action> assert, String additionalMessage) where TException : Exception {
 			try {
 				assert.Actual();
 			} catch (TException ex) {

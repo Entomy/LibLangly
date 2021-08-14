@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits.Testing {
+﻿namespace System.Traits.Testing {
 	public static partial class StandardAssertions {
 		/// <summary>
 		/// Asserts that this instances <see cref="ICount.Count"/> is what was <paramref name="expected"/>.
@@ -24,7 +22,7 @@ namespace System.Traits.Testing {
 		/// <param name="expected">The expected count.</param>
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <paramref name="assert"/>.</returns>
-		public static Assert<T> Count<T>(this Assert<T> assert, Int32 expected, [DisallowNull] String additionalMessage) where T : ICount {
+		public static Assert<T> Count<T>(this Assert<T> assert, Int32 expected, String additionalMessage) where T : ICount {
 			if (!Equals(assert.Actual.Count, expected)) {
 				throw new AssertException($"The count of elements in the collection was not what was expected.\nActual: {assert.Actual.Count}\nExpected: {expected}\n{additionalMessage}");
 			}

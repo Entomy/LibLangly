@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Traits.Testing {
+﻿namespace System.Traits.Testing {
 	public static partial class StandardAssertions {
 		/// <summary>
 		/// Asserts that this instance is not <see langword="null"/>.
@@ -22,7 +20,34 @@ namespace System.Traits.Testing {
 		/// <param name="assert">This <see cref="Assert{T}"/>.</param>
 		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
 		/// <returns>This <paramref name="assert"/>.</returns>
-		public static Assert<T> NotNull<T>(this Assert<T> assert, [DisallowNull] String additionalMessage) where T : class {
+		public static Assert<T> NotNull<T>(this Assert<T> assert, String additionalMessage) where T : class {
+			if (assert.Actual is null) {
+				throw new AssertException($"The instance was null.\nActual: {assert.Actual}\n{additionalMessage}");
+			}
+			return assert;
+		}
+
+		/// <summary>
+		/// Asserts that this instance is not <see langword="null"/>.
+		/// </summary>
+		/// <typeparam name="T">The type of the object.</typeparam>
+		/// <param name="assert">This <see cref="Assert{T}"/>.</param>
+		/// <returns>This <paramref name="assert"/>.</returns>
+		public static Assert<T?> NotNull<T>(this Assert<T?> assert) where T : struct {
+			if (assert.Actual is null) {
+				throw new AssertException($"The instance was null.\nActual: {assert.Actual}");
+			}
+			return assert;
+		}
+
+		/// <summary>
+		/// Asserts that this instance is not <see langword="null"/>.
+		/// </summary>
+		/// <typeparam name="T">The type of the object.</typeparam>
+		/// <param name="assert">This <see cref="Assert{T}"/>.</param>
+		/// <param name="additionalMessage">Additional text to include in the failure message.</param>
+		/// <returns>This <paramref name="assert"/>.</returns>
+		public static Assert<T?> NotNull<T>(this Assert<T?> assert, String additionalMessage) where T : struct {
 			if (assert.Actual is null) {
 				throw new AssertException($"The instance was null.\nActual: {assert.Actual}\n{additionalMessage}");
 			}
