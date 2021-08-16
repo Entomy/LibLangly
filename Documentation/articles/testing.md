@@ -20,9 +20,9 @@ Furthermore, when trying to address these concerns I learned of another issue: s
 
 ## The Solution
 
-When digging through the test protocol .NET uses, it was clear nothing required the test framework to be tied to the test discoverer or test runner. I'm not 100% certain if the test discoverer and test runner have to be tied together, but it's fine if they are. So, if a test framework was developed with _no_ dependency on the other two components, we can start to address these issues. [`Philosoft.Testing`](https://www.nuget.org/packages?q=Philosoft.Testing) does exactly this!
+When digging through the test protocol .NET uses, it was clear nothing required the test framework to be tied to the test discoverer or test runner. I'm not 100% certain if the test discoverer and test runner have to be tied together, but it's fine if they are. So, if a test framework was developed with _no_ dependency on the other two components, we can start to address these issues. [`Defender.Testing`](https://www.nuget.org/packages?q=Defender.Testing) does exactly this!
 
-To use the framework, simply include the `System.Traits.Testing` namespace, and derive your test class from `Tests`. Testing is done through fluent-style assertions, which enables the framework to provide you with _only_ the relevant assertions for the type you're working with. You can easily see what the framework is doing, and don't have to mess around with the framework converting types behind your back. Now you have access to an `Assert` property within your test methods.
+To use the framework, simply include the `Defender.Testing` namespace, and derive your test class from `Tests`. Testing is done through fluent-style assertions, which enables the framework to provide you with _only_ the relevant assertions for the type you're working with. You can easily see what the framework is doing, and don't have to mess around with the framework converting types behind your back. Now you have access to an `Assert` property within your test methods.
 
 `Assert` provides an extensible source for assertions. Originally, I thought providing some overloads of `Assert()` would be fine. Imagine Samuel Jackson saying: It was not fine. When writing an extender to support testing Roslyn Analyzers with a much friendlier approach, the problem became clear: we can't provide a good experience for extension methods on `Test` to handle new situations. Providing an `Assert` property and having extenders operate off the associated type works though. So, setting up an assertion looks like the follow:
 
@@ -158,7 +158,7 @@ If everything is extensible nothing needs to be assumed. The assertions possible
 
 > Testing frameworks aren't extensible by design: testing new complex types requires learning new API's. Kludges like new static classes hamper discoverability.
 
-Everything is set up to handle extension methods. Other than a few key assertions which collide with methods in [`Object`](https://docs.microsoft.com/en-us/dotnet/api/system.object), all functionality is implemented as extensions. The design was specifically chosen to have IntelliSense help as much as possible, while also looking as familiar as possible.
+Everything is set up to handle extension methods. Other than one assertion that collides with methods in [`Object`](https://docs.microsoft.com/en-us/dotnet/api/system.object), all functionality is implemented as extensions. The design was specifically chosen to have IntelliSense help as much as possible, while also looking as familiar as possible.
 
 > Extensions to testing frameworks are tied to test discoverers and test runners.
 

@@ -1,0 +1,9 @@
+# Defender
+
+**Defender** is a collection of libraries for keeping code working as intended. This includes an advanced unit testing framework, analyzers, and more. Every single component has been carefully designed to make verifying and hardening code as easy and enjoyable as possible.
+
+This started out as a guard-clause library back when that was my primary approach to hardening. My history is with exception heavy languages, and to an extent I've been trying to keep many conventions and patterns familiar to .NET. Over time my experiences have been pushing me towards a direction many others have found themselves: trying to avoid exceptions. This is even something Microsoft has attempted before! As such, the purpose of Defender has deviated from standard defensive programming techniques like guard-clauses, towards avoiding exceptions in the first place.
+
+Something I've toyed around with in the past that's finally been realized is a custom testing framework. There were numerous reasons behind this but cheif among them was the need for extensibility. The major testing frameworks have lacked critical features people have been wanting for years. Several of these took less than an hour to implement; leaving people waiting for years is not okay. As such, the design was carefully chosen to allow for rapid extensibility, including extensibility as a first class feature, not an afterthought. This wound up also abstracting over test runners, making the framework decoupled from the runner. And furthermore, when implementing this it was found that many testing frameworks don't test your code as much as they make assumptions about what you're trying to do. This was considered unacceptable, as testing frameworks should only test your code, never impose assumptions about it that require you to code to a specific framework.
+
+There is a contracts-style attribute and analyzer system in planning as well, for static verification.
