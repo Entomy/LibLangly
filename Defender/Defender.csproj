@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Meta-package for all of Defender.</Description>
+		<PackageTags>test, tests, testing, testing framework</PackageTags>
+		<AssemblyName>Defender</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Defender.AnalyzerTesting\Defender.AnalyzerTesting.csproj" />
+		<ProjectReference Include="..\Defender.ConceptTesting\Defender.ConceptTesting.csproj" />
+	  <ProjectReference Include="..\Defender.Testing\Defender.Testing.csproj" />
+	  <ProjectReference Include="..\Defender.TraitTesting\Defender.TraitTesting.csproj" />
+	</ItemGroup>
+
+</Project>

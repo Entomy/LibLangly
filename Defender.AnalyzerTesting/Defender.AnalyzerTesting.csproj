@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Extends Defender.Testing with support for verifying Roslyn Analyzers behave correctly.</Description>
+		<PackageTags>test, tests, testing, roslyn, analyzer, analyzers, codeanalysis, code-analysis, code analysis</PackageTags>
+		<AssemblyName>Defender.AnalyzerTesting</AssemblyName>
+		<RootNamespace>Defender</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzer.Testing" Version="1.1.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.11.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing" Version="1.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Defender.Testing\Defender.Testing.csproj" />
+	</ItemGroup>
+
+</Project>

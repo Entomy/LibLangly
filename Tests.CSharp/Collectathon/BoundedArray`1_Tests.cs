@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Traits.Testing;
-using System.Traits.Testing.Contracts;
+using Defender;
+using Defender.Contracts;
 using Xunit;
 
 namespace Collectathon {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Traits.Testing;
+using Defender;
+using Defender.Contracts;
 using Stringier;
 using Xunit;
 
