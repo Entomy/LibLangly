@@ -131,7 +131,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Clear&lt;TNode&gt;(ref TNode head, ref TNode tail)
-
     where TNode : class, INext&lt;TNode&gt;, IUnlink</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -314,7 +313,6 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static bool Contains&lt;TElement&gt;(TElement*collection, int count, TElement element)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -394,7 +392,6 @@ public static bool Contains&lt;TElement&gt;(TElement*collection, int count, TEle
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static bool Contains&lt;TElement&gt;(TElement*collection, int count, Predicate&lt;TElement&gt; predicate)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -627,7 +624,6 @@ public static bool Contains&lt;TElement&gt;(TElement*collection, int count, Pred
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Contains&lt;TNode, TElement&gt;(TNode head, TElement element)
-
     where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -704,7 +700,6 @@ public static bool Contains&lt;TElement&gt;(TElement*collection, int count, Pred
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Contains&lt;TNode, TElement&gt;(TNode head, Predicate&lt;TElement&gt; predicate)
-
     where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -782,7 +777,6 @@ public static bool Contains&lt;TElement&gt;(TElement*collection, int count, Pred
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static bool ContainsAll&lt;TElement&gt;(TElement*collection, int count, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -938,7 +932,6 @@ public static bool ContainsAll&lt;TElement&gt;(TElement*collection, int count, R
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool ContainsAll&lt;TNode, TElement&gt;(TNode head, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1016,7 +1009,6 @@ public static bool ContainsAll&lt;TElement&gt;(TElement*collection, int count, R
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1172,7 +1164,6 @@ public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, R
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool ContainsAny&lt;TNode, TElement&gt;(TNode head, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1249,7 +1240,6 @@ public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, R
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Dequeue&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail, out TElement element)
-
     where TNode : class, IElement&lt;TElement&gt;, INext&lt;TNode&gt;, IUnlink</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1318,7 +1308,6 @@ public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, R
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement&gt; first, ISequence&lt;TElement, TEnumerator&gt; second)
-
     where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1397,7 +1386,6 @@ public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, R
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; first, IEnumerable&lt;TElement&gt; second)
-
     where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1476,7 +1464,6 @@ public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, R
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; first, ISequence&lt;TElement, TEnumerator&gt; second)
-
     where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1824,7 +1811,6 @@ public static bool ContainsAny&lt;TElement&gt;(TElement*collection, int count, R
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Insert&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail, int count, Index index, TElement element, delegate*&lt;TElement, TNode&gt; newNode)
-
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1911,7 +1897,6 @@ public static void Insert&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Pop&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail, out TElement element)
-
     where TNode : class, IElement&lt;TElement&gt;, INext&lt;TNode&gt;, IUnlink</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2103,7 +2088,6 @@ public static void Insert&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail,
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Postpend&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail, TElement element, delegate*&lt;TElement, TNode&gt; newNode)
-
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2299,7 +2283,6 @@ public static void Postpend&lt;TElement, TNode&gt;(ref TNode head, ref TNode tai
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Prepend&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail, TElement element, delegate*&lt;TElement, TNode&gt; newNode)
-
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2622,7 +2605,6 @@ public static void Prepend&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Replace&lt;TNode, TElement&gt;(TNode head, TElement search, TElement replace)
-
     where TNode : class, INext&lt;TNode&gt;, IReplace&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2881,7 +2863,6 @@ public static void Prepend&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string ToString&lt;TNode&gt;(TNode head, int count)
-
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2954,7 +2935,6 @@ public static void Prepend&lt;TElement, TNode&gt;(ref TNode head, ref TNode tail
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string ToString&lt;TNode&gt;(TNode head, int count, int amount)
-
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
