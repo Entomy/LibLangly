@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Traits;
+using System.Traits.Concepts;
 
 namespace Collectathon.Enumerators {
 	/// <summary>
@@ -8,7 +8,7 @@ namespace Collectathon.Enumerators {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct ArrayEnumerator<TElement> : ICount, ICurrent<TElement>, IMoveNext, IReset {
+	public struct ArrayEnumerator<TElement> : IEnumerator<TElement> {
 		/// <summary>
 		/// The <see cref="Array"/> being enumerated.
 		/// </summary>

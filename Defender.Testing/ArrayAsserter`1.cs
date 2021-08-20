@@ -28,7 +28,7 @@ namespace Defender {
 			case ReadOnlyMemory<T> memory:
 				return Equals(memory);
 			default:
-				return (ArrayAsserter<T>)base.Equals(expected);
+				throw new AssertException($"This instance was not what was expected.\nActual: {Print(Actual)}\nExpected: {expected}");
 			}
 		}
 

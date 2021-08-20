@@ -57,7 +57,7 @@ namespace Defender {
 			case ReadOnlyMemory<T> memory:
 				return Equals(memory);
 			default:
-				throw new AssertException($"This instance was not what was expected.\nActual: {Asserter<T>.Print(Actual, 5)}\nExpected: {expected}");
+				throw new AssertException($"This instance was not what was expected.\nActual: {Asserter<T>.Print(Actual)}\nExpected: {expected}");
 			}
 		}
 
