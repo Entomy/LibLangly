@@ -78,6 +78,7 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
     <div><a class="xref" href="System.Traits.ICurrent-1.html">ICurrent</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IMoveNext.html">IMoveNext</a></div>
@@ -108,7 +109,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Enumerators_ArrayEnumerator_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct ArrayEnumerator&lt;TElement&gt; : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
+    <pre><code class="lang-csharp hljs">public struct ArrayEnumerator&lt;TElement&gt; : IEnumerator&lt;TElement&gt;, ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -282,6 +283,9 @@
   </div>
   <h3 id="implements">Implements</h3>
   <div>
+      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="System.Traits.ICount.html">ICount</a>
   </div>
   <div>
@@ -292,6 +296,10 @@
   </div>
   <div>
       <a class="xref" href="System.Traits.IReset.html">IReset</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_MoveNext__1___0_System_Int32__">TraitExtensions.MoveNext&lt;T&gt;(T, ref Int32)</a>
   </div>
 </article>
           </div>
