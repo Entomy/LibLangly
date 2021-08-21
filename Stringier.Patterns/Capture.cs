@@ -5,6 +5,7 @@ using System.Text;
 #endif
 using System.Traits;
 using System.Traits.Concepts;
+using System.Traits.Providers;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -32,6 +33,50 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		public Char this[Int32 index] => Text.Span[index];
+
+		/// <summary>
+		/// Determines if the two values are equal.
+		/// </summary>
+		/// <param name="obj">The other object.</param>
+		/// <returns><see langword="true"/> if the two values are equal; otherwise, <see langword="false"/>.</returns>
+		public override Boolean Equals(Object? obj) {
+			switch (obj) {
+			case Capture capture:
+				return Equals(capture);
+			case Char[] array:
+				return Equals(array);
+			case ArraySegment<Char> segment:
+				return Equals(segment);
+			case Memory<Char> memory:
+				return Equals(memory);
+			case ReadOnlyMemory<Char> memory:
+				return Equals(memory);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals(Capture? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(params Char[]? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ArraySegment<Char> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Memory<Char> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlyMemory<Char> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Span<Char> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlySpan<Char> other) => Collection.Equals(this, other);
+
 
 		/// <inheritdoc/>
 		[return: NotNull]

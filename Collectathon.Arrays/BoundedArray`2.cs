@@ -75,6 +75,45 @@ namespace Collectathon {
 		public Boolean Contains(Predicate<TElement>? predicate) => Collection.Contains(Elements, Count, predicate);
 
 		/// <inheritdoc/>
+		public override Boolean Equals(Object obj) {
+			switch (obj) {
+			case BoundedArray<TIndex, TElement> array:
+				return Equals(array);
+			case (TIndex, TElement)[] array:
+				return Equals(array);
+			case ArraySegment<(TIndex, TElement)> segment:
+				return Equals(segment);
+			case Memory<(TIndex, TElement)> memory:
+				return Equals(memory);
+			case ReadOnlyMemory<(TIndex, TElement)> memory:
+				return Equals(memory);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals(BoundedArray<TIndex, TElement>? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(params (TIndex Index, TElement Element)[]? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ArraySegment<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Memory<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlyMemory<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Span<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlySpan<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
 		public ArrayEnumerator<TIndex, TElement> GetEnumerator() => new ArrayEnumerator<TIndex, TElement>(Indicies, Elements, Count);
 
 		/// <inheritdoc/>

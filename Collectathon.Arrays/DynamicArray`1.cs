@@ -167,10 +167,18 @@ namespace Collectathon {
 		/// <returns><see langword="true"/> if the two values are equal; otherwise, <see langword="false"/>.</returns>
 		public override Boolean Equals(Object? obj) {
 			switch (obj) {
-			case DynamicArray<TElement> other:
-				return Equals(other);
-			case System.Collections.Generic.IEnumerable<TElement> other:
-				return Equals(other);
+			case DynamicArray<TElement> array:
+				return Equals(array);
+			case TElement[] array:
+				return Equals(array);
+			case ArraySegment<TElement> segment:
+				return Equals(segment);
+			case Memory<TElement> memory:
+				return Equals(memory);
+			case ReadOnlyMemory<TElement> memory:
+				return Equals(memory);
+			case System.Collections.Generic.IEnumerable<TElement> enumerable:
+				return Equals(enumerable);
 			default:
 				return false;
 			}
@@ -178,6 +186,24 @@ namespace Collectathon {
 
 		/// <inheritdoc/>
 		public Boolean Equals(DynamicArray<TElement>? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(params TElement[]? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ArraySegment<TElement> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Memory<TElement> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlyMemory<TElement> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Span<TElement> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlySpan<TElement> other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
 		public Boolean Equals(System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);

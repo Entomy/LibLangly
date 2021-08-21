@@ -9,8 +9,22 @@
 	/// </remarks>
 	public interface ISequence<TElement, TEnumerator> :
 		ICount,
+		IEquatable<TElement[]?>, IEquatable<ArraySegment<TElement>>, IEquatable<Memory<TElement>>, IEquatable<ReadOnlyMemory<TElement>>,
 		IGetEnumerator<TElement, TEnumerator>
 		where TEnumerator : notnull, ICount, ICurrent<TElement>, IMoveNext, IReset {
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
+		/// <param name="other">An object to compare with this object.</param>
+		/// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+		Boolean Equals(Span<TElement> other);
+
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
+		/// <param name="other">An object to compare with this object.</param>
+		/// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+		Boolean Equals(ReadOnlySpan<TElement> other);
 
 		/// <summary>
 		/// Returns a string that represents this sequence, with no more than <paramref name="amount"/> elements.

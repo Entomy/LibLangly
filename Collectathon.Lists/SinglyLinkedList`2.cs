@@ -84,6 +84,45 @@ namespace Collectathon {
 		}
 
 		/// <inheritdoc/>
+		public override Boolean Equals(Object obj) {
+			switch (obj) {
+			case SinglyLinkedList<TIndex, TElement> list:
+				return Equals(list);
+			case (TIndex, TElement)[] array:
+				return Equals(array);
+			case ArraySegment<(TIndex, TElement)> segment:
+				return Equals(segment);
+			case Memory<(TIndex, TElement)> memory:
+				return Equals(memory);
+			case ReadOnlyMemory<(TIndex, TElement)> memory:
+				return Equals(memory);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals(SinglyLinkedList<TIndex, TElement>? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(params (TIndex Index, TElement Element)[]? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ArraySegment<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Memory<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlyMemory<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Span<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlySpan<(TIndex Index, TElement Element)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
 		public StandardListEnumerator<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>> GetEnumerator() => new StandardListEnumerator<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>>(Head, Count);
 
 		/// <inheritdoc/>

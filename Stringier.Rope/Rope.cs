@@ -12,17 +12,17 @@ namespace Stringier {
 	/// </summary>
 	[DebuggerDisplay("{ToString(),nq}")]
 	public sealed partial class Rope :
-		IAdd<Char>, IAdd<String>, IAdd<Char[]>,
+		IAdd<Char>, IAdd<String?>, IAdd<Char[]?>,
 		IClear,
 		IEquatable<Rope>, IEquatable<Char>,
 #if NETCOREAPP3_0_OR_GREATER
 		IEquatable<Rune>,
 #endif
-		IEquatable<String>, IEquatable<Char[]>,
+		IEquatable<String?>,
 		IIndex<Index, Char>,
-		IInsert<Index, Char>, IInsert<Index, String>, IInsert<Index, Char[]>,
-		IPostpend<Char>, IPostpend<String>, IPostpend<Char[]>,
-		IPrepend<Char>, IPrepend<String>, IPrepend<Char[]>,
+		IInsert<Index, Char>, IInsert<Index, String?>, IInsert<Index, Char[]?>,
+		IPostpend<Char>, IPostpend<String?>, IPostpend<Char[]?>,
+		IPrepend<Char>, IPrepend<String?>, IPrepend<Char[]?>,
 		IRemove<Char>,
 		IReplace<Char>,
 		ISequence<Char, Rope.Enumerator> {
@@ -373,7 +373,7 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		public override Boolean Equals([AllowNull] Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Rope other:
 				return Equals(other);
@@ -393,7 +393,7 @@ namespace Stringier {
 		/// <param name="casing">The casing of the comparison.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
-		public Boolean Equals([AllowNull] Object obj, Case casing) {
+		public Boolean Equals(Object? obj, Case casing) {
 			switch (obj) {
 			case Rope other:
 				return Equals(other, casing);
@@ -407,7 +407,7 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals([AllowNull] Rope other) => Collection.Equals(this, other);
+		public Boolean Equals(Rope? other) => Collection.Equals(this, other);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to another object of the same type.
@@ -416,7 +416,7 @@ namespace Stringier {
 		/// <param name="casing">The casing of the comparison.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
-		public Boolean Equals([AllowNull] Rope other, Case casing) => throw new NotImplementedException();
+		public Boolean Equals(Rope? other, Case casing) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public Boolean Equals(Char other) => throw new NotImplementedException();
@@ -449,7 +449,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="other">The object to compare with the current object.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals([AllowNull] String other) => Equals(other.AsSpan());
+		public Boolean Equals(String? other) => Equals(other.AsSpan());
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
@@ -458,14 +458,14 @@ namespace Stringier {
 		/// <param name="casing">The casing of the comparison.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
-		public Boolean Equals([AllowNull] String other, Case casing) => Equals(other.AsSpan(), casing);
+		public Boolean Equals(String? other, Case casing) => Equals(other.AsSpan(), casing);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
 		/// <param name="other">The object to compare with the current object.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals([AllowNull] Char[] other) => Equals(other.AsSpan());
+		public Boolean Equals(Char[]? other) => Equals(other.AsSpan());
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
@@ -474,7 +474,55 @@ namespace Stringier {
 		/// <param name="casing">The casing of the comparison.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
-		public Boolean Equals([AllowNull] Char[] other, Case casing) => Equals(other.AsSpan(), casing);
+		public Boolean Equals(Char[]? other, Case casing) => Equals(other.AsSpan(), casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(ArraySegment<Char> other) => Equals(other.AsSpan());
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(ArraySegment<Char> other, Case casing) => Equals(other.AsSpan(), casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(Memory<Char> other) => Equals(other.Span);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(Memory<Char> other, Case casing) => Equals(other.Span, casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(ReadOnlyMemory<Char> other) => Equals(other.Span);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(ReadOnlyMemory<Char> other, Case casing) => Equals(other.Span, casing);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
@@ -546,7 +594,7 @@ namespace Stringier {
 		/// <param name="length">The length of the <paramref name="other"/>.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		[CLSCompliant(false)]
-		public unsafe Boolean Equals([AllowNull] Char* other, Int32 length) => Equals(new ReadOnlySpan<Char>(other, length));
+		public unsafe Boolean Equals(Char* other, Int32 length) => Equals(new ReadOnlySpan<Char>(other, length));
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
@@ -557,7 +605,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		[CLSCompliant(false)]
-		public unsafe Boolean Equals([AllowNull] Char* other, Int32 length, Case casing) => Equals(new ReadOnlySpan<Char>(other, length), casing);
+		public unsafe Boolean Equals(Char* other, Int32 length, Case casing) => Equals(new ReadOnlySpan<Char>(other, length), casing);
 
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(this);

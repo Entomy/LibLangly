@@ -149,6 +149,49 @@ namespace Numbersome {
 		/// <inheritdoc/>
 		public Boolean Contains(Predicate<TElement>? predicate) => Collection.Contains(Elements, Elements.Length, predicate);
 
+		/// <summary>
+		/// Determines if the two values are equal.
+		/// </summary>
+		/// <param name="obj">The other object.</param>
+		/// <returns><see langword="true"/> if the two values are equal; otherwise, <see langword="false"/>.</returns>
+		public override Boolean Equals(Object? obj) {
+			switch (obj) {
+			case Counter<(TElement, Int32)> counter:
+				return Equals(counter);
+			case (TElement, Int32)[] array:
+				return Equals(array);
+			case ArraySegment<(TElement, Int32)> segment:
+				return Equals(segment);
+			case Memory<(TElement, Int32)> memory:
+				return Equals(memory);
+			case ReadOnlyMemory<(TElement, Int32)> memory:
+				return Equals(memory);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals(Counter<(TElement Element, Int32 Count)>? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(params (TElement Element, Int32 Count)[]? other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ArraySegment<(TElement Element, Int32 Count)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Memory<(TElement Element, Int32 Count)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlyMemory<(TElement Element, Int32 Count)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(Span<(TElement Element, Int32 Count)> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals(ReadOnlySpan<(TElement Element, Int32 Count)> other) => Collection.Equals(this, other);
+
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(Elements, Counts, count);
 
