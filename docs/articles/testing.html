@@ -107,7 +107,7 @@ public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
 </section>
 <section id="tabpanel_bHGHmlrG6S_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-visualbasic">&lt;Theory&gt;
+<pre><code class="lang-vbnet">&lt;Theory&gt;
 Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual)
 End Sub
@@ -144,7 +144,7 @@ public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
 </section>
 <section id="tabpanel_bHGHmlrG6S-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-visualbasic">&lt;Theory&gt;
+<pre><code class="lang-vbnet">&lt;Theory&gt;
 Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual.ToString()).Equals(expected)
 End Sub
@@ -181,7 +181,7 @@ public void TestMethod&lt;T&gt;(T actual, String expected) =&gt;
 </section>
 <section id="tabpanel_bHGHmlrG6S-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-visualbasic">Public Sub TestMethod(Of T)(actual As T, expected As String)
+<pre><code class="lang-vbnet">Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual).ToString(expected)
 End Sub
 </code></pre>
@@ -219,7 +219,7 @@ public void TestMethod(BadBigNum actual, String expected) =&gt;
 </section>
 <section id="tabpanel_bHGHmlrG6S-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-visualbasic">&lt;Theory&gt;
+<pre><code class="lang-vbnet">&lt;Theory&gt;
 Public Sub TestMethod(actual As BadBigNum, expected As String)
 	Assert.That(actual)
 		.Count(expected.Length)

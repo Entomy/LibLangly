@@ -36,7 +36,7 @@ public void TestMethod<T>(T actual, String expected) =>
 
 # [VB](#tab/vb)
 
-~~~~visualbasic
+~~~~vbnet
 <Theory>
 Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual)
@@ -64,7 +64,7 @@ public void TestMethod<T>(T actual, String expected) =>
 
 # [VB](#tab/vb)
 
-~~~~visualbasic
+~~~~vbnet
 <Theory>
 Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual.ToString()).Equals(expected)
@@ -93,7 +93,7 @@ public void TestMethod<T>(T actual, String expected) =>
 
 # [VB](#tab/vb)
 
-~~~~visualbasic
+~~~~vbnet
 Public Sub TestMethod(Of T)(actual As T, expected As String)
 	Assert.That(actual).ToString(expected)
 End Sub
@@ -123,7 +123,7 @@ public void TestMethod(BadBigNum actual, String expected) =>
 
 # [VB](#tab/vb)
 
-~~~~visualbasic
+~~~~vbnet
 <Theory>
 Public Sub TestMethod(actual As BadBigNum, expected As String)
 	Assert.That(actual)
