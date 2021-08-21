@@ -7,7 +7,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <typeparam name="T">The type of the number.</typeparam>
 		/// <param name="value">A number that is greater than or equal to <see cref="INumber{TSelf}"/></param>
-		/// <returns></returns>
+		/// <returns>The absolute value of <paramref name="value"/>.</returns>
 		public static T Abs<T>(this T value) where T : INumber<T> => T.Abs(value);
 
 		/// <summary>

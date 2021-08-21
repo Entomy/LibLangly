@@ -7,7 +7,7 @@ namespace Numbersome {
 		/// Returns the square root of a specified number.
 		/// </summary>
 		/// <param name="d">A number whos square root is to be found.</param>
-		/// <returns></returns>
+		/// <returns>The square root of <paramref name="d"/>.</returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.sqrt"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T Sqrt<T>(this T d) where T : IFloatingPoint<T> => T.Sqrt(d);

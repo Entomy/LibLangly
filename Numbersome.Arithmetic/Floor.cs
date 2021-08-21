@@ -4,9 +4,9 @@ using System.Traits.Concepts;
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
 		/// <summary>
-		/// Returns the largest integral value less than or equal to the specified double-precision floating-point number.
+		/// Returns the largest integral value less than or equal to the specified number.
 		/// </summary>
-		/// <param name="d">A double-precision floating-point number.</param>
+		/// <param name="d">A floating-point number.</param>
 		/// <returns>The largest integral value less than or equal to <paramref name="d"/>.</returns>
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.floor"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

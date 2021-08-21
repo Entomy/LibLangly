@@ -1,4 +1,4 @@
-﻿namespace Defender.ConceptAssertions {
+﻿namespace Defender {
 	/// <summary>
 	/// Provides the set of assertions for <see cref="System.Traits.Concepts"/>.
 	/// </summary>

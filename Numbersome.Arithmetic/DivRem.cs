@@ -3,7 +3,7 @@
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
 		/// <summary>
-		/// Calculates the quotient of two 64-bit signed integers and also returns the remainder in an output parameter.
+		/// Calculates the quotient and remainder of two numbers.
 		/// </summary>
 		/// <param name="a">The dividend.</param>
 		/// <param name="b">The divisor.</param>

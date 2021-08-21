@@ -168,6 +168,12 @@ module Tests =
         Assert.Equal(2un, 1un ^^^ 3un)
 
     [<Fact>]
+    let ``abs`` () =
+        Assert.Equal(1, abs -1)
+        Assert.Equal(1.0, abs -1.0)
+        Assert.Equal(1.0m, abs -1.0m)
+
+    [<Fact>]
     let ``Arrays`` () =
         let ba:int boundedarray = bnd[|1;2;3;4;5|]
         let da:int dynamicarray = dyn[|1;2;3;4;5|]
