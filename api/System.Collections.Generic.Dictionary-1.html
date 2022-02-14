@@ -1,0 +1,2715 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Dictionary&lt;TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Dictionary&lt;TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.58.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.Collections.Generic.Dictionary`1">
+  
+  
+  <h1 id="System_Collections_Generic_Dictionary_1" data-uid="System.Collections.Generic.Dictionary`1" class="text-break">Class Dictionary&lt;TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a collection of keys and values.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;</div>
+    <div class="level2"><span class="xref">Dictionary&lt;TValue&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback">IDeserializationCallback</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.IDictionary.get_Item(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.IDictionary.set_Item(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.add#system-collections-generic-dictionary-2-add(-0-1)">Dictionary&lt;String, TValue&gt;.Add(String, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.clear#system-collections-generic-dictionary-2-clear">Dictionary&lt;String, TValue&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containskey#system-collections-generic-dictionary-2-containskey(-0)">Dictionary&lt;String, TValue&gt;.ContainsKey(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containsvalue#system-collections-generic-dictionary-2-containsvalue(-1)">Dictionary&lt;String, TValue&gt;.ContainsValue(TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.ensurecapacity#system-collections-generic-dictionary-2-ensurecapacity(system-int32)">Dictionary&lt;String, TValue&gt;.EnsureCapacity(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.getenumerator#system-collections-generic-dictionary-2-getenumerator">Dictionary&lt;String, TValue&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.getobjectdata#system-collections-generic-dictionary-2-getobjectdata(system-runtime-serialization-serializationinfo-system-runtime-serialization-streamingcontext)">Dictionary&lt;String, TValue&gt;.GetObjectData(SerializationInfo, StreamingContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.ondeserialization#system-collections-generic-dictionary-2-ondeserialization(system-object)">Dictionary&lt;String, TValue&gt;.OnDeserialization(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.remove#system-collections-generic-dictionary-2-remove(-0)">Dictionary&lt;String, TValue&gt;.Remove(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.remove#system-collections-generic-dictionary-2-remove(-0-1@)">Dictionary&lt;String, TValue&gt;.Remove(String, TValue)</a>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;&gt;.Add(System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;&gt;.Contains(System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;&gt;.CopyTo(System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;[], System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;&gt;.Remove(System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;&gt;.GetEnumerator()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-icollection-copyto#system-collections-generic-dictionary-2-system-collections-icollection-copyto(system-array-system-int32)">Dictionary&lt;String, TValue&gt;.ICollection.CopyTo(Array, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-add#system-collections-generic-dictionary-2-system-collections-idictionary-add(system-object-system-object)">Dictionary&lt;String, TValue&gt;.IDictionary.Add(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-contains#system-collections-generic-dictionary-2-system-collections-idictionary-contains(system-object)">Dictionary&lt;String, TValue&gt;.IDictionary.Contains(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-getenumerator#system-collections-generic-dictionary-2-system-collections-idictionary-getenumerator">Dictionary&lt;String, TValue&gt;.IDictionary.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-remove#system-collections-generic-dictionary-2-system-collections-idictionary-remove(system-object)">Dictionary&lt;String, TValue&gt;.IDictionary.Remove(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-ienumerable-getenumerator#system-collections-generic-dictionary-2-system-collections-ienumerable-getenumerator">Dictionary&lt;String, TValue&gt;.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trimexcess#system-collections-generic-dictionary-2-trimexcess">Dictionary&lt;String, TValue&gt;.TrimExcess()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trimexcess#system-collections-generic-dictionary-2-trimexcess(system-int32)">Dictionary&lt;String, TValue&gt;.TrimExcess(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.tryadd#system-collections-generic-dictionary-2-tryadd(-0-1)">Dictionary&lt;String, TValue&gt;.TryAdd(String, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trygetvalue#system-collections-generic-dictionary-2-trygetvalue(-0-1@)">Dictionary&lt;String, TValue&gt;.TryGetValue(String, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.comparer#system-collections-generic-dictionary-2-comparer">Dictionary&lt;String, TValue&gt;.Comparer</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.count#system-collections-generic-dictionary-2-count">Dictionary&lt;String, TValue&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.item#system-collections-generic-dictionary-2-item(-0)">Dictionary&lt;String, TValue&gt;.Item[String]</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.keys#system-collections-generic-dictionary-2-keys">Dictionary&lt;String, TValue&gt;.Keys</a>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, TValue&gt;&gt;.IsReadOnly</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.IDictionary&lt;System.String, TValue&gt;.Keys</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.IDictionary&lt;System.String, TValue&gt;.Values</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.IReadOnlyDictionary&lt;System.String, TValue&gt;.Keys</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.Dictionary&lt;System.String, TValue&gt;.System.Collections.Generic.IReadOnlyDictionary&lt;System.String, TValue&gt;.Values</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-icollection-issynchronized#system-collections-generic-dictionary-2-system-collections-icollection-issynchronized">Dictionary&lt;String, TValue&gt;.ICollection.IsSynchronized</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-icollection-syncroot#system-collections-generic-dictionary-2-system-collections-icollection-syncroot">Dictionary&lt;String, TValue&gt;.ICollection.SyncRoot</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-isfixedsize#system-collections-generic-dictionary-2-system-collections-idictionary-isfixedsize">Dictionary&lt;String, TValue&gt;.IDictionary.IsFixedSize</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-isreadonly#system-collections-generic-dictionary-2-system-collections-idictionary-isreadonly">Dictionary&lt;String, TValue&gt;.IDictionary.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-item#system-collections-generic-dictionary-2-system-collections-idictionary-item(system-object)">Dictionary&lt;String, TValue&gt;.IDictionary.Item[Object]</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-keys#system-collections-generic-dictionary-2-system-collections-idictionary-keys">Dictionary&lt;String, TValue&gt;.IDictionary.Keys</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.system-collections-idictionary-values#system-collections-generic-dictionary-2-system-collections-idictionary-values">Dictionary&lt;String, TValue&gt;.IDictionary.Values</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.values#system-collections-generic-dictionary-2-values">Dictionary&lt;String, TValue&gt;.Values</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Collections.Generic.html">System.Collections.Generic</a></h6>
+  <h6><strong>Assembly</strong>: Stringier.dll</h6>
+  <h5 id="System_Collections_Generic_Dictionary_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Dictionary&lt;TValue&gt; : Dictionary&lt;string, TValue&gt;, IDictionary&lt;string, TValue&gt;, ICollection&lt;KeyValuePair&lt;string, TValue&gt;&gt;, IReadOnlyDictionary&lt;string, TValue&gt;, IReadOnlyCollection&lt;KeyValuePair&lt;string, TValue&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;string, TValue&gt;&gt;, IDictionary, ICollection, IEnumerable, IDeserializationCallback, ISerializable</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type of the values in the dictionary.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_Dictionary_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This is fundamentally a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;TKey,TValue&gt;</a> which is keyed by textual elements.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor" data-uid="System.Collections.Generic.Dictionary`1.#ctor">Dictionary()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that is empty, has the default initial capacity, and uses the default equality comparer for the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary()</code></pre>
+  </div>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Collections_Generic_IDictionary_System_String__0__" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Collections.Generic.IDictionary{System.String,`0})">Dictionary(IDictionary&lt;String, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that contains elements copied from the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey,TValue&gt;</a> and uses the default equality comparer for the key type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(IDictionary&lt;string, TValue&gt; dictionary)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;</td>
+        <td><span class="parametername">dictionary</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey,TValue&gt;</a> whose elements are copied to the new <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">dictionary</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">dictionary</code> contains one or more duplicate keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Collections_Generic_IDictionary_System_String__0__System_Collections_Generic_IEqualityComparer_System_String__" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Collections.Generic.IDictionary{System.String,`0},System.Collections.Generic.IEqualityComparer{System.String})">Dictionary(IDictionary&lt;String, TValue&gt;, IEqualityComparer&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that contains elements copied from the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey,TValue&gt;</a> and uses the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(IDictionary&lt;string, TValue&gt; dictionary, IEqualityComparer&lt;string&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;</td>
+        <td><span class="parametername">dictionary</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey,TValue&gt;</a> whose elements are copied to the new <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a> implementation to use when comparing keys, or <span class="xref">null</span> to use the default <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.equalitycomparer-1">EqualityComparer&lt;T&gt;</a> for the type of the key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">dictionary</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">dictionary</code> contains one or more duplicate keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String__0___" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,`0}})">Dictionary(IEnumerable&lt;KeyValuePair&lt;String, TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that contains elements copied from the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(IEnumerable&lt;KeyValuePair&lt;string, TValue&gt;&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> whose elements are copied to the new <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">collection</code> contains one or more duplicate keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String__0___System_Collections_Generic_IEqualityComparer_System_String__" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,`0}},System.Collections.Generic.IEqualityComparer{System.String})">Dictionary(IEnumerable&lt;KeyValuePair&lt;String, TValue&gt;&gt;, IEqualityComparer&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that contains elements copied from the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> and uses the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(IEnumerable&lt;KeyValuePair&lt;string, TValue&gt;&gt; collection, IEqualityComparer&lt;string&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, TValue&gt;&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> whose elements are copied to the new <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a> implementation to use when comparing keys, or <span class="xref">null</span> to use the default <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.equalitycomparer-1">EqualityComparer&lt;T&gt;</a> for the type of the key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">collection</code> contains one or more duplicate keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Collections_Generic_IEqualityComparer_System_String__" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Collections.Generic.IEqualityComparer{System.String})">Dictionary(IEqualityComparer&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that is empty, has the default initial capacity, and uses the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(IEqualityComparer&lt;string&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a> implementation to use when comparing keys, or <span class="xref">null</span> to use the default <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.equalitycomparer-1">EqualityComparer&lt;T&gt;</a> for the type of the key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Int32_" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Int32)">Dictionary(Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that is empty, has the specified initial capacity, and uses the default equality comparer for the key type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(int capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The initial number of elements that the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> can contain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">capacity</code> is less than 0.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1__ctor_" data-uid="System.Collections.Generic.Dictionary`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1__ctor_System_Int32_System_Collections_Generic_IEqualityComparer_System_String__" data-uid="System.Collections.Generic.Dictionary`1.#ctor(System.Int32,System.Collections.Generic.IEqualityComparer{System.String})">Dictionary(Int32, IEqualityComparer&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> class that is empty, has the specified initial capacity, and uses the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary(int capacity, IEqualityComparer&lt;string&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The initial number of elements that the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> can contain.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer&lt;T&gt;</a> implementation to use when comparing keys, or <span class="xref">null</span> to use the default <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.equalitycomparer-1">EqualityComparer&lt;T&gt;</a> for the type of the key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">capacity</code> is less than 0.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Item_" data-uid="System.Collections.Generic.Dictionary`1.Item*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Item_System_Char__System_Int32_" data-uid="System.Collections.Generic.Dictionary`1.Item(System.Char*,System.Int32)">Item[Char*, Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public TValue this[char *key, int length] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a>, and a set operation creates a new element with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Item_" data-uid="System.Collections.Generic.Dictionary`1.Item*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Item_System_Char___" data-uid="System.Collections.Generic.Dictionary`1.Item(System.Char[])">Item[Char[]]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[char[] key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a>, and a set operation creates a new element with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Item_" data-uid="System.Collections.Generic.Dictionary`1.Item*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Item_System_Memory_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Item(System.Memory{System.Char})">Item[Memory&lt;Char&gt;]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[Memory&lt;char&gt; key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a>, and a set operation creates a new element with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Item_" data-uid="System.Collections.Generic.Dictionary`1.Item*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Item_System_ReadOnlyMemory_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Item(System.ReadOnlyMemory{System.Char})">Item[ReadOnlyMemory&lt;Char&gt;]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[ReadOnlyMemory&lt;char&gt; key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a>, and a set operation creates a new element with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Item_" data-uid="System.Collections.Generic.Dictionary`1.Item*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Item_System_ReadOnlySpan_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Item(System.ReadOnlySpan{System.Char})">Item[ReadOnlySpan&lt;Char&gt;]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[ReadOnlySpan&lt;char&gt; key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a>, and a set operation creates a new element with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Item_" data-uid="System.Collections.Generic.Dictionary`1.Item*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Item_System_Span_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Item(System.Span{System.Char})">Item[Span&lt;Char&gt;]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[Span&lt;char&gt; key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a>, and a set operation creates a new element with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Add_" data-uid="System.Collections.Generic.Dictionary`1.Add*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Add_System_Char__System_Int32__0_" data-uid="System.Collections.Generic.Dictionary`1.Add(System.Char*,System.Int32,`0)">Add(Char*, Int32, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Add(char *key, int length, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. The value can be <span class="xref">null</span> for reference types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Add_" data-uid="System.Collections.Generic.Dictionary`1.Add*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Add_System_Char____0_" data-uid="System.Collections.Generic.Dictionary`1.Add(System.Char[],`0)">Add(Char[], TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(char[] key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. The value can be <span class="xref">null</span> for reference types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Add_" data-uid="System.Collections.Generic.Dictionary`1.Add*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Add_System_Memory_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.Add(System.Memory{System.Char},`0)">Add(Memory&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Memory&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. The value can be <span class="xref">null</span> for reference types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Add_" data-uid="System.Collections.Generic.Dictionary`1.Add*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Add_System_ReadOnlyMemory_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.Add(System.ReadOnlyMemory{System.Char},`0)">Add(ReadOnlyMemory&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ReadOnlyMemory&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. The value can be <span class="xref">null</span> for reference types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Add_" data-uid="System.Collections.Generic.Dictionary`1.Add*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Add_System_ReadOnlySpan_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.Add(System.ReadOnlySpan{System.Char},`0)">Add(ReadOnlySpan&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ReadOnlySpan&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. The value can be <span class="xref">null</span> for reference types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Add_" data-uid="System.Collections.Generic.Dictionary`1.Add*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Add_System_Span_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.Add(System.Span{System.Char},`0)">Add(Span&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Span&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. The value can be <span class="xref">null</span> for reference types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_ContainsKey_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_ContainsKey_System_Char__System_Int32_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey(System.Char*,System.Int32)">ContainsKey(Char*, Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool ContainsKey(char *key, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified <code data-dev-comment-type="paramref" class="paramref">key</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_ContainsKey_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_ContainsKey_System_Char___" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey(System.Char[])">ContainsKey(Char[])</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(char[] key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified <code data-dev-comment-type="paramref" class="paramref">key</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_ContainsKey_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_ContainsKey_System_Memory_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey(System.Memory{System.Char})">ContainsKey(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(Memory&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified <code data-dev-comment-type="paramref" class="paramref">key</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_ContainsKey_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_ContainsKey_System_ReadOnlyMemory_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey(System.ReadOnlyMemory{System.Char})">ContainsKey(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(ReadOnlyMemory&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified <code data-dev-comment-type="paramref" class="paramref">key</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_ContainsKey_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_ContainsKey_System_ReadOnlySpan_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey(System.ReadOnlySpan{System.Char})">ContainsKey(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(ReadOnlySpan&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified <code data-dev-comment-type="paramref" class="paramref">key</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_ContainsKey_" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_ContainsKey_System_Span_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.ContainsKey(System.Span{System.Char})">ContainsKey(Span&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(Span&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified <code data-dev-comment-type="paramref" class="paramref">key</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Char__System_Int32_" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Char*,System.Int32)">Remove(Char*, Int32)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool Remove(char *key, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>. This method returns <span class="xref">false</span> if <code data-dev-comment-type="paramref" class="paramref">key</code> is not found in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Char__System_Int32__0__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Char*,System.Int32,`0@)">Remove(Char*, Int32, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>, and copies the element to the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool Remove(char *key, int length, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The removed element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Char___" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Char[])">Remove(Char[])</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(char[] key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>. This method returns <span class="xref">false</span> if <code data-dev-comment-type="paramref" class="paramref">key</code> is not found in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Char____0__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Char[],`0@)">Remove(Char[], out TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>, and copies the element to the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(char[] key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The removed element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Memory_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Memory{System.Char})">Remove(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(Memory&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>. This method returns <span class="xref">false</span> if <code data-dev-comment-type="paramref" class="paramref">key</code> is not found in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Memory_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Memory{System.Char},`0@)">Remove(Memory&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>, and copies the element to the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(Memory&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The removed element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_ReadOnlyMemory_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.ReadOnlyMemory{System.Char})">Remove(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(ReadOnlyMemory&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>. This method returns <span class="xref">false</span> if <code data-dev-comment-type="paramref" class="paramref">key</code> is not found in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_ReadOnlyMemory_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.ReadOnlyMemory{System.Char},`0@)">Remove(ReadOnlyMemory&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>, and copies the element to the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(ReadOnlyMemory&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The removed element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_ReadOnlySpan_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.ReadOnlySpan{System.Char})">Remove(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(ReadOnlySpan&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>. This method returns <span class="xref">false</span> if <code data-dev-comment-type="paramref" class="paramref">key</code> is not found in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_ReadOnlySpan_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.ReadOnlySpan{System.Char},`0@)">Remove(ReadOnlySpan&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>, and copies the element to the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(ReadOnlySpan&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The removed element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Span_System_Char__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Span{System.Char})">Remove(Span&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(Span&lt;char&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>. This method returns <span class="xref">false</span> if <code data-dev-comment-type="paramref" class="paramref">key</code> is not found in the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_Remove_" data-uid="System.Collections.Generic.Dictionary`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_Remove_System_Span_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.Remove(System.Span{System.Char},`0@)">Remove(Span&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes the value with the specified key from the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a>, and copies the element to the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(Span&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The removed element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the element is successfully found and removed; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryAdd_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryAdd_System_Char__System_Int32__0_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd(System.Char*,System.Int32,`0)">TryAdd(Char*, Int32, TValue)</h4>
+  <div class="markdown level1 summary"><p>Attempts to add the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryAdd(char *key, int length, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. It can be <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the key/value pair was added to the dictionary successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryAdd_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryAdd_System_Char____0_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd(System.Char[],`0)">TryAdd(Char[], TValue)</h4>
+  <div class="markdown level1 summary"><p>Attempts to add the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAdd(char[] key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. It can be <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the key/value pair was added to the dictionary successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryAdd_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryAdd_System_Memory_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd(System.Memory{System.Char},`0)">TryAdd(Memory&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Attempts to add the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAdd(Memory&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. It can be <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the key/value pair was added to the dictionary successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryAdd_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryAdd_System_ReadOnlyMemory_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd(System.ReadOnlyMemory{System.Char},`0)">TryAdd(ReadOnlyMemory&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Attempts to add the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAdd(ReadOnlyMemory&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. It can be <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the key/value pair was added to the dictionary successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryAdd_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryAdd_System_ReadOnlySpan_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd(System.ReadOnlySpan{System.Char},`0)">TryAdd(ReadOnlySpan&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Attempts to add the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAdd(ReadOnlySpan&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. It can be <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the key/value pair was added to the dictionary successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryAdd_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryAdd_System_Span_System_Char___0_" data-uid="System.Collections.Generic.Dictionary`1.TryAdd(System.Span{System.Char},`0)">TryAdd(Span&lt;Char&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Attempts to add the specified key and value to the dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAdd(Span&lt;char&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the element to add. It can be <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the key/value pair was added to the dictionary successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryGetValue_" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryGetValue_System_Char__System_Int32__0__" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue(System.Char*,System.Int32,`0@)">TryGetValue(Char*, Int32, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryGetValue(char *key, int length, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified key; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryGetValue_" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryGetValue_System_Char____0__" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue(System.Char[],`0@)">TryGetValue(Char[], out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(char[] key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified key; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryGetValue_" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryGetValue_System_Memory_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue(System.Memory{System.Char},`0@)">TryGetValue(Memory&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(Memory&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified key; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryGetValue_" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryGetValue_System_ReadOnlyMemory_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue(System.ReadOnlyMemory{System.Char},`0@)">TryGetValue(ReadOnlyMemory&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(ReadOnlyMemory&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified key; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryGetValue_" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryGetValue_System_ReadOnlySpan_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue(System.ReadOnlySpan{System.Char},`0@)">TryGetValue(ReadOnlySpan&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(ReadOnlySpan&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified key; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Generic_Dictionary_1_TryGetValue_" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_Dictionary_1_TryGetValue_System_Span_System_Char___0__" data-uid="System.Collections.Generic.Dictionary`1.TryGetValue(System.Span{System.Char},`0@)">TryGetValue(Span&lt;Char&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(Span&lt;char&gt; key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code data-dev-comment-type="paramref" class="paramref">value</code> parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="System.Collections.Generic.Dictionary-1.html">Dictionary&lt;TValue&gt;</a> contains an element with the specified key; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">System.Collections.Generic.IDictionary&lt;TKey,TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">System.Collections.Generic.ICollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">System.Collections.Generic.IReadOnlyDictionary&lt;TKey,TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.idictionary">System.Collections.IDictionary</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.icollection">System.Collections.ICollection</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback">System.Runtime.Serialization.IDeserializationCallback</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">System.Runtime.Serialization.ISerializable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Add__1_System_Collections_Generic_ICollection___0____0___">CollectathonExtensions.Add&lt;T&gt;(ICollection&lt;T&gt;, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Add__1_System_Collections_Generic_ICollection___0__System_Memory___0__">CollectathonExtensions.Add&lt;T&gt;(ICollection&lt;T&gt;, Memory&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Add__1_System_Collections_Generic_ICollection___0__System_ReadOnlyMemory___0__">CollectathonExtensions.Add&lt;T&gt;(ICollection&lt;T&gt;, ReadOnlyMemory&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Add__1_System_Collections_Generic_ICollection___0__System_Span___0__">CollectathonExtensions.Add&lt;T&gt;(ICollection&lt;T&gt;, Span&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Add__1_System_Collections_Generic_ICollection___0__System_ReadOnlySpan___0__">CollectathonExtensions.Add&lt;T&gt;(ICollection&lt;T&gt;, ReadOnlySpan&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Add__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__">CollectathonExtensions.Add&lt;T&gt;(ICollection&lt;T&gt;, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Fold__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0____0_">CollectathonExtensions.Fold&lt;TElement&gt;(IEnumerable&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Occurrences__1_System_Collections_Generic_IEnumerable___0____0_">CollectathonExtensions.Occurrences&lt;T&gt;(IEnumerable&lt;T&gt;, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.CollectathonExtensions.html#System_Collections_Generic_CollectathonExtensions_Occurrences__1_System_Collections_Generic_IEnumerable___0__System_Predicate___0__">CollectathonExtensions.Occurrences&lt;T&gt;(IEnumerable&lt;T&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

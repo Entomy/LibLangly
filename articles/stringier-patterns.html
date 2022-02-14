@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Patterns </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Patterns ">
+    <meta name="generator" content="docfx 2.58.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="patterns">Patterns</h1>
+
+<p><strong>LibLangly</strong> works through two layers. <strong>Stringier.Patterns</strong> is the pattern combinator and parsing framework, and <strong>Langly</strong>, the assembly, takes the parsing framework and puts the parsed text into a fully formed parse tree. This article covers the former, base layer.</p>
+<p><strong>Stringier.Patterns</strong> ressurects the extremely powerful but forgotten style of parsing from SNOBOL and UNICON, as a library that existing languages can use, rather than needing to learn an entirely new language. This addresses one of the biggest issues SNOBOL had, and why RegEx became so dominant: it was difficult to integrate and required SNOBOL be a complete language. Parsing frameworks havr come a very long way since then, so <strong>Stringier.Patterns</strong> doesn't keep 100% true to the SNOBOL model, instead taking additional inspiration from the advancements in RegEx engines, parser combinators, parser generators, and string scanners.</p>
+<p>Conceptually, pattern combinators are very similar to parser combinators, as both are built upon combinator theory. The key difference is in the semantics. Parser combinators are built up using functions that explicitly dictate how parsing occurs. Pattern combinators, however, are completely declarative, stating what to parse, not how to parse it. This has two major effects. First is that as a user of the framework, you do not need to know what the most optimal way to parse something is, only what makes up a match. Second is that, because its truely declarative, internally rewriting patterns is possible as an optimization, just like how compilers rewrite code that has the same outcome, but done more efficiently. These two effects work together to create a framework that only requires describing what a successful match looks like; everything else is taken care of for you.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
